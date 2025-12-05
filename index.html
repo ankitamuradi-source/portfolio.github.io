@@ -10,58 +10,114 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", Arial, sans-serif;
         }
 
         body {
-            background: #f5f5f5;
+            background: #eef2f3;
         }
 
         /* Navigation */
         nav {
-            background: #4CAF50;
+            background: #2E7D32;
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 18px;
             font-size: 18px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #c8ffd7;
+            transform: scale(1.05);
         }
 
         section {
             display: none;
-            padding: 30px;
-            max-width: 900px;
-            margin: 20px auto;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 30px auto;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
         }
 
         h1 {
-            color: #4CAF50;
-            margin-bottom: 15px;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            font-size: 32px;
+            text-align: center;
         }
 
-        ul {
-            margin-top: 10px;
-        }
-
-        ul li {
-            margin-bottom: 8px;
-        }
-
-        /* Show default section */
         .active {
             display: block;
+        }
+
+        /* ABOUT PAGE – Profile Cards */
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .profile-box {
+            width: 260px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .profile-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+        }
+
+        .profile-box img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #2E7D32;
+        }
+
+        .profile-box h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .profile-box p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* Home Page Styling */
+        #home p {
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* List styling */
+        ol li {
+            margin-bottom: 10px;
+            line-height: 1.5;
         }
     </style>
 
@@ -87,79 +143,83 @@
 
     <!-- HOME PAGE -->
     <section id="home" class="active">
-        <h1>AARUNYA</h1>
+        <h1>Welcome to AARUNYA</h1>
         <p>This portfolio is created for the course <strong>Algorithmic Problem Solving</strong>.</p>
-        <p>It showcases creativity, teamwork, and the ability to develop professional web-based portfolios.</p>
+        <p>It showcases creativity, teamwork, and our ability to design beautiful and functional web-based projects.</p>
     </section>
 
     <!-- ABOUT PAGE -->
     <section id="about">
-        <h1>About</h1>
+        <h1>Meet Our Team</h1>
 
-        <!-- Ankita -->
-        <p><strong>Name: Ankita Muradi</strong></p>
-        <p><strong>USN: 01FE24BCS146</strong></p>
-        <p><strong>Skills: C, C++, Data Structure And Algorithm</strong></p>
+        <div class="profile-container">
 
-        <br>
+            <div class="profile-box">
+                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
+                <h3>Ankita Muradi</h3>
+                <p><strong>USN:</strong> 01FE24BCS146</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-        <!-- Arbiya -->
-        <p><strong>Name: Arbiya Naaz</strong></p>
-        <p><strong>USN: 01FE24BCS042</strong></p>
-        <p><strong>Skills: C, C++, Data Structure And Algorithm</strong></p>
+            <div class="profile-box">
+                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
+                <h3>Arbiya Naaz</h3>
+                <p><strong>USN:</strong> 01FE24BCS042</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-        <br>
-         <!-- Akshatha -->
-        <p><strong>Name: Akshatha</strong></p>
-        <p><strong>USN: 01FE24BCS146</strong></p>
-        <p><strong>Skills: C, C++, Data Structure And Algorithm</strong></p>
+            <div class="profile-box">
+                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
+                <h3>Akshata</h3>
+                <p><strong>USN:</strong> 01FE24BCS150</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-        <br>
+            <div class="profile-box">
+                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
+                <h3>Sai</h3>
+                <p><strong>USN:</strong> 01FE24BCS160</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-         <!-- Sai -->
-        <p><strong>Name: Sai</strong></p>
-        <p><strong>USN: 01FE24BCS146</strong></p>
-        <p><strong>Skills: C, C++, Data Structure And Algorithm</strong></p>
-
+        </div>
     </section>
 
-    <!-- ARBIYA NAAZ PAGE -->
-    <section id="Arbiya Naaz">
+    <!-- ARBIYA PAGE -->
+    <section id="arbiya">
         <h1>Arbiya Naaz</h1>
-        <h2>Identified business ideas </h2>
-        <div class="business-ideas">
-  <h2>Top 10 Best Business Ideas</h2>
-  <ol>
-    <li><strong>Logistics & Distribution Center</strong> – Ideal due to port & airport connectivity.</li>
-    <li><strong>Eco-Resort & Adventure Tourism Park</strong> – Utilizes eco-forest and waterfront.</li>
-    <li><strong>E-commerce Fulfillment Warehouse</strong> – Supports rapid online retail growth.</li>
-    <li><strong>FinTech & IT Training Institute</strong> – Builds skilled workforce for IT sector.</li>
-    <li><strong>Cold Storage + Food Processing Unit</strong> – Supports agriculture & exports.</li>
-    <li><strong>Shopping Mall / Retail Complex</strong> – High demand from residential zones.</li>
-    <li><strong>Co-working & Startup Hub</strong> – Low investment, strong rental revenue.</li>
-    <li><strong>Multi-specialty Hospital</strong> – Essential service with stable demand.</li>
-    <li><strong>EV Charging & E-Bike Rental Hub</strong> – Future-ready mobility business.</li>
-    <li><strong>Waterfront Resort & Boating Center</strong> – High-margin tourism opportunity.</li>
-  </ol>
-</div>
+        <h2>Identified Business Ideas</h2>
+
+        <ol>
+            <li><strong>Logistics & Distribution Center</strong></li>
+            <li><strong>Eco-Resort & Adventure Tourism Park</strong></li>
+            <li><strong>E-commerce Fulfillment Warehouse</strong></li>
+            <li><strong>FinTech & IT Training Institute</strong></li>
+            <li><strong>Cold Storage + Food Processing Unit</strong></li>
+            <li><strong>Shopping Mall / Retail Complex</strong></li>
+            <li><strong>Co-working & Startup Hub</strong></li>
+            <li><strong>Multi-specialty Hospital</strong></li>
+            <li><strong>EV Charging & E-Bike Rental Hub</strong></li>
+            <li><strong>Waterfront Resort & Boating Center</strong></li>
+        </ol>
     </section>
 
     <!-- ANKITA PAGE -->
     <section id="ankita">
         <h1>Ankita</h1>
-        <h2>Identified business ideas .</h2>
+        <p>Content will be added soon...</p>
     </section>
 
     <!-- SAI PAGE -->
     <section id="sai">
         <h1>Sai</h1>
-        <h2>Identified business ideas </h2>
+        <p>Content will be added soon...</p>
     </section>
 
     <!-- AKSHATA PAGE -->
     <section id="akshata">
         <h1>Akshata</h1>
-        <p>Identified business ideas and created a professional website for portfolio.</p>
+        <p>Identified business ideas and contributed to web design.</p>
     </section>
 
 </body>
