@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarunya</title>
     <title>AARUNYA Portfolio</title>
 
     <!-- Google Font -->
@@ -14,45 +13,35 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", Arial, sans-serif;
             font-family: "Poppins", sans-serif;
         }
 
         body {
-            background: #eef2f3;
             background: #f0f4f3;
             color: #333;
         }
 
-        /* Navigation */
         /* NAVBAR */
         nav {
             background: #2E7D32;
-            padding: 15px;
             padding: 15px 20px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         nav a {
             color: white;
-            margin: 0 18px;
             margin: 0 20px;
             font-size: 18px;
-            text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
             text-decoration: none;
             transition: .3s;
         }
 
         nav a:hover {
-            color: #c8ffd7;
-            transform: scale(1.05);
             color: #C8FFD7;
             transform: scale(1.08);
         }
@@ -63,11 +52,6 @@
             max-width: 1100px;
             margin: 40px auto;
             padding: 40px;
-            max-width: 1000px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
             background: #ffffff;
             border-radius: 18px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.12);
@@ -85,16 +69,12 @@
 
         h1 {
             color: #2E7D32;
-            margin-bottom: 20px;
-            font-size: 32px;
             text-align: center;
             margin-bottom: 25px;
             font-size: 36px;
             font-weight: 700;
         }
 
-        .active {
-            display: block;
         /* HERO BANNER */
         .hero {
             background: linear-gradient(135deg, #2E7D32, #4CAF50, #66bb6a);
@@ -122,7 +102,6 @@
             animation: slideUp .8s forwards;
         }
 
-        /* ABOUT PAGE – Profile Cards */
         @keyframes slideUp {
             from {opacity: 0; transform: translateY(25px);}
             to   {opacity: 1; transform: translateY(0);}
@@ -156,75 +135,40 @@
         .profile-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
-            margin-top: 20px;
             gap: 25px;
         }
 
         .profile-box {
             background: #f7fff9;
             width: 260px;
-            background: #ffffff;
-            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             border-radius: 18px;
             text-align: center;
-            transition: 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             transition: .3s ease;
         }
 
         .profile-box:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.16);
-        }
-
-        .profile-box img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #2E7D32;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .profile-box h3 {
-            font-size: 20px;
             margin-bottom: 5px;
-            color: #333;
-        }
-
-        .profile-box p {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        /* Home Page Styling */
-        #home p {
-            font-size: 18px;
-            text-align: center;
-            line-height: 1.6;
             font-size: 20px;
             color: #2E7D32;
         }
 
-        /* List styling */
         /* BUSINESS IDEAS LIST */
         ol li {
             margin-bottom: 10px;
-            line-height: 1.5;
             font-size: 18px;
             line-height: 1.6;
         }
     </style>
 
     <script>
-        function showPage(pageId) {
-            document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-            document.getElementById(pageId).classList.add("active");
         function showPage(id) {
             document.querySelectorAll("section").forEach(
                 sec => sec.classList.remove("active")
@@ -236,20 +180,18 @@
 
 <body>
 
-    <!-- Navigation Bar -->
     <!-- NAVIGATION -->
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('about')">About</a>
         <a href="#" onclick="showPage('arbiya')">Arbiya</a>
         <a href="#" onclick="showPage('ankita')">Ankita</a>
+        <a href="#" onclick="showPage('sai')">Sai</a>
+        <a href="#" onclick="showPage('akshata')">Akshata</a>
     </nav>
 
     <!-- HOME PAGE -->
     <section id="home" class="active">
-        <h1>Welcome to AARUNYA</h1>
-        <p>This portfolio is created for the course <strong>Algorithmic Problem Solving</strong>.</p>
-        <p>It showcases creativity, teamwork, and our ability to design beautiful and functional web-based projects.</p>
 
         <div class="hero">
             <h1>AARUNYA</h1>
@@ -296,32 +238,29 @@
         <div class="profile-container">
 
             <div class="profile-box">
-                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
                 <h3>Ankita Muradi</h3>
                 <p><strong>USN:</strong> 01FE24BCS146</p>
                 <p><strong>Skills:</strong> C, C++, DSA</p>
             </div>
 
             <div class="profile-box">
-                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
                 <h3>Arbiya Naaz</h3>
                 <p><strong>USN:</strong> 01FE24BCS042</p>
                 <p><strong>Skills:</strong> C, C++, DSA</p>
             </div>
 
             <div class="profile-box">
-                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
                 <h3>Akshata</h3>
                 <p><strong>USN:</strong> 01FE24BCS150</p>
                 <p><strong>Skills:</strong> C, C++, DSA</p>
             </div>
 
             <div class="profile-box">
-                <img src="https://i.ibb.co/3R0WfKP/user.png" alt="">
                 <h3>Sai</h3>
                 <p><strong>USN:</strong> 01FE24BCS160</p>
                 <p><strong>Skills:</strong> C, C++, DSA</p>
             </div>
+
         </div>
     </section>
 
@@ -329,7 +268,6 @@
     <section id="arbiya">
         <h1>Arbiya Naaz</h1>
         <h2 style="margin-bottom:15px;">Identified Business Ideas</h2>
-
         <ol>
             <li>Logistics & Distribution Center</li>
             <li>Eco-Resort & Adventure Tourism Park</li>
@@ -346,9 +284,8 @@
 
     <!-- ANKITA PAGE -->
     <section id="ankita">
-        <h1>Ankita Muradi</h1>
+        <h1>Ankita</h1>
         <h2 style="margin-bottom:15px;">Identified Business Ideas</h2>
-
         <ol>
             <li>Floating micro-farm pods.</li>
             <li>XR hologram shopping stalls.</li>
@@ -361,6 +298,18 @@
             <li>Light-reactive smart sidewalks.</li>
             <li>AI meditation micro-pods.</li>
         </ol>
+    </section>
+
+    <!-- SAI PAGE -->
+    <section id="sai">
+        <h1>Sai</h1>
+        <p>Content will be added soon...</p>
+    </section>
+
+    <!-- AKSHATA PAGE -->
+    <section id="akshata">
+        <h1>Akshata</h1>
+        <p>Identified business ideas and contributed to web design.</p>
     </section>
 
 </body>
