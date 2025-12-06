@@ -1,47 +1,301 @@
-<!-- PROJECT -->
-<section id="project" class="section">
-  <h1 class="title">AARUNYA CITY – Project Overview</h1>
-  <p style="max-width: 800px; margin: auto; font-size: 18px; line-height: 1.5; margin-bottom: 40px;">
-    Aarunya City is a futuristic metropolitan ecosystem blending sustainability, technology, clean energy, and intelligent governance.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AARUNYA CITY – Futuristic Smart City Portfolio</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  text-align: center;
+  z-index: 50;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+}
+nav a {
+  color: white;
+  margin: 0 18px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffd5;
+  transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+  display: none;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00e0ff;
+  animation: fadeIn 0.8s ease forwards;
+}
+.section.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #00fff3;
+  text-shadow: 0 0 20px #00ffe0;
+}
+
+/* ABOUT CARDS */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.profile-box {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffe0;
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 15px #00e0ff;
+  transition: transform 0.3s ease;
+}
+.profile-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #00fff0;
+}
+.profile-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #00fff3;
+  margin-bottom: 15px;
+}
+
+/* BUSINESS IDEAS CONTAINER */
+.ideas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.idea-box {
+  flex: 0 1 260px;
+  background: rgba(0, 20, 30, 0.85);
+  border: 2px solid #00e0ff;
+  box-shadow: 0 0 20px #00e0ff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: 0.3s ease-in-out;
+  user-select: none;
+}
+.idea-box span {
+  font-size: 22px;
+}
+.idea-box:hover {
+  box-shadow: 0 0 40px #00fff7, 0 0 15px #00cde8;
+  transform: translateY(-6px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .idea-box {
+    flex: 1 1 100%;
+  }
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('project')">Project</a>
+  <a onclick="showPage('arbiya')">Arbiya</a>
+  <a onclick="showPage('akshata')">Akshata</a>
+  <a onclick="showPage('ankita')">Ankita</a>
+  <a onclick="showPage('sai')">Sai</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
+  <p style="text-align:center; font-size:20px; max-width:700px; margin:auto;">
+    A futuristic smart city powered by innovation, technology, and sustainable development.
   </p>
+</section>
 
-  <h2 style="text-align:center; margin-bottom: 25px; font-weight: 600; font-size: 22px; background: rgba(0,255,255,0.1); display: inline-block; padding: 10px 20px; border-radius: 10px; border: 2px solid #00e0ff; box-shadow: 0 0 15px #00e0ff;">
-    📚 Aarunya City – Project Details
-  </h2>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1000px; margin: 30px auto 0;">
-    <div style="background: rgba(0, 20, 30, 0.9); border: 2px solid #00e0ff; border-radius: 15px; padding: 25px; flex: 1 1 220px; box-shadow: 0 0 25px #00e0ff; color: white;">
-      <h3 style="font-weight: 600; margin-bottom: 15px; text-align: center;">📘 About the Project</h3>
-      <p style="font-size: 16px; line-height: 1.4; text-align: center;">
-        Aarunya City integrates smart infrastructure, green technology, and data-driven systems for next-gen urban evolution.
-      </p>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h1 class="title">Meet Our Team</h1>
+  <div class="profile-container">
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya" />
+      <h3>Arbiya</h3>
+      <p>USN: 01FE24BCS042</p>
+      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p>Arbiya is responsible for data structuring and algorithm design.</p>
     </div>
-    <div style="background: rgba(0, 20, 30, 0.9); border: 2px solid #00e0ff; border-radius: 15px; padding: 25px; flex: 1 1 220px; box-shadow: 0 0 25px #00e0ff; color: white;">
-      <h3 style="font-weight: 600; margin-bottom: 15px; text-align: center;">⚙ Key Features</h3>
-      <ul style="font-size: 15px; line-height: 1.5; list-style-type: disc; padding-left: 20px;">
-        <li>Smart energy & water management</li>
-        <li>AI-driven traffic & safety control</li>
-        <li>Green spaces & vertical gardens</li>
-        <li>Autonomous public transportation</li>
-      </ul>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata" />
+      <h3>Akshata</h3>
+      <p>USN: 01FE24BCS150</p>
+      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p>Akshata focuses on front-end development and creative business ideation.</p>
     </div>
-    <div style="background: rgba(0, 20, 30, 0.9); border: 2px solid #00e0ff; border-radius: 15px; padding: 25px; flex: 1 1 220px; box-shadow: 0 0 25px #00e0ff; color: white;">
-      <h3 style="font-weight: 600; margin-bottom: 15px; text-align: center;">📈 Project Goals</h3>
-      <ul style="font-size: 15px; line-height: 1.5; list-style-type: disc; padding-left: 20px;">
-        <li>Reduce carbon footprint & waste</li>
-        <li>Enhance citizen quality of life</li>
-        <li>Promote tech-enabled sustainability</li>
-        <li>Drive innovation & economic growth</li>
-      </ul>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita" />
+      <h3>Ankita</h3>
+      <p>USN: 01FE24BCS146</p>
+      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p>Ankita works on back-end logic and integration of city simulations.</p>
     </div>
-    <div style="background: rgba(0, 20, 30, 0.9); border: 2px solid #00e0ff; border-radius: 15px; padding: 25px; flex: 1 1 220px; box-shadow: 0 0 25px #00e0ff; color: white;">
-      <h3 style="font-weight: 600; margin-bottom: 15px; text-align: center;">🌍 Real World Impact</h3>
-      <ul style="font-size: 15px; line-height: 1.5; list-style-type: disc; padding-left: 20px;">
-        <li>Smart governance & citizen services</li>
-        <li>Scalable sustainable urban models</li>
-        <li>Empowered local communities</li>
-        <li>Advanced environmental monitoring</li>
-      </ul>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai" />
+      <h3>Sai</h3>
+      <p>USN: 01FE24BCS160</p>
+      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p>Sai manages project optimization, AI solutions, and system efficiency analysis.</p>
     </div>
   </div>
 </section>
+
+<!-- PROJECT -->
+<section id="project" class="section">
+  <h1 class="title">AARUNYA CITY – Project Overview</h1>
+  <p style="max-width: 800px; margin:auto; font-size:18px; line-height:1.5;">
+    Aarunya City is a futuristic metropolitan ecosystem blending sustainability, technology, clean energy, and intelligent governance.
+  </p>
+</section>
+
+<!-- ARBIYA -->
+<section id="arbiya" class="section">
+  <h1 class="title">Arbiya – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
+    <div class="idea-box"><span>🏕️</span> Eco Resort & Adventure Park</div>
+    <div class="idea-box"><span>💻</span> IT Training Institute</div>
+    <div class="idea-box"><span>❄️</span> Cold Storage + Food Processing</div>
+    <div class="idea-box"><span>🏢</span> Startup & Co-working Hub</div>
+    <div class="idea-box"><span>🛍️</span> Retail & Shopping Mall</div>
+    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
+    <div class="idea-box"><span>⚡</span> EV Charging & E-Bike Rental</div>
+    <div class="idea-box"><span>🚤</span> Tourism Waterfront & Boating</div>
+    <div class="idea-box"><span>📦</span> E-commerce Fulfillment Center</div>
+  </div>
+</section>
+
+<!-- AKSHATA (Ankita's business ideas swapped here) -->
+<section id="akshata" class="section">
+  <h1 class="title">Akshata – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>🦾</span> Floating Micro-Farm Pods</div>
+    <div class="idea-box"><span>🛒</span> XR Hologram Shopping Stalls</div>
+    <div class="idea-box"><span>🎵</span> AI Calming Sound Trails</div>
+    <div class="idea-box"><span>🚴‍♂️</span> Energy-Bike Night Café</div>
+    <div class="idea-box"><span>⏳</span> Time-Simulation Library Pods</div>
+    <div class="idea-box"><span>🧱</span> Algae-Based Eco-Bricks</div>
+    <div class="idea-box"><span>🗺️</span> Scent-Guided City Maps</div>
+    <div class="idea-box"><span>🚁</span> Drone-Only Rooftop Dining</div>
+    <div class="idea-box"><span>🌈</span> Light-Reactive Smart Sidewalks</div>
+    <div class="idea-box"><span>🧘‍♀️</span> AI Meditation Micro-Pods</div>
+  </div>
+</section>
+
+<!-- ANKITA (Akshata's business ideas swapped here) -->
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>♻️</span> Recycling Automation Startup</div>
+    <div class="idea-box"><span>🔒</span> Smart Home Security Systems</div>
+    <div class="idea-box"><span>🛋️</span> Eco Furniture & Interior Design</div>
+    <div class="idea-box"><span>👩‍🎓</span> Women Empowerment Skill Center</div>
+    <div class="idea-box"><span>🛠️</span> Tech Repair & Innovation Hub</div>
+    <div class="idea-box"><span>🥦</span> Organic Food & Health Market</div>
+    <div class="idea-box"><span>☀️</span> Solar Panel Manufacturing</div>
+    <div class="idea-box"><span>🧘‍♂️</span> Wellness & VR Meditation Studio</div>
+    <div class="idea-box"><span>🖨️</span> 3D Printing Prototyping Lab</div>
+    <div class="idea-box"><span>🚲</span> Urban Bike Sharing System</div>
+  </div>
+</section>
+
+<!-- SAI -->
+<section id="sai" class="section">
+  <h1 class="title">Sai – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>🔋</span> Smart Battery Recycling</div>
+    <div class="idea-box"><span>🌐</span> Blockchain Supply Chain</div>
+    <div class="idea-box"><span>🤖</span> AI-Powered Analytics</div>
+    <div class="idea-box"><span>📦</span> Automated Warehousing</div>
+    <div class="idea-box"><span>🛰️</span> Satellite-Based IoT</div>
+    <div class="idea-box"><span>🚗</span> Autonomous Vehicle Fleet</div>
+    <div class="idea-box"><span>🔍</span> Cybersecurity Solutions</div>
+    <div class="idea-box"><span>💡</span> Smart Lighting Systems</div>
+    <div class="idea-box"><span>🧠</span> Neural Network Software</div>
+    <div class="idea-box"><span>📈</span> Data-Driven Marketing</div>
+  </div>
+</section>
+
+<script>
+function showPage(id) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(sec => {
+    if(sec.id === id) {
+      sec.classList.add('active');
+    } else {
+      sec.classList.remove('active');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
