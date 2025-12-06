@@ -9,218 +9,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL STYLING */
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+body { background:#0f0f0f; color:white; overflow-x:hidden; }
 
-/* ===========================
-GLOBAL STYLING
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-body {
-    background: #0f0f0f;
-    color: white;
-    overflow-x: hidden;
-}
-
-/* ===========================
-ANIMATED BACKGROUND
-=========================== */
+/* ANIMATED BACKGROUND */
 .animated-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #0f0, #0af, #a0f, #ff0080);
-    background-size: 400% 400%;
-    animation: gradientShift 12s infinite alternate ease-in-out;
-    z-index: -2;
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(120deg,#0f0,#0af,#a0f,#ff0080);
+    background-size:400% 400%; animation:gradientShift 12s infinite alternate ease-in-out; z-index:-2;
 }
+@keyframes gradientShift { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Floating particles */
+/* FLOATING PARTICLES */
 .particles span {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: rgba(255,255,255,0.55);
-    border-radius: 50%;
-    animation: floatUp 12s linear infinite;
-    z-index: -1;
+    position: fixed; width: 10px; height: 10px; background: rgba(255,255,255,0.55); border-radius: 50%;
+    animation: floatUp 12s linear infinite; z-index:-1;
 }
-
 @keyframes floatUp {
     0% { transform: translateY(100vh) scale(1); opacity: 0; }
-    30% { opacity: 1; }
-    100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+    30% { opacity:1; }
+    100% { transform: translateY(-10vh) scale(0.5); opacity:0; }
 }
 
-/* ===========================
-NAVBAR
-=========================== */
+/* NAVBAR */
 nav {
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(18px);
-    background: rgba(0,0,0,0.45);
-    padding: 15px;
-    text-align: center;
-    z-index: 50;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
+    position: sticky; top:0; backdrop-filter: blur(18px); background: rgba(0,0,0,0.45);
+    padding:15px; text-align:center; z-index:50; border-bottom:2px solid rgba(255,255,255,0.2);
 }
-
 nav a {
-    color: white;
-    margin: 0 20px;
-    font-weight: 600;
-    font-size: 18px;
-    text-decoration: none;
-    transition: .4s;
+    color:white; margin:0 18px; font-weight:600; font-size:18px; text-decoration:none; transition:.4s;
 }
+nav a:hover { color:#00ffcc; text-shadow:0 0 15px #00ffd5; transform:scale(1.15); }
 
-nav a:hover {
-    color: #00ffcc;
-    text-shadow: 0 0 15px #00ffd5;
-    transform: scale(1.15);
-}
+/* SECTIONS */
+.section { display:none; max-width:1000px; margin:50px auto; padding:40px; 
+background: rgba(255,255,255,0.12); border-radius:20px; backdrop-filter:blur(18px);
+box-shadow:0 5px 25px rgba(0,0,0,0.5); animation:fadeIn 0.8s ease; }
+.active { display:block; }
+@keyframes fadeIn { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
 
-/* ===========================
-SECTIONS
-=========================== */
-.section {
-    display: none;
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 40px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    animation: fadeIn 0.8s ease;
-}
+/* TITLES */
+.title { text-align:center; font-size:36px; margin-bottom:20px; color:#8affff; text-shadow:0 0 12px #00f2ff; }
 
-.active { display: block; }
+/* HERO */
+.hero { padding:55px; border-radius:20px; background:rgba(0,0,0,0.5); border:2px solid rgba(255,255,255,0.2);
+text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.6); animation:glowPulse 4s infinite alternate ease-in-out; }
+@keyframes glowPulse { 0%{box-shadow:0 0 25px #00ffaa;}100%{box-shadow:0 0 45px #00ccff;} }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+/* HOME BOX */
+.home-box { display:flex; gap:20px; background:rgba(255,255,255,0.08); padding:20px; border-radius:16px; margin-bottom:20px; border-left:5px solid #00ffcc; transition:.4s; backdrop-filter:blur(10px); }
+.home-box:hover { transform:translateY(-8px); box-shadow:0 10px 30px rgba(0,255,200,0.4); }
 
-.title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #8affff;
-    text-shadow: 0 0 12px #00f2ff;
-}
+/* PROFILE CARDS */
+.profile-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+.profile-box { width:260px; padding:25px; background: rgba(255,255,255,0.15); border-radius:15px; text-align:center; transition:.4s; box-shadow:0 5px 20px rgba(0,0,0,0.5); }
+.profile-box:hover { transform:scale(1.08); box-shadow:0 15px 35px rgba(0,255,200,0.4); }
+.profile-box img { width:100px; height:100px; border-radius:50%; border:3px solid #00ffe5; }
 
-/* ===========================
-HOME HERO
-=========================== */
-.hero {
-    padding: 55px;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.5);
-    border: 2px solid rgba(255,255,255,0.2);
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    animation: glowPulse 4s infinite alternate ease-in-out;
-}
-
-@keyframes glowPulse {
-    0% { box-shadow: 0 0 25px #00ffaa; }
-    100% { box-shadow: 0 0 45px #00ccff; }
-}
-
-.home-box {
-    display: flex;
-    gap: 20px;
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    border-left: 5px solid #00ffcc;
-    transition: .4s;
-    backdrop-filter: blur(10px);
-}
-
-.home-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0,255,200,0.4);
-}
-
-/* ===========================
-PROFILE CARDS
-=========================== */
-.profile-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.profile-box {
-    width: 260px;
-    padding: 25px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 15px;
-    text-align: center;
-    transition: .4s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-
-.profile-box:hover {
-    transform: scale(1.08);
-    box-shadow: 0 15px 35px rgba(0,255,200,0.4);
-}
-
-.profile-box img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #00ffe5;
-}
-
-/* ===========================
-PROJECT CARDS
-=========================== */
-.project-card {
-    background: rgba(0,0,0,0.45);
-    border-left: 5px solid #53ffe0;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    transition: .4s;
-}
-
-.project-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 40px rgba(0,255,200,0.5);
-}
+/* PROJECT CARDS */
+.project-card { background: rgba(0,0,0,0.45); border-left:5px solid #53ffe0; padding:25px; margin-bottom:25px; border-radius:15px; transition:.4s; }
+.project-card:hover { transform: translateX(10px); box-shadow:0 10px 40px rgba(0,255,200,0.5); }
 
 /* LIST */
-.ideas-list li {
-    font-size: 18px;
-    margin-bottom: 12px;
-}
+.ideas-list li { font-size:18px; margin-bottom:12px; }
 
 </style>
 </head>
-
 <body>
 
-<!-- Background Animation -->
+<!-- BACKGROUND -->
 <div class="animated-bg"></div>
-
 <div class="particles">
     <span style="left:5%; animation-delay:1s;"></span>
     <span style="left:20%; animation-delay:3s;"></span>
@@ -231,196 +90,121 @@ PROJECT CARDS
 
 <!-- NAVBAR -->
 <nav>
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('about')">About</a>
-    <a onclick="showPage('project')">Project</a>
-    <a onclick="showPage('arbiya')">Arbiya</a>
-    <a onclick="showPage('ankita')">Ankita</a>
-    <a onclick="showPage('akshata')">Akshata</a>
-    <a onclick="showPage('sai')">Sai</a>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('project')">Project</a>
+<a onclick="showPage('arbiya')">Arbiya</a>
+<a onclick="showPage('ankita')">Ankita</a>
+<a onclick="showPage('akshata')">Akshata</a>
+<a onclick="showPage('sai')">Sai</a>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="section active">
-    <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-
-    <div class="hero">
-        <h2>A Futuristic Smart City Powered by Innovation</h2>
-        <p>Where technology, sustainability and urban intelligence unite.</p>
-    </div>
-
-    <div class="home-box">
-        <div>📘</div>
-        <div>
-            <h3>About Course</h3>
-            <p>Algorithmic Problem Solving sharpens reasoning, logic and creativity.</p>
-        </div>
-    </div>
-
-    <div class="home-box">
-        <div>🔗</div>
-        <div>
-            <h3>DSA Concepts</h3>
-            <p>Graphs, Trees, Tries, Sorting, Searching, Linked Lists and Optimization.</p>
-        </div>
-    </div>
-
-    <div class="home-box">
-        <div>⚙</div>
-        <div>
-            <h3>Applications</h3>
-            <p>Used in AI, robotics, finance, navigation, cybersecurity and more.</p>
-        </div>
-    </div>
+<h1 class="title">WELCOME TO AARUNYA CITY</h1>
+<div class="hero">
+<h2>A Futuristic Smart City Powered by Innovation</h2>
+<p>Where technology, sustainability and urban intelligence unite.</p>
+</div>
+<div class="home-box"><div>📘</div><div><h3>About Course</h3><p>Algorithmic Problem Solving sharpens reasoning, logic and creativity.</p></div></div>
+<div class="home-box"><div>🔗</div><div><h3>DSA Concepts</h3><p>Graphs, Trees, Tries, Sorting, Searching, Linked Lists and Optimization.</p></div></div>
+<div class="home-box"><div>⚙</div><div><h3>Applications</h3><p>Used in AI, robotics, finance, navigation, cybersecurity and more.</p></div></div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
-    <h1 class="title">Meet Our Team</h1>
-
-    <div class="profile-container">
-        <div class="profile-box">
-            <img src="https://i.ibb.co/3R0WfKP/user.png">
-            <h3>Arbiya</h3>
-            <p>USN: 01FE24BCS042</p>
-            <p>Skills: C, C++, DSA</p>
-        </div>
-
-        <div class="profile-box">
-            <img src="https://i.ibb.co/3R0WfKP/user.png">
-            <h3>Akshata</h3>
-            <p>USN: 01FE24BCS150</p>
-            <p>Skills: C, HTML, CSS, DSA</p>
-        </div>
-
-        <div class="profile-box">
-            <img src="https://i.ibb.co/3R0WfKP/user.png">
-            <h3>Ankita</h3>
-            <p>USN: 01FE24BCS146</p>
-            <p>Skills: C++, Python, DSA</p>
-        </div>
-
-        <div class="profile-box">
-            <img src="https://i.ibb.co/3R0WfKP/user.png">
-            <h3>Sai</h3>
-            <p>USN: 01FE24BCS160</p>
-            <p>Skills: Java, C, DSA</p>
-        </div>
-    </div>
+<h1 class="title">Meet Our Team</h1>
+<div class="profile-container">
+<div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png"><h3>Arbiya</h3><p>USN: 01FE24BCS042</p><p>Skills: C, C++, DSA</p><p>Arbiya is responsible for data structuring and algorithm design.</p></div>
+<div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png"><h3>Akshata</h3><p>USN: 01FE24BCS150</p><p>Skills: C, HTML, CSS, DSA</p><p>Akshata focuses on front-end development and creative business ideation.</p></div>
+<div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png"><h3>Ankita</h3><p>USN: 01FE24BCS146</p><p>Skills: C++, Python, DSA</p><p>Ankita works on back-end logic and integration of city simulations.</p></div>
+<div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png"><h3>Sai</h3><p>USN: 01FE24BCS160</p><p>Skills: Java, C, DSA</p><p>Sai manages project optimization, AI solutions, and system efficiency analysis.</p></div>
+</div>
 </section>
 
 <!-- PROJECT -->
 <section id="project" class="section">
-    <h1 class="title">AARUNYA CITY – PROJECT OVERVIEW</h1>
-
-    <div class="project-card">
-        <h2>🌆 City Vision & Concept</h2>
-        <p>Aarunya City is a futuristic metropolitan ecosystem designed to blend sustainability, technological innovation, clean energy, and intelligent governance.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>🌱 Sustainability and Green Zones</h2>
-        <p>50% of Aarunya is dedicated to green cover including nature parks, AI-monitored forests, rooftop gardens, recycled water systems, and zero-waste districts.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>🚗 Smart Mobility</h2>
-        <p>AI traffic control, autonomous EV buses, magnetic rail pods, solar-powered cycle lanes, and drone-based micro-delivery systems.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>⚡ Renewable Energy</h2>
-        <p>Wind hubs, solar rooftops, algae-powered bioreactors, battery banks and geothermal heating reduce carbon output by 70%.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>🏢 Urban Planning Layout</h2>
-        <p>The city includes Digital Corporate Districts, Health & Research Zones, Education Hub, Tourism Riverfront, Cultural Plaza, and Residential Smart Blocks.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>🧠 AI Governance</h2>
-        <p>AI monitors utilities, predicts natural hazards, optimizes energy, tracks pollution and ensures efficient resource distribution.</p>
-    </div>
-
-    <div class="project-card">
-        <h2>📈 Economic Model</h2>
-        <p>Aarunya functions on an innovation-driven economy including tech parks, research labs, business incubation centers, and sustainable manufacturing units.</p>
-    </div>
+<h1 class="title">AARUNYA CITY – PROJECT OVERVIEW</h1>
+<div class="project-card"><h2>🌆 City Vision & Concept</h2><p>Aarunya City is a futuristic metropolitan ecosystem blending sustainability, technology, clean energy, and intelligent governance.</p></div>
+<div class="project-card"><h2>🌱 Sustainability and Green Zones</h2><p>50% green cover with AI-monitored forests, rooftop gardens, recycled water systems, zero-waste districts.</p></div>
+<div class="project-card"><h2>🚗 Smart Mobility</h2><p>AI traffic control, autonomous EV buses, magnetic rail pods, solar cycle lanes, drone micro-delivery.</p></div>
+<div class="project-card"><h2>⚡ Renewable Energy</h2><p>Wind hubs, solar rooftops, algae bioreactors, battery banks, geothermal heating reducing carbon output by 70%.</p></div>
+<div class="project-card"><h2>🏢 Urban Planning Layout</h2><p>Digital Corporate Districts, Health & Research Zones, Education Hub, Tourism Riverfront, Cultural Plaza, Residential Smart Blocks.</p></div>
+<div class="project-card"><h2>🧠 AI Governance</h2><p>AI monitors utilities, predicts hazards, optimizes energy, tracks pollution, ensures efficient resource allocation.</p></div>
+<div class="project-card"><h2>📈 Economic Model</h2><p>Innovation-driven economy with tech parks, research labs, business incubation, and sustainable manufacturing.</p></div>
 </section>
 
 <!-- ARBIYA -->
 <section id="arbiya" class="section">
-    <h1 class="title">Arbiya – Business Ideas</h1>
-    <ol class="ideas-list">
-        <li>Logistics Hub</li>
-        <li>Eco Resort</li>
-        <li>IT Training Institute</li>
-        <li>Cold Storage</li>
-        <li>Startup Hub</li>
-        <li>Retail Mall</li>
-        <li>Hospital</li>
-        <li>EV Charging Hub</li>
-        <li>Tourism Dock</li>
-        <li>E-commerce Hub</li>
-    </ol>
+<h1 class="title">Arbiya – Business Ideas</h1>
+<ol class="ideas-list">
+<li>Logistics Hub</li>
+<li>Eco Resort & Adventure Park</li>
+<li>IT Training Institute</li>
+<li>Cold Storage + Food Processing</li>
+<li>Startup & Co-working Hub</li>
+<li>Retail & Shopping Mall</li>
+<li>Multi-specialty Hospital</li>
+<li>EV Charging & E-Bike Rental</li>
+<li>Tourism Waterfront & Boating</li>
+<li>E-commerce Fulfillment Center</li>
+</ol>
 </section>
 
 <!-- ANKITA -->
 <section id="ankita" class="section">
-    <h1 class="title">Ankita – Business Ideas</h1>
-    <ol class="ideas-list">
-        <li>Floating Micro-Farms</li>
-        <li>XR Shopping</li>
-        <li>AI Sound Trails</li>
-        <li>Energy-Bike Café</li>
-        <li>Time Pods</li>
-        <li>Algae Bricks</li>
-        <li>Scent Maps</li>
-        <li>Drone Dining</li>
-        <li>Smart Light Roads</li>
-        <li>Meditation Pods</li>
-    </ol>
+<h1 class="title">Ankita – Business Ideas</h1>
+<ol class="ideas-list">
+<li>Floating Micro-Farm Pods</li>
+<li>XR Hologram Shopping Stalls</li>
+<li>AI Calming Sound Trails</li>
+<li>Energy-Bike Night Café</li>
+<li>Time-Simulation Library Pods</li>
+<li>Algae-Based Eco-Bricks</li>
+<li>Scent-Guided City Maps</li>
+<li>Drone-Only Rooftop Dining</li>
+<li>Light-Reactive Smart Sidewalks</li>
+<li>AI Meditation Micro-Pods</li>
+</ol>
 </section>
 
 <!-- AKSHATA -->
 <section id="akshata" class="section">
-    <h1 class="title">Akshata – Business Ideas</h1>
-    <ol class="ideas-list">
-        <li>Recycling Automation</li>
-        <li>Smart Home Security</li>
-        <li>Eco Furniture</li>
-        <li>Women Skill Center</li>
-        <li>Tech Repair Hub</li>
-        <li>Organic Food Market</li>
-        <li>Solar Manufacturing</li>
-        <li>Wellness Studio</li>
-        <li>3D Printing Hub</li>
-        <li>Digital Marketing Agency</li>
-    </ol>
+<h1 class="title">Akshata – Creative Business Ideas</h1>
+<ol class="ideas-list">
+<li>Recycling Automation Startup</li>
+<li>Smart Home Security Systems</li>
+<li>Eco Furniture & Interior Design</li>
+<li>Women Empowerment Skill Center</li>
+<li>Tech Repair & Innovation Hub</li>
+<li>Organic Food & Health Market</li>
+<li>Solar Panel Manufacturing</li>
+<li>Wellness & VR Meditation Studio</li>
+<li>3D Printing Design Lab</li>
+<li>Digital Marketing & AI Agency</li>
+</ol>
 </section>
 
 <!-- SAI -->
 <section id="sai" class="section">
-    <h1 class="title">Sai – Business Ideas</h1>
-    <ol class="ideas-list">
-        <li>Robotics Automation</li>
-        <li>Drone Delivery Base</li>
-        <li>AI Gaming Studio</li>
-        <li>Cloud Storage Firm</li>
-        <li>EV Service Hub</li>
-        <li>Skill Learning Platform</li>
-        <li>App Dev Hub</li>
-        <li>Cybersecurity Academy</li>
-        <li>Smart Irrigation</li>
-        <li>Gadget Innovation Lab</li>
-    </ol>
+<h1 class="title">Sai – Innovative Business Ideas</h1>
+<ol class="ideas-list">
+<li>Robotics Automation Facility</li>
+<li>Drone Delivery & Logistics</li>
+<li>AI Gaming & Simulation Studio</li>
+<li>Cloud Storage & Data Centers</li>
+<li>EV Service & Charging Hub</li>
+<li>Skill Development & Online Learning Platform</li>
+<li>App Development & SaaS Hub</li>
+<li>Cybersecurity Training Academy</li>
+<li>Smart Irrigation & AgriTech</li>
+<li>Gadget & IoT Innovation Lab</li>
+</ol>
 </section>
 
-<!-- SCRIPT -->
 <script>
-function showPage(id) {
-    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+function showPage(id){
+    document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
 </script>
