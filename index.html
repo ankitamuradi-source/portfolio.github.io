@@ -62,14 +62,8 @@ nav a:hover {
   display: block;
 }
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* TITLE */
@@ -79,6 +73,12 @@ nav a:hover {
   margin-bottom: 30px;
   color: #00fff3;
   text-shadow: 0 0 20px #00ffe0;
+}
+.desc {
+  text-align: center;
+  font-size: 20px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* ABOUT CARDS */
@@ -110,7 +110,7 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* BUSINESS IDEAS CONTAINER */
+/* BUSINESS IDEAS */
 .ideas-container {
   display: flex;
   flex-wrap: wrap;
@@ -143,16 +143,12 @@ nav a:hover {
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
-  .idea-box {
-    flex: 1 1 100%;
-  }
-  .profile-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  .idea-box { flex: 1 1 100%; }
+  .profile-container { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -168,7 +164,7 @@ nav a:hover {
 <!-- HOME -->
 <section id="home" class="section active">
   <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p style="text-align:center; font-size:20px; max-width:700px; margin:auto;">
+  <p class="desc">
     A futuristic smart city powered by innovation, technology, and sustainable development.
   </p>
 </section>
@@ -177,42 +173,47 @@ nav a:hover {
 <section id="about" class="section">
   <h1 class="title">Meet Our Team</h1>
   <div class="profile-container">
+
     <div class="profile-box">
       <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya" />
       <h3>Arbiya</h3>
       <p>USN: 01FE24BCS042</p>
-      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p><b>Skills:</b> C, C++, Data Structures & Algorithms</p>
       <p>Arbiya is responsible for data structuring and algorithm design.</p>
     </div>
+
     <div class="profile-box">
       <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata" />
       <h3>Akshata</h3>
       <p>USN: 01FE24BCS150</p>
-      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
       <p>Akshata focuses on front-end development and creative business ideation.</p>
     </div>
+
     <div class="profile-box">
       <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita" />
       <h3>Ankita</h3>
       <p>USN: 01FE24BCS146</p>
-      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
-      <p>Ankita works on back-end logic and integration of city simulations.</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Ankita works on back-end logic and simulation integration.</p>
     </div>
+
     <div class="profile-box">
       <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai" />
       <h3>Sai</h3>
       <p>USN: 01FE24BCS160</p>
-      <p><b>Skills:</b> C, C++, Data Structure and Algorithm</p>
-      <p>Sai manages project optimization, AI solutions, and system efficiency analysis.</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Sai manages optimization, AI solutions, and efficiency analysis.</p>
     </div>
+
   </div>
 </section>
 
 <!-- PROJECT -->
 <section id="project" class="section">
   <h1 class="title">AARUNYA CITY – Project Overview</h1>
-  <p style="max-width: 800px; margin:auto; font-size:18px; line-height:1.5;">
-    Aarunya City is a futuristic metropolitan ecosystem blending sustainability, technology, clean energy, and intelligent governance.
+  <p class="desc">
+    Aarunya City is a futuristic smart metropolitan ecosystem blending innovation, sustainability, clean energy, and intelligent governance.
   </p>
 </section>
 
@@ -233,7 +234,7 @@ nav a:hover {
   </div>
 </section>
 
-<!-- AKSHATA (Ankita's business ideas swapped here) -->
+<!-- AKSHATA -->
 <section id="akshata" class="section">
   <h1 class="title">Akshata – Business Ideas</h1>
   <div class="ideas-container">
@@ -241,7 +242,7 @@ nav a:hover {
     <div class="idea-box"><span>🛒</span> XR Hologram Shopping Stalls</div>
     <div class="idea-box"><span>🎵</span> AI Calming Sound Trails</div>
     <div class="idea-box"><span>🚴‍♂️</span> Energy-Bike Night Café</div>
-    <div class="idea-box"><span>⏳</span> Time-Simulation Library Pods</div>
+    <div class="idea-box"><span>⏳</span> Time Simulation Library Pods</div>
     <div class="idea-box"><span>🧱</span> Algae-Based Eco-Bricks</div>
     <div class="idea-box"><span>🗺️</span> Scent-Guided City Maps</div>
     <div class="idea-box"><span>🚁</span> Drone-Only Rooftop Dining</div>
@@ -250,7 +251,7 @@ nav a:hover {
   </div>
 </section>
 
-<!-- ANKITA (Akshata's business ideas swapped here) -->
+<!-- ANKITA -->
 <section id="ankita" class="section">
   <h1 class="title">Ankita – Business Ideas</h1>
   <div class="ideas-container">
@@ -286,14 +287,10 @@ nav a:hover {
 
 <script>
 function showPage(id) {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(sec => {
-    if(sec.id === id) {
-      sec.classList.add('active');
-    } else {
-      sec.classList.remove('active');
-    }
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
   });
+  document.getElementById(id).classList.add('active');
 }
 </script>
 
