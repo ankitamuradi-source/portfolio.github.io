@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AARUNYA CITY – Smart City Portfolio</title>
-
+<title>Ankita – Smart City Business Ideas</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
 <style>
-/* ========================= */
-/* GLOBAL DARK THEME         */
-/* ========================= */
+/* GLOBAL DARK THEME */
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +18,7 @@ body {
   color: #e2e8f0;
   overflow-x: hidden;
 }
-
-/* ========================= */
-/* NAVBAR                    */
-/* ========================= */
+/* NAVBAR */
 nav {
   position: sticky;
   top: 0;
@@ -49,10 +42,7 @@ nav a:hover {
   color: #4dabff;
   text-shadow: 0 0 8px #268cff;
 }
-
-/* ========================= */
-/* SECTIONS                  */
-/* ========================= */
+/* SECTIONS */
 .section {
   display: none;
   max-width: 1100px;
@@ -64,684 +54,282 @@ nav a:hover {
   box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
   animation: fadeIn 0.7s ease forwards;
 }
-.section.active {
-  display: block;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========================= */
-/* TITLES                    */
-/* ========================= */
-.title {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #ffb703;
-  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
-}
-.desc {
-  text-align: center;
-  font-size: 19px;
-  max-width: 750px;
-  margin: auto;
-  line-height: 1.6;
-  color: #cbd5e1;
-}
-
-/* ========================= */
-/* DARK GLOW PROFILE CARDS   */
-/* ========================= */
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-.profile-box {
-  background: #0b1320;
-  border: 1px solid #1e3454;
-  border-radius: 15px;
-  padding: 25px;
-  width: 260px;
-  text-align: center;
-  box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
-  transition: 0.3s;
-}
-.profile-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
-}
-.profile-box img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #268cff;
-  margin-bottom: 15px;
-}
-
-/* ========================= */
-/* DARK GLOW IDEA CARDS      */
-/* ========================= */
-.ideas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-.idea-box {
-  flex: 0 1 270px;
-  background: #0b1320;
-  border: 1px solid #1e3454;
-  box-shadow: 0 0 15px rgba(38, 140, 255, 0.18);
-  padding: 15px 20px;
-  border-radius: 12px;
-  color: #e2e8f0;
-  font-size: 17px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.idea-box:hover {
-  background: #0f1e33;
-  box-shadow: 0 0 28px rgba(38, 140, 255, 0.35);
-  transform: translateY(-5px);
-}
-.idea-box span {
-  font-size: 24px;
-}
-
-/* Ankita detail card (Dron-style pop) */
-.ankita-card {
-  margin-top: 28px;
-  background: linear-gradient(180deg, rgba(9,18,30,0.95), rgba(6,12,22,0.95));
-  border: 1px solid #1e3e65;
-  box-shadow: 0 12px 60px rgba(2,60,120,0.45);
-  padding: 22px;
-  border-radius: 14px;
-  color: #dbeafe;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  overflow: hidden;
-}
-.ankita-card.hidden {
-  opacity: 0; transform: translateY(-20px); pointer-events: none;
-}
-.ankita-card.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.ankita-card h2 { color: #ffd86b; margin-bottom: 6px; font-size:24px; }
-.ankita-card .sub { color:#9fb7d9; margin-bottom:12px; }
-.ankita-grid { display:grid; grid-template-columns: 1fr; gap:12px; }
-.chips { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
-.chip { background:#051425; border:1px solid #2b6ea3; padding:8px 12px; border-radius:10px; color:#bfe1ff; }
-.section-code { background:#001218; border:1px solid #0f5a86; padding:14px; border-radius:10px; color:#9fffbf; font-family:monospace; white-space:pre; overflow:auto; max-height:360px; }
-.small { font-size:14px; color:#bcd7f3; }
-.note { font-size:14px; color:#c8e6ff; line-height:1.5; }
-
-/* Copy button for code */
-.copy-btn {
-  background:#0b3b5a; border:1px solid #2b6ea3; color:#dff4ff; padding:8px 10px; border-radius:8px; cursor:pointer; float:right;
-}
-.copy-btn:hover { background:#174b6f; }
-
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+/* TITLES */
+.title { text-align: center; font-size: 34px; margin-bottom: 25px; color: #ffb703; text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);}
+.desc { text-align: center; font-size: 19px; max-width: 750px; margin: auto; line-height: 1.6; color: #cbd5e1;}
+/* IDEA BOXES */
+.ideas-container { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;}
+.idea-box { flex: 0 1 300px; background: #0b1320; border: 1px solid #1e3454; box-shadow: 0 0 15px rgba(38, 140, 255, 0.18); padding: 15px 20px; border-radius: 12px; color: #e2e8f0; font-size: 17px; cursor: pointer; transition: 0.3s;}
+.idea-box:hover { background: #0f1e33; box-shadow: 0 0 28px rgba(38, 140, 255, 0.35); transform: translateY(-5px);}
+.idea-content { display: none; margin-top: 15px; background: #0c192c; padding: 15px; border-radius: 10px; border: 1px solid #1e3454; color: #e2e8f0;}
+.idea-content pre { background: #0b1320; padding: 10px; border-radius: 8px; overflow-x: auto; color: #4dabff; font-size: 14px;}
 /* RESPONSIVE */
-@media (max-width: 860px) {
-  .idea-box { flex: 1 1 100%; }
-  .profile-container { flex-direction: column; align-items: center; }
-  .section { padding:20px; margin:20px; }
-}
+@media (max-width: 600px) { .idea-box { flex: 1 1 100%; } }
 </style>
 </head>
-
 <body>
-
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
-  <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('about')">About</a>
-  <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
-  <a onclick="showPage('akshata')">Akshata</a>
   <a onclick="showPage('ankita')">Ankita</a>
-  <a onclick="showPage('sai')">Sai</a>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="section active">
-  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">
-    A futuristic smart city powered by innovation, technology, and sustainable development.
-  </p>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h1 class="title">Meet Our Team</h1>
-  <div class="profile-container">
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
-      <h3>Arbiya Naaz</h3>
-      <p>USN: 01FE24BCS042</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Works on algorithms and data structuring.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata">
-      <h3>Akshata</h3>
-      <p>USN: 01FE24BCS150</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Handles front-end and creative ideation.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita">
-      <h3>Ankita</h3>
-      <p>USN: 01FE24BCS146</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Manages back-end logic and simulations.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai">
-      <h3>Sai</h3>
-      <p>USN: 01FE24BCS160</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Focuses on AI, optimization, and analytics.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECT -->
-<section id="project" class="section">
-  <h1 class="title">AARUNYA CITY – Project Overview</h1>
-  <p class="desc">
-    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
-    automation, clean energy, innovation, and modern urban planning.
-  </p>
-</section>
-
-<!-- ARBIYA -->
-<section id="arbiya" class="section">
-  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
-
+<!-- ANKITA PAGE -->
+<section id="ankita" class="section active">
+  <h1 class="title">Ankita – Business Ideas</h1>
   <div class="ideas-container">
-    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
-    <div class="idea-box"><span>🏕</span> Eco Resort</div>
-    <div class="idea-box"><span>💻</span> IT Training Center</div>
-    <div class="idea-box"><span>❄</span> Cold Storage</div>
-    <div class="idea-box"><span>🏢</span> Co-working Hub</div>
-    <div class="idea-box"><span>🛍</span> Retail Mall</div>
-    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
-    <div class="idea-box"><span>⚡</span> EV Charging</div>
-    <div class="idea-box"><span>🚤</span> Waterfront Tourism</div>
-    <div class="idea-box"><span>📦</span> E-commerce Center</div>
+    
+    <!-- IDEA 1 -->
+    <div class="idea-box" onclick="toggleContent(1)">
+      🏥 Smart Healthcare & Emergency Routing
+      <div id="content1" class="idea-content">
+        <p><b>SDG:</b> Good Health and Well-Being</p>
+        <p><b>DAA Algorithms:</b> Dijkstra, BFS, DFS, Greedy MST, Shortest Path Analysis</p>
+        <p><b>Explanation:</b> Optimizes emergency vehicle routes, reduces patient wait times, and ensures efficient hospital resource allocation.</p>
+        <pre>
+// Example: Dijkstra's Algorithm in C++
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+struct Edge { int to, weight; };
+void dijkstra(int src, vector&lt;vector&lt;Edge&gt;&gt; &graph) {
+    int n = graph.size();
+    vector&lt;int&gt; dist(n, 1e9);
+    dist[src] = 0;
+    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;>, greater&lt;&gt;&gt; pq;
+    pq.push({0, src});
+    while(!pq.empty()){
+        auto [d,u] = pq.top(); pq.pop();
+        if(d &gt; dist[u]) continue;
+        for(auto e: graph[u]){
+            if(dist[e.to] &gt; dist[u]+e.weight){
+                dist[e.to] = dist[u]+e.weight;
+                pq.push({dist[e.to], e.to});
+            }
+        }
+    }
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 2 -->
+    <div class="idea-box" onclick="toggleContent(2)">
+      ⚡💧 Smart Water–Energy Optimization Grid
+      <div id="content2" class="idea-content">
+        <p><b>SDG:</b> Clean Water & Energy</p>
+        <p><b>DAA Algorithms:</b> Floyd-Warshall, Bellman-Ford, Dynamic Programming, Greedy, Heap</p>
+        <p><b>Explanation:</b> Optimizes water and energy distribution, minimizes loss, predicts peak loads efficiently.</p>
+        <pre>
+// Example: Floyd-Warshall Algorithm
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+void floydWarshall(vector&lt;vector&lt;int&gt;&gt; &graph){
+    int n = graph.size();
+    for(int k=0;k&lt;n;k++)
+        for(int i=0;i&lt;n;i++)
+            for(int j=0;j&lt;n;j++)
+                if(graph[i][k]!=1e9 &amp;&amp; graph[k][j]!=1e9)
+                    graph[i][j] = min(graph[i][j], graph[i][k]+graph[k][j]);
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 3 -->
+    <div class="idea-box" onclick="toggleContent(3)">
+      ♻ Intelligent Waste Management
+      <div id="content3" class="idea-content">
+        <p><b>SDG:</b> Sustainable Cities and Communities</p>
+        <p><b>DAA Algorithms:</b> BFS, DFS, Heap, Kruskal, Greedy</p>
+        <p><b>Explanation:</b> Efficient waste collection routes, resource optimization, reduced carbon footprint.</p>
+        <pre>
+// Example: Kruskal's Algorithm for MST
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+struct Edge{int u,v,w;};
+int findSet(int u, vector&lt;int&gt;&amp; parent){ return parent[u]==u?u:parent[u]=findSet(parent[u], parent);}
+void kruskal(vector&lt;Edge&gt; &edges, int n){
+    sort(edges.begin(), edges.end(), [](Edge a, Edge b){return a.w&lt;b.w;});
+    vector&lt;int&gt; parent(n);
+    for(int i=0;i&lt;n;i++) parent[i]=i;
+    for(auto e: edges){
+        int u=findSet(e.u,parent), v=findSet(e.v,parent);
+        if(u!=v) { parent[u]=v; cout&lt;&lt;e.u&lt;&lt;"-"&lt;&lt;e.v&lt;&lt;" "&lt;&lt;e.w&lt;&lt;endl;}
+    }
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 4 -->
+    <div class="idea-box" onclick="toggleContent(4)">
+      🎓📚 Personalized Learning Platform
+      <div id="content4" class="idea-content">
+        <p><b>SDG:</b> Quality Education</p>
+        <p><b>DAA Algorithms:</b> Binary Search, KMP, Trie, DP, Heap</p>
+        <p><b>Explanation:</b> Adaptive content delivery, fast search, efficient content indexing and recommendation.</p>
+        <pre>
+// Example: Trie for Fast Word Search
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+struct TrieNode{ map&lt;char,TrieNode*&gt; children; bool end=false; };
+void insert(TrieNode* root, string s){
+    for(char c:s){ if(!root->children[c]) root->children[c]=new TrieNode(); root=root->children[c]; }
+    root->end=true;
+}
+bool search(TrieNode* root, string s){
+    for(char c:s){ if(!root->children[c]) return false; root=root->children[c]; }
+    return root->end;
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 5 -->
+    <div class="idea-box" onclick="toggleContent(5)">
+      🚦🚌 Smart Traffic Management
+      <div id="content5" class="idea-content">
+        <p><b>SDG:</b> Sustainable Cities and Communities</p>
+        <p><b>DAA Algorithms:</b> Dijkstra, Bellman-Ford, BFS, Priority Queue, Heap</p>
+        <p><b>Explanation:</b> Optimizes traffic signals, reduces congestion, computes shortest paths for routing vehicles.</p>
+        <pre>
+// Example: Dijkstra with Priority Queue
+// (similar to Idea 1 example, applied to city traffic)
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 6 -->
+    <div class="idea-box" onclick="toggleContent(6)">
+      🛡🎥 Security & Surveillance Hub
+      <div id="content6" class="idea-content">
+        <p><b>SDG:</b> Peace, Justice, and Strong Institutions</p>
+        <p><b>DAA Algorithms:</b> DFS, BFS, KMP, Rabin-Karp, Hashing</p>
+        <p><b>Explanation:</b> Detects intrusions, monitors cameras efficiently, pattern matching for threat detection.</p>
+        <pre>
+// Example: Rabin-Karp String Matching
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+void rabinKarp(string text, string pat){
+    int n=text.size(), m=pat.size(), p=31, mod=1e9+7;
+    long long pat_hash=0, text_hash=0, p_pow=1;
+    for(int i=0;i&lt;m;i++){ pat_hash=(pat_hash+(pat[i]-'a'+1)*p_pow)%mod; p_pow=(p_pow*p)%mod;}
+    p_pow=1;
+    for(int i=0;i&lt;m;i++){ text_hash=(text_hash+(text[i]-'a'+1)*p_pow)%mod; p_pow=(p_pow*p)%mod;}
+    for(int i=0;i&lt;=n-m;i++){
+        if(pat_hash==text_hash) cout&lt;&lt;"Pattern at "&lt;&lt;i&lt;&lt;endl;
+        if(i&lt;n-m){ text_hash=(text_hash-(text[i]-'a'+1)+mod)%mod; text_hash=(text_hash/p)%mod;
+        text_hash=(text_hash+(text[i+m]-'a'+1)*p_pow)%mod;}
+    }
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 7 -->
+    <div class="idea-box" onclick="toggleContent(7)">
+      🌾🚜 Smart Farming Network
+      <div id="content7" class="idea-content">
+        <p><b>SDG:</b> Zero Hunger</p>
+        <p><b>DAA Algorithms:</b> Dynamic Programming, BFS, Segment Trees, Heap, Greedy</p>
+        <p><b>Explanation:</b> Optimizes irrigation, crop rotation, resource allocation, predicts yields efficiently.</p>
+        <pre>
+// Example: DP for Maximum Yield
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int maximizeYield(vector&lt;int&gt; crops, int n){
+    vector&lt;int&gt; dp(n+1,0); dp[0]=0; dp[1]=crops[0];
+    for(int i=2;i<=n;i++) dp[i]=max(dp[i-1], dp[i-2]+crops[i-1]);
+    return dp[n];
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 8 -->
+    <div class="idea-box" onclick="toggleContent(8)">
+      ✈🚉🚗 Multi-Modal Transport System
+      <div id="content8" class="idea-content">
+        <p><b>SDG:</b> Industry, Innovation and Infrastructure</p>
+        <p><b>DAA Algorithms:</b> Dijkstra, BFS, DFS, MST (Prim), Bellman-Ford</p>
+        <p><b>Explanation:</b> Computes optimal routes across transport modes, ensures minimal travel time and cost.</p>
+        <pre>
+// Example: BFS for Transport Connectivity
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+void bfs(int src, vector&lt;vector&lt;int&gt;&gt; &graph){
+    int n = graph.size(); vector&lt;bool&gt; vis(n,false); queue&lt;int&gt; q; q.push(src); vis[src]=true;
+    while(!q.empty()){ int u=q.front(); q.pop(); for(int v: graph[u]) if(!vis[v]){ vis[v]=true; q.push(v); } }
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 9 -->
+    <div class="idea-box" onclick="toggleContent(9)">
+      🛒📦 Supply Chain Optimization
+      <div id="content9" class="idea-content">
+        <p><b>SDG:</b> Responsible Consumption and Production</p>
+        <p><b>DAA Algorithms:</b> KMP, Binary Search, DP, Greedy, Heap</p>
+        <p><b>Explanation:</b> Optimizes inventory, shipping routes, demand prediction, reduces wastage.</p>
+        <pre>
+// Example: Binary Search for Inventory Lookup
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int binarySearch(vector&lt;int&gt;&amp; arr, int key){
+    int l=0, r=arr.size()-1;
+    while(l&lt;=r){ int m=(l+r)/2; if(arr[m]==key) return m; else if(arr[m]&lt;key) l=m+1; else r=m-1;}
+    return -1;
+}
+        </pre>
+      </div>
+    </div>
+
+    <!-- IDEA 10 -->
+    <div class="idea-box" onclick="toggleContent(10)">
+      🧠💻 Cyber-Tech Innovation Lab
+      <div id="content10" class="idea-content">
+        <p><b>SDG:</b> Industry, Innovation and Infrastructure</p>
+        <p><b>DAA Algorithms:</b> KMP, Rabin-Karp, DP, BFS, DFS</p>
+        <p><b>Explanation:</b> Simulates cyber systems, AI, encryption, optimizes tech innovation projects.</p>
+        <pre>
+// Example: DP for Tech Simulation
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int simulateTech(vector&lt;int&gt; v){
+    int n=v.size(); vector&lt;int&gt; dp(n,0); dp[0]=v[0];
+    for(int i=1;i&lt;n;i++) dp[i]=max(v[i], dp[i-1]+v[i]);
+    return dp[n-1];
+}
+        </pre>
+      </div>
+    </div>
+
   </div>
-
-</section>
-
-<!-- AKSHATA -->
-<section id="akshata" class="section">
-  <h1 class="title">Akshata – Business Ideas</h1>
-
-  <div class="ideas-container">
-    <div class="idea-box"><span>🦾</span> Floating Micro-Farms</div>
-    <div class="idea-box"><span>🛒</span> XR Hologram Shops</div>
-    <div class="idea-box"><span>🎵</span> AI Sound Trails</div>
-    <div class="idea-box"><span>🚴‍♂</span> Energy-Bike Café</div>
-    <div class="idea-box"><span>⏳</span> Simulation Pods</div>
-    <div class="idea-box"><span>🧱</span> Eco-Bricks</div>
-    <div class="idea-box"><span>🗺</span> Scent Navigation Maps</div>
-    <div class="idea-box"><span>🚁</span> Drone Dining</div>
-    <div class="idea-box"><span>🌈</span> Smart Sidewalks</div>
-    <div class="idea-box"><span>🧘‍♀</span> Meditation Pods</div>
-  </div>
-
-</section>
-
-<!-- ========================= -->
-<!-- ANKITA PAGE (DRON-STYLE)  -->
-<!-- ========================= -->
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Business Ideas (Interactive)</h1>
-
-  <p class="desc">
-    Click any idea to view SDG alignment, the main DAA algorithm applied (student-friendly explanation), complexity, and a ready-to-copy C++ implementation using maps/graphs where appropriate.
-  </p>
-
-  <div class="ideas-container" id="ankitaIdeas">
-    <div class="idea-box" onclick="openIdea(1)"><span>🏥</span> Smart Healthcare & Emergency Routing</div>
-    <div class="idea-box" onclick="openIdea(2)"><span>⚡💧</span> Smart Water–Energy Optimization Grid</div>
-    <div class="idea-box" onclick="openIdea(3)"><span>♻</span> Intelligent Waste Management</div>
-    <div class="idea-box" onclick="openIdea(4)"><span>🎓📚</span> Personalized Learning Platform</div>
-    <div class="idea-box" onclick="openIdea(5)"><span>🚦🚌</span> Smart Traffic Management</div>
-    <div class="idea-box" onclick="openIdea(6)"><span>🛡🎥</span> Security & Surveillance Hub</div>
-    <div class="idea-box" onclick="openIdea(7)"><span>🌾🚜</span> Smart Farming Network</div>
-    <div class="idea-box" onclick="openIdea(8)"><span>✈🚉🚗</span> Multi-Modal Transport System</div>
-    <div class="idea-box" onclick="openIdea(9)"><span>🛒📦</span> Supply Chain Optimization</div>
-    <div class="idea-box" onclick="openIdea(10)"><span>🧠💻</span> Cyber-Tech Innovation Lab</div>
-  </div>
-
-  <!-- Dron-style expanded card -->
-  <div id="ankitaCard" class="ankita-card hidden" aria-live="polite"></div>
-</section>
-
-<!-- SAI -->
-<section id="sai" class="section">
-  <h1 class="title">Sai – Business Ideas</h1>
-
-  <div class="ideas-container">
-    <div class="idea-box"><span>🔋</span> Smart Energy Grid</div>
-    <div class="idea-box"><span>🚚</span> Autonomous Port Logistics</div>
-    <div class="idea-box"><span>🛰</span> Satellite-IoT Monitoring</div>
-    <div class="idea-box"><span>🛡</span> Cybersecurity Intelligence</div>
-    <div class="idea-box"><span>🚦</span> Smart Mobility Control</div>
-    <div class="idea-box"><span>🚐</span> Autonomous Shuttle Pods</div>
-    <div class="idea-box"><span>🧠</span> Neural Simulation Lab</div>
-    <div class="idea-box"><span>🏥</span> AI Healthcare Prediction</div>
-    <div class="idea-box"><span>💡</span> Smart Lighting Network</div>
-    <div class="idea-box"><span>📊</span> Data Commerce Hub</div>
-  </div>
-
 </section>
 
 <script>
 function showPage(id) {
   document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  window.scrollTo({top:0, behavior:'smooth'});
 }
-
-/* ---------------------------
-   DATA: Ankita ideas content
-   Each item: title, sdg, algorithm, design, complexity, code, explanation
-   (Code blocks are preformatted strings)
-   --------------------------- */
-const ankitaData = {
-  1: {
-    title: "Smart Healthcare & Emergency Routing",
-    sdg: "SDG 3 – Good Health & Well-Being",
-    algorithm: "Dijkstra (Shortest Path) + A* (heuristic) + BFS + Bellman-Ford + Floyd-Warshall",
-    design: `Design philosophy:
-- Model city intersections as graph nodes and roads as weighted edges (weight = travel time in minutes).
-- Use Dijkstra for live shortest-path with non-negative weights.
-- Use A* for fast single-source single-target queries when coordinates available.
-- Use BFS for unweighted, quick reachability checks.
-- Use Bellman-Ford to detect modeling inconsistencies (negative cycles) if you model penalties/bonuses.
-- Use Floyd-Warshall to precompute small-network all-pairs distances for instant lookup.`,
-    complexity: `Complexities:
-- Dijkstra (binary heap): O((V+E) log V)
-- A*: similar (depends on heuristic)
-- BFS: O(V+E)
-- Bellman-Ford: O(V*E)
-- Floyd-Warshall: O(V^3)`,
-    codeTitle: "C++ (Dijkstra using map + priority_queue)",
-    code: `// Dijkstra using map<string, vector<pair<string,int>>> for city map
-#include <bits/stdc++.h>
-using namespace std;
-using pii = pair<int,string>;
-map<string, vector<pair<string,int>>> graph;
-
-void addEdge(const string &u, const string &v, int w) {
-    graph[u].push_back({v,w});
-    graph[v].push_back({u,w});
+function toggleContent(num){
+  var el = document.getElementById('content'+num);
+  el.style.display = (el.style.display==='block')?'none':'block';
 }
-
-map<string,int> dijkstra(const string &src) {
-    const int INF = 1e9;
-    map<string,int> dist;
-    for (auto &kv : graph) dist[kv.first] = INF;
-    dist[src] = 0;
-    priority_queue<pii, vector<pii>, greater<pii>> pq;
-    pq.push({0,src});
-    while(!pq.empty()) {
-        auto [d,u] = pq.top(); pq.pop();
-        if (d != dist[u]) continue;
-        for(auto &nbr : graph[u]) {
-            string v = nbr.first; int w = nbr.second;
-            if (dist[v] > d + w) {
-                dist[v] = d + w;
-                pq.push({dist[v], v});
-            }
-        }
-    }
-    return dist;
-}
-
-int main() {
-    addEdge("Hospital","J1",4);
-    addEdge("J1","A1",6);
-    addEdge("Hospital","A2",10);
-    addEdge("A1","A2",2);
-    auto dist = dijkstra("Hospital");
-    for(auto &p: dist) cout << p.first << \" : \" << p.second << \" mins\\n\";
-    return 0;
-}`,
-    explanation: `Why this fits:
-- Ambulances need fastest routes; Dijkstra + A* let us compute those with labels (strings) suitable for named intersections.
-- For live traffic, re-run Dijkstra on updated weights or use incremental updates.
-Sample output:
-Hospital : 0 mins
-J1      : 4 mins
-A1      : 10 mins
-A2      : 12 mins`
-  },
-
-  2: {
-    title: "Smart Water–Energy Optimization Grid",
-    sdg: "SDG 7 – Affordable & Clean Energy",
-    algorithm: "Prim (MST) + Min-Cost Flow + Dynamic Programming + Greedy",
-    design: `Design philosophy:
-- Represent substations and consumer nodes as graph nodes; edges have installation cost and loss.
-- Build an MST (Prim) to minimize infrastructure cost when connecting nodes.
-- Use min-cost flow for distribution optimization and DP for scheduling loads.`,
-    complexity: `Complexities:
-- Prim: O((V+E) log V)
-- Min-cost flow: depends on implementation (use successive shortest paths or min-cost max-flow),
-- DP varies by state size.`,
-    codeTitle: "C++ (Prim with map + heap) — skeleton",
-    code: `// Prim skeleton (map<string, vector<pair<string,int>>>)
-#include <bits/stdc++.h>
-using namespace std;
-map<string, vector<pair<string,int>>> graph;
-void addEdge(string u,string v,int w){
-  graph[u].push_back({v,w});
-  graph[v].push_back({u,w});
-}
-int prim(string start){
-  unordered_map<string,bool> inMST;
-  unordered_map<string,int> key;
-  for(auto &kv: graph) key[kv.first] = INT_MAX;
-  key[start] = 0;
-  priority_queue<pair<int,string>, vector<pair<int,string>>, greater<pair<int,string>>> pq;
-  pq.push({0,start});
-  int total=0;
-  while(!pq.empty()){
-    auto [k,u] = pq.top(); pq.pop();
-    if(inMST[u]) continue;
-    inMST[u]=true; total+=k;
-    for(auto &e: graph[u]){
-      string v=e.first; int w=e.second;
-      if(!inMST[v] && w < key[v]){ key[v]=w; pq.push({w,v}); }
-    }
-  }
-  return total;
-}`,
-    explanation: `Why this fits:
-- MST minimizes cable/cost while connecting distributed infrastructure.
-Sample: total MST cost printed by prim() call.`
-  },
-
-  3: {
-    title: "Intelligent Waste Management",
-    sdg: "SDG 11 – Sustainable Cities & Communities",
-    algorithm: "Greedy nearest-neighbor + VRP heuristics + BFS + KMeans (clustering)",
-    design: `Design philosophy:
-- Model collection points as nodes. Use greedy nearest-neighbour for a fast route (heuristic VRP).
-- Use clustering to divide city into clusters for different trucks, then apply local optimization (2-opt).`,
-    complexity: `Complexities:
-- Greedy nearest: O(V^2) naive; improved with spatial indexing.
-- VRP heuristics vary.`,
-    codeTitle: "C++ (Greedy nearest heuristic skeleton)",
-    code: `// Greedy nearest neighbor (coordinates)
-#include <bits/stdc++.h>
-using namespace std;
-map<string, pair<int,int>> coords;
-set<string> unvisited;
-int manhattan(pair<int,int>a,pair<int,int>b){ return abs(a.first-b.first)+abs(a.second-b.second); }
-vector<string> greedyRoute(string start){
-  vector<string> route; string cur=start; route.push_back(cur); unvisited.erase(cur);
-  while(!unvisited.empty()){
-    int best=INT_MAX; string pick;
-    for(auto &n: unvisited){
-      int d = manhattan(coords[cur], coords[n]);
-      if(d<best){ best=d; pick=n; }
-    }
-    cur=pick; route.push_back(cur); unvisited.erase(cur);
-  }
-  return route;
-}`,
-    explanation: `Why this fits:
-- Good tradeoff between speed and route-quality for daily pickups. Use better heuristics for production.`
-  },
-
-  4: {
-    title: "Personalized Learning Platform",
-    sdg: "SDG 4 – Quality Education",
-    algorithm: "Dynamic Programming (recommendation knapsack) + Trie + KMP + Hashing",
-    design: `Design philosophy:
-- Model student learning as stateful progress; DP (knapsack-like) selects modules maximizing learning gain within time.
-- Use Trie for fast content lookup and KMP for text matching in assessments.`,
-    complexity: `Complexities:
-- DP: depends on state size (knapsack O(n*W))
-- Trie: O(L) per lookup`,
-    codeTitle: "C++ (Knapsack-style DP skeleton)",
-    code: `// Knapsack DP for module selection
-#include <bits/stdc++.h>
-using namespace std;
-struct Module{ int time, gain; };
-int knapsack(vector<Module>& mods, int T){
-  int n=mods.size();
-  vector<int> dp(T+1,0);
-  for(auto &m: mods)
-    for(int t=T;t>=m.time;--t)
-      dp[t] = max(dp[t], dp[t-m.time]+m.gain);
-  return dp[T];
-}`,
-    explanation: `Why this fits:
-- Personalization is resource-constrained selection — DP matches perfectly.`
-  },
-
-  5: {
-    title: "Smart Traffic Management",
-    sdg: "SDG 9 – Industry, Innovation & Infrastructure",
-    algorithm: "A* (heuristic shortest path) + Dijkstra + Segment Tree (range queries) + BFS",
-    design: `Design philosophy:
-- Use weighted graph with dynamic edge weights (traffic).
-- A* helps for faster single-route search with good heuristic (e.g., euclidean).`,
-    complexity: `Complexities:
-- A*: similar to Dijkstra in worst-case; with heuristic often much faster.
-- Segment Tree queries: O(log n)`,
-    codeTitle: "C++ (A* skeleton / heuristic guide)",
-    code: `// A* skeleton (conceptual)
-#include <bits/stdc++.h>
-using namespace std;
-// store coords and graph; heuristic = euclidean distance.
-// Use open/closed sets with f = g + h as priority.
-`,
-    explanation: `Why this fits:
-- A* keeps routing fast under real-time constraints.`
-  },
-
-  6: {
-    title: "Security & Surveillance Hub",
-    sdg: "SDG 16 – Peace, Justice & Strong Institutions",
-    algorithm: "KMP (pattern search) + Hashing + Graph clustering + Trie",
-    design: `Design philosophy:
-- Use fast pattern search (KMP) across logs, hashing & tries for watchlists, and graph clustering to identify suspicious movement patterns.`,
-    complexity: `Complexities:
-- KMP: O(n+m)`,
-    codeTitle: "C++ (KMP pattern search)",
-    code: `#include <bits/stdc++.h>
-using namespace std;
-vector<int> buildLPS(const string &pat){
-  int m=pat.size(); vector<int> lps(m); int len=0,i=1;
-  while(i<m){ if(pat[i]==pat[len]) lps[i++]=++len; else if(len) len=lps[len-1]; else lps[i++]=0; }
-  return lps;
-}
-vector<int> kmpSearch(const string &txt,const string &pat){
-  auto lps=buildLPS(pat); vector<int> occ; int i=0,j=0;
-  while(i<txt.size()){
-    if(txt[i]==pat[j]){ i++; j++; if(j==pat.size()){occ.push_back(i-j); j=lps[j-1];}}
-    else if(j) j=lps[j-1]; else i++;
-  }
-  return occ;
-}`
-  },
-
-  7: {
-    title: "Smart Farming Network",
-    sdg: "SDG 2 – Zero Hunger",
-    algorithm: "Segment Tree + Fenwick (sensor queries) + DP (crop scheduling) + Greedy",
-    design: `Design philosophy:
-- Use segment tree or fenwick to quickly query sensor data ranges and DP/Greedy to schedule crops to maximize yield.`,
-    complexity: `Complexities:
-- Segment tree: build O(n), query/update O(log n)`,
-    codeTitle: "C++ (Segment Tree range max skeleton)",
-    code: `#include <bits/stdc++.h>
-using namespace std;
-struct SegmentTree{ int n; vector<int> st;
-  SegmentTree(vector<int>&A){ n=A.size(); st.assign(4*n,0); build(1,0,n-1,A); }
-  void build(int p,int l,int r,vector<int>&A){ if(l==r){st[p]=A[l]; return;} int m=(l+r)/2; build(2*p,l,m,A); build(2*p+1,m+1,r,A); st[p]=max(st[2*p],st[2*p+1]); }
-  int query(int p,int l,int r,int i,int j){ if(i>r||j<l) return INT_MIN; if(i<=l&&r<=j) return st[p]; int m=(l+r)/2; return max(query(2*p,l,m,i,j), query(2*p+1,m+1,r,i,j)); }
-};`
-  },
-
-  8: {
-    title: "Multi-Modal Transport System",
-    sdg: "SDG 11 – Sustainable Cities",
-    algorithm: "Layered Dijkstra (multi-graph) + Floyd-Warshall + TSP heuristics",
-    design: `Design philosophy:
-- Build layered graph with modes prefixed (bus_A, train_B). Run Dijkstra across layers for combined shortest path.`,
-    complexity: `Complexities:
-- Dijkstra per source O((V+E) log V); Floyd-Warshall O(V^3) for precompute.`,
-    codeTitle: "C++ (Multi-layer Dijkstra skeleton)",
-    code: `// Multi-modal Dijkstra (map-based)
-#include <bits/stdc++.h>
-using namespace std;
-map<string, vector<pair<string,int>>> graph;
-void addEdge(string u,string v,int w){ graph[u].push_back({v,w}); graph[v].push_back({u,w}); }
-`
-  },
-
-  9: {
-    title: "Supply Chain Optimization",
-    sdg: "SDG 8 – Decent Work & Economic Growth",
-    algorithm: "Knapsack (packing) + Min-cost flow + QuickSort + Greedy",
-    design: `Design philosophy:
-- Use knapsack DP for packing optimization and min-cost flow for distribution cost minimization.`,
-    complexity: `Complexities:
-- Knapsack: O(n*W)`,
-    codeTitle: "C++ (0/1 Knapsack DP)",
-    code: `#include <bits/stdc++.h>
-using namespace std;
-int knapsack(vector<int>&wt, vector<int>&val, int W){
-  int n=wt.size(); vector<int> dp(W+1,0);
-  for(int i=0;i<n;i++) for(int w=W; w>=wt[i]; --w) dp[w] = max(dp[w], dp[w-wt[i]] + val[i]);
-  return dp[W];
-}`
-  },
-
-  10: {
-    title: "Cyber-Tech Innovation Lab",
-    sdg: "SDG 9 – Industry, Innovation & Infrastructure",
-    algorithm: "Trie + Hashing + Huffman + Strassen (research) + Complexity theory notes (P/NP)",
-    design: `Design philosophy:
-- Provide sandbox: tries/hashing for indexing, Huffman for compression experiments, Strassen for matrix multiply research.`,
-    complexity: `Complexities:
-- Trie: O(L) per lookup; Huffman O(n log n); Strassen ~ O(n^2.8) theoretical.`,
-    codeTitle: "C++ (Trie skeleton)",
-    code: `#include <bits/stdc++.h>
-using namespace std;
-struct Trie{ bool end=false; unordered_map<char,Trie*> next; };
-void insertWord(Trie*root, const string &s){ Trie*cur=root; for(char c:s){ if(!cur->next[c]) cur->next[c]=new Trie(); cur=cur->next[c]; } cur->end=true; }`
-  }
-};
-
-/* Helper to escape code for HTML display */
-function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-/* Render clicked idea into the Dron-style card */
-function openIdea(id) {
-  const data = ankitaData[id];
-  const card = document.getElementById('ankitaCard');
-  card.classList.remove('hidden'); card.classList.add('visible');
-  card.innerHTML = `
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <h2>${data.title}</h2>
-        <div class="sub">SDG: <b>${data.sdg}</b></div>
-        <div class="chips">
-          <div class="chip">Algorithm(s): ${data.algorithm.split(' + ').slice(0,3).join(', ')}</div>
-          <div class="chip">Complexity: ${data.complexity.split('\\n')[0]}</div>
-        </div>
-      </div>
-      <div>
-        <button class="copy-btn" onclick="downloadCode(${id})">Download .cpp</button>
-      </div>
-    </div>
-
-    <div class="ankita-grid">
-      <div>
-        <div class="small"><b>Design Philosophy & Intuitions</b></div>
-        <div class="note">${data.design}</div>
-      </div>
-
-      <div>
-        <div class="small"><b>Space & Time Complexities</b></div>
-        <div class="note">${data.complexity.replace(/\\n/g,'<br>')}</div>
-      </div>
-
-      <div>
-        <div class="small"><b>Primary C++ Implementation — ${data.codeTitle}</b>
-          <button class="copy-btn" onclick="copyCode(${id})">Copy Code</button>
-        </div>
-        <pre class="section-code" id="codeBlock">${escapeHtml(data.code)}</pre>
-      </div>
-
-      <div>
-        <div class="small"><b>Why this algorithm fits the idea</b></div>
-        <div class="note">${data.explanation || 'See above design notes and code comments.'}</div>
-      </div>
-    </div>
-  `;
-  // scroll card into view
-  setTimeout(()=> card.scrollIntoView({behavior:'smooth', block:'center'}), 80);
-}
-
-/* Copy code to clipboard */
-function copyCode(id){
-  const code = ankitaData[id].code;
-  navigator.clipboard.writeText(code).then(()=> {
-    alert('C++ code copied to clipboard — paste into your editor.');
-  }, ()=> {
-    alert('Copy failed — you can select the code and copy manually.');
-  });
-}
-
-/* Download .cpp file for the idea */
-function downloadCode(id){
-  const data = ankitaData[id];
-  const filename = data.title.toLowerCase().replace(/[^a-z0-9]+/g,'_') + '.cpp';
-  const blob = new Blob([data.code], {type: 'text/plain'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = filename;
-  document.body.appendChild(a);
-  a.click(); a.remove();
-  URL.revokeObjectURL(url);
-}
-
-/* Hide card when clicking outside */
-document.addEventListener('click', function(e){
-  const card = document.getElementById('ankitaCard');
-  const ideas = document.getElementById('ankitaIdeas');
-  if(!card.contains(e.target) && !ideas.contains(e.target)){
-    card.classList.add('hidden'); card.classList.remove('visible');
-  }
-});
-
-/* escapeHtml for code (JS side) */
-function escapeHtml(str){ return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-/* Initialize default page */
-document.addEventListener('DOMContentLoaded', ()=> { showPage('home'); });
 </script>
 
 </body>
