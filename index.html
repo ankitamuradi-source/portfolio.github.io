@@ -1,152 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aarunya — Team Members</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AARUNYA CITY – Smart City Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
 <style>
-  :root{
-    --accent:#0b63d7;
-    --muted:#6b7280;
-    --card:#ffffff;
-    --bg:#f6f8fb;
-    --glass: rgba(255,255,255,0.85);
-  }
-  body{
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background:var(--bg);
-    color:#071228;
-    margin:22px;
-    -webkit-font-smoothing:antialiased;
-  }
-  .hero {
-    background: linear-gradient(135deg,var(--accent), #6aa7ff);
-    color: #fff;
-    padding:28px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(11,99,215,0.12);
-  }
-  .hero h1 { margin:0; font-size:32px; letter-spacing:0.6px; }
-  .hero p { margin:6px 0 0; opacity:0.95; }
-  .card { background:var(--card); padding:14px; border-radius:10px; box-shadow:0 8px 24px rgba(2,6,23,0.06); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px; }
-  h2 { margin:6px 0 12px 0; color:#071228; }
-  .muted { color:var(--muted); font-size:14px; }
-  ul { padding-left:18px; margin:8px 0; }
-  .maps { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:12px; }
-  .maps img { max-width:48%; border-radius:8px; box-shadow:0 8px 20px rgba(2,6,23,0.06); }
-  .table { overflow-x:auto; background:var(--card); padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,0.04); margin-top:10px; }
-  table { width:100%; border-collapse:collapse; }
-  th, td { padding:10px; border-bottom:1px solid #eef2f7; text-align:left; }
-  tr.total td { font-weight:700; }
-  .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:12px; }
-  .member { background: linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:16px; box-shadow:0 8px 24px rgba(2,6,23,0.04); display:flex; flex-direction:column; justify-content:space-between; }
-  .member h3 { margin:0 0 6px 0; }
-  .ideas { font-size:14px; line-height:1.6; margin-top:6px; color:#111827; }
-  .portfolio-btn { margin-top:12px; padding:8px 12px; background:var(--accent); color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; text-decoration:none; text-align:center; display:inline-block; }
-  .foot { margin-top:22px; color:var(--muted); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-  a.repo { color:var(--accent); text-decoration:none; font-weight:600; }
-  .small { font-size:13px; color:var(--muted); }
-  @media (max-width:720px) { .maps img{ max-width:100%; display:block; margin:6px auto } .hero h1{ font-size:26px } }
+/* ========================= */
+/* GLOBAL DARK THEME         */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #0a0f1a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* NAVBAR                    */
+/* ========================= */
+nav {
+  position: sticky;
+  top: 0;
+  background: #0d1627;
+  padding: 18px;
+  text-align: center;
+  border-bottom: 2px solid #1c2d45;
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.25);
+  z-index: 50;
+}
+nav a {
+  color: #cbd5e1;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #4dabff;
+  text-shadow: 0 0 8px #268cff;
+}
+
+/* ========================= */
+/* SECTIONS                  */
+/* ========================= */
+.section {
+  display: none;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #0d1627;
+  border-radius: 20px;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
+  animation: fadeIn 0.7s ease forwards;
+}
+.section.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* TITLES                    */
+/* ========================= */
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #ffb703;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
+}
+.desc {
+  text-align: center;
+  font-size: 19px;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* ========================= */
+/* PROFILE CARDS             */
+/* ========================= */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.profile-box {
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  border-radius: 15px;
+  padding: 25px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
+  transition: 0.3s;
+}
+.profile-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
+}
+.profile-box img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #268cff;
+  margin-bottom: 15px;
+}
+
+/* ========================= */
+/* IDEA CARDS                */
+/* ========================= */
+.ideas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.idea-box {
+  flex: 0 1 270px;
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 15px rgba(38, 140, 255, 0.18);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+.idea-box:hover {
+  background: #0f1e33;
+  box-shadow: 0 0 28px rgba(38, 140, 255, 0.35);
+  transform: translateY(-5px);
+}
+
+/* ========================= */
+/* IDEA DETAILS              */
+/* ========================= */
+.idea-details {
+  background: #0b1320;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 18px rgba(38, 140, 255, 0.15);
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+@media (max-width: 600px) {
+  .idea-box { flex: 1 1 100%; }
+  .profile-container { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <h1>Aarunya — Team Members</h1>
-    <p class="muted">Team members with their curated business ideas.</p>
-  </header>
+<!-- ========================= -->
+<!-- NAVIGATION BAR            -->
+<!-- ========================= -->
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('project')">Project</a>
+  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+  <a onclick="showPage('akshata')">Akshata</a>
+  <a onclick="showPage('ankita')">Ankita</a>
+  <a onclick="showPage('sai')">Sai</a>
+</nav>
 
-  <main style="margin-top:18px;">
+<!-- ========================= -->
+<!-- HOME PAGE                 -->
+<!-- ========================= -->
+<section id="home" class="section active">
+  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
+  <p class="desc">
+    A futuristic smart city powered by innovation, technology, and sustainable development.
+  </p>
+</section>
 
-    <section class="card" aria-labelledby="team">
-      <h2 id="team">Team & Business Ideas</h2>
-      <p class="muted">Each member's curated business ideas are listed below — click "View Portfolio" for details.</p>
+<!-- ========================= -->
+<!-- ABOUT TEAM                -->
+<!-- ========================= -->
+<section id="about" class="section">
+  <h1 class="title">Meet Our Team</h1>
+  <div class="profile-container">
 
-      <div class="team-grid">
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
+      <h3>Arbiya Naaz</h3>
+      <p>USN: 01FE24BCS042</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Works on algorithms and data structuring.</p>
+    </div>
 
-        <div class="member">
-          <h3>Arbiya Naaz</h3>
-          <p class="small">Focus: Logistics, Tourism, Retail & Health</p>
-          <div class="ideas">
-            ⚡ Logistics Hub<br>
-            🏕 Eco Resort<br>
-            💻 IT Training Center<br>
-            ❄ Cold Storage<br>
-            🏢 Co-working Hub<br>
-            🛍 Retail Mall<br>
-            🏥 Multi-specialty Hospital<br>
-            ⚡ EV Charging Stations<br>
-            🚤 Waterfront Tourism<br>
-            📦 E-commerce Center
-          </div>
-          <a href="#" class="portfolio-btn">View Portfolio</a>
-        </div>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata">
+      <h3>Akshata</h3>
+      <p>USN: 01FE24BCS150</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Handles front-end and creative ideation.</p>
+    </div>
 
-        <div class="member">
-          <h3>Akshata</h3>
-          <p class="small">Focus: Green tech, experiential retail & micro-innovations</p>
-          <div class="ideas">
-            🦾 Floating Micro-Farms<br>
-            🛒 XR Hologram Shops<br>
-            🎵 AI Sound Trails<br>
-            🚴‍♂ Energy-Bike Café<br>
-            ⏳ Simulation Pods<br>
-            🧱 Eco-Bricks<br>
-            🗺 Scent Navigation Maps<br>
-            🚁 Drone Dining<br>
-            🌈 Smart Sidewalks<br>
-            🧘‍♀ Meditation Pods
-          </div>
-          <a href="#" class="portfolio-btn">View Portfolio</a>
-        </div>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita">
+      <h3>Ankita</h3>
+      <p>USN: 01FE24BCS146</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Manages back-end logic and simulations.</p>
+    </div>
 
-        <div class="member">
-          <h3>Ankita</h3>
-          <p class="small">Focus: Systems, services & operational platforms</p>
-          <div class="ideas">
-            🏥 Smart Healthcare & Emergency Routing<br>
-            ⚡💧 Smart Water–Energy Optimization Grid<br>
-            ♻ Intelligent Waste Management<br>
-            🎓📚 Personalized Learning Platform<br>
-            🚦🚌 Smart Traffic Management<br>
-            🛡🎥 Security & Surveillance Hub<br>
-            🌾🚜 Smart Farming Network<br>
-            ✈🚉🚗 Multi-Modal Transport System<br>
-            🛒📦 Supply Chain Optimization<br>
-            🧠💻 Cyber-Tech Innovation Lab
-          </div>
-          <a href="#" class="portfolio-btn">View Portfolio</a>
-        </div>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai">
+      <h3>Sai</h3>
+      <p>USN: 01FE24BCS160</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Focuses on AI, optimization, and analytics.</p>
+    </div>
 
-        <div class="member">
-          <h3>Sai</h3>
-          <p class="small">Focus: Core smart-city platforms & analytics</p>
-          <div class="ideas">
-            🔋 Smart Energy Grid<br>
-            🚚 Autonomous Port Logistics<br>
-            🛰 Satellite–IoT Monitoring<br>
-            🛡 Cybersecurity Intelligence<br>
-            🚦 Smart Mobility Control<br>
-            🚐 Autonomous Shuttle Pods<br>
-            🧠 Neural Simulation Lab<br>
-            🏥 AI Healthcare Prediction<br>
-            💡 Smart Lighting Network<br>
-            📊 Data Commerce Hub
-          </div>
-          <a href="#" class="portfolio-btn">View Portfolio</a>
-        </div>
+  </div>
+</section>
 
-      </div>
-    </section>
+<!-- ========================= -->
+<!-- PROJECT OVERVIEW          -->
+<!-- ========================= -->
+<section id="project" class="section">
+  <h1 class="title">AARUNYA CITY – Project Overview</h1>
+  <p class="desc">
+    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
+    automation, clean energy, innovation, and modern urban planning.
+  </p>
+</section>
 
-  </main>
+<!-- ========================================================== -->
+<!-- ARBIYA PAGE (NO STEP-2 TITLE)                              -->
+<!-- ========================================================== -->
+<section id="arbiya" class="section">
+  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
 
-  <footer class="foot">
-    <div>© 2025 Aarunya Project</div>
-    <div><a class="repo" href="https://github.com/your-org/aarunya" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" style="margin-right:6px"></i> Project Repository</a></div>
-  </footer>
+  <!-- IDEA LIST -->
+  <div class="ideas-container">
+    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
+    <div class="idea-box"><span>🏕</span> Eco Resort</div>
+    <div class="idea-box"><span>💻</span> IT Training Center</div>
+    <div class="idea-box"><span>❄</span> Cold Storage</div>
+    <div class="idea-box"><span>🏢</span> Co-working Hub</div>
+    <div class="idea-box"><span>🛍</span> Retail Mall</div>
+    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
+    <div class="idea-box"><span>⚡</span> EV Charging Stations</div>
+    <div class="idea-box"><span>🚤</span> Waterfront Tourism</div>
+    <div class="idea-box"><span>📦</span> E-commerce Center</div>
+  </div>
+
+  <br><br>
+
+  <!-- DETAILS WITHOUT STEP-2 HEADING -->
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">1. Logistics Hub</h3>
+    <p><b>What it is:</b> A distribution center for warehousing, transport and cargo movement.</p>
+    <p><b>Income:</b> Storage fees, shipping charges, inventory handling services.</p>
+    <p><b>SDG:</b> SDG 8 – Decent Work & Economic Growth, SDG 9 – Industry, Innovation & Infrastructure</p>
+    <p><b>Explanation:</b> Improves supply chain efficiency, speeds deliveries and creates jobs.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">2. Eco Resort</h3>
+    <p><b>What it is:</b> A sustainable nature-based hospitality destination.</p>
+    <p><b>Income:</b> Room bookings, outdoor activities, eco-tourism experiences.</p>
+    <p><b>SDG:</b> SDG 11 – Sustainable Cities & Communities, SDG 13 – Climate Action</p>
+    <p><b>Explanation:</b> Encourages eco-friendly tourism and protects natural habitats.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">3. IT Training Center</h3>
+    <p><b>What it is:</b> A digital skills learning institute teaching coding & AI.</p>
+    <p><b>Income:</b> Course fees, certification programs, workshops.</p>
+    <p><b>SDG:</b> SDG 4 – Quality Education, SDG 8 – Decent Work & Economic Growth</p>
+    <p><b>Explanation:</b> Builds a skilled workforce ready for tech careers.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">4. Cold Storage</h3>
+    <p><b>What it is:</b> A refrigerated facility to store fruits, vegetables and dairy.</p>
+    <p><b>Income:</b> Storage rentals, logistics fees, packaging services.</p>
+    <p><b>SDG:</b> SDG 2 – Zero Hunger, SDG 9 – Industry, Innovation & Infrastructure</p>
+    <p><b>Explanation:</b> Reduces food waste and supports farmers.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">5. Co-working Hub</h3>
+    <p><b>What it is:</b> A shared office workspace for freelancers and startups.</p>
+    <p><b>Income:</b> Membership fees, meeting room rentals, event bookings.</p>
+    <p><b>SDG:</b> SDG 8 – Decent Work, SDG 9 – Innovation & Infrastructure</p>
+    <p><b>Explanation:</b> Encourages innovation & collaboration.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">6. Retail Mall</h3>
+    <p><b>What it is:</b> A commercial center with shops, entertainment and food courts.</p>
+    <p><b>Income:</b> Shop rent, stall commission, ads.</p>
+    <p><b>SDG:</b> SDG 8 – Economic Growth, SDG 11 – Sustainable Cities</p>
+    <p><b>Explanation:</b> Creates jobs and enhances lifestyle.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">7. Multi-specialty Hospital</h3>
+    <p><b>What it is:</b> A medical facility offering multiple healthcare services.</p>
+    <p><b>Income:</b> Consultations, diagnostics, pharmacy, surgeries.</p>
+    <p><b>SDG:</b> SDG 3 – Good Health & Well-Being</p>
+    <p><b>Explanation:</b> Provides accessible and advanced healthcare.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">8. EV Charging Stations</h3>
+    <p><b>What it is:</b> Charging units for electric scooters, cars and buses.</p>
+    <p><b>Income:</b> Charging fees, subscriptions, fleet partnerships.</p>
+    <p><b>SDG:</b> SDG 7 – Clean Energy, SDG 13 – Climate Action</p>
+    <p><b>Explanation:</b> Promotes green transportation.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">9. Waterfront Tourism</h3>
+    <p><b>What it is:</b> Tourism activities around river or lakefront.</p>
+    <p><b>Income:</b> Boating, food stalls, events.</p>
+    <p><b>SDG:</b> SDG 8 – Economic Growth, SDG 11 – Sustainable Cities</p>
+    <p><b>Explanation:</b> Boosts urban recreation and tourism.</p>
+  </div>
+
+  <div class="idea-details">
+    <h3 style="color:#4dabff;">10. E-commerce Distribution Center</h3>
+    <p><b>What it is:</b> Warehouse for online orders, packaging and last-mile delivery.</p>
+    <p><b>Income:</b> Delivery fees, commissions, seller services.</p>
+    <p><b>SDG:</b> SDG 9 – Innovation & Infrastructure, SDG 8 – Economic Growth</p>
+    <p><b>Explanation:</b> Strengthens digital economy & fast delivery systems.</p>
+  </div>
+
+</section>
+
+<!-- Other pages unchanged -->
+
+<section id="akshata" class="section">
+  <h1 class="title">Akshata – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>🦾</span> Floating Micro-Farms</div>
+    <div class="idea-box"><span>🛒</span> XR Hologram Shops</div>
+    <div class="idea-box"><span>🎵</span> AI Sound Trails</div>
+    <div class="idea-box"><span>🚴‍♂</span> Energy-Bike Café</div>
+    <div class="idea-box"><span>⏳</span> Simulation Pods</div>
+    <div class="idea-box"><span>🧱</span> Eco-Bricks</div>
+    <div class="idea-box"><span>🗺</span> Scent Navigation Maps</div>
+    <div class="idea-box"><span>🚁</span> Drone Dining</div>
+    <div class="idea-box"><span>🌈</span> Smart Sidewalks</div>
+    <div class="idea-box"><span>🧘‍♀</span> Meditation Pods</div>
+  </div>
+</section>
+
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>🏥</span> Smart Healthcare & Emergency Routing</div>
+    <div class="idea-box"><span>⚡💧</span> Smart Water–Energy Optimization Grid</div>
+    <div class="idea-box"><span>♻</span> Intelligent Waste Management</div>
+    <div class="idea-box"><span>🎓📚</span> Personalized Learning Platform</div>
+    <div class="idea-box"><span>🚦🚌</span> Smart Traffic Management</div>
+    <div class="idea-box"><span>🛡🎥</span> Security & Surveillance Hub</div>
+    <div class="idea-box"><span>🌾🚜</span> Smart Farming Network</div>
+    <div class="idea-box"><span>✈🚉🚗</span> Multi-Modal Transport System</div>
+    <div class="idea-box"><span>🛒📦</span> Supply Chain Optimization</div>
+    <div class="idea-box"><span>🧠💻</span> Cyber-Tech Innovation Lab</div>
+  </div>
+</section>
+
+<section id="sai" class="section">
+  <h1 class="title">Sai – Business Ideas</h1>
+  <div class="ideas-container">
+    <div class="idea-box"><span>🔋</span> Smart Energy Grid</div>
+    <div class="idea-box"><span>🚚</span> Autonomous Port Logistics</div>
+    <div class="idea-box"><span>🛰</span> Satellite-IoT Monitoring</div>
+    <div class="idea-box"><span>🛡</span> Cybersecurity Intelligence</div>
+    <div class="idea-box"><span>🚦</span> Smart Mobility Control</div>
+    <div class="idea-box"><span>🚐</span> Autonomous Shuttle Pods</div>
+    <div class="idea-box"><span>🧠</span> Neural Simulation Lab</div>
+    <div class="idea-box"><span>🏥</span> AI Healthcare Prediction</div>
+    <div class="idea-box"><span>💡</span> Smart Lighting Network</div>
+    <div class="idea-box"><span>📊</span> Data Commerce Hub</div>
+  </div>
+</section>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
