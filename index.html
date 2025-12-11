@@ -115,8 +115,23 @@ nav a:hover {
   font-size: 17px;
 }
 
+.view-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #4dabff;
+  color: #0a0f1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s;
+}
+.view-btn:hover {
+  background: #268cff;
+}
+
 /* ========================= */
-/* ARBIYA DETAILED IDEA BOX  */
+/* DETAILED IDEA BOX         */
 /* ========================= */
 .detailed-idea {
   background: #0b1320;
@@ -142,7 +157,6 @@ nav a:hover {
   color: #d1eaff;
   border-radius: 8px;
 }
-
 </style>
 </head>
 
@@ -169,7 +183,7 @@ nav a:hover {
 </section>
 
 <!-- ========================= -->
-<!-- PROJECT PAGE (MERGED)    -->
+<!-- PROJECT PAGE (UPDATED)   -->
 <!-- ========================= -->
 <section id="project" class="section">
   <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
@@ -190,6 +204,7 @@ nav a:hover {
       <p>🚤 Waterfront Tourism</p>
       <p>📦 E-commerce Distribution Center</p>
     </div>
+    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
   </div>
 
   <!-- AKSHATA BLOCK -->
@@ -208,6 +223,7 @@ nav a:hover {
       <p>🌈 Smart Sidewalks</p>
       <p>🧘‍♀ Meditation Pods</p>
     </div>
+    <button class="view-btn" onclick="showPage('akshata')">View Portfolio</button>
   </div>
 
   <!-- ANKITA BLOCK -->
@@ -226,6 +242,7 @@ nav a:hover {
       <p>🛒 Supply Chain Optimization</p>
       <p>🧠 Cyber-Tech Innovation Lab</p>
     </div>
+    <button class="view-btn" onclick="showPage('ankita')">View Portfolio</button>
   </div>
 
   <!-- SAI BLOCK -->
@@ -244,6 +261,7 @@ nav a:hover {
       <p>💡 Smart Lighting Network</p>
       <p>📊 Data Commerce Hub</p>
     </div>
+    <button class="view-btn" onclick="showPage('sai')">View Portfolio</button>
   </div>
 
 </section>
@@ -256,34 +274,24 @@ nav a:hover {
   <p class="desc"><b>Roll No:</b> 214</p>
   <br><br>
 
-  <!-- START OF DETAILED IDEAS (10 IDEAS WITH ALGORITHM + CODE) -->
-  
-  <!-- Example 1 -->
+  <!-- IDEA 1 -->
   <div class="detailed-idea">
     <h3>1. ⚡ Logistics Hub</h3>
-
-    <p><b>Problem Statement:</b> Find the shortest and cost-efficient delivery routes inside the logistics hub.</p>
-    <p><b>Algorithm Used:</b> Floyd–Warshall Algorithm</p>
-
+    <p><b>Algorithm:</b> Floyd–Warshall Algorithm</p>
     <div class="code-box">
 FloydWarshall(cost[][]):
     for k in range(n):
         for i in range(n):
             for j in range(n):
                 cost[i][j] = min(cost[i][j], cost[i][k] + cost[k][j])
-    return cost
     </div>
-
-    <p><b>Application Logic:</b> Helps compute shortest routes for trucks and delivery vehicles reducing travel time.</p>
+    <p><b>Application:</b> Computes shortest delivery routes.</p>
   </div>
 
-  <!-- Example 2 -->
+  <!-- IDEA 2 -->
   <div class="detailed-idea">
     <h3>2. 🏕 Eco Resort</h3>
-
-    <p><b>Problem Statement:</b> Suggest eco-friendly activity paths inside the resort.</p>
-    <p><b>Algorithm Used:</b> Dijkstra’s Algorithm</p>
-
+    <p><b>Algorithm:</b> Dijkstra’s Algorithm</p>
     <div class="code-box">
 Dijkstra(graph, src):
     dist[] = infinity
@@ -295,37 +303,141 @@ Dijkstra(graph, src):
         for each neighbor v:
             if dist[v] > dist[u] + weight(u,v):
                 dist[v] = dist[u] + weight(u,v)
-    return dist
     </div>
-
-    <p><b>Application Logic:</b> Helps guests choose shortest route paths for trekking or exploration.</p>
+    <p><b>Application:</b> Best trekking paths.</p>
   </div>
-
 
   <!-- IDEA 3 -->
   <div class="detailed-idea">
     <h3>3. 💻 IT Training Center</h3>
-
-    <p><b>Problem Statement:</b> Schedule classes efficiently based on priority.</p>
-    <p><b>Algorithm Used:</b> Heap Sort</p>
-
+    <p><b>Algorithm:</b> Heap Sort</p>
     <div class="code-box">
 HeapSort(arr):
     buildMaxHeap(arr)
     for i from n to 1:
         swap(arr[0], arr[i])
         heapify(arr, 0, i)
-    return arr
     </div>
-
-    <p><b>Application Logic:</b> Sorts batches by demand and schedules sessions properly.</p>
+    <p><b>Application:</b> Sort batches by demand.</p>
   </div>
 
-  <!-- CONTINUE adding all 10 ideas EXACTLY like this ↓ -->
+  <!-- IDEA 4 -->
+  <div class="detailed-idea">
+    <h3>4. ❄ Cold Storage</h3>
+    <p><b>Algorithm:</b> Quick Sort</p>
+    <div class="code-box">
+QuickSort(arr, low, high):
+    if low < high:
+        p = partition(arr, low, high)
+        QuickSort(arr, low, p-1)
+        QuickSort(arr, p+1, high)
+    </div>
+    <p><b>Application:</b> Sort products by expiry.</p>
+  </div>
 
-  <!-- I WILL ADD ALL 10 IDEAS IN YOUR NEXT MESSAGE IF YOU CONFIRM -->
+  <!-- IDEA 5 -->
+  <div class="detailed-idea">
+    <h3>5. 🏢 Co-working Hub</h3>
+    <p><b>Algorithm:</b> Merge Sort</p>
+    <div class="code-box">
+MergeSort(arr):
+    if size > 1:
+        mid = n/2
+        left = MergeSort(leftHalf)
+        right = MergeSort(rightHalf)
+        return merge(left, right)
+    </div>
+    <p><b>Application:</b> Sort workspace bookings.</p>
+  </div>
 
+  <!-- IDEA 6 -->
+  <div class="detailed-idea">
+    <h3>6. 🛍 Retail Mall</h3>
+    <p><b>Algorithm:</b> Boyer–Moore Search</p>
+    <div class="code-box">
+BoyerMoore(text, pattern):
+    preprocessBadChar(pattern)
+    i = 0
+    while i <= n-m:
+        j = m-1
+        while j >= 0 and pattern[j] == text[i+j]:
+            j--
+        if j < 0: return i
+        i += max(1, j - badChar[text[i+j]])
+    </div>
+    <p><b>Application:</b> Search items faster.</p>
+  </div>
+
+  <!-- IDEA 7 -->
+  <div class="detailed-idea">
+    <h3>7. 🏥 Hospital</h3>
+    <p><b>Algorithm:</b> KMP</p>
+    <div class="code-box">
+KMP(text, pattern):
+    computeLPS(pattern)
+    i = j = 0
+    while i < n:
+        if text[i] == pattern[j]:
+            i++, j++
+            if j == m: return i-j
+        else:
+            if j != 0: j = lps[j-1]
+            else i++
+    </div>
+    <p><b>Application:</b> Fast record matching.</p>
+  </div>
+
+  <!-- IDEA 8 -->
+  <div class="detailed-idea">
+    <h3>8. ⚡ EV Charging</h3>
+    <p><b>Algorithm:</b> Bellman–Ford</p>
+    <div class="code-box">
+BellmanFord(graph, src):
+    dist[] = INF
+    dist[src] = 0
+    for i from 1 to n–1:
+        for each edge (u,v,w):
+            dist[v] = min(dist[v], dist[u] + w)
+    </div>
+    <p><b>Application:</b> Best charging route planning.</p>
+  </div>
+
+  <!-- IDEA 9 -->
+  <div class="detailed-idea">
+    <h3>9. 🚤 Waterfront Tourism</h3>
+    <p><b>Algorithm:</b> Prim’s MST</p>
+    <div class="code-box">
+PrimMST(graph):
+    key[] = INF
+    key[0] = 0
+    for i in range(n):
+        u = minKey()
+        for v in neighbors(u):
+            if weight(u,v) < key[v]:
+                key[v] = weight(u,v)
+    </div>
+    <p><b>Application:</b> Minimal cost tourist pathway.</p>
+  </div>
+
+  <!-- IDEA 10 -->
+  <div class="detailed-idea">
+    <h3>10. 📦 E-commerce Center</h3>
+    <p><b>Algorithm:</b> Kruskal’s Algorithm</p>
+    <div class="code-box">
+Kruskal(graph):
+    sort(edges)
+    for each edge (u,v,w):
+        if find(u) != find(v):
+            Union(u, v)
+            add edge to MST
+    </div>
+    <p><b>Application:</b> Efficient distribution network.</p>
+  </div>
 </section>
+
+<!-- ========================= -->
+<!-- OTHER PAGES              -->
+<!-- ========================= -->
 
 <section id="akshata" class="section">
   <h1 class="title">Akshata</h1>
