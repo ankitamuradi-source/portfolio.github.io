@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AARUNYA CITY – Smart City Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ========================= */
-/* GLOBAL DARK THEME         */
-/* ========================= */
+/* ------------------------------------------------ */
+/* GLOBAL THEME */
+/* ------------------------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +23,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ========================= */
-/* NAVBAR                    */
-/* ========================= */
+/* ------------------------------------------------ */
+/* NAVIGATION */
+/* ------------------------------------------------ */
 nav {
   position: sticky;
   top: 0;
@@ -33,7 +33,7 @@ nav {
   padding: 18px;
   text-align: center;
   border-bottom: 2px solid #1c2d45;
-  box-shadow: 0 0 12px rgba(0, 150, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0,150,255,0.25);
   z-index: 50;
 }
 nav a {
@@ -41,18 +41,17 @@ nav a {
   margin: 0 20px;
   font-weight: 600;
   font-size: 18px;
-  text-decoration: none;
   cursor: pointer;
-  transition: 0.3s;
+  text-decoration: none;
 }
 nav a:hover {
   color: #4dabff;
   text-shadow: 0 0 8px #268cff;
 }
 
-/* ========================= */
-/* SECTIONS                  */
-/* ========================= */
+/* ------------------------------------------------ */
+/* SECTIONS */
+/* ------------------------------------------------ */
 .section {
   display: none;
   max-width: 1100px;
@@ -61,110 +60,100 @@ nav a:hover {
   background: #0d1627;
   border-radius: 20px;
   border: 1px solid #1e3454;
-  box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
-  animation: fadeIn 0.7s ease forwards;
+  box-shadow: 0 0 25px rgba(0,150,255,0.15);
 }
 .section.active {
   display: block;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
-/* ========================= */
-/* TITLES                    */
-/* ========================= */
+/* ------------------------------------------------ */
+/* TITLES */
+/* ------------------------------------------------ */
 .title {
   text-align: center;
   font-size: 34px;
   margin-bottom: 25px;
   color: #ffb703;
-  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
 }
 .desc {
   text-align: center;
   font-size: 19px;
   max-width: 750px;
   margin: auto;
-  line-height: 1.6;
   color: #cbd5e1;
+  line-height: 1.6;
 }
 
-/* ========================= */
-/* BUSINESS CARDS            */
-/* ========================= */
+/* ------------------------------------------------ */
+/* PROJECT PAGE BOXES */
+/* ------------------------------------------------ */
 .member-box {
   background: #0b1320;
   padding: 25px;
+  margin-bottom: 25px;
   border-radius: 15px;
+  box-shadow: 0 0 20px rgba(38,140,255,0.2);
   border: 1px solid #1e3454;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(38, 140, 255, 0.2);
 }
-
 .member-box h2 {
   color: #4dabff;
-  margin-bottom: 8px;
 }
-
 .idea-list {
   margin-top: 10px;
   padding-left: 20px;
   line-height: 1.8;
-  font-size: 17px;
 }
-
 .view-btn {
   margin-top: 15px;
-  padding: 10px 20px;
-  background: #4dabff;
-  color: #0a0f1a;
+  padding: 10px 18px;
+  background: #268cff;
   border: none;
-  border-radius: 8px;
+  color: #fff;
+  border-radius: 7px;
   cursor: pointer;
-  font-weight: 600;
-  transition: .3s;
 }
 .view-btn:hover {
-  background: #268cff;
+  background: #4dabff;
 }
 
-/* ========================= */
-/* DETAILED IDEA BOX         */
-/* ========================= */
+/* ------------------------------------------------ */
+/* DETAILED IDEA BOX */
+/* ------------------------------------------------ */
 .detailed-idea {
   background: #0b1320;
+  margin-bottom: 30px;
   padding: 25px;
   border-radius: 15px;
   border: 1px solid #1e3454;
-  margin-bottom: 28px;
-  box-shadow: 0 0 25px rgba(38, 140, 255, 0.25);
+  box-shadow: 0 0 20px rgba(38,140,255,0.25);
 }
-
 .detailed-idea h3 {
   color: #ffb703;
+  margin-bottom: 8px;
 }
-
+.sdgs {
+  color: #4dabff;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
 .code-box {
-  background: #0a1322;
+  background: #091425;
   padding: 15px;
   border-left: 4px solid #4dabff;
-  margin-top: 10px;
-  white-space: pre-wrap;
+  border-radius: 10px;
   font-family: monospace;
   font-size: 15px;
+  white-space: pre-wrap;
   color: #d1eaff;
-  border-radius: 8px;
+  line-height: 1.6;
+  margin-top: 12px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!-- NAVIGATION BAR            -->
-<!-- ========================= -->
+<!-- NAVIGATION -->
 <nav>
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('project')">Project</a>
@@ -174,21 +163,17 @@ nav a:hover {
   <a onclick="showPage('sai')">Sai</a>
 </nav>
 
-<!-- ========================= -->
-<!-- HOME PAGE                 -->
-<!-- ========================= -->
+<!-- HOME -->
 <section id="home" class="section active">
   <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">A futuristic smart city built on sustainability, innovation, and advanced technology.</p>
+  <p class="desc">A futuristic smart city built on sustainability, smart governance, and clean technologies.</p>
 </section>
 
-<!-- ========================= -->
-<!-- PROJECT PAGE (UPDATED)   -->
-<!-- ========================= -->
+<!-- PROJECT PAGE -->
 <section id="project" class="section">
   <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
 
-  <!-- ARBIYA BLOCK -->
+  <!-- ARBIYA -->
   <div class="member-box">
     <h2>Arbiya Naaz</h2>
     <p><b>Roll No:</b> 214</p>
@@ -196,18 +181,18 @@ nav a:hover {
       <p>⚡ Logistics Hub</p>
       <p>🏕 Eco Resort</p>
       <p>💻 IT Training Center</p>
-      <p>❄ Cold Storage</p>
-      <p>🏢 Co-working Hub</p>
+      <p>❄ Cold Storage Facility</p>
+      <p>🏢 Co-working Innovation Hub</p>
       <p>🛍 Retail Mall</p>
       <p>🏥 Multi-specialty Hospital</p>
-      <p>⚡ EV Charging Stations</p>
+      <p>⚡ EV Charging Network</p>
       <p>🚤 Waterfront Tourism</p>
       <p>📦 E-commerce Distribution Center</p>
     </div>
     <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
   </div>
 
-  <!-- AKSHATA BLOCK -->
+  <!-- AKSHATA -->
   <div class="member-box">
     <h2>Akshata</h2>
     <p><b>Roll No:</b> 215</p>
@@ -215,18 +200,18 @@ nav a:hover {
       <p>🦾 Floating Micro-Farms</p>
       <p>🛒 XR Hologram Shops</p>
       <p>🎵 AI Sound Trails</p>
-      <p>🚴‍♂ Energy-Bike Café</p>
+      <p>🚴 Energy-Bike Café</p>
       <p>⏳ Simulation Pods</p>
       <p>🧱 Eco-Bricks</p>
       <p>🗺 Scent Navigation Maps</p>
       <p>🚁 Drone Dining</p>
       <p>🌈 Smart Sidewalks</p>
-      <p>🧘‍♀ Meditation Pods</p>
+      <p>🧘 Meditation Pods</p>
     </div>
     <button class="view-btn" onclick="showPage('akshata')">View Portfolio</button>
   </div>
 
-  <!-- ANKITA BLOCK -->
+  <!-- ANKITA -->
   <div class="member-box">
     <h2>Ankita</h2>
     <p><b>Roll No:</b> 244</p>
@@ -245,7 +230,7 @@ nav a:hover {
     <button class="view-btn" onclick="showPage('ankita')">View Portfolio</button>
   </div>
 
-  <!-- SAI BLOCK -->
+  <!-- SAI -->
   <div class="member-box">
     <h2>Sai</h2>
     <p><b>Roll No:</b> 202</p>
@@ -263,201 +248,315 @@ nav a:hover {
     </div>
     <button class="view-btn" onclick="showPage('sai')">View Portfolio</button>
   </div>
-
 </section>
 
-<!-- ========================= -->
-<!-- ARBIYA PAGE (DETAILED)   -->
-<!-- ========================= -->
+<!-- ARBIYA NAaz DETAILED PAGE -->
 <section id="arbiya" class="section">
   <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
-  <p class="desc"><b>Roll No:</b> 214</p>
+  <p class="desc">Here are the 10 smart-city business ideas optimized using algorithms.</p>
   <br><br>
 
-  <!-- IDEA 1 -->
-  <div class="detailed-idea">
-    <h3>1. ⚡ Logistics Hub</h3>
-    <p><b>Algorithm:</b> Floyd–Warshall Algorithm</p>
-    <div class="code-box">
-FloydWarshall(cost[][]):
+<!-- =============================================== -->
+<!-- IDEA 1 -->
+<div class="detailed-idea">
+  <h3>1. ⚡ Logistics Hub Optimization</h3>
+  <p class="sdgs">SDG 9 – Industry, Innovation & Infrastructure</p>
+
+  <p><b>Problem Statement:</b> Find the shortest delivery routes inside the logistics hub to minimize fuel and time.</p>
+
+  <p><b>Algorithm Used:</b> Floyd–Warshall Algorithm (Best for all-pairs shortest path)</p>
+
+  <div class="code-box">
+FloydWarshall(cost):
     for k in range(n):
         for i in range(n):
             for j in range(n):
-                cost[i][j] = min(cost[i][j], cost[i][k] + cost[k][j])
-    </div>
-    <p><b>Application:</b> Computes shortest delivery routes.</p>
+                if cost[i][j] > cost[i][k] + cost[k][j]:
+                    cost[i][j] = cost[i][k] + cost[k][j]
+
+    return cost
   </div>
 
-  <!-- IDEA 2 -->
-  <div class="detailed-idea">
-    <h3>2. 🏕 Eco Resort</h3>
-    <p><b>Algorithm:</b> Dijkstra’s Algorithm</p>
-    <div class="code-box">
-Dijkstra(graph, src):
-    dist[] = infinity
-    dist[src] = 0
-    priorityQueue.push(src)
+  <p><b>Application Logic:</b>  
+  The algorithm computes shortest distances between all warehouse nodes.  
+  It helps trucks choose optimal internal movement paths—reducing congestion and cost.</p>
+</div>
+
+<!-- =============================================== -->
+<!-- IDEA 2 -->
+<div class="detailed-idea">
+  <h3>2. 🏕 Eco Resort – Nature Path Recommendation</h3>
+  <p class="sdgs">SDG 11 – Sustainable Cities & Communities</p>
+
+  <p><b>Problem Statement:</b> Visitors need paths that are safe, scenic, and shortest.</p>
+
+  <p><b>Algorithm Used:</b> Dijkstra’s Algorithm</p>
+
+  <div class="code-box">
+Dijkstra(graph, source):
+    dist = [∞] * n
+    dist[source] = 0
+    priorityQueue.push(source)
 
     while queue not empty:
         u = extractMin()
+
         for each neighbor v:
             if dist[v] > dist[u] + weight(u,v):
                 dist[v] = dist[u] + weight(u,v)
-    </div>
-    <p><b>Application:</b> Best trekking paths.</p>
+
+    return dist
   </div>
 
-  <!-- IDEA 3 -->
-  <div class="detailed-idea">
-    <h3>3. 💻 IT Training Center</h3>
-    <p><b>Algorithm:</b> Heap Sort</p>
-    <div class="code-box">
+  <p><b>Application Logic:</b>  
+  Dijkstra finds shortest safe hiking routes ensuring nature preservation and visitor comfort.</p>
+</div>
+
+<!-- =============================================== -->
+<!-- IDEA 3 -->
+<div class="detailed-idea">
+  <h3>3. 💻 IT Training Center – Batch Scheduling</h3>
+  <p class="sdgs">SDG 4 – Quality Education</p>
+
+  <p><b>Problem Statement:</b> High-demand classes must be scheduled first.</p>
+
+  <p><b>Algorithm Used:</b> Heap Sort</p>
+
+  <div class="code-box">
 HeapSort(arr):
     buildMaxHeap(arr)
-    for i from n to 1:
+
+    for i from n-1 downto 1:
         swap(arr[0], arr[i])
         heapify(arr, 0, i)
-    </div>
-    <p><b>Application:</b> Sort batches by demand.</p>
+
+    return arr
   </div>
 
-  <!-- IDEA 4 -->
-  <div class="detailed-idea">
-    <h3>4. ❄ Cold Storage</h3>
-    <p><b>Algorithm:</b> Quick Sort</p>
-    <div class="code-box">
+  <p><b>Application Logic:</b>  
+  The center ranks training batches by demand, priority, and availability—ensuring efficient class scheduling.</p>
+</div>
+
+<!-- =============================================== -->
+<!-- IDEA 4 -->
+<div class="detailed-idea">
+  <h3>4. ❄ Cold Storage Facility – Temperature Data Search</h3>
+  <p class="sdgs">SDG 12 – Responsible Consumption & Production</p>
+
+  <p><b>Problem Statement:</b> Need to detect faulty temperature readings quickly.</p>
+
+  <p><b>Algorithm Used:</b> Brute Force String Search</p>
+
+  <div class="code-box">
+BruteForce(pattern, text):
+    for i in range(0, len(text) - len(pattern)):
+        match = true
+
+        for j in range(0, len(pattern)):
+            if text[i+j] != pattern[j]:
+                match = false
+                break
+
+        if match:
+            return i
+
+    return -1
+  </div>
+
+  <p><b>Application Logic:</b>  
+  Helps detect abnormal temperature logs by searching error codes inside sensor data streams.</p>
+</div>
+
+<!-- =============================================== -->
+<!-- IDEA 5 -->
+<div class="detailed-idea">
+  <h3>5. 🏢 Co-working Hub – Quick Booking Allocation</h3>
+  <p class="sdgs">SDG 8 – Decent Work & Economic Growth</p>
+
+  <p><b>Problem Statement:</b> Assign seats quickly during peak hours.</p>
+
+  <p><b>Algorithm Used:</b> Quick Sort</p>
+
+  <div class="code-box">
 QuickSort(arr, low, high):
     if low < high:
-        p = partition(arr, low, high)
-        QuickSort(arr, low, p-1)
-        QuickSort(arr, p+1, high)
-    </div>
-    <p><b>Application:</b> Sort products by expiry.</p>
+        pivotIndex = partition(arr, low, high)
+        QuickSort(arr, low, pivotIndex-1)
+        QuickSort(arr, pivotIndex+1, high)
   </div>
 
-  <!-- IDEA 5 -->
-  <div class="detailed-idea">
-    <h3>5. 🏢 Co-working Hub</h3>
-    <p><b>Algorithm:</b> Merge Sort</p>
-    <div class="code-box">
-MergeSort(arr):
-    if size > 1:
-        mid = n/2
-        left = MergeSort(leftHalf)
-        right = MergeSort(rightHalf)
-        return merge(left, right)
-    </div>
-    <p><b>Application:</b> Sort workspace bookings.</p>
-  </div>
+  <p><b>Application Logic:</b>  
+  Sorts bookings by time and priority instantly—ensuring fast seat allocation.</p>
+</div>
 
-  <!-- IDEA 6 -->
-  <div class="detailed-idea">
-    <h3>6. 🛍 Retail Mall</h3>
-    <p><b>Algorithm:</b> Boyer–Moore Search</p>
-    <div class="code-box">
-BoyerMoore(text, pattern):
-    preprocessBadChar(pattern)
-    i = 0
-    while i <= n-m:
-        j = m-1
-        while j >= 0 and pattern[j] == text[i+j]:
-            j--
-        if j < 0: return i
-        i += max(1, j - badChar[text[i+j]])
-    </div>
-    <p><b>Application:</b> Search items faster.</p>
-  </div>
+<!-- IDEA 6 -->
+<div class="detailed-idea">
+  <h3>6. 🛍 Retail Mall – Product Search Optimization</h3>
+  <p class="sdgs">SDG 9 – Industry, Innovation & Infrastructure</p>
 
-  <!-- IDEA 7 -->
-  <div class="detailed-idea">
-    <h3>7. 🏥 Hospital</h3>
-    <p><b>Algorithm:</b> KMP</p>
-    <div class="code-box">
-KMP(text, pattern):
-    computeLPS(pattern)
+  <p><b>Problem Statement:</b> Customers must find product locations quickly.</p>
+
+  <p><b>Algorithm Used:</b> KMP Pattern Matching</p>
+
+  <div class="code-box">
+KMP(pattern, text):
+    lps = computeLPS(pattern)
     i = j = 0
-    while i < n:
-        if text[i] == pattern[j]:
-            i++, j++
-            if j == m: return i-j
-        else:
-            if j != 0: j = lps[j-1]
-            else i++
-    </div>
-    <p><b>Application:</b> Fast record matching.</p>
+
+    while i < len(text):
+        if pattern[j] == text[i]:
+            i += 1
+            j += 1
+
+        if j == len(pattern):
+            return i - j
+
+        elif i < len(text) and pattern[j] != text[i]:
+            if j != 0:
+                j = lps[j-1]
+            else:
+                i += 1
   </div>
 
-  <!-- IDEA 8 -->
-  <div class="detailed-idea">
-    <h3>8. ⚡ EV Charging</h3>
-    <p><b>Algorithm:</b> Bellman–Ford</p>
-    <div class="code-box">
+  <p><b>Application Logic:</b>  
+  Helps customers instantly locate items inside large malls.</p>
+</div>
+
+<!-- IDEA 7 -->
+<div class="detailed-idea">
+  <h3>7. 🏥 Multi-specialty Hospital – Patient Route Optimization</h3>
+  <p class="sdgs">SDG 3 – Good Health & Well-being</p>
+
+  <p><b>Problem Statement:</b> Patients need shortest internal routes to reach departments faster.</p>
+
+  <p><b>Algorithm Used:</b> Bellman–Ford Algorithm</p>
+
+  <div class="code-box">
 BellmanFord(graph, src):
-    dist[] = INF
+    dist = [∞] * n
     dist[src] = 0
-    for i from 1 to n–1:
-        for each edge (u,v,w):
-            dist[v] = min(dist[v], dist[u] + w)
-    </div>
-    <p><b>Application:</b> Best charging route planning.</p>
+
+    for i in range(n-1):
+        for (u, v, weight) in edges:
+            if dist[u] + weight < dist[v]:
+                dist[v] = dist[u] + weight
+
+    return dist
   </div>
 
-  <!-- IDEA 9 -->
-  <div class="detailed-idea">
-    <h3>9. 🚤 Waterfront Tourism</h3>
-    <p><b>Algorithm:</b> Prim’s MST</p>
-    <div class="code-box">
-PrimMST(graph):
-    key[] = INF
+  <p><b>Application Logic:</b>  
+  Works even when path delays (weights) fluctuate due to congestion.</p>
+</div>
+
+<!-- IDEA 8 -->
+<div class="detailed-idea">
+  <h3>8. ⚡ EV Charging Network – Power Grid Optimization</h3>
+  <p class="sdgs">SDG 7 – Affordable and Clean Energy</p>
+
+  <p><b>Problem Statement:</b> Connect charging stations with minimal wiring cost.</p>
+
+  <p><b>Algorithm Used:</b> Prim’s Minimum Spanning Tree</p>
+
+  <div class="code-box">
+Prim(graph):
+    key[] = ∞
     key[0] = 0
-    for i in range(n):
-        u = minKey()
+    mstSet[] = false
+
+    for count in range(n):
+        u = extractMin(key)
+        mstSet[u] = true
+
         for v in neighbors(u):
-            if weight(u,v) < key[v]:
+            if mstSet[v] == false and weight(u,v) < key[v]:
                 key[v] = weight(u,v)
-    </div>
-    <p><b>Application:</b> Minimal cost tourist pathway.</p>
   </div>
 
-  <!-- IDEA 10 -->
-  <div class="detailed-idea">
-    <h3>10. 📦 E-commerce Center</h3>
-    <p><b>Algorithm:</b> Kruskal’s Algorithm</p>
-    <div class="code-box">
-Kruskal(graph):
-    sort(edges)
-    for each edge (u,v,w):
-        if find(u) != find(v):
-            Union(u, v)
-            add edge to MST
-    </div>
-    <p><b>Application:</b> Efficient distribution network.</p>
+  <p><b>Application Logic:</b>  
+  Ensures minimum-cost cable layout connecting all EV chargers.</p>
+</div>
+
+<!-- IDEA 9 -->
+<div class="detailed-idea">
+  <h3>9. 🚤 Waterfront Tourism – Route Mapping</h3>
+  <p class="sdgs">SDG 14 – Life Below Water</p>
+
+  <p><b>Problem Statement:</b> Boats need safe and shortest navigation paths.</p>
+
+  <p><b>Algorithm Used:</b> Merge Sort (for route sorting)</p>
+
+  <div class="code-box">
+MergeSort(arr):
+    if length <= 1:
+        return arr
+
+    mid = length/2
+    left = MergeSort(leftHalf)
+    right = MergeSort(rightHalf)
+
+    return merge(left, right)
   </div>
+
+  <p><b>Application Logic:</b>  
+  Sorts route safety scores, tourist interest levels, and travel durations.</p>
+</div>
+
+<!-- IDEA 10 -->
+<div class="detailed-idea">
+  <h3>10. 📦 E-commerce Distribution Center – Package Filtering</h3>
+  <p class="sdgs">SDG 8 – Decent Work & Economic Growth</p>
+
+  <p><b>Problem Statement:</b> Huge incoming packages need fast scanning for errors.</p>
+
+  <p><b>Algorithm Used:</b> Rabin–Karp Algorithm</p>
+
+  <div class="code-box">
+RabinKarp(pattern, text, q):
+    m = len(pattern)
+    n = len(text)
+    p = t = 0
+    h = pow(d, m-1) % q
+
+    # initial hash
+    for i in range(m):
+        p = (d*p + pattern[i]) % q
+        t = (d*t + text[i]) % q
+
+    for i in range(n-m+1):
+        if p == t:
+            if text[i:i+m] == pattern:
+                return i
+
+        if i < n-m:
+            t = (d*(t - text[i]*h) + text[i+m]) % q
+  </div>
+
+  <p><b>Application Logic:</b>  
+  Used for scanning barcodes, tracking IDs, and detecting corrupted entries.</p>
+</div>
+
 </section>
 
-<!-- ========================= -->
-<!-- OTHER PAGES              -->
-<!-- ========================= -->
-
+<!-- OTHER MEMBERS -->
 <section id="akshata" class="section">
   <h1 class="title">Akshata</h1>
-  <p class="desc">Portfolio Under Construction</p>
+  <p class="desc">Portfolio under construction</p>
 </section>
 
 <section id="ankita" class="section">
   <h1 class="title">Ankita</h1>
-  <p class="desc">Portfolio Under Construction</p>
+  <p class="desc">Portfolio under construction</p>
 </section>
 
 <section id="sai" class="section">
   <h1 class="title">Sai</h1>
-  <p class="desc">Portfolio Under Construction</p>
+  <p class="desc">Portfolio under construction</p>
 </section>
 
 <script>
 function showPage(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 </script>
 
