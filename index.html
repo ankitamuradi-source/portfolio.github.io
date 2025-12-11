@@ -1,289 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AARUNYA CITY – Smart City Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARUNYA Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* GLOBAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background: #f4f7fb;
-  color: #1a1a1a;
-  overflow-x: hidden;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
 
-/* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background: #ffffff;
-  padding: 15px;
-  text-align: center;
-  z-index: 50;
-  border-bottom: 2px solid #d0e7ff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-nav a {
-  color: #1a1a1a;
-  margin: 0 18px;
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-nav a:hover {
-  color: #007bff;
-  transform: scale(1.08);
-}
+        body {
+            background: #f0f4f3;
+            color: #333;
+        }
 
-/* SECTIONS */
-.section {
-  display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.12);
-  animation: fadeIn 0.8s ease forwards;
-}
-.section.active {
-  display: block;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+        /* NAVBAR */
+        nav {
+            background: #2E7D32;
+            padding: 15px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
 
-/* HEADINGS */
-.title {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #0056d6;
-}
+        nav a {
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .3s;
+        }
 
-/* IDEA CARDS */
-.ideas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-.idea-box {
-  flex: 0 1 260px;
-  background: #eef6ff;
-  border: 1px solid #bcd9ff;
-  box-shadow: 0 0 12px rgba(0, 115, 255, 0.15);
-  padding: 15px 20px;
-  border-radius: 12px;
-  color: #1a1a1a;
-  font-size: 17px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: 0.3s;
-}
-.idea-box:hover {
-  background: #e3efff;
-  box-shadow: 0 0 25px rgba(0, 115, 255, 0.25);
-  transform: translateY(-5px);
-}
-.idea-box span {
-  font-size: 22px;
-}
+        nav a:hover {
+            color: #C8FFD7;
+            transform: scale(1.08);
+        }
 
-/* EXPLANATION BOX */
-.explain-box {
-  margin-top: 25px;
-  padding: 22px;
-  background: #e8f3ff;
-  border-left: 5px solid #007bff;
-  border-radius: 12px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-.explain-box h2 {
-  margin-bottom: 10px;
-  color: #0056d6;
-}
+        /* GENERAL SECTION STYLING */
+        section {
+            display: none;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            animation: fadeIn 1s ease-in-out;
+        }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .idea-box { flex: 1 1 100%; }
-}
-</style>
+        .active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to   {opacity: 1; transform: translateY(0);}
+        }
+
+        h1 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* HERO BANNER */
+        .hero {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50, #66bb6a);
+            padding: 55px;
+            border-radius: 18px;
+            color: white;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* HOME PAGE BOXES */
+        .home-box {
+            background: linear-gradient(135deg, #ffffff, #e8f5e9);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            margin-bottom: 22px;
+            border-left: 6px solid #2E7D32;
+            display: flex;
+            gap: 20px;
+            transition: .4s ease;
+            opacity: 0;
+            animation: slideUp .8s forwards;
+        }
+
+        @keyframes slideUp {
+            from {opacity: 0; transform: translateY(25px);}
+            to   {opacity: 1; transform: translateY(0);}
+        }
+
+        .home-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        }
+
+        .icon {
+            min-width: 60px;
+            height: 60px;
+            font-size: 30px;
+            border-radius: 50%;
+            background: #2E7D32;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: .3s ease;
+        }
+
+        .home-box:hover .icon {
+            background: #43a047;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* ABOUT PAGE CARDS */
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .profile-box {
+            background: #f7fff9;
+            width: 260px;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transition: .3s ease;
+        }
+
+        .profile-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .profile-box h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #2E7D32;
+        }
+
+        /* BUSINESS IDEAS LIST */
+        ol li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll("section").forEach(
+                sec => sec.classList.remove("active")
+            );
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
 </head>
 
 <body>
 
-<nav>
-  <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('about')">About</a>
-  <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
-  <a onclick="showPage('akshata')">Akshata</a>
-  <a onclick="showPage('ankita')">Ankita</a>
-  <a onclick="showPage('sai')">Sai</a>
-</nav>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('arbiya')">Arbiya</a>
+        <a href="#" onclick="showPage('ankita')">Ankita</a>
+        <a href="#" onclick="showPage('sai')">Sai</a>
+        <a href="#" onclick="showPage('akshata')">Akshata</a>
+    </nav>
 
-<!-- HOME -->
-<section id="home" class="section active">
-  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-</section>
+    <!-- HOME PAGE -->
+    <section id="home" class="active">
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h1 class="title">Meet Our Team</h1>
-</section>
+        <div class="hero">
+            <h1>AARUNYA</h1>
+            <p style="font-size:20px; opacity:0.9;">A Creative Portfolio for Algorithmic Problem Solving</p>
+        </div>
 
-<!-- PROJECT -->
-<section id="project" class="section">
-  <h1 class="title">AARUNYA CITY – Project Overview</h1>
-</section>
+        <!-- Q1 -->
+        <div class="home-box">
+            <div class="icon">📘</div>
+            <div>
+                <h2>What is the course about?</h2>
+                <p>Design and analysis of algorithms is the foundation of computer science. It explores natural  
+                patterns, inspires computational logic, and builds strong analytical thinking and  
+                problem-solving strategies.</p>
+            </div>
+        </div>
 
-<!-- ARBIYA -->
-<section id="arbiya" class="section">
-  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
+        <!-- Q2 -->
+        <div class="home-box">
+            <div class="icon">🔗</div>
+            <div>
+                <h2>What data structures and algorithms have you studied?</h2>
+                <p>Arrays, strings, linked lists, stacks, queues, trees, tries, skip lists—each structure  
+                teaches a new way to organize data and solve problems beautifully and efficiently.</p>
+            </div>
+        </div>
 
-  <div class="ideas-container">
-    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
-    <div class="idea-box"><span>🏕</span> Eco Resort</div>
-    <div class="idea-box"><span>💻</span> IT Training Center</div>
-    <div class="idea-box"><span>❄</span> Cold Storage</div>
-    <div class="idea-box"><span>🏢</span> Co-working Hub</div>
-    <div class="idea-box"><span>🛍</span> Retail Mall</div>
-    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
-    <div class="idea-box"><span>⚡</span> EV Charging</div>
-    <div class="idea-box"><span>🚤</span> Waterfront Tourism</div>
-    <div class="idea-box"><span>📦</span> E-commerce Center</div>
-  </div>
+        <!-- Q3 -->
+        <div class="home-box">
+            <div class="icon">⚙</div>
+            <div>
+                <h2>How does the course connect to real-time applications?</h2>
+                <p>Algorithms guide GPS routes, sort e-commerce data, power search engines, secure networks,  
+                and personalize user experiences. They silently shape the digital world around us.</p>
+            </div>
+        </div>
 
-  <!-- EXPLANATIONS -->
-  
-  <div class="explain-box">
-    <h2>⚡ Logistics Hub</h2>
-    <p>
-      A centre where goods are stored, sorted and transported efficiently.  
-      It earns money through warehouse rentals, transport charges and delivery services.  
-      It matches <b>SDG 8 – Decent Work and Economic Growth</b>.  
-    </p>
-  </div>
+    </section>
 
-  <div class="explain-box">
-    <h2>🏕 Eco Resort</h2>
-    <p>
-      A nature-friendly resort offering sustainable tourism experiences.  
-      Income comes from accommodation, dining, guided tours and adventure activities.  
-      It matches <b>SDG 12 – Responsible Consumption and Production</b>.  
-    </p>
-  </div>
+    <!-- ABOUT PAGE -->
+    <section id="about">
+        <h1>Meet Our Team</h1>
 
-  <div class="explain-box">
-    <h2>💻 IT Training Center</h2>
-    <p>
-      A centre providing computer courses and technical skill development.  
-      It earns revenue through course fees, workshops and certification programs.  
-      It matches <b>SDG 4 – Quality Education</b>.  
-    </p>
-  </div>
+        <div class="profile-container">
 
-  <div class="explain-box">
-    <h2>❄ Cold Storage</h2>
-    <p>
-      A temperature-controlled facility to store fruits, vegetables and medicines.  
-      It earns income through storage charges and distribution services.  
-      It matches <b>SDG 9 – Industry, Innovation and Infrastructure</b>.  
-    </p>
-  </div>
+            <div class="profile-box">
+                <h3>Ankita Muradi</h3>
+                <p><strong>USN:</strong> 01FE24BCS146</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-  <div class="explain-box">
-    <h2>🏢 Co-working Hub</h2>
-    <p>
-      Shared office spaces for startups, freelancers and small companies.  
-      Revenue comes from space rentals, meeting rooms and membership plans.  
-      It matches <b>SDG 8 – Decent Work and Economic Growth</b>.  
-    </p>
-  </div>
+            <div class="profile-box">
+                <h3>Arbiya Naaz</h3>
+                <p><strong>USN:</strong> 01FE24BCS042</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-  <div class="explain-box">
-    <h2>🛍 Retail Mall</h2>
-    <p>
-      A shopping complex with multiple branded stores and entertainment spaces.  
-      It earns through shop rentals, advertisements and customer footfall.  
-      It matches <b>SDG 11 – Sustainable Cities</b>.  
-    </p>
-  </div>
+            <div class="profile-box">
+                <h3>Akshata</h3>
+                <p><strong>USN:</strong> 01FE24BCS150</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-  <div class="explain-box">
-    <h2>🏥 Multi-specialty Hospital</h2>
-    <p>
-      A healthcare facility offering advanced treatments across departments.  
-      Income comes from consultations, medical procedures and insurance tie-ups.  
-      It matches <b>SDG 3 – Good Health and Well-Being</b>.  
-    </p>
-  </div>
+            <div class="profile-box">
+                <h3>Sai</h3>
+                <p><strong>USN:</strong> 01FE24BCS160</p>
+                <p><strong>Skills:</strong> C, C++, DSA</p>
+            </div>
 
-  <div class="explain-box">
-    <h2>⚡ EV Charging Station</h2>
-    <p>
-      Charging points for electric vehicles across the city.  
-      It earns revenue through charging fees and subscription plans.  
-      It matches <b>SDG 13 – Climate Action</b>.  
-    </p>
-  </div>
+        </div>
+    </section>
 
-  <div class="explain-box">
-    <h2>🚤 Waterfront Tourism</h2>
-    <p>
-      Recreational activities like boating, cruises and waterfront dining.  
-      Income comes from ticket sales, rentals and tourism services.  
-      It matches <b>SDG 8 – Economic Growth</b>.  
-    </p>
-  </div>
+    <!-- ARBIYA PAGE -->
+    <section id="arbiya">
+        <h1>Arbiya Naaz</h1>
+        <h2 style="margin-bottom:15px;">Identified Business Ideas</h2>
+        <ol>
+            <li>Logistics & Distribution Center</li>
+            <li>Eco-Resort & Adventure Tourism Park</li>
+            <li>E-commerce Fulfillment Warehouse</li>
+            <li>FinTech & IT Training Institute</li>
+            <li>Cold Storage + Food Processing Unit</li>
+            <li>Shopping Mall / Retail Complex</li>
+            <li>Co-working & Startup Hub</li>
+            <li>Multi-specialty Hospital</li>
+            <li>EV Charging & E-Bike Rental Hub</li>
+            <li>Waterfront Resort & Boating Center</li>
+        </ol>
+    </section>
 
-  <div class="explain-box">
-    <h2>📦 E-commerce Center</h2>
-    <p>
-      A facility managing online order processing, packaging and dispatch.  
-      It earns through partnerships, handling fees and logistics services.  
-      It matches <b>SDG 9 – Industry and Innovation</b>.  
-    </p>
-  </div>
+    <!-- ANKITA PAGE -->
+    <section id="ankita">
+        <h1>Ankita</h1>
+        <p>Content will be added soon...</p>
+    </section>
 
-</section>
+    <!-- SAI PAGE -->
+    <section id="sai">
+        <h1>Sai</h1>
+        <p>Content will be added soon...</p>
+    </section>
 
-<!-- AKSHATA -->
-<section id="akshata" class="section">
-  <h1 class="title">Akshata – Business Ideas</h1>
-</section>
-
-<!-- ANKITA -->
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Business Ideas</h1>
-</section>
-
-<!-- SAI -->
-<section id="sai" class="section">
-  <h1 class="title">Sai – Business Ideas</h1>
-</section>
-
-<script>
-function showPage(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-</script>
+    <!-- AKSHATA PAGE -->
+    <section id="akshata">
+        <h1>Akshata</h1>
+        <p>Identified business ideas and contributed to web design.</p>
+    </section>
 
 </body>
 </html>
