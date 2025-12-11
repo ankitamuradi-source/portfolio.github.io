@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aarunya — Smart City (Team Portfolio)</title>
+<title>Aarunya — Team Members</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root{
@@ -40,10 +40,11 @@
   table { width:100%; border-collapse:collapse; }
   th, td { padding:10px; border-bottom:1px solid #eef2f7; text-align:left; }
   tr.total td { font-weight:700; }
-  .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px; }
-  .member { background: linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:12px; box-shadow:0 8px 24px rgba(2,6,23,0.04); }
+  .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:12px; }
+  .member { background: linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:16px; box-shadow:0 8px 24px rgba(2,6,23,0.04); display:flex; flex-direction:column; justify-content:space-between; }
   .member h3 { margin:0 0 6px 0; }
-  .ideas { font-size:14px; line-height:1.5; margin-top:6px; color:#111827; }
+  .ideas { font-size:14px; line-height:1.6; margin-top:6px; color:#111827; }
+  .portfolio-btn { margin-top:12px; padding:8px 12px; background:var(--accent); color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; text-decoration:none; text-align:center; display:inline-block; }
   .foot { margin-top:22px; color:var(--muted); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
   a.repo { color:var(--accent); text-decoration:none; font-weight:600; }
   .small { font-size:13px; color:var(--muted); }
@@ -53,138 +54,97 @@
 <body>
 
   <header class="hero">
-    <h1>Aarunya — Smart City (Team Portfolio)</h1>
-    <p class="muted">City plan, budget & team business ideas — translated from hand-drawn posters and team notes.</p>
+    <h1>Aarunya — Team Members</h1>
+    <p class="muted">Team members with their curated business ideas.</p>
   </header>
 
   <main style="margin-top:18px;">
 
-    <section class="card" aria-labelledby="snapshot">
-      <h2 id="snapshot">City Snapshot</h2>
-      <div class="grid">
-        <div>
-          <p><strong>City Name:</strong> Aarunya</p>
-          <p><strong>State:</strong> Andhra Pradesh</p>
-          <p><strong>Pincode:</strong> 530200</p>
-          <p class="muted"><strong>Timezone:</strong> IST (UTC +5:30)</p>
-        </div>
-        <div>
-          <p><strong>Estimated Population:</strong> 5,000,000</p>
-          <p class="muted">Population density (approx): ≈ 3,830 / sq km</p>
-          <p class="muted">Vehicle registration prefix: AP (local format)</p>
-        </div>
-        <div>
-          <p><strong>Key Sectors (from layout):</strong></p>
-          <ul>
-            <li>Residential & commercial zones</li>
-            <li>Industry & port sector</li>
-            <li>Public transport corridors</li>
-            <li>Renewable energy, green & ecological buffers</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" style="margin-top:16px;" aria-labelledby="visuals">
-      <h2 id="visuals">Visual Plans & Budget Sheets</h2>
-      <p class="muted">Hand-drawn masterplan (left) and revenue/budget pages (right) from the team's poster.</p>
-      <div class="maps" role="img" aria-label="Aarunya maps">
-        <img src="assets/map_layout1.jpg" alt="Aarunya city layout (poster)">
-        <img src="assets/map_budget1.jpg" alt="Aarunya budget & revenue (poster)">
-      </div>
-
-      <div class="table" style="margin-top:14px;">
-        <h3 style="margin:0 0 8px 0;">Budget Estimation (Selected Sectors)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Sector</th>
-              <th>Cost (₹ Cr / km)</th>
-              <th>Estimated Total (₹ Cr)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Residential Infrastructure</td><td>250</td><td>112,500</td></tr>
-            <tr><td>Industrial & Port Sector</td><td>400</td><td>66,000</td></tr>
-            <tr><td>Renewable Energy</td><td>450</td><td>67,500</td></tr>
-            <tr><td>Public & Transport</td><td>500</td><td>75,000</td></tr>
-            <tr><td>Agriculture & Green Zones</td><td>150</td><td>22,500</td></tr>
-            <tr><td>Health & Education</td><td>350</td><td>28,350</td></tr>
-            <tr><td>Commercial Sector</td><td>450</td><td>40,500</td></tr>
-            <tr><td>Waste Management</td><td>350</td><td>26,250</td></tr>
-            <tr><td>Tech Park & Data Centres</td><td>500</td><td>49,500</td></tr>
-            <tr class="total"><td>Total</td><td></td><td>4,88,100</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="table" style="margin-top:12px;">
-        <h3 style="margin:0 0 8px 0;">Revenue Model (Selected Items)</h3>
-        <table>
-          <thead>
-            <tr><th>Source</th><th>Annual Revenue (₹ Crore)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Renewable Energy Exports</td><td>7,800</td></tr>
-            <tr><td>Green Hydrogen</td><td>5,400</td></tr>
-            <tr><td>Industrial Leases</td><td>8,200</td></tr>
-            <tr><td>Tech Services</td><td>8,000</td></tr>
-            <tr><td>Property Tax</td><td>5,200</td></tr>
-            <tr><td>Utilities</td><td>2,800</td></tr>
-            <tr><td>Tourism</td><td>4,800</td></tr>
-            <tr><td>Hotel Tax</td><td>1,600</td></tr>
-            <tr class="total"><td>Total Annual Revenue</td><td>44,400</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="card" style="margin-top:16px;" aria-labelledby="team">
-      <h2 id="team">Team & Business Ideas (Aarunya Project)</h2>
-      <p class="muted">Each member's curated business ideas are listed below — these are mapped to the project responsibilities.</p>
+    <section class="card" aria-labelledby="team">
+      <h2 id="team">Team & Business Ideas</h2>
+      <p class="muted">Each member's curated business ideas are listed below — click "View Portfolio" for details.</p>
 
       <div class="team-grid">
+
         <div class="member">
           <h3>Arbiya Naaz</h3>
           <p class="small">Focus: Logistics, Tourism, Retail & Health</p>
-          <p class="ideas"><strong>Ideas:</strong> ⚡ Logistics Hub • 🏕 Eco Resort • 💻 IT Training Center • ❄ Cold Storage • 🏢 Co-working Hub • 🛍 Retail Mall • 🏥 Multi-specialty Hospital • ⚡ EV Charging Stations • 🚤 Waterfront Tourism • 📦 E-commerce Center</p>
+          <div class="ideas">
+            ⚡ Logistics Hub<br>
+            🏕 Eco Resort<br>
+            💻 IT Training Center<br>
+            ❄ Cold Storage<br>
+            🏢 Co-working Hub<br>
+            🛍 Retail Mall<br>
+            🏥 Multi-specialty Hospital<br>
+            ⚡ EV Charging Stations<br>
+            🚤 Waterfront Tourism<br>
+            📦 E-commerce Center
+          </div>
+          <a href="#" class="portfolio-btn">View Portfolio</a>
         </div>
 
         <div class="member">
           <h3>Akshata</h3>
           <p class="small">Focus: Green tech, experiential retail & micro-innovations</p>
-          <p class="ideas"><strong>Ideas:</strong> 🦾 Floating Micro-Farms • 🛒 XR Hologram Shops • 🎵 AI Sound Trails • 🚴‍♂ Energy-Bike Café • ⏳ Simulation Pods • 🧱 Eco-Bricks • 🗺 Scent Navigation Maps • 🚁 Drone Dining • 🌈 Smart Sidewalks • 🧘‍♀ Meditation Pods</p>
+          <div class="ideas">
+            🦾 Floating Micro-Farms<br>
+            🛒 XR Hologram Shops<br>
+            🎵 AI Sound Trails<br>
+            🚴‍♂ Energy-Bike Café<br>
+            ⏳ Simulation Pods<br>
+            🧱 Eco-Bricks<br>
+            🗺 Scent Navigation Maps<br>
+            🚁 Drone Dining<br>
+            🌈 Smart Sidewalks<br>
+            🧘‍♀ Meditation Pods
+          </div>
+          <a href="#" class="portfolio-btn">View Portfolio</a>
         </div>
 
         <div class="member">
           <h3>Ankita</h3>
           <p class="small">Focus: Systems, services & operational platforms</p>
-          <p class="ideas"><strong>Ideas:</strong> 🏥 Smart Healthcare & Emergency Routing • ⚡💧 Smart Water–Energy Optimization Grid • ♻ Intelligent Waste Management • 🎓📚 Personalized Learning Platform • 🚦🚌 Smart Traffic Management • 🛡🎥 Security & Surveillance Hub • 🌾🚜 Smart Farming Network • ✈🚉🚗 Multi-Modal Transport System • 🛒📦 Supply Chain Optimization • 🧠💻 Cyber-Tech Innovation Lab</p>
+          <div class="ideas">
+            🏥 Smart Healthcare & Emergency Routing<br>
+            ⚡💧 Smart Water–Energy Optimization Grid<br>
+            ♻ Intelligent Waste Management<br>
+            🎓📚 Personalized Learning Platform<br>
+            🚦🚌 Smart Traffic Management<br>
+            🛡🎥 Security & Surveillance Hub<br>
+            🌾🚜 Smart Farming Network<br>
+            ✈🚉🚗 Multi-Modal Transport System<br>
+            🛒📦 Supply Chain Optimization<br>
+            🧠💻 Cyber-Tech Innovation Lab
+          </div>
+          <a href="#" class="portfolio-btn">View Portfolio</a>
         </div>
 
         <div class="member">
           <h3>Sai</h3>
           <p class="small">Focus: Core smart-city platforms & analytics</p>
-          <p class="ideas"><strong>Ideas:</strong> 🔋 Smart Energy Grid • 🚚 Autonomous Port Logistics • 🛰 Satellite–IoT Monitoring • 🛡 Cybersecurity Intelligence • 🚦 Smart Mobility Control • 🚐 Autonomous Shuttle Pods • 🧠 Neural Simulation Lab • 🏥 AI Healthcare Prediction • 💡 Smart Lighting Network • 📊 Data Commerce Hub</p>
+          <div class="ideas">
+            🔋 Smart Energy Grid<br>
+            🚚 Autonomous Port Logistics<br>
+            🛰 Satellite–IoT Monitoring<br>
+            🛡 Cybersecurity Intelligence<br>
+            🚦 Smart Mobility Control<br>
+            🚐 Autonomous Shuttle Pods<br>
+            🧠 Neural Simulation Lab<br>
+            🏥 AI Healthcare Prediction<br>
+            💡 Smart Lighting Network<br>
+            📊 Data Commerce Hub
+          </div>
+          <a href="#" class="portfolio-btn">View Portfolio</a>
         </div>
-      </div>
-    </section>
 
-    <section class="card" style="margin-top:16px;" aria-labelledby="notes">
-      <h2 id="notes">Source & Notes</h2>
-      <ul>
-        <li>Poster images (masterplan, budget, revenue) were transcribed to the Budget & Revenue tables above.</li>
-        <li>Population and age-distribution figures were estimated from the poster and formatted for the city snapshot.</li>
-        <li>Team idea lists were taken from your provided team notes and placed under each member card.</li>
-        <li>Replace the placeholder image files in <code>assets/</code> with your high-res scans for best visual quality.</li>
-      </ul>
-      <p class="muted">If any value needs correction (e.g., revenue or costs), tell me and I'll update the HTML instantly.</p>
+      </div>
     </section>
 
   </main>
 
   <footer class="foot">
-    <div>© 2025 Aarunya City Project</div>
+    <div>© 2025 Aarunya Project</div>
     <div><a class="repo" href="https://github.com/your-org/aarunya" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" style="margin-right:6px"></i> Project Repository</a></div>
   </footer>
 
