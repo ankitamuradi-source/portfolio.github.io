@@ -86,8 +86,8 @@ nav a:hover {
   border: 1px solid #1e3454;
   border-radius: 15px;
   padding: 20px;
-  width: 260px;
-  text-align: center;
+  width: 300px;
+  text-align: left;
   box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
   transition: 0.3s;
 }
@@ -95,49 +95,32 @@ nav a:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
 }
-.profile-box img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #268cff;
-  margin-bottom: 15px;
-}
-.ideas-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 40px;
-}
-.idea-details {
-  background: #0b1320;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #1e3454;
-  box-shadow: 0 0 18px rgba(38, 140, 255, 0.15);
-}
-.idea-details h2 {
+.profile-box h2 {
   color: #4dabff;
+  margin-bottom: 8px;
+}
+.profile-box p {
   margin-bottom: 12px;
 }
-.idea-details ul {
-  margin-bottom: 15px;
-  padding-left: 20px;
+.profile-box ul {
+  list-style-type: none;
+  padding-left: 0;
 }
-.idea-details ul li {
-  margin-bottom: 8px;
-  font-size: 17px;
+.profile-box ul li {
+  margin-bottom: 6px;
+  font-size: 16px;
 }
-.idea-details button {
+.profile-box button {
   background: #4dabff;
   color: #0a0f1a;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
 }
-.idea-details button:hover {
+.profile-box button:hover {
   background: #268cff;
   color: #fff;
 }
@@ -168,31 +151,11 @@ nav a:hover {
 <section id="project" class="section">
   <h1 class="title">PROJECT – Team & Business Ideas</h1>
   
-  <!-- TEAM PROFILES -->
   <div class="profile-container">
-    <div class="profile-box">
-      <p><b>Arbiya Naaz</b></p>
-      <p>Roll No: 214</p>
-    </div>
-    <div class="profile-box">
-      <p><b>Akshata</b></p>
-      <p>Roll No: 215</p>
-    </div>
-    <div class="profile-box">
-      <p><b>Ankita</b></p>
-      <p>Roll No: 244</p>
-    </div>
-    <div class="profile-box">
-      <p><b>Sai</b></p>
-      <p>Roll No: 202</p>
-    </div>
-  </div>
-
-  <!-- BUSINESS IDEAS -->
-  <div class="ideas-container">
     <!-- Arbiya -->
-    <div class="idea-details">
-      <h2>Arbiya Naaz – Business Ideas</h2>
+    <div class="profile-box">
+      <h2>Arbiya Naaz</h2>
+      <p>Roll No: 214</p>
       <ul>
         <li>⚡ Logistics Hub</li>
         <li>🏕 Eco Resort</li>
@@ -209,8 +172,9 @@ nav a:hover {
     </div>
 
     <!-- Akshata -->
-    <div class="idea-details">
-      <h2>Akshata – Business Ideas</h2>
+    <div class="profile-box">
+      <h2>Akshata</h2>
+      <p>Roll No: 215</p>
       <ul>
         <li>🦾 Floating Micro-Farms</li>
         <li>🛒 XR Hologram Shops</li>
@@ -227,8 +191,9 @@ nav a:hover {
     </div>
 
     <!-- Ankita -->
-    <div class="idea-details">
-      <h2>Ankita – Business Ideas</h2>
+    <div class="profile-box">
+      <h2>Ankita</h2>
+      <p>Roll No: 244</p>
       <ul>
         <li>🏥 Smart Healthcare & Emergency Routing</li>
         <li>⚡💧 Smart Water–Energy Optimization Grid</li>
@@ -245,8 +210,9 @@ nav a:hover {
     </div>
 
     <!-- Sai -->
-    <div class="idea-details">
-      <h2>Sai – Business Ideas</h2>
+    <div class="profile-box">
+      <h2>Sai</h2>
+      <p>Roll No: 202</p>
       <ul>
         <li>🔋 Smart Energy Grid</li>
         <li>🚚 Autonomous Port Logistics</li>
@@ -264,7 +230,6 @@ nav a:hover {
   </div>
 </section>
 
-<!-- Empty portfolio sections -->
 <section id="arbiya" class="section"></section>
 <section id="akshata" class="section"></section>
 <section id="ankita" class="section"></section>
