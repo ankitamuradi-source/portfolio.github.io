@@ -335,3 +335,175 @@ function showPage(id) {
 
 </body>
 </html>
+<!-- ========================= -->
+<!-- ANKITA PAGE               -->
+<!-- ========================= -->
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Business Ideas</h1>
+
+  <div class="ideas-container">
+
+    <!-- 1. Smart Healthcare & Emergency Routing -->
+    <div class="idea-box">
+      <span>🏥</span>
+      <div>
+        <b>Smart Healthcare & Emergency Routing</b>
+        <p><i>SDG: 3 – Good Health & Well-being</i></p>
+        <p>Dijkstra's algorithm for fastest ambulance routing:</p>
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+void dijkstra(int src, vector&lt;vector&lt;pair&lt;int,int&gt;&gt; &graph, vector&lt;int&gt;&amp; dist){
+    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;>, greater&lt;&gt;&gt; pq;
+    dist[src] = 0; pq.push({0,src});
+    while(!pq.empty()){
+        int u = pq.top().second; pq.pop();
+        for(auto &edge: graph[u]){
+            int v = edge.first, w = edge.second;
+            if(dist[u]+w &lt; dist[v]){
+                dist[v] = dist[u]+w;
+                pq.push({dist[v],v});
+            }
+        }
+    }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 2. Smart Water–Energy Optimization Grid -->
+    <div class="idea-box">
+      <span>⚡💧</span>
+      <div>
+        <b>Smart Water–Energy Optimization Grid</b>
+        <p><i>SDG: 6 &amp; 7 – Clean Water &amp; Affordable Energy</i></p>
+        <p>Greedy algorithm for resource allocation:</p>
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct Node{ int demand, capacity; };
+bool cmp(Node a, Node b){ return a.capacity &gt; b.capacity; }
+int main(){
+    vector&lt;Node&gt; nodes = {{5,10},{3,8},{7,12}};
+    sort(nodes.begin(), nodes.end(), cmp);
+    // Allocate resources greedily
+}</pre>
+      </div>
+    </div>
+
+    <!-- 3. Intelligent Waste Management -->
+    <div class="idea-box">
+      <span>♻</span>
+      <div>
+        <b>Intelligent Waste Management</b>
+        <p><i>SDG: 11 – Sustainable Cities &amp; Communities</i></p>
+        <p>BFS/DFS for monitoring waste bins &amp; optimal collection routes:</p>
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+void bfs(int start, vector&lt;vector&lt;int&gt;&gt;&amp; graph){
+    vector&lt;bool&gt; visited(graph.size(), false);
+    queue&lt;int&gt; q; q.push(start); visited[start]=true;
+    while(!q.empty()){
+        int u = q.front(); q.pop();
+        for(int v: graph[u]) if(!visited[v]){
+            visited[v]=true; q.push(v);
+        }
+    }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 4. Personalized Learning Platform -->
+    <div class="idea-box">
+      <span>🎓📚</span>
+      <div>
+        <b>Personalized Learning Platform</b>
+        <p><i>SDG: 4 – Quality Education</i></p>
+        <p>Use priority queue to recommend courses based on scores:</p>
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+int main(){
+    priority_queue&lt;int&gt; pq;
+    pq.push(90); pq.push(75); pq.push(85);
+    while(!pq.empty()){
+        cout &lt;&lt; pq.top() &lt;&lt; endl;
+        pq.pop();
+    }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 5. Smart Traffic Management -->
+    <div class="idea-box">
+      <span>🚦🚌</span>
+      <div>
+        <b>Smart Traffic Management</b>
+        <p><i>SDG: 9 – Industry, Innovation &amp; Infrastructure</i></p>
+        <p>Dijkstra or A* algorithm to optimize traffic signals and reduce congestion.</p>
+      </div>
+    </div>
+
+    <!-- 6. Security & Surveillance Hub -->
+    <div class="idea-box">
+      <span>🛡🎥</span>
+      <div>
+        <b>Security &amp; Surveillance Hub</b>
+        <p><i>SDG: 11 – Sustainable Cities &amp; Communities</i></p>
+        <p>Algorithmic face detection & anomaly detection (OpenCV in C++).</p>
+      </div>
+    </div>
+
+    <!-- 7. Smart Farming Network -->
+    <div class="idea-box">
+      <span>🌾🚜</span>
+      <div>
+        <b>Smart Farming Network</b>
+        <p><i>SDG: 2 – Zero Hunger</i></p>
+        <p>IoT sensors collect data; use linear search & predictive algorithms for yield prediction.</p>
+      </div>
+    </div>
+
+    <!-- 8. Multi-Modal Transport System -->
+    <div class="idea-box">
+      <span>✈🚉🚗</span>
+      <div>
+        <b>Multi-Modal Transport System</b>
+        <p><i>SDG: 9 – Industry, Innovation &amp; Infrastructure</i></p>
+        <p>Shortest path algorithms (Dijkstra / A*) for optimal multi-modal routes.</p>
+      </div>
+    </div>
+
+    <!-- 9. Supply Chain Optimization -->
+    <div class="idea-box">
+      <span>🛒📦</span>
+      <div>
+        <b>Supply Chain Optimization</b>
+        <p><i>SDG: 12 – Responsible Consumption &amp; Production</i></p>
+        <p>Dynamic Programming &amp; Greedy algorithms for warehouse &amp; inventory management.</p>
+      </div>
+    </div>
+
+    <!-- 10. Cyber-Tech Innovation Lab -->
+    <div class="idea-box">
+      <span>🧠💻</span>
+      <div>
+        <b>Cyber-Tech Innovation Lab</b>
+        <p><i>SDG: 9 – Industry, Innovation &amp; Infrastructure</i></p>
+        <p>Graph-based simulations &amp; AI algorithms in C++.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
