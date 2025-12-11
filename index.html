@@ -3,256 +3,333 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AARUNYA CITY – Smart City Portfolio (Full Expanded)</title>
+<title>AARUNYA CITY – Smart City Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
 <style>
-body { background:#0a0f1a; color:#e2e8f0; font-family:Poppins, sans-serif; margin:0; }
-nav { background:#0d1627; padding:14px; display:flex; gap:8px; align-items:center; position:sticky; top:0; z-index:99; }
-nav .brand{color:#ffd166;font-weight:700;margin-right:8px}
-nav a{color:#cbd5e1;text-decoration:none;padding:8px 10px;border-radius:8px;cursor:pointer}
-nav a:hover{background:rgba(75,140,255,0.06);color:#fff}
-.container{max-width:1200px;margin:28px auto;padding:20px}
-.header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.title{font-size:26px;color:#ffd166}
-.subtitle{color:#bcd9ff}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
-.box{background:#0b1320;padding:16px;border-radius:12px;border:1px solid rgba(120,160,220,0.04);cursor:pointer}
-.box h3{margin-bottom:8px}
-.page{display:none}
-.page.active{display:block}
-.subpage{background:#071426;padding:22px;border-radius:12px;border:1px solid rgba(120,160,220,0.04);margin-top:18px}
-.section-title{color:#ffd166;font-size:20px;margin-bottom:6px}
-.meta{color:#9ec8ff;margin-bottom:12px}
-.paragraph{color:#cfe8ff;margin-bottom:12px}
-.code{background:#001428;padding:14px;border-radius:10px;overflow:auto;color:#eaf6ff;border:1px solid rgba(20,90,150,0.08);white-space:pre-wrap}
-.flowchart, .map{background:#021226;padding:12px;border-radius:8px;color:#bfe0ff;margin:12px 0;font-family:monospace}
-.back{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;background:#0c2340;color:#bfe0ff;cursor:pointer}
-@media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:520px){.grid-4{grid-template-columns:1fr}}
+/* ========================= */
+/* GLOBAL DARK THEME         */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #0a0f1a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* NAVBAR                    */
+/* ========================= */
+nav {
+  position: sticky;
+  top: 0;
+  background: #0d1627;
+  padding: 18px;
+  text-align: center;
+  border-bottom: 2px solid #1c2d45;
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.25);
+  z-index: 50;
+}
+nav a {
+  color: #cbd5e1;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #4dabff;
+  text-shadow: 0 0 8px #268cff;
+}
+
+/* ========================= */
+/* SECTIONS                  */
+/* ========================= */
+.section {
+  display: none;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #0d1627;
+  border-radius: 20px;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
+  animation: fadeIn 0.7s ease forwards;
+}
+.section.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* TITLES                    */
+/* ========================= */
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #ffb703;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
+}
+.desc {
+  text-align: center;
+  font-size: 19px;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* ========================= */
+/* DARK GLOW PROFILE CARDS   */
+/* ========================= */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.profile-box {
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  border-radius: 15px;
+  padding: 25px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
+  transition: 0.3s;
+}
+.profile-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
+}
+.profile-box img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #268cff;
+  margin-bottom: 15px;
+}
+
+/* ========================= */
+/* DARK GLOW IDEA CARDS      */
+/* ========================= */
+.ideas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.idea-box {
+  flex: 0 1 270px;
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 15px rgba(38, 140, 255, 0.18);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+.idea-box:hover {
+  background: #0f1e33;
+  box-shadow: 0 0 28px rgba(38, 140, 255, 0.35);
+  transform: translateY(-5px);
+}
+.idea-box span {
+  font-size: 24px;
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+@media (max-width: 600px) {
+  .idea-box { flex: 1 1 100%; }
+  .profile-container { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
+
 <body>
+
+<!-- ========================= -->
+<!-- NAVIGATION BAR            -->
+<!-- ========================= -->
 <nav>
-  <div class="brand">AARUNYA CITY</div>
-  <a onclick="show('home')">Home</a>
-  <a onclick="show('about')">About</a>
-  <a onclick="show('project')">Project</a>
-  <a onclick="show('arbiya')">Arbiya</a>
-  <a onclick="show('akshata')">Akshata</a>
-  <a onclick="show('ankita')">Ankita</a>
-  <a onclick="show('sai')">Sai</a>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('project')">Project</a>
+  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+  <a onclick="showPage('akshata')">Akshata</a>
+  <a onclick="showPage('ankita')">Ankita</a>
+  <a onclick="showPage('sai')">Sai</a>
 </nav>
 
-<div class="container page active" id="home">
-  <div class="header"><div>
-    <div class="title">Welcome to Aarunya City — Full Expanded Portfolio</div>
-    <div class="subtitle">Each idea has SDG mapping, DAA explanation, flowchart, map and long C++ code demonstrating 3–4 algorithms.</div>
-  </div></div>
-</div>
+<!-- ========================= -->
+<!-- HOME PAGE                 -->
+<!-- ========================= -->
+<section id="home" class="section active">
+  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
+  <p class="desc">
+    A futuristic smart city powered by innovation, technology, and sustainable development.
+  </p>
+</section>
 
-<div class="container page" id="about">
-  <h2 class="title">About</h2>
-  <p class="paragraph">This portfolio demonstrates 40 business ideas across 4 team members. Each idea was designed considering Sustainable Development Goals (SDGs) and implemented conceptually using core DAA techniques. The C++ code blocks are educational templates intended for learning and prototyping. They combine multiple algorithms (graph, DP, greedy, search) to show how real systems can be composed.</p>
-</div>
+<!-- ========================= -->
+<!-- ABOUT TEAM                -->
+<!-- ========================= -->
+<section id="about" class="section">
+  <h1 class="title">Meet Our Team</h1>
+  <div class="profile-container">
 
-<div class="container page" id="project">
-  <h2 class="title">Project — Business Ideas Overview (4 columns)</h2>
-  <div class="grid-4">
-    <div class="box"><h3>Arbiya (1–10)</h3><ol>
-      <li>1 Logistics Hub</li><li>2 Eco Resort</li><li>3 IT Training Center</li><li>4 Cold Storage</li><li>5 Co-working Hub</li>
-      <li>6 Retail Mall</li><li>7 Multi-specialty Hospital</li><li>8 EV Charging</li><li>9 Waterfront Tourism</li><li>10 E-commerce Center</li>
-    </ol></div>
-    <div class="box"><h3>Akshata (1–10)</h3><ol>
-      <li>1 Floating Micro-Farms</li><li>2 XR Hologram Shops</li><li>3 AI Sound Trails</li><li>4 Energy-Bike Café</li><li>5 Simulation Pods</li>
-      <li>6 Eco-Bricks</li><li>7 Scent Navigation Maps</li><li>8 Drone Dining</li><li>9 Smart Sidewalks</li><li>10 Meditation Pods</li>
-    </ol></div>
-    <div class="box"><h3>Ankita (1–10)</h3><ol>
-      <li>1 Smart Healthcare & Emergency Routing</li><li>2 Smart Water–Energy Optimization Grid</li><li>3 Intelligent Waste Management</li>
-      <li>4 Personalized Learning Platform</li><li>5 Smart Traffic Management</li><li>6 Security & Surveillance Hub</li>
-      <li>7 Smart Farming Network</li><li>8 Multi-Modal Transport System</li><li>9 Supply Chain Optimization</li><li>10 Cyber-Tech Innovation Lab</li>
-    </ol></div>
-    <div class="box"><h3>Sai (1–10)</h3><ol>
-      <li>1 Smart Energy Grid</li><li>2 Autonomous Port Logistics</li><li>3 Satellite-IoT Monitoring</li><li>4 Cybersecurity Intelligence</li><li>5 Smart Mobility Control</li>
-      <li>6 Autonomous Shuttle Pods</li><li>7 Neural Simulation Lab</li><li>8 AI Healthcare Prediction</li><li>9 Smart Lighting Network</li><li>10 Data Commerce Hub</li>
-    </ol></div>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
+      <h3>Arbiya Naaz</h3>
+      <p>USN: 01FE24BCS042</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Works on algorithms and data structuring.</p>
+    </div>
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata">
+      <h3>Akshata</h3>
+      <p>USN: 01FE24BCS150</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Handles front-end and creative ideation.</p>
+    </div>
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita">
+      <h3>Ankita</h3>
+      <p>USN: 01FE24BCS146</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Manages back-end logic and simulations.</p>
+    </div>
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai">
+      <h3>Sai</h3>
+      <p>USN: 01FE24BCS160</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Focuses on AI, optimization, and analytics.</p>
+    </div>
+
   </div>
-</div>
+</section>
 
-<!-- Member pages with 10 idea links each -->
-<div class="container page" id="arbiya">
-  <h2 class="title">Arbiya – Business Ideas</h2>
-  <div class="grid-4">
-    <div class="box" onclick="openSub('arbiya-1')">1. Logistics Hub</div>
-    <div class="box" onclick="openSub('arbiya-2')">2. Eco Resort</div>
-    <div class="box" onclick="openSub('arbiya-3')">3. IT Training Center</div>
-    <div class="box" onclick="openSub('arbiya-4')">4. Cold Storage</div>
-    <div class="box" onclick="openSub('arbiya-5')">5. Co-working Hub</div>
-    <div class="box" onclick="openSub('arbiya-6')">6. Retail Mall</div>
-    <div class="box" onclick="openSub('arbiya-7')">7. Multi-specialty Hospital</div>
-    <div class="box" onclick="openSub('arbiya-8')">8. EV Charging</div>
-    <div class="box" onclick="openSub('arbiya-9')">9. Waterfront Tourism</div>
-    <div class="box" onclick="openSub('arbiya-10')">10. E-commerce Center</div>
+<!-- ========================= -->
+<!-- PROJECT OVERVIEW          -->
+<!-- ========================= -->
+<section id="project" class="section">
+  <h1 class="title">AARUNYA CITY – Project Overview</h1>
+  <p class="desc">
+    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
+    automation, clean energy, innovation, and modern urban planning.
+  </p>
+</section>
+
+<!-- ========================= -->
+<!-- ARBIYA PAGE               -->
+<!-- ========================= -->
+<section id="arbiya" class="section">
+  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
+
+  <div class="ideas-container">
+    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
+    <div class="idea-box"><span>🏕</span> Eco Resort</div>
+    <div class="idea-box"><span>💻</span> IT Training Center</div>
+    <div class="idea-box"><span>❄</span> Cold Storage</div>
+    <div class="idea-box"><span>🏢</span> Co-working Hub</div>
+    <div class="idea-box"><span>🛍</span> Retail Mall</div>
+    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
+    <div class="idea-box"><span>⚡</span> EV Charging</div>
+    <div class="idea-box"><span>🚤</span> Waterfront Tourism</div>
+    <div class="idea-box"><span>📦</span> E-commerce Center</div>
   </div>
-</div>
 
-<div class="container page" id="akshata">
-  <h2 class="title">Akshata – Business Ideas</h2>
-  <div class="grid-4">
-    <div class="box" onclick="openSub('akshata-1')">1. Floating Micro-Farms</div>
-    <div class="box" onclick="openSub('akshata-2')">2. XR Hologram Shops</div>
-    <div class="box" onclick="openSub('akshata-3')">3. AI Sound Trails</div>
-    <div class="box" onclick="openSub('akshata-4')">4. Energy-Bike Café</div>
-    <div class="box" onclick="openSub('akshata-5')">5. Simulation Pods</div>
-    <div class="box" onclick="openSub('akshata-6')">6. Eco-Bricks</div>
-    <div class="box" onclick="openSub('akshata-7')">7. Scent Navigation Maps</div>
-    <div class="box" onclick="openSub('akshata-8')">8. Drone Dining</div>
-    <div class="box" onclick="openSub('akshata-9')">9. Smart Sidewalks</div>
-    <div class="box" onclick="openSub('akshata-10')">10. Meditation Pods</div>
+</section>
+
+<!-- ========================= -->
+<!-- AKSHATA PAGE              -->
+<!-- ========================= -->
+<section id="akshata" class="section">
+  <h1 class="title">Akshata – Business Ideas</h1>
+
+  <div class="ideas-container">
+    <div class="idea-box"><span>🦾</span> Floating Micro-Farms</div>
+    <div class="idea-box"><span>🛒</span> XR Hologram Shops</div>
+    <div class="idea-box"><span>🎵</span> AI Sound Trails</div>
+    <div class="idea-box"><span>🚴‍♂</span> Energy-Bike Café</div>
+    <div class="idea-box"><span>⏳</span> Simulation Pods</div>
+    <div class="idea-box"><span>🧱</span> Eco-Bricks</div>
+    <div class="idea-box"><span>🗺</span> Scent Navigation Maps</div>
+    <div class="idea-box"><span>🚁</span> Drone Dining</div>
+    <div class="idea-box"><span>🌈</span> Smart Sidewalks</div>
+    <div class="idea-box"><span>🧘‍♀</span> Meditation Pods</div>
   </div>
-</div>
 
-<div class="container page" id="ankita">
-  <h2 class="title">Ankita – Business Ideas</h2>
-  <div class="grid-4">
-    <div class="box" onclick="openSub('ankita-1')">1. Smart Healthcare & Emergency Routing</div>
-    <div class="box" onclick="openSub('ankita-2')">2. Smart Water–Energy Optimization Grid</div>
-    <div class="box" onclick="openSub('ankita-3')">3. Intelligent Waste Management</div>
-    <div class="box" onclick="openSub('ankita-4')">4. Personalized Learning Platform</div>
-    <div class="box" onclick="openSub('ankita-5')">5. Smart Traffic Management</div>
-    <div class="box" onclick="openSub('ankita-6')">6. Security & Surveillance Hub</div>
-    <div class="box" onclick="openSub('ankita-7')">7. Smart Farming Network</div>
-    <div class="box" onclick="openSub('ankita-8')">8. Multi-Modal Transport System</div>
-    <div class="box" onclick="openSub('ankita-9')">9. Supply Chain Optimization</div>
-    <div class="box" onclick="openSub('ankita-10')">10. Cyber-Tech Innovation Lab</div>
+</section>
+
+<!-- ========================= -->
+<!-- ANKITA PAGE               -->
+<!-- ========================= -->
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Business Ideas</h1>
+
+  <div class="ideas-container">
+    <div class="idea-box"><span>🏥</span> Smart Healthcare & Emergency Routing</div>
+    <div class="idea-box"><span>⚡💧</span> Smart Water–Energy Optimization Grid</div>
+    <div class="idea-box"><span>♻</span> Intelligent Waste Management</div>
+    <div class="idea-box"><span>🎓📚</span> Personalized Learning Platform</div>
+    <div class="idea-box"><span>🚦🚌</span> Smart Traffic Management</div>
+    <div class="idea-box"><span>🛡🎥</span> Security & Surveillance Hub</div>
+    <div class="idea-box"><span>🌾🚜</span> Smart Farming Network</div>
+    <div class="idea-box"><span>✈🚉🚗</span> Multi-Modal Transport System</div>
+    <div class="idea-box"><span>🛒📦</span> Supply Chain Optimization</div>
+    <div class="idea-box"><span>🧠💻</span> Cyber-Tech Innovation Lab</div>
   </div>
-</div>
 
-<div class="container page" id="sai">
-  <h2 class="title">Sai – Business Ideas</h2>
-  <div class="grid-4">
-    <div class="box" onclick="openSub('sai-1')">1. Smart Energy Grid</div>
-    <div class="box" onclick="openSub('sai-2')">2. Autonomous Port Logistics</div>
-    <div class="box" onclick="openSub('sai-3')">3. Satellite-IoT Monitoring</div>
-    <div class="box" onclick="openSub('sai-4')">4. Cybersecurity Intelligence</div>
-    <div class="box" onclick="openSub('sai-5')">5. Smart Mobility Control</div>
-    <div class="box" onclick="openSub('sai-6')">6. Autonomous Shuttle Pods</div>
-    <div class="box" onclick="openSub('sai-7')">7. Neural Simulation Lab</div>
-    <div class="box" onclick="openSub('sai-8')">8. AI Healthcare Prediction</div>
-    <div class="box" onclick="openSub('sai-9')">9. Smart Lighting Network</div>
-    <div class="box" onclick="openSub('sai-10')">10. Data Commerce Hub</div>
+</section>
+
+<!-- ========================= -->
+<!-- SAI PAGE                  -->
+<!-- ========================= -->
+<section id="sai" class="section">
+  <h1 class="title">Sai – Business Ideas</h1>
+
+  <div class="ideas-container">
+    <div class="idea-box"><span>🔋</span> Smart Energy Grid</div>
+    <div class="idea-box"><span>🚚</span> Autonomous Port Logistics</div>
+    <div class="idea-box"><span>🛰</span> Satellite-IoT Monitoring</div>
+    <div class="idea-box"><span>🛡</span> Cybersecurity Intelligence</div>
+    <div class="idea-box"><span>🚦</span> Smart Mobility Control</div>
+    <div class="idea-box"><span>🚐</span> Autonomous Shuttle Pods</div>
+    <div class="idea-box"><span>🧠</span> Neural Simulation Lab</div>
+    <div class="idea-box"><span>🏥</span> AI Healthcare Prediction</div>
+    <div class="idea-box"><span>💡</span> Smart Lighting Network</div>
+    <div class="idea-box"><span>📊</span> Data Commerce Hub</div>
   </div>
-</div>
 
-<!-- ======= SUB-PAGES (40) ======= -->
+</section>
 
 <script>
-function openSub(id){
-  // hide all main pages
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  // hide all subpages
-  document.querySelectorAll('.subpage').forEach(s=>s.remove());
-  // create subpage container by id mapping
-  const container = document.createElement('div');
-  container.className='container subpage page active';
-  container.id = id;
-  // content generated below by switch
-  const content = generateContent(id);
-  container.innerHTML = content;
-  document.body.appendChild(container);
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function show(page){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById(page).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
-
-function goBack(memberId){ document.querySelectorAll('.subpage').forEach(s=>s.remove()); show(memberId); }
-
-function copyCode(btn){ const pre = btn.previousElementSibling; if(!pre) return; navigator.clipboard.writeText(pre.innerText).then(()=>{ btn.innerText='Copied!'; setTimeout(()=>btn.innerText='Copy Code',1200); }); }
-
-function generateContent(id){
-  // Long content for each of 40 ids. We'll construct per id with repeated template.
-  const templates = {
-    'arbiya-1': {
-      title: 'Arbiya – Idea 1: Logistics Hub',
-      explanation: `A centralized Logistics Hub coordinates shipments between suppliers, warehouses and customers. The hub manages vehicle assignment, capacity planning, delivery time-windows, and last-mile routing. It must minimize total distance and time while respecting constraints such as vehicle capacity, delivery deadlines, and traffic variability. The hub uses real-time telemetry (vehicle GPS, traffic feeds) and historical demand patterns to plan routes and adapt schedules dynamically.`,`
-      sdg: 'SDG 9: Industry, Innovation & Infrastructure — improves logistics efficiency and resilient infrastructure.',
-      daa: `Core algorithms: Dijkstra/A* for routing on a road graph, Clarke-Wright savings / VRP heuristics for vehicle routing, DP for time-windowed knapsack-style loading, and greedy bin-packing for load distribution. Combining these ensures scalable near-optimal operational plans.',
-      flow: `Flowchart:\n[Order Received] -> [Batching & Clustering] -> [Vehicle Assignment (matching)] -> [Route Planning (Dijkstra/A*)] -> [Execution & Telemetry] -> [Replan if delay detected]`,
-      map: `Map (logical):\nWarehouse A --(road graph)--> Junctions --> Customer zones (clusters). Hotspots identified via demand heatmap.`
-    },
-    // We'll generate similar templates for other ids programmatically below
-  };
-  // build content if template exists else generic
-  if(templates[id]){
-    const t = templates[id];
-    return `<div><div class="section-title">${t.title}</div><div class="meta">${t.sdg}</div><div class="paragraph"><strong>Explanation:</strong> ${t.explanation}</div><div class="paragraph"><strong>DAA:</strong> ${t.daa}</div><div class="flowchart"><pre>${t.flow}</pre></div><div class="map"><pre>${t.map}</pre></div><div><div class="section-title">C++ Multi-Algorithm Code (Dijkstra, DP knap, Greedy scheduling, Binary Search)</div><pre class="code">// ${t.title} - Multi-algorithm template (educational)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-// 1) Dijkstra: shortest paths (routing)
-vector<int> dijkstra(int n, vector<vector<pair<int,int>>> &g, int src){
-  const int INF = 1e9; vector<int> dist(n,INF); dist[src]=0;
-  priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq; pq.push({0,src});
-  while(!pq.empty()){
-    auto [d,u]=pq.top(); pq.pop(); if(d>dist[u]) continue;
-    for(auto &e: g[u]){ int v=e.first,w=e.second; if(dist[v]>dist[u]+w){ dist[v]=dist[u]+w; pq.push({dist[v],v}); }}
-  }
-  return dist;
-}
-
-// 2) DP knapsack: load optimization
-int knap(const vector<int>& val, const vector<int>& wt, int W){
-  int n=val.size(); vector<int> dp(W+1,0);
-  for(int i=0;i<n;i++) for(int w=W; w>=wt[i]; w--) dp[w]=max(dp[w], dp[w-wt[i]]+val[i]);
-  return dp[W];
-}
-
-// 3) Greedy interval scheduling: deliveries with time-windows
-vector<pair<int,int>> intervalSchedule(vector<pair<int,int>> tasks){
-  sort(tasks.begin(), tasks.end(), [](auto &a, auto &b){ return a.second < b.second; });
-  vector<pair<int,int>> res; int last=-1;
-  for(auto &t: tasks) if(t.first>=last){ res.push_back(t); last=t.second; }
-  return res;
-}
-
-// 4) Binary search: threshold finding for capacity/delay
-int binarySearch(const vector<int>& a, int target){ int l=0,r=(int)a.size()-1; while(l<=r){ int m=(l+r)/2; if(a[m]==target) return m; if(a[m]<target) l=m+1; else r=m-1; } return -1; }
-
-int main(){
-  cout<<"Logistics Hub demo run (small)\n";
-  // small demo graph
-  int n=5; vector<vector<pair<int,int>>> g(n);
-  g[0].push_back({1,10}); g[0].push_back({2,5}); g[2].push_back({1,3});
-  auto dist = dijkstra(n,g,0);
-  cout<<"Distances from 0: "; for(int x: dist) cout<<x<<" "; cout<<"\n";
-
-  vector<int> val={10,40,30}; vector<int> wt={1,3,2}; cout<<"Knap value: "<<knap(val,wt,4)<<"\n";
-
-  vector<pair<int,int>> tasks={{1,4},{3,5},{0,6},{5,7}}; auto s=intervalSchedule(tasks);
-  cout<<"Scheduled count: "<<s.size()<<"\n";
-
-  vector<int> arr={10,20,30,40}; cout<<"Index of 30: "<<binarySearch(arr,30)<<"\n";
-  return 0;
-}
-</pre><button class="back" onclick="goBack('arbiya')">← Back to Arbiya</button></div></div>`;
-  }
-  // generic long template for all others (keeps structure consistent)
-  const parts = id.split('-');
-  const member = parts[0]; const idx = parts[1];
-  const title = `${member.charAt(0).toUpperCase()+member.slice(1)} – Idea ${idx}`;
-  const sdg = 'Mapped SDGs will be included based on idea domain (health, energy, education, etc.).';
-  const explanation = 'Long form explanation: This idea combines domain knowledge with algorithmic techniques. It includes data collection, modeling, optimization and runtime control loops. Use sensors, telemetry, and forecasting to adapt in real time.';
-  const daa = 'DAA: Graph algs for routing, DP for resource allocation, Greedy heuristics for fast decisions, and search methods for tuning thresholds.';
-  const flow = 'Flowchart:\n[Input] -> [Preprocess] -> [Model & Plan] -> [Execute] -> [Monitor & Replan]';
-  const map = 'Map:\nNode clusters -> Road graph -> Service zones';
-  return `<div><div class="section-title">${title}</div><div class="meta">${sdg}</div><div class="paragraph"><strong>Explanation:</strong> ${explanation}</div><div class="paragraph"><strong>DAA:</strong> ${daa}</div><div class="flowchart"><pre>${flow}</pre></div><div class="map"><pre>${map}</pre></div><div><div class="section-title">C++ Multi-Algorithm Template</div><pre class="code">// ${title} - generic multi-algorithm template
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-vector<int> dijkstra(int n, vector<vector<pair<int,int>>> &g, int src){ const int INF=1e9; vector<int> dist(n,INF); dist[src]=0; priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq; pq.push({0,src}); while(!pq.empty()){ auto [d,u]=pq.top(); pq.pop(); if(d>dist[u]) continue; for(auto &e:g[u]){ int v=e.first,w=e.second; if(dist[v]>dist[u]+w){dist[v]=dist[u]+w; pq.push({dist[v],v});}} } return dist; }
-int knap(const vector<int>& val, const vector<int>& wt, int W){ int n=val.size(); vector<int> dp(W+1,0); for(int i=0;i<n;i++) for(int w=W; w>=wt[i]; w--) dp[w]=max(dp[w], dp[w-wt[i]]+val[i]); return dp[W]; }
-vector<pair<int,int>> intervalSchedule(vector<pair<int,int>> tasks){ sort(tasks.begin(), tasks.end(), [](auto &a, auto &b){ return a.second<b.second; }); vector<pair<int,int>> res; int last=-1; for(auto &t: tasks) if(t.first>=last){ res.push_back(t); last=t.second; } return res; }
-int binarySearch(const vector<int>& a, int target){ int l=0,r=(int)a.size()-1; while(l<=r){ int m=(l+r)/2; if(a[m]==target) return m; if(a[m]<target) l=m+1; else r=m-1; } return -1; }
-int main(){ cout<<"${title} demo\n"; return 0; }</pre><button class="back" onclick="goBack('${member}')">← Back</button></div></div>`;
+function showPage(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 </script>
 
