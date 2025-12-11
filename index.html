@@ -1,336 +1,901 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AARUNYA CITY – Smart City Portfolio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
 <style>
-/* ========================= */
-/* GLOBAL DARK THEME         */
-/* ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background: #0a0f1a;
-  color: #e2e8f0;
-  overflow-x: hidden;
-}
+/* ========== GLOBAL DARK THEME ========== */
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
+body { background:#0a0f1a; color:#e2e8f0; -webkit-font-smoothing:antialiased; padding-bottom:60px; }
 
-/* ========================= */
-/* NAVBAR                    */
-/* ========================= */
-nav {
-  position: sticky;
-  top: 0;
-  background: #0d1627;
-  padding: 18px;
-  text-align: center;
-  border-bottom: 2px solid #1c2d45;
-  box-shadow: 0 0 12px rgba(0, 150, 255, 0.25);
-  z-index: 50;
-}
-nav a {
-  color: #cbd5e1;
-  margin: 0 20px;
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-nav a:hover {
-  color: #4dabff;
-  text-shadow: 0 0 8px #268cff;
-}
+/* ========== NAV ========== */
+nav { position:sticky; top:0; background:#0d1627; padding:14px; text-align:center; border-bottom:2px solid #1c2d45; box-shadow:0 0 12px rgba(0,150,255,0.2); z-index:50; }
+nav a { color:#cbd5e1; margin:0 14px; font-weight:600; font-size:16px; text-decoration:none; cursor:pointer; transition:0.2s; }
+nav a:hover { color:#4dabff; text-shadow:0 0 8px #268cff; }
 
-/* ========================= */
-/* SECTIONS                  */
-/* ========================= */
-.section {
-  display: none;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 40px;
-  background: #0d1627;
-  border-radius: 20px;
-  border: 1px solid #1e3454;
-  box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
-  animation: fadeIn 0.7s ease forwards;
-}
-.section.active {
-  display: block;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ========== PAGE SECTIONS ========== */
+.container { max-width:1100px; margin:36px auto; padding:30px; background:#0d1627; border-radius:16px; border:1px solid #1e3454; box-shadow:0 0 20px rgba(0,150,255,0.08); }
+.header { text-align:center; margin-bottom:22px; }
+.title { font-size:30px; color:#ffb703; text-shadow:0 0 8px rgba(255,183,3,0.35); margin-bottom:8px; }
+.desc { color:#cbd5e1; max-width:850px; margin:0 auto; font-size:16px; line-height:1.6; }
 
-/* ========================= */
-/* TITLES                    */
-/* ========================= */
-.title {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #ffb703;
-  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
-}
-.desc {
-  text-align: center;
-  font-size: 19px;
-  max-width: 750px;
-  margin: auto;
-  line-height: 1.6;
-  color: #cbd5e1;
-}
+/* ========== GRID ========== */
+.profile-container { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-top:18px; }
+.profile-box { background:#0b1320; border:1px solid #1e3454; border-radius:12px; padding:18px; width:240px; text-align:center; box-shadow:0 0 18px rgba(0,140,255,0.12); }
+.profile-box img { width:96px; height:96px; border-radius:50%; border:3px solid #268cff; margin-bottom:10px; }
 
-/* ========================= */
-/* DARK GLOW PROFILE CARDS   */
-/* ========================= */
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-.profile-box {
-  background: #0b1320;
-  border: 1px solid #1e3454;
-  border-radius: 15px;
-  padding: 25px;
-  width: 260px;
-  text-align: center;
-  box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
-  transition: 0.3s;
-}
-.profile-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
-}
-.profile-box img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #268cff;
-  margin-bottom: 15px;
-}
+/* ========== IDEAS ========== */
+.ideas-container { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:18px; }
+.idea-box { background:#0b1320; border:1px solid #1e3454; box-shadow:0 0 12px rgba(38,140,255,0.12); padding:14px 16px; border-radius:12px; color:#e2e8f0; font-size:16px; width:280px; cursor:pointer; transition:0.22s; position:relative; }
+.idea-box:hover { transform:translateY(-6px); box-shadow:0 0 28px rgba(38,140,255,0.2); background:#0f1e33; }
+.idea-box .label { display:flex; gap:12px; align-items:center; }
+.idea-box .emoji { font-size:20px; width:30px; text-align:center; }
 
-/* ========================= */
-/* DARK GLOW IDEA CARDS      */
-/* ========================= */
-.ideas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-.idea-box {
-  flex: 0 1 270px;
-  background: #0b1320;
-  border: 1px solid #1e3454;
-  box-shadow: 0 0 15px rgba(38, 140, 255, 0.18);
-  padding: 15px 20px;
-  border-radius: 12px;
-  color: #e2e8f0;
-  font-size: 17px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: 0.3s;
-}
-.idea-box:hover {
-  background: #0f1e33;
-  box-shadow: 0 0 28px rgba(38, 140, 255, 0.35);
-  transform: translateY(-5px);
-}
-.idea-box span {
-  font-size: 24px;
-}
+/* ========== COLLAPSIBLE CONTENT ========== */
+.idea-content { display:none; margin-top:12px; padding:12px; border-top:1px solid #1e3454; font-size:14px; color:#cbd5e1; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:8px; }
+.idea-content h4 { color:#ffd166; margin-bottom:6px; font-size:15px; }
+.idea-content p { margin-bottom:8px; line-height:1.5; }
+pre { background:#071026; padding:12px; border-radius:8px; overflow:auto; font-size:13px; color:#e6eef8; }
 
-/* ========================= */
-/* RESPONSIVE                */
-/* ========================= */
-@media (max-width: 600px) {
-  .idea-box { flex: 1 1 100%; }
-  .profile-container { flex-direction: column; align-items: center; }
+/* ========== SMALL UTILS ========== */
+.copy-btn { position:absolute; right:10px; top:10px; background:#0d1627; color:#9ecfff; border:1px solid #1e3454; padding:6px 8px; border-radius:8px; font-size:12px; cursor:pointer; display:none; }
+.idea-box:hover .copy-btn { display:block; }
+
+/* ========== PAGE SWITCH ========== */
+.pages { display:none; }
+.pages.active { display:block; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:700px) {
+  .idea-box { width:100%; }
+  .profile-box { width:100%; }
+  nav a { display:inline-block; margin:6px 8px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- ========================= -->
-<!-- NAVIGATION BAR            -->
-<!-- ========================= -->
 <nav>
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('about')">About</a>
   <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+  <a onclick="showPage('arbiya')">Arbiya</a>
   <a onclick="showPage('akshata')">Akshata</a>
   <a onclick="showPage('ankita')">Ankita</a>
   <a onclick="showPage('sai')">Sai</a>
 </nav>
 
-<!-- ========================= -->
-<!-- HOME PAGE                 -->
-<!-- ========================= -->
-<section id="home" class="section active">
-  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">
-    A futuristic smart city powered by innovation, technology, and sustainable development.
-  </p>
-</section>
+<div class="container pages active" id="home">
+  <div class="header">
+    <div class="title">AARUNYA CITY – Smart City Portfolio</div>
+    <div class="desc">Interactive portfolio with 4 team pages. Click any business idea to view explanation, SDG link, DAA algorithm used and a C++ code snippet.</div>
+  </div>
+</div>
 
-<!-- ========================= -->
-<!-- ABOUT TEAM                -->
-<!-- ========================= -->
-<section id="about" class="section">
-  <h1 class="title">Meet Our Team</h1>
+<div class="container pages" id="about">
+  <div class="header">
+    <div class="title">About the Team</div>
+    <div class="desc">Team members: Arbiya, Akshata, Ankita, Sai — each presents 10 business ideas focusing on sustainability, technology, and DAA-driven solutions.</div>
+  </div>
   <div class="profile-container">
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
-      <h3>Arbiya Naaz</h3>
-      <p>USN: 01FE24BCS042</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Works on algorithms and data structuring.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata">
-      <h3>Akshata</h3>
-      <p>USN: 01FE24BCS150</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Handles front-end and creative ideation.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita">
-      <h3>Ankita</h3>
-      <p>USN: 01FE24BCS146</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Manages back-end logic and simulations.</p>
-    </div>
-
-    <div class="profile-box">
-      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai">
-      <h3>Sai</h3>
-      <p>USN: 01FE24BCS160</p>
-      <p><b>Skills:</b> C, C++, DSA</p>
-      <p>Focuses on AI, optimization, and analytics.</p>
-    </div>
-
+    <div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya"><h3>Arbiya Naaz</h3><p>USN: 01FE24BCS042</p><p><b>Skills:</b> C, C++, DSA</p></div>
+    <div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata"><h3>Akshata</h3><p>USN: 01FE24BCS150</p><p><b>Skills:</b> C, C++, Front-end</p></div>
+    <div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita"><h3>Ankita</h3><p>USN: 01FE24BCS146</p><p><b>Skills:</b> Back-end, DSA</p></div>
+    <div class="profile-box"><img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai"><h3>Sai</h3><p>USN: 01FE24BCS160</p><p><b>Skills:</b> AI, Optimization</p></div>
   </div>
-</section>
+</div>
 
-<!-- ========================= -->
-<!-- PROJECT OVERVIEW          -->
-<!-- ========================= -->
-<section id="project" class="section">
-  <h1 class="title">AARUNYA CITY – Project Overview</h1>
-  <p class="desc">
-    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
-    automation, clean energy, innovation, and modern urban planning.
-  </p>
-</section>
+<div class="container pages" id="project">
+  <div class="header">
+    <div class="title">Project Overview</div>
+    <div class="desc">Aarunya City: integrating AI, optimization, sustainability and modern urban services. Each idea shows the SDG it maps to and the DAA algorithm that powers it.</div>
+  </div>
+</div>
 
-<!-- ========================= -->
-<!-- ARBIYA PAGE               -->
-<!-- ========================= -->
-<section id="arbiya" class="section">
-  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
+<!-- ================= ARBIYA PAGE (10 IDEAS) ================= -->
+<div class="container pages" id="arbiya">
+  <div class="header"><div class="title">Arbiya – Business Ideas</div><div class="desc">Click an idea to expand its details (Explanation, SDG, DAA algorithm, C++ code).</div></div>
 
   <div class="ideas-container">
-    <div class="idea-box"><span>⚡</span> Logistics Hub</div>
-    <div class="idea-box"><span>🏕</span> Eco Resort</div>
-    <div class="idea-box"><span>💻</span> IT Training Center</div>
-    <div class="idea-box"><span>❄</span> Cold Storage</div>
-    <div class="idea-box"><span>🏢</span> Co-working Hub</div>
-    <div class="idea-box"><span>🛍</span> Retail Mall</div>
-    <div class="idea-box"><span>🏥</span> Multi-specialty Hospital</div>
-    <div class="idea-box"><span>⚡</span> EV Charging</div>
-    <div class="idea-box"><span>🚤</span> Waterfront Tourism</div>
-    <div class="idea-box"><span>📦</span> E-commerce Center</div>
-  </div>
+    <!-- 1 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">⚡</div><div>Logistics Hub</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4>
+        <p>Centralized logistics to coordinate shipments with route optimization and load balancing between warehouses.</p>
+        <h4>SDG</h4><p>SDG 9: Industry, Innovation and Infrastructure</p>
+        <h4>DAA Algorithm</h4><p>Minimum cost flow / Dijkstra for route optimization; also uses a greedy bin-packing-like method for load distribution.</p>
+        <h4>C++ (Dijkstra template)</h4>
+        <pre>// Dijkstra: shortest-path template
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+using pii = pair<int,int>;
+vector<int> dijkstra(int n, vector<vector<pii>>& g, int src){
+  const int INF = 1e9; vector<int> dist(n,INF);
+  priority_queue<pii, vector<pii>, greater&lt;pii&gt;> pq;
+  dist[src]=0; pq.push({0,src});
+  while(!pq.empty()){
+    auto [d,u]=pq.top(); pq.pop();
+    if(d>dist[u]) continue;
+    for(auto &e: g[u]){
+      int v=e.first,w=e.second;
+      if(dist[u]+w &lt; dist[v]){ dist[v]=dist[u]+w; pq.push({dist[v],v}); }
+    }
+  }
+  return dist;
+}</pre>
+      </div>
+    </div>
 
-</section>
+    <!-- 2 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🏕</div><div>Eco Resort</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Eco-friendly lodging using resource allocation and reservation optimization to minimize energy and water usage.</p>
+        <h4>SDG</h4><p>SDG 12: Responsible Consumption and Production</p>
+        <h4>DAA Algorithm</h4><p>Knapsack-like allocation for resource-constrained scheduling, greedy + dynamic programming for booking optimization.</p>
+        <h4>C++ (0/1 Knapsack)</h4>
+        <pre>// 0/1 Knapsack (DP)
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int knap(int W, vector<int>& wt, vector<int>& val){
+  int n=wt.size(); vector<int> dp(W+1,0);
+  for(int i=0;i&lt;n;i++)
+    for(int w=W; w>=wt[i]; w--) dp[w]=max(dp[w], dp[w-wt[i]]+val[i]);
+  return dp[W];
+}</pre>
+      </div>
+    </div>
 
-<!-- ========================= -->
-<!-- AKSHATA PAGE              -->
-<!-- ========================= -->
-<section id="akshata" class="section">
-  <h1 class="title">Akshata – Business Ideas</h1>
+    <!-- 3 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">💻</div><div>IT Training Center</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Personalized course assignment and scheduling engine that adapts to learner progress and resource availability.</p>
+        <h4>SDG</h4><p>SDG 4: Quality Education</p>
+        <h4>DAA Algorithm</h4><p>Recommendation via collaborative filtering (similarity), sorting and priority queues for scheduling.</p>
+        <h4>C++ (Priority scheduling sample)</h4>
+        <pre>// Simple priority scheduling (using pair: priority, task)
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main(){
+  priority_queue<pair<int,string>> pq;
+  pq.push({5,"Advanced DSA"}); pq.push({3,"Intro to HTML"});
+  while(!pq.empty()){
+    auto t=pq.top(); pq.pop();
+    cout&lt;&lt;"Schedule: "&lt;&lt;t.second&lt;&lt;" (priority "&lt;&lt;t.first&lt;&lt;")\\n";
+  }
+}</pre>
+      </div>
+    </div>
 
+    <!-- 4 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">❄</div><div>Cold Storage</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Warehouse temperature control and inventory rotation (FIFO) scheduling to reduce spoilage.</p>
+        <h4>SDG</h4><p>SDG 2: Zero Hunger</p>
+        <h4>DAA Algorithm</h4><p>Queue and deque structures; scheduling via sliding-window monitoring and BFS for route checks.</p>
+        <h4>C++ (Queue-based FIFO)</h4>
+        <pre>// FIFO queue example
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+int main(){
+  queue<string> q;
+  q.push("BatchA"); q.push("BatchB");
+  while(!q.empty()){ cout&lt;&lt;"Dispatch: "&lt;&lt;q.front()&lt;&lt;"\\n"; q.pop(); }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🏢</div><div>Co-working Hub</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Maximizes seat utilization and booking fairness with conflict-free scheduling and room allocation.</p>
+        <h4>SDG</h4><p>SDG 8: Decent Work and Economic Growth</p>
+        <h4>DAA Algorithm</h4><p>Interval scheduling (greedy) for non-overlapping booking optimization.</p>
+        <h4>C++ (Interval Scheduling)</h4>
+        <pre>// Interval scheduling: choose max non-overlapping intervals
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int maxNonOverlap(vector<pair<int,int>>& intervals){
+  sort(intervals.begin(), intervals.end(), [](auto &a, auto &b){ return a.second &lt; b.second;});
+  int cnt=0, last=-1;
+  for(auto &in: intervals) if(in.first &gt;= last){ cnt++; last=in.second; }
+  return cnt;
+}</pre>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛍</div><div>Retail Mall</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Retail layout optimization, product placement and queue management to improve shopping experience.</p>
+        <h4>SDG</h4><p>SDG 11: Sustainable Cities and Communities</p>
+        <h4>DAA Algorithm</h4><p>Simulated annealing / heuristics for layout; queues and priority handling for checkout optimization.</p>
+        <h4>C++ (Simple simulated annealing stub)</h4>
+        <pre>// Simulated annealing stub (structure)
+#include &lt;iostream&gt;
+int main(){
+  // Pseudocode structure - replace with domain specifics
+  std::cout&lt;&lt;"Run simulated annealing iterations for layout optimization\\n";
+}</pre>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🏥</div><div>Multi-specialty Hospital</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Manages triage, resource allocation (beds/OR), and appointment scheduling with prioritization for emergencies.</p>
+        <h4>SDG</h4><p>SDG 3: Good Health and Well-being</p>
+        <h4>DAA Algorithm</h4><p>Priority queues and Dijkstra for patient transport routing inside campus.</p>
+        <h4>C++ (Priority queue triage)</h4>
+        <pre>// Simple triage priority queue
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+int main(){
+  priority_queue<pair<int,string>> triage;
+  triage.push({10,"Critical patient"}); triage.push({3,"Minor wound"});
+  while(!triage.empty()){ auto p=triage.top(); triage.pop(); cout&lt;&lt;p.second&lt;&lt;"\\n"; }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">⚡</div><div>EV Charging</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Optimizes charger placement, manages queueing, predicts peak loads and schedules vehicles to minimize wait times.</p>
+        <h4>SDG</h4><p>SDG 7: Affordable and Clean Energy</p>
+        <h4>DAA Algorithm</h4><p>K-means for placement clustering, queuing models for scheduling.</p>
+        <h4>C++ (K-means skeleton)</h4>
+        <pre>// K-means skeleton (no external libs)
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main(){
+  cout&lt;&lt;"K-means clustering skeleton - cluster EV demand points\\n";
+}</pre>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚤</div><div>Waterfront Tourism</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Tours scheduling, capacity control for attractions, and dynamic pricing to smooth demand.</p>
+        <h4>SDG</h4><p>SDG 8: Decent Work & Economic Growth; SDG 14: Life Below Water (if conservation included)</p>
+        <h4>DAA Algorithm</h4><p>Greedy + dynamic pricing heuristics; BFS for area mapping.</p>
+        <h4>C++ (BFS map traversal)</h4>
+        <pre>// BFS template for graph traversal
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+void bfs(int s, vector<vector<int>>& g){
+  int n=g.size(); vector&lt;bool&gt; vis(n,false); queue<int>q; q.push(s); vis[s]=true;
+  while(!q.empty()){ int u=q.front(); q.pop(); cout&lt;&lt;u&lt;&lt;" "; for(int v: g[u]) if(!vis[v]){vis[v]=true; q.push(v);} }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">📦</div><div>E-commerce Center</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Order matching, stock prediction, delivery routing and warehouse location optimization for fast fulfillment.</p>
+        <h4>SDG</h4><p>SDG 9: Industry, Innovation and Infrastructure</p>
+        <h4>DAA Algorithm</h4><p>Time-series forecasting (simple moving average), vehicle routing (approximate heuristics), and hash maps for catalog search.</p>
+        <h4>C++ (Simple moving average)</h4>
+        <pre>// Simple moving average
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+double movingAvg(const vector&lt;double&gt;&amp; a, int k){
+  int n=a.size(); double sum=0;
+  for(int i=0;i&lt;k;i++) sum+=a[i];
+  double best=sum/k;
+  for(int i=k;i&lt;n;i++){ sum+=a[i]-a[i-k]; best=sum/k; }
+  return best;
+}</pre>
+      </div>
+    </div>
+
+  </div><!-- end ideas-container -->
+</div><!-- end arbiya -->
+
+<!-- ================= AKSHATA PAGE (10 IDEAS) ================= -->
+<div class="container pages" id="akshata">
+  <div class="header"><div class="title">Akshata – Business Ideas</div><div class="desc">Creative, tech-forward ideas with algorithmic backbones.</div></div>
   <div class="ideas-container">
-    <div class="idea-box"><span>🦾</span> Floating Micro-Farms</div>
-    <div class="idea-box"><span>🛒</span> XR Hologram Shops</div>
-    <div class="idea-box"><span>🎵</span> AI Sound Trails</div>
-    <div class="idea-box"><span>🚴‍♂</span> Energy-Bike Café</div>
-    <div class="idea-box"><span>⏳</span> Simulation Pods</div>
-    <div class="idea-box"><span>🧱</span> Eco-Bricks</div>
-    <div class="idea-box"><span>🗺</span> Scent Navigation Maps</div>
-    <div class="idea-box"><span>🚁</span> Drone Dining</div>
-    <div class="idea-box"><span>🌈</span> Smart Sidewalks</div>
-    <div class="idea-box"><span>🧘‍♀</span> Meditation Pods</div>
-  </div>
+    <!-- 1 Floating Micro-Farms -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🦾</div><div>Floating Micro-Farms</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Small modular farms on water bodies with sensor-driven irrigation and yield prediction.</p>
+        <h4>SDG</h4><p>SDG 2: Zero Hunger; SDG 6: Clean Water & Sanitation (water-friendly design)</p>
+        <h4>DAA Algorithm</h4><p>Linear regression / simple ML for yield prediction, sliding-window anomaly detection for sensors.</p>
+        <h4>C++ (Linear regression skeleton)</h4>
+        <pre>// Simple linear regression (least squares) skeleton
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+pair&lt;double,double&gt; linearFit(const vector&lt;double&gt;&amp; x,const vector&lt;double&gt;&amp;y){
+  int n=x.size(); double sx=0,sy=0,sxy=0,sxx=0;
+  for(int i=0;i&lt;n;i++){ sx+=x[i]; sy+=y[i]; sxy+=x[i]*y[i]; sxx+=x[i]*x[i]; }
+  double m = (n*sxy - sx*sy) / (n*sxx - sx*sx);
+  double b = (sy - m*sx)/n; return {m,b};
+}</pre>
+      </div>
+    </div>
 
-</section>
+    <!-- 2 XR Hologram Shops -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛒</div><div>XR Hologram Shops</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Virtual try-on and hologram product demos with recommendation engine and latency optimization.</p>
+        <h4>SDG</h4><p>SDG 9: Industry, Innovation and Infrastructure</p>
+        <h4>DAA Algorithm</h4><p>Nearest neighbors for recommendation and caching strategies for latency reduction.</p>
+        <h4>C++ (KD-tree neighbor search stub)</h4>
+        <pre>// KD-tree neighbor search stub (structure)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"KD-tree neighbor search structure - implement recursively\\n"; }</pre>
+      </div>
+    </div>
 
-<!-- ========================= -->
-<!-- ANKITA PAGE               -->
-<!-- ========================= -->
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Business Ideas</h1>
+    <!-- 3 AI Sound Trails -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🎵</div><div>AI Sound Trails</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Location-based, adaptive audio trails that change with time of day and user mood (sensor inputs).</p>
+        <h4>SDG</h4><p>SDG 11: Sustainable Cities and Communities (cultural experiences)</p>
+        <h4>DAA Algorithm</h4><p>Hidden Markov Models / simple state machines to adapt audio sequences.</p>
+        <h4>C++ (Simple state machine)</h4>
+        <pre>// Simple state machine example
+#include &lt;iostream&gt;
+using namespace std;
+enum State{ CALM, ENERGETIC };
+int main(){
+  State s = CALM;
+  // switch based on sensor input
+  cout&lt;&lt;"Audio state machine running\\n";
+}</pre>
+      </div>
+    </div>
 
+    <!-- 4 Energy-Bike Café -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚴‍♂</div><div>Energy-Bike Café</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Customers generate power via bikes; scheduling and reward systems manage fairness and peak generation.</p>
+        <h4>SDG</h4><p>SDG 7 & SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Round-robin scheduling and queue management; simple accounting ledger for credits.</p>
+        <h4>C++ (Round-robin scheduler)</h4>
+        <pre>// Round-robin queue example
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+int main(){
+  queue&lt;string&gt; q; q.push("UserA"); q.push("UserB");
+  while(!q.empty()){ cout&lt;&lt;q.front()&lt;&lt;" gets slot\\n"; q.pop(); }
+}</pre>
+      </div>
+    </div>
+
+    <!-- 5 Simulation Pods -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">⏳</div><div>Simulation Pods</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Pods provide scenario simulations for urban planning and training using physics/agent-based models.</p>
+        <h4>SDG</h4><p>SDG 11: Sustainable Cities and Communities</p>
+        <h4>DAA Algorithm</h4><p>Agent-based simulation loops; priority scheduling for compute resources.</p>
+        <h4>C++ (Agent loop skeleton)</h4>
+        <pre>// Agent simulation loop skeleton
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+struct Agent{ int id; void step(){ /* behavior */ } };
+int main(){
+  vector&lt;Agent&gt; agents(10); for(auto &a: agents) a.step();
+}</pre>
+      </div>
+    </div>
+
+    <!-- 6 Eco-Bricks -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🧱</div><div>Eco-Bricks</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Manufacture bricks from recycled material; optimize mixture ratios and production batch scheduling.</p>
+        <h4>SDG</h4><p>SDG 12 & SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Genetic algorithms to optimize mixtures; batch scheduling via greedy techniques.</p>
+        <h4>C++ (Genetic algorithm skeleton)</h4>
+        <pre>// Genetic algorithm skeleton
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"GA skeleton for optimizing mixture ratios\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 7 Scent Navigation Maps -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🗺</div><div>Scent Navigation Maps</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Assistive navigation using olfactory beacons—map creation and path planning for low-vision users.</p>
+        <h4>SDG</h4><p>SDG 10: Reduced Inequalities</p>
+        <h4>DAA Algorithm</h4><p>A* pathfinding for accessible routes with penalties for obstacles.</p>
+        <h4>C++ (A* stub)</h4>
+        <pre>// A* algorithm stub structure
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"A* algorithm skeleton for path planning\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 8 Drone Dining -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚁</div><div>Drone Dining</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Drone delivery for dining experiences; scheduling airspace slots and collision-free trajectories.</p>
+        <h4>SDG</h4><p>SDG 9</p>
+        <h4>DAA Algorithm</h4><p>RRT (rapidly-exploring random trees) or A* for trajectory planning, collision detection via spatial hashing.</p>
+        <h4>C++ (RRT skeleton)</h4>
+        <pre>// RRT skeleton for path planning
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"RRT path planning skeleton\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 9 Smart Sidewalks -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🌈</div><div>Smart Sidewalks</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Interactive sidewalks with sensors for load balancing, energy harvesting and dynamic routing for micro-mobility.</p>
+        <h4>SDG</h4><p>SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Sensor fusion with Kalman filters; graph routing for walker flow distribution.</p>
+        <h4>C++ (Kalman filter skeleton)</h4>
+        <pre>// Kalman filter skeleton
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Kalman filter skeleton for sensor fusion\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 10 Meditation Pods -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🧘‍♀</div><div>Meditation Pods</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Pods adapt audio/lighting to biometric feedback; scheduling for fairness and privacy-preserving data handling.</p>
+        <h4>SDG</h4><p>SDG 3: Good Health & Well-being</p>
+        <h4>DAA Algorithm</h4><p>Adaptive filters and privacy-preserving aggregation (secure sum) for biometric data.</p>
+        <h4>C++ (Secure-sum concept)</h4>
+        <pre>// Secure sum skeleton (collaborative, simplified)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Secure-sum aggregation skeleton (concept)\\n"; }</pre>
+      </div>
+    </div>
+
+  </div><!-- end ideas-container -->
+</div><!-- end akshata -->
+
+<!-- ================= ANKITA PAGE (10 IDEAS) ================= -->
+<div class="container pages" id="ankita">
+  <div class="header"><div class="title">Ankita – Business Ideas</div><div class="desc">Ankita's data-focused and infrastructure solutions.</div></div>
   <div class="ideas-container">
-    <div class="idea-box"><span>🏥</span> Smart Healthcare & Emergency Routing</div>
-    <div class="idea-box"><span>⚡💧</span> Smart Water–Energy Optimization Grid</div>
-    <div class="idea-box"><span>♻</span> Intelligent Waste Management</div>
-    <div class="idea-box"><span>🎓📚</span> Personalized Learning Platform</div>
-    <div class="idea-box"><span>🚦🚌</span> Smart Traffic Management</div>
-    <div class="idea-box"><span>🛡🎥</span> Security & Surveillance Hub</div>
-    <div class="idea-box"><span>🌾🚜</span> Smart Farming Network</div>
-    <div class="idea-box"><span>✈🚉🚗</span> Multi-Modal Transport System</div>
-    <div class="idea-box"><span>🛒📦</span> Supply Chain Optimization</div>
-    <div class="idea-box"><span>🧠💻</span> Cyber-Tech Innovation Lab</div>
-  </div>
+    <!-- 1 Smart Healthcare & Emergency Routing -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🏥</div><div>Smart Healthcare & Emergency Routing</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Quickest-path dispatch for ambulances using live traffic and hospital occupancy data to reduce response times.</p>
+        <h4>SDG</h4><p>SDG 3: Good Health and Well-being</p>
+        <h4>DAA Algorithm</h4><p>Dijkstra / A* for weighted shortest path with dynamic traffic edge weights.</p>
+        <h4>C++ (A* simple template)</h4>
+        <pre>// A* template (heuristic omitted for brevity)
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main(){ cout&lt;&lt;"A* template for emergency routing (implement heuristic)\\n"; }</pre>
+      </div>
+    </div>
 
-</section>
+    <!-- 2 Smart Water–Energy Optimization Grid -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">⚡💧</div><div>Smart Water–Energy Optimization Grid</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Coordinates pump and generator schedules to minimize combined energy-water cost while meeting demand.</p>
+        <h4>SDG</h4><p>SDG 6 & SDG 7</p>
+        <h4>DAA Algorithm</h4><p>Linear programming (LP) or greedy heuristics; simplex or heuristic approximations for integer schedules.</p>
+        <h4>C++ (Greedy cost minimization example)</h4>
+        <pre>// Greedy cost minimizer (toy example)
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std; int main(){ cout&lt;&lt;"Greedy schedule minimizer (toy)\\n"; }</pre>
+      </div>
+    </div>
 
-<!-- ========================= -->
-<!-- SAI PAGE                  -->
-<!-- ========================= -->
-<section id="sai" class="section">
-  <h1 class="title">Sai – Business Ideas</h1>
+    <!-- 3 Intelligent Waste Management -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">♻</div><div>Intelligent Waste Management</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Smart bins report fill levels; routes adaptively planned to minimize distance and time.</p>
+        <h4>SDG</h4><p>SDG 11 & SDG 12</p>
+        <h4>DAA Algorithm</h4><p>Vehicle Routing Problem heuristics (savings algorithm / Clarke-Wright).</p>
+        <h4>C++ (Clarke-Wright savings skeleton)</h4>
+        <pre>// Clarke-Wright savings algorithm skeleton
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Clarke-Wright savings skeleton for routing\\n"; }</pre>
+      </div>
+    </div>
 
+    <!-- 4 Personalized Learning Platform -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🎓📚</div><div>Personalized Learning Platform</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Adaptive content sequencing based on student performance and difficulty modeling.</p>
+        <h4>SDG</h4><p>SDG 4</p>
+        <h4>DAA Algorithm</h4><p>Bayesian Knowledge Tracing / simple reinforcement learners; ranking via Thompson sampling variants.</p>
+        <h4>C++ (Thompson sampling stub)</h4>
+        <pre>// Thompson sampling stub (concept)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Thompson sampling structure for content selection\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 5 Smart Traffic Management -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚦🚌</div><div>Smart Traffic Management</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Adaptive traffic lights using queue lengths and predicted flows to reduce congestion.</p>
+        <h4>SDG</h4><p>SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Reinforcement learning / Q-learning for signal control; sensor-weighted heuristics otherwise.</p>
+        <h4>C++ (Q-learning stub)</h4>
+        <pre>// Q-learning stub structure
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Q-learning stub for signal optimization\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 6 Security & Surveillance Hub -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛡🎥</div><div>Security & Surveillance Hub</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Real-time analytics for cameras and sensors; event detection triggers automated responses.</p>
+        <h4>SDG</h4><p>SDG 16: Peace, Justice & Strong Institutions (safety)</p>
+        <h4>DAA Algorithm</h4><p>Background subtraction, motion detection, and connected component labeling; sometimes graph-based anomaly detection.</p>
+        <h4>C++ (Motion detection skeleton)</h4>
+        <pre>// Motion detection skeleton (concept)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Motion detection pipeline skeleton\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 7 Smart Farming Network -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🌾🚜</div><div>Smart Farming Network</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Sensor-driven irrigation, pest prediction and supply forecasting for cooperative farms.</p>
+        <h4>SDG</h4><p>SDG 2</p>
+        <h4>DAA Algorithm</h4><p>Time series forecasting and clustering for microclimates; decision trees for pest alerts.</p>
+        <h4>C++ (Time-series SMA)</h4>
+        <pre>// Simple moving average for time-series
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+double sma(const vector&lt;double&gt;&amp; v,int k){ double s=0; for(int i=0;i&lt;k;i++) s+=v[i]; return s/k; }</pre>
+      </div>
+    </div>
+
+    <!-- 8 Multi-Modal Transport System -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">✈🚉🚗</div><div>Multi-Modal Transport System</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Integrate different transport modes with transfer schedules and minimum-transfer routing.</p>
+        <h4>SDG</h4><p>SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Multi-criteria shortest path (time + cost) — use Dijkstra variant with composite weights.</p>
+        <h4>C++ (Multi-criteria Dijkstra sketch)</h4>
+        <pre>// Multi-criteria Dijkstra sketch (concept)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Multi-criteria Dijkstra sketch\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 9 Supply Chain Optimization -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛒📦</div><div>Supply Chain Optimization</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Optimizes stock, reorder points, and delivery frequency across distribution centers.</p>
+        <h4>SDG</h4><p>SDG 9 & SDG 12</p>
+        <h4>DAA Algorithm</h4><p>Mixed-integer programming or heuristics like reorder point (s,S) models and simulation.</p>
+        <h4>C++ (EOQ calculation)</h4>
+        <pre>// Economic Order Quantity (EOQ) simple formula example
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+double EOQ(double D,double S,double H){ return sqrt((2*D*S)/H); }</pre>
+      </div>
+    </div>
+
+    <!-- 10 Cyber-Tech Innovation Lab -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🧠💻</div><div>Cyber-Tech Innovation Lab</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>R&D space for prototypes; proof-of-concept workflows and CI/CD for simulations and ML.</p>
+        <h4>SDG</h4><p>SDG 9</p>
+        <h4>DAA Algorithm</h4><p>Varies by project: graph algorithms, ML, optimization; lab orchestration uses topological sorting for build tasks.</p>
+        <h4>C++ (Topological sort)</h4>
+        <pre>// Topological sort (Kahn's algorithm)
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+vector<int> topo(int n, vector<vector<int>>& g){
+  vector<int> indeg(n,0), res; for(int u=0;u&lt;n;u++) for(int v:g[u]) indeg[v]++;
+  queue<int>q; for(int i=0;i&lt;n;i++) if(indeg[i]==0) q.push(i);
+  while(!q.empty()){ int u=q.front(); q.pop(); res.push_back(u);
+    for(int v:g[u]) if(--indeg[v]==0) q.push(v);
+  } return res;
+}</pre>
+      </div>
+    </div>
+
+  </div><!-- end ideas-container -->
+</div><!-- end ankita -->
+
+<!-- ================= SAI PAGE (10 IDEAS) ================= -->
+<div class="container pages" id="sai">
+  <div class="header"><div class="title">Sai – Business Ideas</div><div class="desc">High-performance and AI-driven infrastructure ideas with algorithmic cores.</div></div>
   <div class="ideas-container">
-    <div class="idea-box"><span>🔋</span> Smart Energy Grid</div>
-    <div class="idea-box"><span>🚚</span> Autonomous Port Logistics</div>
-    <div class="idea-box"><span>🛰</span> Satellite-IoT Monitoring</div>
-    <div class="idea-box"><span>🛡</span> Cybersecurity Intelligence</div>
-    <div class="idea-box"><span>🚦</span> Smart Mobility Control</div>
-    <div class="idea-box"><span>🚐</span> Autonomous Shuttle Pods</div>
-    <div class="idea-box"><span>🧠</span> Neural Simulation Lab</div>
-    <div class="idea-box"><span>🏥</span> AI Healthcare Prediction</div>
-    <div class="idea-box"><span>💡</span> Smart Lighting Network</div>
-    <div class="idea-box"><span>📊</span> Data Commerce Hub</div>
-  </div>
 
-</section>
+    <!-- 1 Smart Energy Grid -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🔋</div><div>Smart Energy Grid</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Distributed energy resource scheduling, demand response and fault detection.</p>
+        <h4>SDG</h4><p>SDG 7</p>
+        <h4>DAA Algorithm</h4><p>Optimal power flow (OPF) approximations and anomaly detection using clustering.</p>
+        <h4>C++ (Anomaly detection via k-means skeleton)</h4>
+        <pre>// k-means skeleton for anomaly detection
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"k-means skeleton for energy anomaly detection\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 2 Autonomous Port Logistics -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚚</div><div>Autonomous Port Logistics</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Orchestrates autonomous vehicles for container handling—minimizes idle time and congestion.</p>
+        <h4>SDG</h4><p>SDG 9</p>
+        <h4>DAA Algorithm</h4><p>Task allocation via matching algorithms and route planning via Dijkstra or Hungarian for assignment.</p>
+        <h4>C++ (Hungarian algorithm stub)</h4>
+        <pre>// Hungarian algorithm stub (assignment problem)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Hungarian algorithm skeleton for assignment\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 3 Satellite-IoT Monitoring -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛰</div><div>Satellite-IoT Monitoring</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Aggregates remote sensors via satellite links; prioritizes data transfer and compression scheduling.</p>
+        <h4>SDG</h4><p>SDG 13: Climate Action (monitoring), SDG 2 as well</p>
+        <h4>DAA Algorithm</h4><p>Compression scheduling, prioritization via weighted queues and sparse sampling strategies.</p>
+        <h4>C++ (Weighted priority queue)</h4>
+        <pre>// Weighted priority queue example
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main(){ priority_queue<pair<int,string>> pq; pq.push({10,"High"}); cout&lt;&lt;pq.top().second&lt;&lt;"\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 4 Cybersecurity Intelligence -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🛡</div><div>Cybersecurity Intelligence</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Threat detection, correlation of alerts and automated containment workflows.</p>
+        <h4>SDG</h4><p>SDG 16 (secure infrastructure)</p>
+        <h4>DAA Algorithm</h4><p>Graph-based anomaly detection, shortest-path for breach containment and signature matching (KMP).</p>
+        <h4>C++ (KMP pattern matching)</h4>
+        <pre>// KMP pattern search
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+using namespace std;
+vector&lt;int&gt; prefix(const string &s){ int n=s.size(); vector&lt;int&gt; pi(n);
+  for(int i=1;i&lt;n;i++){ int j=pi[i-1]; while(j&gt;0 && s[i]!=s[j]) j=pi[j-1]; if(s[i]==s[j]) j++; pi[i]=j; } return pi;
+}
+vector&lt;int&gt; kmp(const string &t,const string &p){
+  string s=p+'#'+t; auto pi=prefix(s); vector<int> ans;
+  for(int i=0;i&lt;s.size();i++) if(pi[i]==p.size()) ans.push_back(i-2*p.size());
+  return ans;
+}</pre>
+      </div>
+    </div>
+
+    <!-- 5 Smart Mobility Control -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚦</div><div>Smart Mobility Control</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Coordinates signals, shared vehicles and safety enforcement; minimizes delays across city zones.</p>
+        <h4>SDG</h4><p>SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Graph partitioning and flow algorithms; spectral clustering for zone detection.</p>
+        <h4>C++ (Spectral cluster stub)</h4>
+        <pre>// Spectral clustering skeleton
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Spectral clustering skeleton - build Laplacian, calc eigenvectors\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 6 Autonomous Shuttle Pods -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🚐</div><div>Autonomous Shuttle Pods</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Fleet coordination, charging scheduling and passenger routing to minimize wait times.</p>
+        <h4>SDG</h4><p>SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Matching + dynamic routing; bipartite matching for passenger assignment (Hopcroft-Karp).</p>
+        <h4>C++ (Hopcroft-Karp stub)</h4>
+        <pre>// Hopcroft-Karp skeleton for bipartite matching
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Hopcroft-Karp skeleton for matching\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 7 Neural Simulation Lab -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🧠</div><div>Neural Simulation Lab</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Run small neural network experiments; provide GPU scheduling and experiment reproducibility.</p>
+        <h4>SDG</h4><p>SDG 9</p>
+        <h4>DAA Algorithm</h4><p>Backpropagation training loops; scheduling via priority queues and topological sorts for DAG tasks.</p>
+        <h4>C++ (Backprop pseudocode sketch)</h4>
+        <pre>// Backpropagation sketch (concept)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Backpropagation loop skeleton (forward/backward)\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 8 AI Healthcare Prediction -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">🏥</div><div>AI Healthcare Prediction</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Predict patient risk scores and readmission probabilities using historical data.</p>
+        <h4>SDG</h4><p>SDG 3</p>
+        <h4>DAA Algorithm</h4><p>Logistic regression / decision trees for classification tasks.</p>
+        <h4>C++ (Logistic regression skeleton)</h4>
+        <pre>// Logistic regression skeleton (concept)
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Logistic regression skeleton - implement gradient descent\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 9 Smart Lighting Network -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">💡</div><div>Smart Lighting Network</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Adaptive street lighting that responds to pedestrian presence to save power.</p>
+        <h4>SDG</h4><p>SDG 7 & SDG 11</p>
+        <h4>DAA Algorithm</h4><p>Event-driven control and occupancy prediction via simple ML models (decision trees).</p>
+        <h4>C++ (Event-driven handler)</h4>
+        <pre>// Event handler skeleton
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Event-driven lighting handler skeleton\\n"; }</pre>
+      </div>
+    </div>
+
+    <!-- 10 Data Commerce Hub -->
+    <div class="idea-box" onclick="toggleIdea(this)">
+      <div class="label"><div class="emoji">📊</div><div>Data Commerce Hub</div></div>
+      <button class="copy-btn" onclick="copyCode(event,this)">Copy Code</button>
+      <div class="idea-content">
+        <h4>Explanation</h4><p>Marketplace for anonymized sensor and mobility data with access control and usage-based pricing.</p>
+        <h4>SDG</h4><p>SDG 9</p>
+        <h4>DAA Algorithm</h4><p>Access policy via ACLs, price optimization via dynamic programming or greedy heuristics.</p>
+        <h4>C++ (Access-check stub)</h4>
+        <pre>// Access check stub for data marketplace
+#include &lt;iostream&gt;
+int main(){ std::cout&lt;&lt;"Access-check skeleton for data marketplace\\n"; }</pre>
+      </div>
+    </div>
+
+  </div><!-- end ideas-container -->
+</div><!-- end sai -->
 
 <script>
-function showPage(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+/* ===== Page switching ===== */
+function showPage(id){
+  document.querySelectorAll('.pages').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  // scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+
+/* ===== Idea toggling ===== */
+function toggleIdea(elem){
+  const content = elem.querySelector('.idea-content');
+  if(!content) return;
+  // collapse others inside same container (optional: keep multiple open if you like)
+  const container = elem.parentElement;
+  if(container){
+    container.querySelectorAll('.idea-content').forEach(c=>{ if(c!==content) c.style.display='none'; });
+  }
+  content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+  // smooth scroll
+  if(content.style.display === 'block'){
+    setTimeout(()=>elem.scrollIntoView({behavior:'smooth', block:'center'}),150);
+  }
+}
+
+/* ===== Copy code button ===== */
+function copyCode(e, btn){
+  e.stopPropagation();
+  const idea = btn.closest('.idea-box');
+  const pre = idea.querySelector('pre');
+  if(!pre) return;
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(()=> {
+    btn.innerText='Copied!';
+    setTimeout(()=>btn.innerText='Copy Code',1200);
+  }, ()=> {
+    btn.innerText='Failed';
+    setTimeout(()=>btn.innerText='Copy Code',1200);
+  });
+}
+
+/* Prevent copy button from triggering toggle */
+document.querySelectorAll('.copy-btn').forEach(b => b.addEventListener('click', function(e){ e.stopPropagation(); }));
+
 </script>
 
 </body>
