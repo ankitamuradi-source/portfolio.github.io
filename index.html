@@ -104,15 +104,14 @@ nav a:hover {
 }
 .ideas-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
 }
 .idea-details {
   background: #0b1320;
   padding: 20px;
   border-radius: 12px;
-  margin-bottom: 18px;
   border: 1px solid #1e3454;
   box-shadow: 0 0 18px rgba(38, 140, 255, 0.15);
 }
@@ -139,7 +138,6 @@ nav a:hover {
   color: #fff;
 }
 @media (max-width: 600px) {
-  .idea-box { flex: 1 1 100%; }
   .profile-container { flex-direction: column; align-items: center; }
 }
 </style>
@@ -149,7 +147,6 @@ nav a:hover {
 
 <nav>
   <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('about')">About</a>
   <a onclick="showPage('project')">Project</a>
   <a onclick="showPage('arbiya')">Arbiya Naaz</a>
   <a onclick="showPage('akshata')">Akshata</a>
@@ -164,8 +161,10 @@ nav a:hover {
   </p>
 </section>
 
-<section id="about" class="section">
-  <h1 class="title">Meet Our Team</h1>
+<section id="project" class="section">
+  <h1 class="title">PROJECT – Team & Business Ideas</h1>
+  
+  <!-- TEAM PROFILES -->
   <div class="profile-container">
     <div class="profile-box">
       <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
@@ -196,15 +195,8 @@ nav a:hover {
       <p>Focuses on AI, optimization, and analytics.</p>
     </div>
   </div>
-</section>
 
-<section id="project" class="section">
-  <h1 class="title">AARUNYA CITY – Project Overview</h1>
-  <p class="desc">
-    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
-    automation, clean energy, innovation, and modern urban planning.
-  </p>
-
+  <!-- BUSINESS IDEAS -->
   <div class="ideas-container">
     <!-- Arbiya -->
     <div class="idea-details">
@@ -277,7 +269,6 @@ nav a:hover {
       </ul>
       <button onclick="loadPortfolio('sai')">View Portfolio</button>
     </div>
-
   </div>
 </section>
 
@@ -296,13 +287,13 @@ function showPage(id) {
 // Dynamically fill portfolio only when "View Portfolio" is clicked
 function loadPortfolio(member) {
   const portfolios = {
-    arbiya: `<h1 class="title">Arbiya Naaz – Portfolio</h1>
+    arbiya: `<h1 class="title">Arbiya Naaz </h1>
              <p class="desc">Add images, project details, or additional notes here.</p>`,
-    akshata: `<h1 class="title">Akshata – Portfolio</h1>
+    akshata: `<h1 class="title">Akshata </h1>
               <p class="desc">Add images, project details, or additional notes here.</p>`,
-    ankita: `<h1 class="title">Ankita – Portfolio</h1>
+    ankita: `<h1 class="title">Ankita </h1>
              <p class="desc">Add images, project details, or additional notes here.</p>`,
-    sai: `<h1 class="title">Sai – Portfolio</h1>
+    sai: `<h1 class="title">Sai </h1>
           <p class="desc">Add images, project details, or additional notes here.</p>`
   };
   const section = document.getElementById(member);
