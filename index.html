@@ -1,420 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aarunya — Smart City (Team Portfolio)</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AARUNYA CITY – Smart City Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
 <style>
-  :root{
-    --bg-dark:#0b0b0c;
-    --panel:#0f1720;
-    --muted:#9aa4b2;
-    --glass: rgba(255,255,255,0.04);
-    --accent:#00aaff;
-    --card-radius:12px;
-    --pastel-pink:#ffc8dd;
-    --pastel-lav:#cdb4db;
-    --pastel-yellow:#ffef9f;
-    --pastel-blue:#bde0fe;
-    --text:#e6eef8;
-  }
+/* ========================= */
+/* GLOBAL DARK THEME         */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #0a0f1a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
 
-  /* Reset & body */
-  *{box-sizing:border-box}
-  body{
-    margin:20px;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(180deg, #060607 0%, #0b0b0c 100%);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-  }
+/* ========================= */
+/* NAVBAR                    */
+/* ========================= */
+nav {
+  position: sticky;
+  top: 0;
+  background: #0d1627;
+  padding: 18px;
+  text-align: center;
+  border-bottom: 2px solid #1c2d45;
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.25);
+  z-index: 50;
+}
+nav a {
+  color: #cbd5e1;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #4dabff;
+  text-shadow: 0 0 8px #268cff;
+}
 
-  /* Header / hero */
-  .hero {
-    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.03);
-    padding:22px;
-    border-radius:var(--card-radius);
-    display:flex;
-    gap:18px;
-    align-items:center;
-  }
-  .logo {
-    width:56px;height:56px;border-radius:10px;
-    background:linear-gradient(135deg,#08132a 0%, #0b2a3f 100%);
-    display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--pastel-blue);
-    box-shadow:0 8px 30px rgba(0,0,0,0.6);
-    font-size:20px;
-  }
-  .hero h1{margin:0;font-size:22px}
-  .hero p{margin:3px 0 0;color:var(--muted);font-size:13px}
+/* ========================= */
+/* SECTIONS                  */
+/* ========================= */
+.section {
+  display: none;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #0d1627;
+  border-radius: 20px;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
+  animation: fadeIn 0.7s ease forwards;
+}
+.section.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  /* layout */
-  main{margin-top:18px; display:grid; gap:18px; grid-template-columns: 1fr 420px; align-items:start;}
-  @media (max-width:980px){ main{grid-template-columns: 1fr; } }
+/* ========================= */
+/* TITLES                    */
+/* ========================= */
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #ffb703;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
+}
+.desc {
+  text-align: center;
+  font-size: 19px;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
 
-  /* cards */
-  .card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.03);
-    padding:16px;
-    border-radius:var(--card-radius);
-    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-  }
-  h2{margin:0 0 10px 0;color:var(--text)}
-  .muted{color:var(--muted);font-size:13px}
+/* ========================= */
+/* PROFILE CARDS             */
+/* ========================= */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.profile-box {
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  border-radius: 15px;
+  padding: 25px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.18);
+  transition: 0.3s;
+}
+.profile-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0, 140, 255, 0.35);
+}
+.profile-box img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #268cff;
+  margin-bottom: 15px;
+}
 
-  /* snapshot grid */
-  .snapshot { display:flex; gap:12px; flex-wrap:wrap; }
-  .snap-col{flex:1; min-width:220px}
+/* ========================= */
+/* IDEA CARDS                */
+/* ========================= */
+.ideas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.idea-box {
+  flex: 0 1 270px;
+  background: #0b1320;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 15px rgba(38, 140, 255, 0.18);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+.idea-box:hover {
+  background: #0f1e33;
+  box-shadow: 0 0 28px rgba(38, 140, 255, 0.35);
+  transform: translateY(-5px);
+}
 
-  /* maps */
-  .maps { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:10px }
-  .maps img{width:100%;max-width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+/* ========================= */
+/* IDEA DETAILS              */
+/* ========================= */
+.idea-details {
+  background: #0b1320;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #1e3454;
+  box-shadow: 0 0 18px rgba(38, 140, 255, 0.15);
+}
+.idea-details h2, .idea-details h3 {
+  color: #4dabff;
+  margin-bottom: 12px;
+}
+.idea-details ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.idea-details button {
+  background: #4dabff;
+  color: #0a0f1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.idea-details button:hover {
+  background: #268cff;
+  color: #fff;
+}
 
-  /* tables */
-  .table{overflow:auto;margin-top:12px}
-  table{width:100%;border-collapse:collapse; font-size:14px; color:var(--text)}
-  th, td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03); text-align:left}
-  tr.total td{font-weight:700}
-
-  /* team cards */
-  .team-rail{display:flex;flex-direction:column;gap:12px}
-  .member {
-    display:block;
-    padding:12px;border-radius:10px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.03);
-    text-decoration:none;color:var(--text);
-  }
-  .member .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
-  .member h3{margin:0 0 6px 0}
-  .ideas{font-size:13px;color:var(--text);line-height:1.45;margin-top:6px}
-
-  /* pastel profile badges */
-  .badge {
-    display:inline-block;padding:10px;border-radius:10px;color:#061220;font-weight:700;font-size:13px;
-    margin-top:8px;
-  }
-  .badge-arbiya{background:var(--pastel-blue)}
-  .badge-sai{background:var(--pastel-lav)}
-  .badge-akshata{background:var(--pastel-pink)}
-  .badge-ankita{background:var(--pastel-yellow)}
-
-  /* modal / profile preview (light pastel pages) */
-  .profile-modal {
-    position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(0.98);
-    width:min(880px,96%);max-height:90vh;overflow:auto;padding:18px;border-radius:14px;
-    box-shadow:0 30px 80px rgba(0,0,0,0.8); z-index:1200; display:none;
-  }
-  .profile-content{border-radius:12px;padding:14px}
-  .close-btn{float:right;background:rgba(0,0,0,0.08);border:none;padding:8px 10px;border-radius:8px;color:#061220;font-weight:700;cursor:pointer}
-
-  /* footer */
-  footer{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px}
-
-  /* tiny responsive tweaks */
-  @media (max-width:720px){
-    .hero{flex-direction:row;gap:12px}
-    .badge{display:block}
-  }
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+@media (max-width: 600px) {
+  .idea-box { flex: 1 1 100%; }
+  .profile-container { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
+
 <body>
 
-  <header class="hero card" role="banner">
-    <div class="logo">A</div>
-    <div>
-      <h1>Aarunya — Smart City (Team Portfolio)</h1>
-      <p class="muted">A data-structures & algorithms driven student project — city plan, budget, business ideas & team profiles.</p>
+<!-- ========================= -->
+<!-- NAVIGATION BAR            -->
+<!-- ========================= -->
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('project')">Project</a>
+  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+  <a onclick="showPage('akshata')">Akshata</a>
+  <a onclick="showPage('ankita')">Ankita</a>
+  <a onclick="showPage('sai')">Sai</a>
+</nav>
+
+<!-- ========================= -->
+<!-- HOME PAGE                 -->
+<!-- ========================= -->
+<section id="home" class="section active">
+  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
+  <p class="desc">
+    A futuristic smart city powered by innovation, technology, and sustainable development.
+  </p>
+</section>
+
+<!-- ========================= -->
+<!-- ABOUT TEAM                -->
+<!-- ========================= -->
+<section id="about" class="section">
+  <h1 class="title">Meet Our Team</h1>
+  <div class="profile-container">
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Arbiya">
+      <h3>Arbiya Naaz</h3>
+      <p>USN: 01FE24BCS042</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Works on algorithms and data structuring.</p>
     </div>
-  </header>
 
-  <main>
-    <!-- Left column (main content) -->
-    <section style="display:flex;flex-direction:column;gap:16px">
-      <!-- Overview -->
-      <article class="card" aria-labelledby="overview-title">
-        <h2 id="overview-title">Overview</h2>
-        <p class="muted">Aarunya translates core DAA concepts into practical smart-city components: routing (graphs), optimization (DP/greedy), pattern discovery (KMP/RK) and hierarchical storage (trees/trie).</p>
-        <p class="muted">The project uses a hand-drawn masterplan and budget poster as input, and maps team business ideas to algorithmic approaches — making a classroom-to-city bridge.</p>
-      </article>
-
-      <!-- Layout & maps -->
-      <article class="card" aria-labelledby="layout-title">
-        <h2 id="layout-title">City Layout Plan</h2>
-        <p class="muted">Balanced zoning: residential, commercial, industrial, transport corridors, green buffers and waterfront. Replace images in <code>assets/</code> with high-res scans for best results.</p>
-        <div class="maps">
-          <img src="assets/map_layout1.jpg" alt="Aarunya hand-drawn layout (poster)">
-          <img src="assets/map_budget1.jpg" alt="Aarunya budget & revenue (poster)">
-        </div>
-      </article>
-
-      <!-- Budget -->
-      <article class="card" aria-labelledby="budget-title">
-        <h2 id="budget-title">Budget Estimation</h2>
-        <div class="table">
-          <table>
-            <thead>
-              <tr><th>Sector</th><th>Cost (₹ Cr / km)</th><th>Estimated Total (₹ Cr)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Residential Infrastructure</td><td>250</td><td>112,500</td></tr>
-              <tr><td>Industrial & Port Sector</td><td>400</td><td>66,000</td></tr>
-              <tr><td>Renewable Energy</td><td>450</td><td>67,500</td></tr>
-              <tr><td>Public & Transport</td><td>500</td><td>75,000</td></tr>
-              <tr><td>Agriculture & Green Zones</td><td>150</td><td>22,500</td></tr>
-              <tr><td>Health & Education</td><td>350</td><td>28,350</td></tr>
-              <tr><td>Commercial Sector</td><td>450</td><td>40,500</td></tr>
-              <tr><td>Waste Management</td><td>350</td><td>26,250</td></tr>
-              <tr><td>Tech Park & Data Centres</td><td>500</td><td>49,500</td></tr>
-              <tr class="total"><td>Total</td><td></td><td>4,88,100</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <!-- Revenue -->
-      <article class="card" aria-labelledby="revenue-title">
-        <h2 id="revenue-title">Revenue Model</h2>
-        <div class="table">
-          <table>
-            <thead><tr><th>Source</th><th>Annual Revenue (₹ Crore)</th></tr></thead>
-            <tbody>
-              <tr><td>Renewable Energy Exports</td><td>7,800</td></tr>
-              <tr><td>Green Hydrogen</td><td>5,400</td></tr>
-              <tr><td>Industrial Leases</td><td>8,200</td></tr>
-              <tr><td>Tech Services</td><td>8,000</td></tr>
-              <tr><td>Property Tax</td><td>5,200</td></tr>
-              <tr><td>Utilities</td><td>2,800</td></tr>
-              <tr><td>Tourism</td><td>4,800</td></tr>
-              <tr><td>Hotel Tax</td><td>1,600</td></tr>
-              <tr class="total"><td>Total Annual Revenue</td><td>44,400</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <!-- Notes -->
-      <article class="card">
-        <h2>Source & Notes</h2>
-        <ul class="muted">
-          <li>Poster images, revenue and budget tables were transcribed from the team poster (hand-drawn).</li>
-          <li>Population and age distribution were estimated and formatted into the city snapshot.</li>
-          <li>Replace the placeholder images in <code>assets/</code> with your scans for higher visual quality.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Right column (rail) -->
-    <aside>
-      <section class="card" aria-labelledby="snapshot">
-        <h2 id="snapshot">City Snapshot</h2>
-        <div class="snapshot">
-          <div class="snap-col">
-            <p><strong>City Name:</strong> Aarunya</p>
-            <p><strong>State:</strong> Andhra Pradesh</p>
-            <p><strong>Pincode:</strong> 530200</p>
-            <p class="muted"><strong>Timezone:</strong> IST (UTC +5:30)</p>
-          </div>
-          <div class="snap-col">
-            <p><strong>Population:</strong> 5,000,000</p>
-            <p class="muted">Male: 2,600,000 • Female: 2,400,000</p>
-            <p class="muted">Density (approx): 3,830 / sq km</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2>Team & Business Ideas</h2>
-        <p class="muted">Click any member to open their light pastel profile page.</p>
-
-        <div class="team-rail" style="margin-top:10px">
-          <!-- Arbiya (light blue) -->
-          <a class="member" href="#" data-member="arbiya" onclick="openProfile(event,'arbiya')">
-            <h3>Arbiya Naaz <span class="meta">• Roll: 214 • USN: 01FE24BCS042</span></h3>
-            <div class="meta">Focus: Logistics, Tourism, Retail & Health Infrastructure</div>
-            <div class="badge badge-arbiya">Light Blue — Arbiya</div>
-            <p class="ideas"><strong>Ideas:</strong> Logistics Hub; Eco Resort; IT Training Center; Cold Storage; Co-working Hub; Retail Mall; Multi-specialty Hospital; EV Charging; Waterfront Tourism; E-commerce Center</p>
-          </a>
-
-          <!-- Sai (lavender) -->
-          <a class="member" href="#" data-member="sai" onclick="openProfile(event,'sai')">
-            <h3>Sai <span class="meta">• Roll: 202 • USN: 01FE24BCS018</span></h3>
-            <div class="meta">Focus: Core Smart-City Platforms & Analytics</div>
-            <div class="badge badge-sai">Lavender — Sai</div>
-            <p class="ideas"><strong>Ideas:</strong> Smart Energy Grid; Autonomous Port Logistics; Satellite–IoT Monitoring; Cybersecurity Intelligence; Smart Mobility Control; Autonomous Shuttles; Neural Lab; AI Healthcare Prediction; Smart Lighting; Data Commerce.</p>
-          </a>
-
-          <!-- Akshata (pink) -->
-          <a class="member" href="#" data-member="akshata" onclick="openProfile(event,'akshata')">
-            <h3>Akshata <span class="meta">• Roll: 215 • USN: 01FE24BCS044</span></h3>
-            <div class="meta">Focus: Green Tech, Experiential Retail & Micro-Enterprise</div>
-            <div class="badge badge-akshata">Pastel Pink — Akshata</div>
-            <p class="ideas"><strong>Ideas:</strong> Floating Micro-Farms; XR Hologram Shops; AI Sound Trails; Energy-Bike Café; Simulation Pods; Eco-Bricks; Scent Navigation; Drone Dining; Smart Sidewalks; Meditation Pods.</p>
-          </a>
-
-          <!-- Ankita (yellow) -->
-          <a class="member" href="#" data-member="ankita" onclick="openProfile(event,'ankita')">
-            <h3>Ankita <span class="meta">• Roll: 244 • USN: 01FE24BCS146</span></h3>
-            <div class="meta">Focus: Systems, Emergency Routing & Operations</div>
-            <div class="badge badge-ankita">Pastel Yellow — Ankita</div>
-            <p class="ideas"><strong>Ideas:</strong> Smart Healthcare & Emergency Routing; Smart Water–Energy Grid; Waste Management; Personalized Learning; Smart Traffic Management; Security & Surveillance; Smart Farming; Multi-modal Transport; Supply Chain Optimization; Cyber-Tech Lab.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="card" style="margin-top:12px">
-        <h2>Quick Links</h2>
-        <p class="muted" style="margin:6px 0">Repo & resources</p>
-        <p><a class="muted" href="https://github.com/your-org/aarunya" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none"><i class="fab fa-github"></i> Project Repository</a></p>
-        <p class="muted" style="font-size:13px">Replace placeholders inside <code>assets/</code> with your final poster images for best visual output.</p>
-      </section>
-    </aside>
-  </main>
-
-  <!-- Profile modals (pastel pages) -->
-  <div id="profileModal" class="profile-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div id="profileInner" class="profile-content card">
-      <button class="close-btn" onclick="closeProfile()">Close ✕</button>
-      <div id="profileBody" style="margin-top:8px"></div>
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Akshata">
+      <h3>Akshata</h3>
+      <p>USN: 01FE24BCS150</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Handles front-end and creative ideation.</p>
     </div>
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Ankita">
+      <h3>Ankita</h3>
+      <p>USN: 01FE24BCS146</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Manages back-end logic and simulations.</p>
+    </div>
+
+    <div class="profile-box">
+      <img src="https://i.ibb.co/3R0WfKP/user.png" alt="Sai">
+      <h3>Sai</h3>
+      <p>USN: 01FE24BCS160</p>
+      <p><b>Skills:</b> C, C++, DSA</p>
+      <p>Focuses on AI, optimization, and analytics.</p>
+    </div>
+
   </div>
+</section>
 
-  <footer style="margin-top:20px">
-    <div class="muted">© 2025 Aarunya City Project</div>
-    <div><a class="repo" href="https://github.com/your-org/aarunya" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:none"><i class="fab fa-github" style="margin-right:8px"></i> Project Repository</a></div>
-  </footer>
+<!-- ========================= -->
+<!-- PROJECT OVERVIEW          -->
+<!-- ========================= -->
+<section id="project" class="section">
+  <h1 class="title">AARUNYA CITY – Project Overview</h1>
+  <p class="desc">
+    Aarunya City is a futuristic sustainable metropolitan ecosystem integrating AI,
+    automation, clean energy, innovation, and modern urban planning.
+  </p>
+
+  <div class="ideas-container">
+
+    <!-- ARBIYA NAZ IDEAS -->
+    <div class="idea-details">
+      <h2>Arbiya Naaz – Business Ideas</h2>
+      <ul>
+        <li>Logistics Hub</li>
+        <li>Eco Resort</li>
+        <li>IT Training Center</li>
+        <li>Cold Storage</li>
+        <li>Co-working Hub</li>
+        <li>Retail Mall</li>
+        <li>Multi-specialty Hospital</li>
+        <li>EV Charging Stations</li>
+        <li>Waterfront Tourism</li>
+        <li>E-commerce Center</li>
+      </ul>
+      <button onclick="showPage('arbiya')">View Portfolio</button>
+    </div>
+
+    <!-- AKSHATA IDEAS -->
+    <div class="idea-details">
+      <h2>Akshata – Business Ideas</h2>
+      <ul>
+        <li>Floating Micro-Farms</li>
+        <li>XR Hologram Shops</li>
+        <li>AI Sound Trails</li>
+        <li>Energy-Bike Café</li>
+        <li>Simulation Pods</li>
+        <li>Eco-Bricks</li>
+        <li>Scent Navigation Maps</li>
+        <li>Drone Dining</li>
+        <li>Smart Sidewalks</li>
+        <li>Meditation Pods</li>
+      </ul>
+      <button onclick="showPage('akshata')">View Portfolio</button>
+    </div>
+
+    <!-- ANKITA IDEAS -->
+    <div class="idea-details">
+      <h2>Ankita – Business Ideas</h2>
+      <ul>
+        <li>Smart Healthcare & Emergency Routing</li>
+        <li>Smart Water–Energy Optimization Grid</li>
+        <li>Intelligent Waste Management</li>
+        <li>Personalized Learning Platform</li>
+        <li>Smart Traffic Management</li>
+        <li>Security & Surveillance Hub</li>
+        <li>Smart Farming Network</li>
+        <li>Multi-Modal Transport System</li>
+        <li>Supply Chain Optimization</li>
+        <li>Cyber-Tech Innovation Lab</li>
+      </ul>
+      <button onclick="showPage('ankita')">View Portfolio</button>
+    </div>
+
+    <!-- SAI IDEAS -->
+    <div class="idea-details">
+      <h2>Sai – Business Ideas</h2>
+      <ul>
+        <li>Smart Energy Grid</li>
+        <li>Autonomous Port Logistics</li>
+        <li>Satellite-IoT Monitoring</li>
+        <li>Cybersecurity Intelligence</li>
+        <li>Smart Mobility Control</li>
+        <li>Autonomous Shuttle Pods</li>
+        <li>Neural Simulation Lab</li>
+        <li>AI Healthcare Prediction</li>
+        <li>Smart Lighting Network</li>
+        <li>Data Commerce Hub</li>
+      </ul>
+      <button onclick="showPage('sai')">View Portfolio</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- MEMBER PORTFOLIOS         -->
+<!-- ========================= -->
+<section id="arbiya" class="section">
+  <h1 class="title">Arbiya Naaz – Portfolio</h1>
+  <p class="desc">Portfolio content goes here. Add images, project details, or additional notes.</p>
+</section>
+
+<section id="akshata" class="section">
+  <h1 class="title">Akshata – Portfolio</h1>
+  <p class="desc">Portfolio content goes here. Add images, project details, or additional notes.</p>
+</section>
+
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Portfolio</h1>
+  <p class="desc">Portfolio content goes here. Add images, project details, or additional notes.</p>
+</section>
+
+<section id="sai" class="section">
+  <h1 class="title">Sai – Portfolio</h1>
+  <p class="desc">Portfolio content goes here. Add images, project details, or additional notes.</p>
+</section>
 
 <script>
-  const profiles = {
-    arbiya: {
-      name: "Arbiya Naaz",
-      color: "#bde0fe",
-      roll: "214",
-      usn: "01FE24BCS042",
-      focus: "Logistics, Tourism, Retail & Health Infrastructure",
-      skills: "C, C++, HTML, CSS",
-      ideas: [
-        "Logistics Hub",
-        "Eco Resort",
-        "IT Training Center",
-        "Cold Storage",
-        "Co-working Hub",
-        "Retail Mall",
-        "Multi-specialty Hospital",
-        "EV Charging Stations",
-        "Waterfront Tourism",
-        "E-commerce Center"
-      ],
-      paragraph: "Arbiya leads business ideas focusing on logistics, tourism and health infrastructure. She maps practical service concepts — like cold storage and logistics hubs — to algorithmic planning for routing, scheduling and resource allocation. Her work ties urban commerce to transport optimization, creating last-mile efficiencies for Aarunya."
-    },
-    sai: {
-      name: "Sai",
-      color: "#cdb4db",
-      roll: "202",
-      usn: "01FE24BCS018",
-      focus: "Core Smart-City Platforms & Analytics",
-      skills: "C, C++, HTML, CSS",
-      ideas: [
-        "Smart Energy Grid",
-        "Autonomous Port Logistics",
-        "Satellite–IoT Monitoring",
-        "Cybersecurity Intelligence",
-        "Smart Mobility Control",
-        "Autonomous Shuttle Pods",
-        "Neural Simulation Lab",
-        "AI Healthcare Prediction",
-        "Smart Lighting Network",
-        "Data Commerce Hub"
-      ],
-      paragraph: "Sai handles core platform ideas including energy systems, logistics and analytics. His tasks involve integrating algorithmic models for routing (MST/Dijkstra), simulation (DP/TSP) and cybersecurity mapping to provide a robust back-end for Aarunya's smart systems."
-    },
-    akshata: {
-      name: "Akshata",
-      color: "#ffc8dd",
-      roll: "215",
-      usn: "01FE24BCS044",
-      focus: "Green Tech, Experiential Retail & Micro-Enterprise",
-      skills: "C, C++, HTML, CSS",
-      ideas: [
-        "Floating Micro-Farms",
-        "XR Hologram Shops",
-        "AI Sound Trails",
-        "Energy-Bike Café",
-        "Simulation Pods",
-        "Eco-Bricks",
-        "Scent Navigation Maps",
-        "Drone Dining",
-        "Smart Sidewalks",
-        "Meditation Pods"
-      ],
-      paragraph: "Akshata focuses on human-centric innovations: green micro-enterprise, immersive retail and micro-farming solutions. She pairs UX-centered concepts with efficient small-scale systems, emphasizing sustainability and community engagement across Aarunya."
-    },
-    ankita: {
-      name: "Ankita",
-      color: "#ffef9f",
-      roll: "244",
-      usn: "01FE24BCS146",
-      focus: "Systems, Emergency Routing & Operations",
-      skills: "C, C++, HTML, CSS",
-      ideas: [
-        "Smart Healthcare & Emergency Routing",
-        "Smart Water–Energy Optimization Grid",
-        "Intelligent Waste Management",
-        "Personalized Learning Platform",
-        "Smart Traffic Management",
-        "Security & Surveillance Hub",
-        "Smart Farming Network",
-        "Multi-Modal Transport System",
-        "Supply Chain Optimization",
-        "Cyber-Tech Innovation Lab"
-      ],
-      paragraph: "Ankita designs systems for city operations and emergency response. Her work emphasizes routing reliability, water-energy optimization and secure operational platforms — connecting on-field data to decision-making models for resilient service delivery."
-    }
-  };
-
-  function openProfile(e, id){
-    e.preventDefault();
-    const p = profiles[id];
-    const modal = document.getElementById('profileModal');
-    const body = document.getElementById('profileBody');
-    body.innerHTML = `
-      <div style="background:${p.color};padding:16px;border-radius:10px;color:#061320">
-        <h2 style="margin:0 0 6px 0">${p.name}</h2>
-        <div style="font-size:13px;color:#0b1a29;margin-bottom:10px">Roll: ${p.roll} • USN: ${p.usn}</div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:8px">Focus</div>
-        <div style="margin-bottom:10px">${p.focus}</div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:6px">Top Ideas</div>
-        <ul style="color:#061320;margin-top:4px">
-          ${p.ideas.map(i=><li>${i}</li>).join('')}
-        </ul>
-        <div style="margin-top:12px;color:#061320">${p.paragraph}</div>
-        <div style="margin-top:12px;font-size:13px;color:#061320"><strong>Skills:</strong> ${p.skills}</div>
-      </div>
-    `;
-    modal.style.display='block';
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-
-  function closeProfile(){
-    const modal = document.getElementById('profileModal');
-    modal.style.display='none';
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
-
-  // close when click outside:
-  document.getElementById('profileModal').addEventListener('click', function(e){
-    if(e.target === this) closeProfile();
-  });
-
-  // keyboard ESC to close
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeProfile();
-  });
+function showPage(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
 </script>
 
 </body>
