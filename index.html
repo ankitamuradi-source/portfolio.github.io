@@ -15,35 +15,37 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   background: #f4f7fb;
   color: #1a1a1a;
-  overflow-x: hidden;
 }
 
 /* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: #ffffff;
+  background: #fff;
   padding: 15px;
   text-align: center;
-  z-index: 50;
+  z-index: 100;
   border-bottom: 2px solid #d0e7ff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 nav a {
   color: #1a1a1a;
   margin: 0 18px;
   font-weight: 600;
   font-size: 18px;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
   transition: 0.3s;
 }
+
 nav a:hover {
   color: #007bff;
-  transform: scale(1.08);
+  transform: scale(1.09);
 }
 
 /* SECTIONS */
@@ -52,14 +54,16 @@ nav a:hover {
   max-width: 1000px;
   margin: 40px auto;
   padding: 40px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 20px;
-  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.12);
-  animation: fadeIn 0.8s ease forwards;
+  box-shadow: 0 0 25px rgba(0,0,0,0.12);
 }
+
 .section.active {
   display: block;
+  animation: fadeIn 0.8s ease;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -68,81 +72,90 @@ nav a:hover {
 /* TITLES */
 .title {
   text-align: center;
-  font-size: 34px;
+  font-size: 32px;
   margin-bottom: 25px;
   color: #0056d6;
 }
+
 .desc {
   text-align: center;
   font-size: 19px;
+  line-height: 1.6;
   max-width: 750px;
   margin: auto;
-  line-height: 1.6;
 }
 
 /* TEAM CARDS */
 .profile-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 25px;
+  justify-content: center;
 }
+
 .profile-box {
   background: #f9fcff;
   border: 1px solid #cfe3ff;
-  border-radius: 15px;
-  padding: 25px;
   width: 250px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,120,255,0.15);
   transition: 0.3s ease;
 }
+
 .profile-box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(0, 140, 255, 0.25);
+  box-shadow: 0 0 30px rgba(0,115,255,0.25);
 }
+
 .profile-box img {
   width: 100px;
-  height: 100px;
   border-radius: 50%;
-  border: 2px solid #007bff;
   margin-bottom: 15px;
 }
 
-/* IDEA CARDS */
+/* IDEA BOXES */
 .ideas-container {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
   justify-content: center;
 }
+
 .idea-box {
-  flex: 0 1 260px;
   background: #eef6ff;
-  border: 1px solid #bcd9ff;
-  box-shadow: 0 0 12px rgba(0, 115, 255, 0.15);
   padding: 15px 20px;
   border-radius: 12px;
-  color: #1a1a1a;
-  font-size: 17px;
+  border: 1px solid #bcd9ff;
+  flex: 0 1 260px;
   display: flex;
-  align-items: center;
   gap: 12px;
+  align-items: center;
   transition: 0.3s;
+  font-size: 17px;
+  box-shadow: 0 0 12px rgba(0,115,255,0.15);
 }
+
 .idea-box:hover {
   background: #e3efff;
-  box-shadow: 0 0 25px rgba(0, 115, 255, 0.25);
   transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,115,255,0.25);
 }
-.idea-box span {
-  font-size: 22px;
+
+.idea-details {
+  margin-top: 30px;
+}
+
+.idea-details h2 {
+  margin-top: 18px;
+  color: #0056d6;
 }
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .idea-box { flex: 1 1 100%; }
-  .profile-container { flex-direction: column; align-items: center; }
+  .profile-container { flex-direction: column; }
 }
 </style>
 </head>
@@ -215,11 +228,10 @@ nav a:hover {
   </p>
 </section>
 
-<!-- ARBIYA UPDATED -->
+<!-- ARBIYA -->
 <section id="arbiya" class="section">
   <h1 class="title">Arbiya Naaz – Business Ideas</h1>
 
-  <!-- Step 1: Show all ideas first -->
   <div class="ideas-container">
     <div class="idea-box"><span>⚡</span> Logistics Hub</div>
     <div class="idea-box"><span>🏕</span> Eco Resort</div>
@@ -233,48 +245,37 @@ nav a:hover {
     <div class="idea-box"><span>📦</span> E-commerce Center</div>
   </div>
 
-  <!-- Step 2: Detailed explanation section -->
-  <div style="margin-top: 30px;">
+  <div class="idea-details">
 
     <h2>Logistics Hub</h2>
-    <p><b>SDG:</b> SDG 8, SDG 9</p>
-    <p>Improves supply chain efficiency, reduces delivery costs, and attracts major industries to the city.</p>
+    <p><b>SDG:</b> SDG 8, SDG 9 – Supports supply chains & reduces delivery cost.</p>
 
     <h2>Eco Resort</h2>
-    <p><b>SDG:</b> SDG 8, SDG 12</p>
-    <p>Promotes sustainable tourism, generates employment, and boosts city revenue.</p>
+    <p><b>SDG:</b> SDG 8, 12 – Promotes sustainable tourism & local income.</p>
 
     <h2>IT Training Center</h2>
-    <p><b>SDG:</b> SDG 4, SDG 8</p>
-    <p>Enhances digital skills, supports startups, and creates a skilled tech workforce.</p>
+    <p><b>SDG:</b> SDG 4, 8 – Builds a skilled digital workforce.</p>
 
     <h2>Cold Storage</h2>
-    <p><b>SDG:</b> SDG 2, SDG 8</p>
-    <p>Reduces food wastage, increases farmer income, and supports agricultural trade.</p>
+    <p><b>SDG:</b> SDG 2, 8 – Reduces food waste & improves farmer income.</p>
 
     <h2>Co-working Hub</h2>
-    <p><b>SDG:</b> SDG 8, SDG 9</p>
-    <p>Supports freelancers and startups, fostering an innovation-driven business ecosystem.</p>
+    <p><b>SDG:</b> SDG 8, 9 – Supports startups & innovation.</p>
 
     <h2>Retail Mall</h2>
-    <p><b>SDG:</b> SDG 8, SDG 11</p>
-    <p>Boosts the local economy through sales, employment, and commercial activity.</p>
+    <p><b>SDG:</b> SDG 8, 11 – Boosts local commercial activity.</p>
 
     <h2>Multi-specialty Hospital</h2>
-    <p><b>SDG:</b> SDG 3, SDG 8</p>
-    <p>Improves healthcare quality while generating revenue through medical services.</p>
+    <p><b>SDG:</b> SDG 3, 8 – Improves city healthcare & employment.</p>
 
     <h2>EV Charging</h2>
-    <p><b>SDG:</b> SDG 7, SDG 11</p>
-    <p>Encourages green mobility and generates income through charging services.</p>
+    <p><b>SDG:</b> SDG 7, 11 – Encourages clean mobility.</p>
 
     <h2>Waterfront Tourism</h2>
-    <p><b>SDG:</b> SDG 8, SDG 14</p>
-    <p>Creates tourism opportunities, business growth, and employment for locals.</p>
+    <p><b>SDG:</b> SDG 8, 14 – Creates tourism & jobs.</p>
 
     <h2>E-commerce Center</h2>
-    <p><b>SDG:</b> SDG 9, SDG 8</p>
-    <p>Strengthens digital trade, logistics, and employment in modern commerce.</p>
+    <p><b>SDG:</b> SDG 8, 9 – Strengthens modern commerce.</p>
 
   </div>
 </section>
@@ -300,16 +301,16 @@ nav a:hover {
 <section id="ankita" class="section">
   <h1 class="title">Ankita – Business Ideas</h1>
   <div class="ideas-container">
-    <div class="idea-box"><span>🏥</span> Smart Healthcare & Emergency Routing Center</div>
-    <div class="idea-box"><span>⚡💧</span> Aarunya Smart Water–Energy Optimization Grid</div>
-    <div class="idea-box"><span>♻️</span> Intelligent Waste Collection & Recycling System</div>
-    <div class="idea-box"><span>🎓📚</span> Aarunya Edu-Tech Personalized Learning Platform</div>
-    <div class="idea-box"><span>🚦🚌</span> Smart Traffic Management & Public Transport Controller</div>
-    <div class="idea-box"><span>🛡️🎥</span> Urban Security & Surveillance Intelligence Hub</div>
-    <div class="idea-box"><span>🌾🚜</span> Aarunya AgroTech Smart Farming Network</div>
-    <div class="idea-box"><span>✈️🚉🚗</span> Multi-Modal Transportation & Mobility System</div>
-    <div class="idea-box"><span>🛒📦</span> E-Commerce & Supply Chain Optimization Center</div>
-    <div class="idea-box"><span>🧠💻</span> Aarunya Cyber-Tech Innovation & Research Lab</div>
+    <div class="idea-box"><span>🏥</span> Smart Healthcare Routing</div>
+    <div class="idea-box"><span>⚡💧</span> Water–Energy Grid</div>
+    <div class="idea-box"><span>♻️</span> Intelligent Waste System</div>
+    <div class="idea-box"><span>🎓📚</span> Personalized Edu-Tech</div>
+    <div class="idea-box"><span>🚦🚌</span> Smart Mobility Controller</div>
+    <div class="idea-box"><span>🛡️🎥</span> Surveillance Intelligence</div>
+    <div class="idea-box"><span>🌾🚜</span> Smart AgroTech Network</div>
+    <div class="idea-box"><span>✈️</span> Multi-Modal Transport</div>
+    <div class="idea-box"><span>📦</span> Supply Chain Center</div>
+    <div class="idea-box"><span>🧠</span> Cyber-Tech Lab</div>
   </div>
 </section>
 
@@ -319,20 +320,22 @@ nav a:hover {
   <div class="ideas-container">
     <div class="idea-box"><span>🔋</span> Smart Energy Grid</div>
     <div class="idea-box"><span>🚚</span> Autonomous Port Logistics</div>
-    <div class="idea-box"><span>🛰</span> Satellite-IoT Monitoring Hub</div>
-    <div class="idea-box"><span>🛡</span> Cybersecurity Intelligence Center</div>
-    <div class="idea-box"><span>🚦</span> Smart Mobility Control Hub</div>
+    <div class="idea-box"><span>🛰</span> Satellite IoT Hub</div>
+    <div class="idea-box"><span>🛡</span> Cybersecurity Center</div>
+    <div class="idea-box"><span>🚦</span> Smart Mobility Hub</div>
     <div class="idea-box"><span>🚐</span> Autonomous Shuttle Pods</div>
-    <div class="idea-box"><span>🧠</span> Neural Urban Simulation Lab</div>
-    <div class="idea-box"><span>🏥</span> AI Healthcare Prediction Hub</div>
+    <div class="idea-box"><span>🧠</span> Urban Simulation Lab</div>
+    <div class="idea-box"><span>🏥</span> AI Health Prediction Hub</div>
     <div class="idea-box"><span>💡</span> Smart Lighting & Safety Network</div>
-    <div class="idea-box"><span>📊</span> Data Commerce & Analytics Hub</div>
+    <div class="idea-box"><span>📊</span> Data Analytics Hub</div>
   </div>
 </section>
 
 <script>
 function showPage(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(sec =>
+    sec.classList.remove('active')
+  );
   document.getElementById(id).classList.add('active');
 }
 </script>
