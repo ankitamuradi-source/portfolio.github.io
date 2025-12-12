@@ -10,9 +10,15 @@
 <style>
 /* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
 body{
-  background:
-    linear-gradient(135deg,#2a1b3d 0%, #1e2a4f 40%, #0f1c2e 70%, #090f1f 100%);
+  background:linear-gradient(
+    135deg,
+    #06060c 0%,
+    #141228 25%,
+    #1e2a4f 55%,
+    #080812 100%
+  );
   color:#e2e8f0;
   overflow-x:hidden;
 }
@@ -21,18 +27,18 @@ body{
 nav{
   position:sticky;
   top:0;
-  background:linear-gradient(90deg,#24143a,#1c2b52);
+  background:linear-gradient(90deg,#120f24,#1c2b52);
   padding:18px;
   text-align:center;
-  border-bottom:1px solid #3d2c6d;
-  box-shadow:0 0 14px rgba(180,150,255,0.4);
+  border-bottom:1px solid #2f2a55;
+  box-shadow:0 0 14px rgba(150,140,255,0.35);
   z-index:50;
 }
 nav a{
   color:#e6ddff;
   margin:0 20px;
-  font-weight:500;
   font-size:18px;
+  font-weight:500;
   text-decoration:none;
   cursor:pointer;
   transition:0.3s;
@@ -48,10 +54,10 @@ nav a:hover{
   max-width:1100px;
   margin:40px auto;
   padding:40px;
-  background:linear-gradient(160deg,#1b1933,#151526);
+  background:linear-gradient(160deg,#141226,#0c0c18);
   border-radius:20px;
-  border:1px solid #3b2f63;
-  box-shadow:0 0 30px rgba(0,0,0,0.85);
+  border:1px solid #2f2a55;
+  box-shadow:0 0 32px rgba(0,0,0,0.9);
   animation:fadeIn 0.7s ease forwards;
 }
 .section.active{display:block;}
@@ -60,7 +66,7 @@ nav a:hover{
   to{opacity:1;transform:translateY(0);}
 }
 
-/* MAIN HEADINGS (unchanged from previous version) */
+/* MAIN HEADINGS */
 .title{
   text-align:center;
   font-size:34px;
@@ -83,37 +89,41 @@ nav a:hover{
 /* NAME – NEON LAVENDER */
 .neon-name{
   color:#d6b4ff;
+  font-size:22px;
   font-weight:400;
   text-shadow:
-    0 0 8px rgba(214,180,255,0.95),
-    0 0 18px rgba(214,180,255,0.65);
+    0 0 8px rgba(214,180,255,0.9),
+    0 0 18px rgba(214,180,255,0.6);
 }
 
-/* ROLL NO & USN – NEON PINK */
+/* ROLL NO & USN – NEON PEACH / ORANGE */
 .neon-info{
-  color:#ff6ec7;
+  color:#ffb07c;
+  font-size:17px;
   font-weight:400;
   text-shadow:
-    0 0 7px rgba(255,110,199,0.9),
-    0 0 16px rgba(255,110,199,0.6);
+    0 0 6px rgba(255,176,124,0.85),
+    0 0 14px rgba(255,176,124,0.55);
 }
 
 /* MEMBER BOX */
 .member-box{
-  background:linear-gradient(160deg,#17152a,#111124);
+  background:linear-gradient(160deg,#13122a,#0c0c1b);
   padding:25px;
   border-radius:15px;
-  border:1px solid #332a5c;
+  border:1px solid #2a2550;
   margin-bottom:20px;
-  box-shadow:0 0 24px rgba(0,0,0,0.75);
+  box-shadow:0 0 26px rgba(0,0,0,0.85);
 }
 .member-box h2{margin-bottom:8px;}
+
 .idea-list{
   margin-top:10px;
   padding-left:20px;
   line-height:1.8;
   font-size:17px;
 }
+
 .view-btn{
   margin-top:15px;
   padding:10px 18px;
@@ -154,24 +164,24 @@ nav a:hover{
 <section id="project" class="section">
   <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
 
-  <!-- ARBIYA -->
+  <!-- SAI -->
   <div class="member-box">
-    <h2 class="neon-name">Arbiya Naaz Bhavikatti</h2>
-    <p class="neon-info">Roll No: 214</p>
-    <p class="neon-info">USN: 01FE24BCS042</p>
+    <h2 class="neon-name">Sai Bhusaraddi</h2>
+    <p class="neon-info">Roll No: 202</p>
+    <p class="neon-info">USN: 01FE24BCS018</p>
     <div class="idea-list">
-      <p>⚡ Logistics Hub</p>
-      <p>🏕 Eco Resort</p>
-      <p>💻 IT Training Center</p>
-      <p>❄ Cold Storage</p>
-      <p>🏢 Co-working Hub</p>
-      <p>🛍 Retail Mall</p>
-      <p>🏥 Multi-specialty Hospital</p>
-      <p>⚡ EV Charging Stations</p>
-      <p>🚤 Waterfront Tourism</p>
-      <p>📦 E-commerce Distribution Center</p>
+      <p>🔋 Smart Energy Grid</p>
+      <p>🚚 Autonomous Port Logistics</p>
+      <p>🛰 Satellite-IoT Monitoring</p>
+      <p>🛡 Cybersecurity Intelligence</p>
+      <p>🚦 Smart Mobility Control</p>
+      <p>🚐 Autonomous Shuttle Pods</p>
+      <p>🧠 Neural Simulation Lab</p>
+      <p>🏥 AI Healthcare Prediction</p>
+      <p>💡 Smart Lighting Network</p>
+      <p>📊 Data Commerce Hub</p>
     </div>
-    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
+    <button class="view-btn" onclick="window.location.href='sai.html'">View Portfolio</button>
   </div>
 
   <!-- AKSHATA -->
@@ -214,25 +224,26 @@ nav a:hover{
     <button class="view-btn" onclick="showPage('ankita')">View Portfolio</button>
   </div>
 
-  <!-- SAI -->
+  <!-- ARBIYA -->
   <div class="member-box">
-    <h2 class="neon-name">Sai Bhusaraddi</h2>
-    <p class="neon-info">Roll No: 202</p>
-    <p class="neon-info">USN: 01FE24BCS018</p>
+    <h2 class="neon-name">Arbiya Naaz Bhavikatti</h2>
+    <p class="neon-info">Roll No: 214</p>
+    <p class="neon-info">USN: 01FE24BCS042</p>
     <div class="idea-list">
-      <p>🔋 Smart Energy Grid</p>
-      <p>🚚 Autonomous Port Logistics</p>
-      <p>🛰 Satellite-IoT Monitoring</p>
-      <p>🛡 Cybersecurity Intelligence</p>
-      <p>🚦 Smart Mobility Control</p>
-      <p>🚐 Autonomous Shuttle Pods</p>
-      <p>🧠 Neural Simulation Lab</p>
-      <p>🏥 AI Healthcare Prediction</p>
-      <p>💡 Smart Lighting Network</p>
-      <p>📊 Data Commerce Hub</p>
+      <p>⚡ Logistics Hub</p>
+      <p>🏕 Eco Resort</p>
+      <p>💻 IT Training Center</p>
+      <p>❄ Cold Storage</p>
+      <p>🏢 Co-working Hub</p>
+      <p>🛍 Retail Mall</p>
+      <p>🏥 Multi-specialty Hospital</p>
+      <p>⚡ EV Charging Stations</p>
+      <p>🚤 Waterfront Tourism</p>
+      <p>📦 E-commerce Distribution Center</p>
     </div>
-    <button class="view-btn" onclick="window.location.href='sai.html'">View Portfolio</button>
+    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
   </div>
+
 </section>
 
 <script>
