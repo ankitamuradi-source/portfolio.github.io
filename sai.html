@@ -6,14 +6,14 @@
 <title>Smart City — 10 Case Studies</title>
 <style>
   :root{
-    --bg1: #071027;
-    --bg2: #0f1730;
-    --card: rgba(255,255,255,0.03);
-    --accent: linear-gradient(135deg,#23a6d5,#7b2ff7);
-    --chip-bg: rgba(255,255,255,0.05);
-    --muted: rgba(255,255,255,0.65);
-    --glass: rgba(255,255,255,0.02);
-    --card-border: rgba(255,255,255,0.04);
+    --page-bg: #070a10;
+    --panel-bg: #071427;
+    --card-bg: rgba(255,255,255,0.02);
+    --muted: rgba(255,255,255,0.66);
+    --neon-yellow: #ffbf00;
+    --neon-yellow-2: #ffb800;
+    --accent-start: #0ea5e9;
+    --accent-end: #7c3aed;
     --mono: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
@@ -21,435 +21,422 @@
     height:100%;
     margin:0;
     font-family:var(--mono);
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.07), transparent),
-                radial-gradient(1000px 400px at 90% 90%, rgba(139,92,246,0.05), transparent),
-                linear-gradient(180deg,var(--bg1),var(--bg2));
+    background: linear-gradient(180deg, #03060a 0%, #071027 45%, #05101a 100%);
     color:#e9f0ff;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
-    padding:32px;
-    box-sizing:border-box;
   }
 
-  .container{
+  .wrap{
+    max-width:1100px;
+    margin:28px auto;
+    padding:0 20px 60px;
+  }
+
+  /* HERO / WELCOME BANNER */
+  .hero {
+    margin-top:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
+    border-radius: 22px;
+    padding: 48px 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 10px 40px rgba(2,6,23,0.7),
+      inset 0 1px 0 rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  /* subtle inner glow border (like screenshot) */
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset: 4px;
+    pointer-events:none;
+    border-radius:18px;
+    box-shadow: 0 0 0 1px rgba(16,56,96,0.22) inset;
+    mix-blend-mode:screen;
+  }
+
+  .hero-inner{
     max-width:1000px;
     margin:0 auto;
+    text-align:center;
+    position:relative;
+    z-index:2;
   }
 
-  header{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    margin-bottom:20px;
-  }
-  .logo{
-    width:56px;height:56px;border-radius:10px;
-    background:var(--accent);
-    box-shadow:0 6px 20px rgba(123,47,247,0.18);
-    display:flex;align-items:center;justify-content:center;font-weight:700;
-    color:white;font-size:18px;
-  }
-  h1{
+  .hero h2{
     margin:0;
-    font-size:20px;
-    letter-spacing:0.2px;
-  }
-  p.lead{
-    margin:8px 0 28px 72px;
-    color:var(--muted);
-    font-size:13px;
-    max-width:900px;
+    font-size:36px;
+    letter-spacing:1px;
+    color: var(--neon-yellow);
+    font-weight:800;
+    text-transform:uppercase;
+    /* neon glow */
+    text-shadow:
+      0 2px 0 rgba(0,0,0,0.6),
+      0 6px 18px rgba(255,191,0,0.12),
+      0 0 28px rgba(255,191,0,0.08),
+      0 0 60px rgba(255,160,0,0.06);
   }
 
+  .hero p.lead{
+    margin:16px auto 0;
+    color:var(--muted);
+    max-width:820px;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  /* subtle top highlight bar (thin) */
+  .hero-topline{
+    position:absolute;
+    inset:0 0 auto 0;
+    height:6px;
+    background: linear-gradient(90deg, rgba(14,165,233,0.12), rgba(124,58,237,0.10));
+    border-top-left-radius:22px;
+    border-top-right-radius:22px;
+  }
+
+  /* main cards grid */
   .grid{
     display:grid;
     grid-template-columns: 1fr;
     gap:18px;
+    margin-top:26px;
   }
 
   .card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid var(--card-border);
-    padding:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     border-radius:12px;
-    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.55);
     overflow:hidden;
   }
 
-  .title-row{
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
-  }
-  .title{
-    display:flex;align-items:center;gap:12px;
-  }
+  .title-row{ display:flex; align-items:center; gap:12px; }
   .index-badge{
-    background:linear-gradient(90deg,#0ea5e9,#7c3aed);
-    padding:6px 10px;border-radius:10px;font-weight:700;font-size:13px;
-    color:white;
+    background: linear-gradient(90deg,var(--accent-start),var(--accent-end));
+    padding:6px 10px;border-radius:10px;font-weight:700;font-size:13px;color:white;
   }
-  .name{
-    font-size:16px;font-weight:700;
-  }
+  .name{ font-size:16px; font-weight:700; color:#f3f9ff; }
 
-  .chips{
-    display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
-  }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
   .chip{
-    background:var(--chip-bg);
-    padding:7px 10px;border-radius:999px;font-size:12px;color: #cfe9ff;
-    backdrop-filter: blur(4px);
-    border:1px solid rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.03);
+    padding:7px 10px;border-radius:999px;font-size:12px;color:#cfe9ff;
+    border:1px solid rgba(255,255,255,0.02);
   }
 
-  .desc{
-    margin-top:12px;
-    color:#e8f4ff;
-    line-height:1.5;
-    font-size:14px;
-  }
-
-  .sdg{
-    margin-top:14px;
-    font-size:13px;
-    color:var(--muted);
-  }
+  .desc{ margin-top:12px; color:#e8f4ff; line-height:1.5; font-size:14px; }
+  .sdg{ margin-top:14px; font-size:13px; color:var(--muted); }
   .sdg strong{ color:#fff; font-weight:700; }
 
-  .meta{
-    margin-top:12px;
-    display:flex;flex-direction:column;gap:6px;
-  }
+  .meta{ margin-top:12px; display:flex; flex-direction:column; gap:6px; }
   .meta .block{
-    background:var(--glass);
+    background: rgba(255,255,255,0.015);
     padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);
-    font-family:monospace;
-    font-size:13px;color:#cfe9ff;
-  }
-
-  /* responsive */
-  @media (min-width:700px){
-    .grid{ grid-template-columns: 1fr; }
-    p.lead{ margin-left:72px; }
-  }
-  @media (min-width:1000px){
-    .grid{ grid-template-columns: 1fr; }
+    font-family: "Courier New", monospace; font-size:13px; color:#cfe9ff;
   }
 
   footer{
-    margin-top:20px;color:var(--muted);font-size:13px;text-align:center;
+    margin-top:30px; color:var(--muted); font-size:13px; text-align:center;
   }
+
+  /* Responsive tweaks */
+  @media (max-width:720px){
+    .hero h2{ font-size:26px; }
+    .hero{ padding:28px 18px; border-radius:16px; }
+    .index-badge{ padding:6px 8px; font-size:12px; }
+  }
+
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <div class="logo">SC</div>
-    <div>
-      <h1>Smart City — 10 Case Studies</h1>
-      <div style="color:var(--muted);font-size:13px;margin-top:6px">
-        Clean, screenshot-style cards — tags, short paragraph, SDGs, DS & Algorithms
+  <div class="wrap">
+
+    <!-- HERO BANNER -->
+    <section class="hero" role="banner" aria-label="Welcome to Aarunya City">
+      <div class="hero-topline" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h2>WELCOME TO AARUNYA CITY</h2>
+        <p class="lead">A futuristic smart city built on sustainability, innovation, and advanced technology.</p>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <div class="grid">
+    <!-- CONTENT GRID (case study cards) -->
+    <main class="grid" role="main" aria-label="Case Studies">
 
-    <!-- 1 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 1 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">1</div>
-          <div>
-            <div class="name">Smart Energy Grid &amp; Load Balancing</div>
-          </div>
+          <div class="name">Smart Energy Grid &amp; Load Balancing</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Solar</span>
-        <span class="chip">Wind</span>
-        <span class="chip">Dijkstra</span>
-        <span class="chip">MST</span>
-        <span class="chip">Greedy</span>
-        <span class="chip">Knapsack</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Solar</span>
+          <span class="chip">Wind</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">MST</span>
+          <span class="chip">Greedy</span>
+          <span class="chip">Knapsack</span>
+        </div>
 
-      <p class="desc">
-        The Smart Energy Grid integrates renewable sources with intelligent load balancing across the city. Power plants and substations form a weighted graph, where MST algorithms minimize infrastructure cost and Dijkstra computes efficient real-time energy routing. Knapsack-based dynamic programming improves peak-hour renewable allocation, while greedy policies prioritize clean energy dispatch. This ensures reliable, low-loss, and sustainable energy distribution.
-      </p>
+        <p class="desc">
+          The Smart Energy Grid integrates renewable sources with intelligent load balancing across the city. Power plants and substations form a weighted graph, where MST algorithms minimize infrastructure cost and Dijkstra computes efficient real-time energy routing. Knapsack-based dynamic programming improves peak-hour renewable allocation, while greedy policies prioritize clean energy dispatch. This ensures reliable, low-loss, and sustainable energy distribution.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> adjacency list, priority_queue, arrays</div>
-        <div class="block"><strong>Algorithms:</strong> Dijkstra, Prim/Kruskal (MST), Knapsack DP, Greedy</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency list, priority_queue, arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Dijkstra, Prim/Kruskal (MST), Knapsack DP, Greedy</div>
+        </div>
+      </article>
 
-    <!-- 2 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 2 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">2</div>
-          <div>
-            <div class="name">AI Healthcare Prediction &amp; Outbreak Monitoring Hub</div>
-          </div>
+          <div class="name">AI Healthcare Prediction &amp; Outbreak Monitoring Hub</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Decision Tree</span>
-        <span class="chip">Hashing</span>
-        <span class="chip">DP</span>
-        <span class="chip">Pattern Matching</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Decision Tree</span>
+          <span class="chip">Hashing</span>
+          <span class="chip">DP</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
 
-      <p class="desc">
-        The Healthcare Prediction Hub analyzes hospital data, symptoms, and demographic trends to detect early disease outbreaks. Hashing enables rapid medical record retrieval, decision trees classify high-risk groups, dynamic programming models infection spread, and KMP/Rabin–Karp detect unusual patterns in health logs. This strengthens early intervention and hospital preparedness.
-      </p>
+        <p class="desc">
+          The Healthcare Prediction Hub analyzes hospital data, symptoms, and demographic trends to detect early disease outbreaks. Hashing enables rapid medical record retrieval, decision trees classify high-risk groups, dynamic programming models infection spread, and KMP/Rabin–Karp detect unusual patterns in health logs. This strengthens early intervention and hospital preparedness.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 3 – Good Health &amp; Well-being, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 11 – Sustainable Cities</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 3 – Good Health &amp; Well-being, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 11 – Sustainable Cities</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> hash tables, matrices, trees</div>
-        <div class="block"><strong>Algorithms:</strong> Decision Tree, DP Spread Modeling, KMP / Rabin–Karp</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash tables, matrices, trees</div>
+          <div class="block"><strong>Algorithms:</strong> Decision Tree, DP Spread Modeling, KMP / Rabin–Karp</div>
+        </div>
+      </article>
 
-    <!-- 3 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 3 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">3</div>
-          <div><div class="name">Smart Mobility &amp; Traffic Control Hub</div></div>
+          <div class="name">Smart Mobility &amp; Traffic Control Hub</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Dijkstra</span>
-        <span class="chip">Floyd–Warshall</span>
-        <span class="chip">BFS</span>
-        <span class="chip">DFS</span>
-        <span class="chip">Segment Tree</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Dijkstra</span>
+          <span class="chip">Floyd–Warshall</span>
+          <span class="chip">BFS</span>
+          <span class="chip">DFS</span>
+          <span class="chip">Segment Tree</span>
+        </div>
 
-      <p class="desc">
-        The traffic hub models the city’s road network as a weighted graph to optimize travel efficiency. Dijkstra provides real-time shortest paths, Floyd–Warshall supports full-network planning, and BFS/DFS simulate congestion under peak loads. Segment trees maintain live traffic density metrics, enabling adaptive signaling and emergency-routing decisions.
-      </p>
+        <p class="desc">
+          The traffic hub models the city’s road network as a weighted graph to optimize travel efficiency. Dijkstra provides real-time shortest paths, Floyd–Warshall supports full-network planning, and BFS/DFS simulate congestion under peak loads. Segment trees maintain live traffic density metrics, enabling adaptive signaling and emergency-routing decisions.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> adjacency matrix/list, segment tree, priority_queue</div>
-        <div class="block"><strong>Algorithms:</strong> Dijkstra, Floyd–Warshall, BFS/DFS</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency matrix/list, segment tree, priority_queue</div>
+          <div class="block"><strong>Algorithms:</strong> Dijkstra, Floyd–Warshall, BFS/DFS</div>
+        </div>
+      </article>
 
-    <!-- 4 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 4 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">4</div>
-          <div><div class="name">Satellite–IoT Disaster Detection &amp; Response Hub</div></div>
+          <div class="name">Satellite–IoT Disaster Detection &amp; Response Hub</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">IoT</span>
-        <span class="chip">BFS</span>
-        <span class="chip">DFS</span>
-        <span class="chip">DP Forecast</span>
-        <span class="chip">Pattern Matching</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">IoT</span>
+          <span class="chip">BFS</span>
+          <span class="chip">DFS</span>
+          <span class="chip">DP Forecast</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
 
-      <p class="desc">
-        This disaster-monitoring hub merges IoT sensor alerts and satellite imagery to detect floods, storms, and ecological hazards. BFS/DFS track spatial hazard spread, dynamic programming predicts intensity escalation, and string-matching algorithms identify recurring danger patterns in satellite frames. The system supports rapid emergency response and climate-resilient planning.
-      </p>
+        <p class="desc">
+          This disaster-monitoring hub merges IoT sensor alerts and satellite imagery to detect floods, storms, and ecological hazards. BFS/DFS track spatial hazard spread, dynamic programming predicts intensity escalation, and string-matching algorithms identify recurring danger patterns in satellite frames. The system supports rapid emergency response and climate-resilient planning.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 13 – Climate Action, SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 13 – Climate Action, SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> 2D grids, graphs, time-series buffers</div>
-        <div class="block"><strong>Algorithms:</strong> BFS/DFS, DP Forecasting, Pattern Matching</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> 2D grids, graphs, time-series buffers</div>
+          <div class="block"><strong>Algorithms:</strong> BFS/DFS, DP Forecasting, Pattern Matching</div>
+        </div>
+      </article>
 
-    <!-- 5 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 5 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">5</div>
-          <div><div class="name">Cybersecurity Intelligence &amp; Threat Analytics Center</div></div>
+          <div class="name">Cybersecurity Intelligence &amp; Threat Analytics Center</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Hashing</span>
-        <span class="chip">KMP</span>
-        <span class="chip">Boyer–Moore</span>
-        <span class="chip">Graph Analysis</span>
-        <span class="chip">Crypto Trees</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Hashing</span>
+          <span class="chip">KMP</span>
+          <span class="chip">Boyer–Moore</span>
+          <span class="chip">Graph Analysis</span>
+          <span class="chip">Crypto Trees</span>
+        </div>
 
-      <p class="desc">
-        The cybersecurity center analyzes network activity to detect intrusions, malware, and abnormal access attempts. Hashing secures authentication, while KMP and Boyer–Moore provide fast malware signature scanning. Graph algorithms trace attacker paths across connected systems, and tree-based cryptographic structures secure communication. This strengthens digital safety across all smart-city services.
-      </p>
+        <p class="desc">
+          The cybersecurity center analyzes network activity to detect intrusions, malware, and abnormal access attempts. Hashing secures authentication, while KMP and Boyer–Moore provide fast malware signature scanning. Graph algorithms trace attacker paths across connected systems, and tree-based cryptographic structures secure communication. This strengthens digital safety across all smart-city services.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 16 – Peace, Justice &amp; Strong Institutions, SDG 11 – Sustainable Cities</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 16 – Peace, Justice &amp; Strong Institutions, SDG 11 – Sustainable Cities</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> hash maps, tries, graphs, cryptographic trees</div>
-        <div class="block"><strong>Algorithms:</strong> KMP, Boyer–Moore, Graph Traversal</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash maps, tries, graphs, cryptographic trees</div>
+          <div class="block"><strong>Algorithms:</strong> KMP, Boyer–Moore, Graph Traversal</div>
+        </div>
+      </article>
 
-    <!-- 6 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 6 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">6</div>
-          <div><div class="name">Autonomous Shuttle Pods &amp; Navigation System</div></div>
+          <div class="name">Autonomous Shuttle Pods &amp; Navigation System</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">A*</span>
-        <span class="chip">Dijkstra</span>
-        <span class="chip">BFS</span>
-        <span class="chip">Priority Queue</span>
-        <span class="chip">Obstacle Detection</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">A*</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">BFS</span>
+          <span class="chip">Priority Queue</span>
+          <span class="chip">Obstacle Detection</span>
+        </div>
 
-      <p class="desc">
-        Autonomous pods navigate the city using optimized pathfinding over a mapped road network. A* and Dijkstra compute efficient travel paths, BFS identifies reachable sectors, and priority queues manage ride scheduling. Onboard obstacle detection supports safe, collision-free driving, improving last-mile mobility and reducing congestion and emissions.
-      </p>
+        <p class="desc">
+          Autonomous pods navigate the city using optimized pathfinding over a mapped road network. A* and Dijkstra compute efficient travel paths, BFS identifies reachable sectors, and priority queues manage ride scheduling. Onboard obstacle detection supports safe, collision-free driving, improving last-mile mobility and reducing congestion and emissions.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> grids, adjacency lists, min-heaps</div>
-        <div class="block"><strong>Algorithms:</strong> A*, Dijkstra, BFS</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> grids, adjacency lists, min-heaps</div>
+          <div class="block"><strong>Algorithms:</strong> A*, Dijkstra, BFS</div>
+        </div>
+      </article>
 
-    <!-- 7 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 7 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">7</div>
-          <div><div class="name">Neural Urban Simulation &amp; Planning Lab</div></div>
+          <div class="name">Neural Urban Simulation &amp; Planning Lab</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">DP</span>
-        <span class="chip">Regression</span>
-        <span class="chip">AVL Tree</span>
-        <span class="chip">TSP</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">DP</span>
+          <span class="chip">Regression</span>
+          <span class="chip">AVL Tree</span>
+          <span class="chip">TSP</span>
+        </div>
 
-      <p class="desc">
-        The simulation lab predicts future city conditions—traffic density, pollution, utility demand—using regression and dynamic programming. AVL and 2–3 trees allow fast scenario-state retrieval, while TSP variants optimize service routes for waste collection, inspection, and maintenance. This supports long-term, evidence-based urban planning.
-      </p>
+        <p class="desc">
+          The simulation lab predicts future city conditions—traffic density, pollution, utility demand—using regression and dynamic programming. AVL and 2–3 trees allow fast scenario-state retrieval, while TSP variants optimize service routes for waste collection, inspection, and maintenance. This supports long-term, evidence-based urban planning.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> AVL tree, 2-3 tree, matrices</div>
-        <div class="block"><strong>Algorithms:</strong> Dynamic Programming, Regression, TSP</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> AVL tree, 2-3 tree, matrices</div>
+          <div class="block"><strong>Algorithms:</strong> Dynamic Programming, Regression, TSP</div>
+        </div>
+      </article>
 
-    <!-- 8 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 8 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">8</div>
-          <div><div class="name">Smart Lighting &amp; Safety Network</div></div>
+          <div class="name">Smart Lighting &amp; Safety Network</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Greedy</span>
-        <span class="chip">BFS</span>
-        <span class="chip">Segment Tree</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Greedy</span>
+          <span class="chip">BFS</span>
+          <span class="chip">Segment Tree</span>
+        </div>
 
-      <p class="desc">
-        The lighting network uses motion sensors and adaptive LED control to reduce energy usage while enhancing nighttime safety. Greedy strategies adjust lighting intensity for maximum energy savings, BFS identifies safe pedestrian pathways, and segment trees track zone-wise consumption for optimization. This improves sustainability and public safety.
-      </p>
+        <p class="desc">
+          The lighting network uses motion sensors and adaptive LED control to reduce energy usage while enhancing nighttime safety. Greedy strategies adjust lighting intensity for maximum energy savings, BFS identifies safe pedestrian pathways, and segment trees track zone-wise consumption for optimization. This improves sustainability and public safety.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> segment tree, sensor arrays</div>
-        <div class="block"><strong>Algorithms:</strong> Greedy Optimization, BFS</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> segment tree, sensor arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Greedy Optimization, BFS</div>
+        </div>
+      </article>
 
-    <!-- 9 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 9 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">9</div>
-          <div><div class="name">Data Commerce &amp; Analytics Hub</div></div>
+          <div class="name">Data Commerce &amp; Analytics Hub</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">Hashing</span>
-        <span class="chip">Trie</span>
-        <span class="chip">Sorting</span>
-        <span class="chip">Pattern Matching</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Hashing</span>
+          <span class="chip">Trie</span>
+          <span class="chip">Sorting</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
 
-      <p class="desc">
-        This platform provides structured datasets for researchers, startups, and government agencies. Hashing ensures fast indexing, tries support intelligent search and auto-completion, and merge/quick sort prepare data efficiently. Pattern-matching algorithms detect anomalies and trends, enabling high-quality analytics and innovation.
-      </p>
+        <p class="desc">
+          This platform provides structured datasets for researchers, startups, and government agencies. Hashing ensures fast indexing, tries support intelligent search and auto-completion, and merge/quick sort prepare data efficiently. Pattern-matching algorithms detect anomalies and trends, enabling high-quality analytics and innovation.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 8 – Decent Work &amp; Economic Growth, SDG 11 – Sustainable Cities</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 8 – Decent Work &amp; Economic Growth, SDG 11 – Sustainable Cities</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> hash table, trie, arrays</div>
-        <div class="block"><strong>Algorithms:</strong> Merge Sort, Quick Sort, KMP / Rabin–Karp</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash table, trie, arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Merge Sort, Quick Sort, KMP / Rabin–Karp</div>
+        </div>
+      </article>
 
-    <!-- 10 -->
-    <article class="card">
-      <div class="title-row">
-        <div class="title">
+      <!-- 10 -->
+      <article class="card">
+        <div class="title-row">
           <div class="index-badge">10</div>
-          <div><div class="name">Autonomous Port Logistics &amp; Cargo Optimization</div></div>
+          <div class="name">Autonomous Port Logistics &amp; Cargo Optimization</div>
         </div>
-      </div>
 
-      <div class="chips" aria-hidden="true">
-        <span class="chip">MST</span>
-        <span class="chip">Dijkstra</span>
-        <span class="chip">Knapsack</span>
-        <span class="chip">Priority Queue</span>
-      </div>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">MST</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">Knapsack</span>
+          <span class="chip">Priority Queue</span>
+        </div>
 
-      <p class="desc">
-        Smart port logistics automates cargo movement between ports, warehouses, and industries. MST constructs low-cost transport networks, Dijkstra identifies the fastest cargo routes, knapsack dynamic programming optimizes container loading, and priority queues schedule automated cranes and robots. This increases operational efficiency while reducing fuel usage and emissions.
-      </p>
+        <p class="desc">
+          Smart port logistics automates cargo movement between ports, warehouses, and industries. MST constructs low-cost transport networks, Dijkstra identifies the fastest cargo routes, knapsack dynamic programming optimizes container loading, and priority queues schedule automated cranes and robots. This increases operational efficiency while reducing fuel usage and emissions.
+        </p>
 
-      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 12 – Responsible Consumption &amp; Production, SDG 13 – Climate Action</div>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 12 – Responsible Consumption &amp; Production, SDG 13 – Climate Action</div>
 
-      <div class="meta">
-        <div class="block"><strong>Data Structures:</strong> adjacency list, min-heap, DP table</div>
-        <div class="block"><strong>Algorithms:</strong> MST, Dijkstra, Knapsack</div>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency list, min-heap, DP table</div>
+          <div class="block"><strong>Algorithms:</strong> MST, Dijkstra, Knapsack</div>
+        </div>
+      </article>
 
+    </main>
+
+    <footer>Generated for you — save as <code>smart_city_case_studies.html</code>. Want this exported to slides or a PDF next?</footer>
   </div>
-
-  <footer>
-    Generated for you — save as <code>smart_city_case_studies.html</code>. Tell me if you want slide-ready versions or PDF export!
-  </footer>
-</div>
 </body>
 </html>
-
-
