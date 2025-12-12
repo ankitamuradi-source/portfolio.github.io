@@ -1,258 +1,455 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AARUNYA CITY – Smart City Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Smart City — 10 Case Studies</title>
 <style>
-/* GLOBAL */
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{background:#0a0f1a;color:#e2e8f0;overflow-x:hidden;}
+  :root{
+    --bg1: #071027;
+    --bg2: #0f1730;
+    --card: rgba(255,255,255,0.03);
+    --accent: linear-gradient(135deg,#23a6d5,#7b2ff7);
+    --chip-bg: rgba(255,255,255,0.05);
+    --muted: rgba(255,255,255,0.65);
+    --glass: rgba(255,255,255,0.02);
+    --card-border: rgba(255,255,255,0.04);
+    --mono: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
 
-/* NAV */
-nav{position:sticky;top:0;background:#0d1627;padding:18px;text-align:center;border-bottom:2px solid #1c2d45;box-shadow:0 0 12px rgba(0,150,255,0.25);z-index:50;}
-nav a{color:#cbd5e1;margin:0 20px;font-weight:600;font-size:18px;text-decoration:none;cursor:pointer;transition:0.3s;}
-nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:var(--mono);
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.07), transparent),
+                radial-gradient(1000px 400px at 90% 90%, rgba(139,92,246,0.05), transparent),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:#e9f0ff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:32px;
+    box-sizing:border-box;
+  }
 
-/* SECTIONS */
-.section{display:none;max-width:1100px;margin:40px auto;padding:40px;background:#0d1627;border-radius:20px;border:1px solid #1e3454;box-shadow:0 0 25px rgba(0,150,255,0.15);animation:fadeIn 0.7s ease forwards;}
-.section.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .container{
+    max-width:1000px;
+    margin:0 auto;
+  }
 
-/* TITLES */
-.title{text-align:center;font-size:34px;margin-bottom:25px;color:#ffb703;text-shadow:0 0 8px rgba(255,183,3,0.4);}
-.desc{text-align:center;font-size:19px;max-width:750px;margin:auto;line-height:1.6;color:#cbd5e1;}
+  header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:20px;
+  }
+  .logo{
+    width:56px;height:56px;border-radius:10px;
+    background:var(--accent);
+    box-shadow:0 6px 20px rgba(123,47,247,0.18);
+    display:flex;align-items:center;justify-content:center;font-weight:700;
+    color:white;font-size:18px;
+  }
+  h1{
+    margin:0;
+    font-size:20px;
+    letter-spacing:0.2px;
+  }
+  p.lead{
+    margin:8px 0 28px 72px;
+    color:var(--muted);
+    font-size:13px;
+    max-width:900px;
+  }
 
-/* MEMBER BOX */
-.member-box{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:20px;box-shadow:0 0 20px rgba(38,140,255,0.2);}
-.member-box h2{color:#4dabff;margin-bottom:8px;}
-.idea-list{margin-top:10px;padding-left:20px;line-height:1.8;font-size:17px;}
-.view-btn{margin-top:15px;padding:10px 18px;background:#268cff;border:none;color:white;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
-.view-btn:hover{background:#4dabff;box-shadow:0 0 10px #1e90ff;}
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:18px;
+  }
 
-/* DETAILED IDEAS */
-.detailed-idea{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:28px;box-shadow:0 0 25px rgba(38,140,255,0.25);}
-.detailed-idea h3{color:#ffb703;margin-bottom:10px;}
-.sdgs{color:#4dabff;margin-bottom:12px;font-weight:600;}
-.code-box{background:#0a1322;padding:18px;border-left:4px solid #4dabff;margin-top:12px;white-space:pre-wrap;font-family:monospace;font-size:15px;color:#d1eaff;border-radius:8px;line-height:1.5;}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid var(--card-border);
+    padding:18px;
+    border-radius:12px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    overflow:hidden;
+  }
+
+  .title-row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .title{
+    display:flex;align-items:center;gap:12px;
+  }
+  .index-badge{
+    background:linear-gradient(90deg,#0ea5e9,#7c3aed);
+    padding:6px 10px;border-radius:10px;font-weight:700;font-size:13px;
+    color:white;
+  }
+  .name{
+    font-size:16px;font-weight:700;
+  }
+
+  .chips{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+  }
+  .chip{
+    background:var(--chip-bg);
+    padding:7px 10px;border-radius:999px;font-size:12px;color: #cfe9ff;
+    backdrop-filter: blur(4px);
+    border:1px solid rgba(255,255,255,0.03);
+  }
+
+  .desc{
+    margin-top:12px;
+    color:#e8f4ff;
+    line-height:1.5;
+    font-size:14px;
+  }
+
+  .sdg{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .sdg strong{ color:#fff; font-weight:700; }
+
+  .meta{
+    margin-top:12px;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .meta .block{
+    background:var(--glass);
+    padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);
+    font-family:monospace;
+    font-size:13px;color:#cfe9ff;
+  }
+
+  /* responsive */
+  @media (min-width:700px){
+    .grid{ grid-template-columns: 1fr; }
+    p.lead{ margin-left:72px; }
+  }
+  @media (min-width:1000px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+
+  footer{
+    margin-top:20px;color:var(--muted);font-size:13px;text-align:center;
+  }
 </style>
 </head>
-
 <body>
+<div class="container">
+  <header>
+    <div class="logo">SC</div>
+    <div>
+      <h1>Smart City — 10 Case Studies</h1>
+      <div style="color:var(--muted);font-size:13px;margin-top:6px">
+        Clean, screenshot-style cards — tags, short paragraph, SDGs, DS & Algorithms
+      </div>
+    </div>
+  </header>
 
+  <div class="grid">
 
-<h2>1. Smart Energy Grid</h2>
-<p>
-The Smart Energy Grid aims to build a renewable and efficient power distribution system by integrating solar, wind, 
-and intelligent load balancing across the city.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Increases renewable energy adoption</li>
-    <li>Reduces pollution and carbon emissions</li>
-    <li>Ensures stable and balanced power supply</li>
-    <li>Supports long-term sustainable city growth</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Dijkstra/Bellman-Ford for optimal power routing</li>
-    <li>Kruskal/Prim (MST) for low-cost grid design</li>
-    <li>Knapsack (DP) for energy-load optimization</li>
-    <li>Greedy algorithms for renewable energy prioritization</li>
-</ul>
+    <!-- 1 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">1</div>
+          <div>
+            <div class="name">Smart Energy Grid &amp; Load Balancing</div>
+          </div>
+        </div>
+      </div>
 
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Solar</span>
+        <span class="chip">Wind</span>
+        <span class="chip">Dijkstra</span>
+        <span class="chip">MST</span>
+        <span class="chip">Greedy</span>
+        <span class="chip">Knapsack</span>
+      </div>
 
-<h2>2. AI Healthcare Prediction Hub</h2>
-<p>
-The AI Healthcare Prediction Hub aims to predict disease outbreaks and support hospitals by analyzing large-scale health 
-and demographic data.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Enables early detection of disease patterns</li>
-    <li>Strengthens hospital preparedness</li>
-    <li>Supports continuous public health monitoring</li>
-    <li>Reduces the spread and impact of outbreaks</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Decision-tree style classification for risk prediction</li>
-    <li>Dynamic Programming for modeling disease spread</li>
-    <li>Hashing for fast medical data retrieval</li>
-    <li>KMP/Rabin-Karp for pattern detection in health logs</li>
-</ul>
+      <p class="desc">
+        The Smart Energy Grid integrates renewable sources with intelligent load balancing across the city. Power plants and substations form a weighted graph, where MST algorithms minimize infrastructure cost and Dijkstra computes efficient real-time energy routing. Knapsack-based dynamic programming improves peak-hour renewable allocation, while greedy policies prioritize clean energy dispatch. This ensures reliable, low-loss, and sustainable energy distribution.
+      </p>
 
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
 
-<h2>3. Smart Mobility & Traffic Control Hub</h2>
-<p>
-This system aims to optimize city traffic, reduce congestion, and ensure safer movement using AI-driven routing and 
-real-time updates.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Reduces congestion and overall travel time</li>
-    <li>Encourages sustainable and public transport usage</li>
-    <li>Improves route safety and transport planning</li>
-    <li>Enhances mobility efficiency across all city zones</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Dijkstra for real-time shortest path routing</li>
-    <li>Floyd–Warshall for full-city distance mapping</li>
-    <li>BFS/DFS for modeling traffic movement</li>
-    <li>Priority Queues for emergency routing and priority flow</li>
-    <li>Segment Trees for dynamic traffic density management</li>
-</ul>
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> adjacency list, priority_queue, arrays</div>
+        <div class="block"><strong>Algorithms:</strong> Dijkstra, Prim/Kruskal (MST), Knapsack DP, Greedy</div>
+      </div>
+    </article>
 
+    <!-- 2 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">2</div>
+          <div>
+            <div class="name">AI Healthcare Prediction &amp; Outbreak Monitoring Hub</div>
+          </div>
+        </div>
+      </div>
 
-<h2>4. Satellite–IoT Disaster Monitoring Hub</h2>
-<p>
-This hub aims to monitor environmental changes and provide early disaster warnings using satellite imaging and IoT 
-sensor networks.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Detects floods, storms, and ecological risks early</li>
-    <li>Accelerates response times for emergencies</li>
-    <li>Minimizes life and infrastructure losses</li>
-    <li>Supports climate-resilient development planning</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>BFS/DFS for mapping the spread of disasters</li>
-    <li>Dynamic Programming for forecasting hazard intensity</li>
-    <li>String Matching for pattern detection in satellite images</li>
-    <li>Huffman Coding for efficient satellite data compression</li>
-</ul>
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Decision Tree</span>
+        <span class="chip">Hashing</span>
+        <span class="chip">DP</span>
+        <span class="chip">Pattern Matching</span>
+      </div>
 
+      <p class="desc">
+        The Healthcare Prediction Hub analyzes hospital data, symptoms, and demographic trends to detect early disease outbreaks. Hashing enables rapid medical record retrieval, decision trees classify high-risk groups, dynamic programming models infection spread, and KMP/Rabin–Karp detect unusual patterns in health logs. This strengthens early intervention and hospital preparedness.
+      </p>
 
-<h2>5. Cybersecurity Intelligence Center</h2>
-<p>
-The Cybersecurity Intelligence Center aims to protect the city's digital infrastructure by monitoring threats and 
-securing sensitive information.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Prevents cyberattacks and data breaches</li>
-    <li>Secures essential smart city systems</li>
-    <li>Builds skilled cybersecurity professionals</li>
-    <li>Enhances trust in digital governance</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Hashing for secure authentication processes</li>
-    <li>KMP/Boyer–Moore for malware signature scanning</li>
-    <li>Graph algorithms for mapping cyberattack paths</li>
-    <li>Tree-based cryptographic key structures for encryption</li>
-</ul>
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 3 – Good Health &amp; Well-being, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 11 – Sustainable Cities</div>
 
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> hash tables, matrices, trees</div>
+        <div class="block"><strong>Algorithms:</strong> Decision Tree, DP Spread Modeling, KMP / Rabin–Karp</div>
+      </div>
+    </article>
 
-<h2>6. Autonomous Shuttle Pods</h2>
-<p>
-Autonomous Shuttle Pods aim to deliver clean, electric, AI-driven transportation within the city to reduce congestion 
-and improve urban travel.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Reduces fuel consumption and pollution</li>
-    <li>Improves last-mile transport connectivity</li>
-    <li>Decreases road congestion</li>
-    <li>Enhances accessibility for all urban zones</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Dijkstra/A* for autonomous navigation</li>
-    <li>BFS/DFS for identifying reachable regions</li>
-    <li>Priority Queues for managing shuttle scheduling</li>
-    <li>Obstacle detection logic for safe movement</li>
-</ul>
+    <!-- 3 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">3</div>
+          <div><div class="name">Smart Mobility &amp; Traffic Control Hub</div></div>
+        </div>
+      </div>
 
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Dijkstra</span>
+        <span class="chip">Floyd–Warshall</span>
+        <span class="chip">BFS</span>
+        <span class="chip">DFS</span>
+        <span class="chip">Segment Tree</span>
+      </div>
 
-<h2>7. Neural Urban Simulation Lab</h2>
-<p>
-The Neural Urban Simulation Lab aims to simulate complex city behaviors—traffic flows, population dynamics, infrastructure 
-stress, and pollution trends—to support smarter planning.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Reduces planning errors and inefficiencies</li>
-    <li>Predicts long-term urban challenges</li>
-    <li>Supports data-driven city design decisions</li>
-    <li>Helps allocate infrastructure resources effectively</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Dynamic Programming for simulation optimization</li>
-    <li>TSP for municipal route optimization</li>
-    <li>AVL/2-3 Trees for quick simulation data retrieval</li>
-    <li>Regression-based models for forecasting patterns</li>
-</ul>
+      <p class="desc">
+        The traffic hub models the city’s road network as a weighted graph to optimize travel efficiency. Dijkstra provides real-time shortest paths, Floyd–Warshall supports full-network planning, and BFS/DFS simulate congestion under peak loads. Segment trees maintain live traffic density metrics, enabling adaptive signaling and emergency-routing decisions.
+      </p>
 
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
 
-<h2>8. Smart Lighting & Safety Network</h2>
-<p>
-This system aims to provide energy-efficient, sensor-based lighting and safer walkways for city residents, especially 
-during night hours.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Saves electricity through intelligent lighting usage</li>
-    <li>Improves public safety at night</li>
-    <li>Reduces carbon footprint using solar LEDs</li>
-    <li>Enhances walkability and area surveillance</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Greedy algorithms for energy-saving strategies</li>
-    <li>BFS for identifying safe pathway connectivity</li>
-    <li>Segment Trees for tracking zone-wise energy use</li>
-</ul>
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> adjacency matrix/list, segment tree, priority_queue</div>
+        <div class="block"><strong>Algorithms:</strong> Dijkstra, Floyd–Warshall, BFS/DFS</div>
+      </div>
+    </article>
 
+    <!-- 4 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">4</div>
+          <div><div class="name">Satellite–IoT Disaster Detection &amp; Response Hub</div></div>
+        </div>
+      </div>
 
-<h2>9. Data Commerce & Analytics Hub</h2>
-<p>
-The Data Commerce & Analytics Hub aims to create a platform where businesses, researchers, and government departments 
-can access structured, high-quality city datasets.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Encourages startup innovation and research</li>
-    <li>Creates new job opportunities in data science</li>
-    <li>Strengthens the city’s overall digital ecosystem</li>
-    <li>Enables transparent and informed planning</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>Hashing for fast indexing of datasets</li>
-    <li>Trie structures for auto-suggestions and quick search</li>
-    <li>Merge Sort/Quick Sort for dataset preprocessing</li>
-    <li>Rabin-Karp/KMP for scanning large logs and text data</li>
-</ul>
+      <div class="chips" aria-hidden="true">
+        <span class="chip">IoT</span>
+        <span class="chip">BFS</span>
+        <span class="chip">DFS</span>
+        <span class="chip">DP Forecast</span>
+        <span class="chip">Pattern Matching</span>
+      </div>
 
+      <p class="desc">
+        This disaster-monitoring hub merges IoT sensor alerts and satellite imagery to detect floods, storms, and ecological hazards. BFS/DFS track spatial hazard spread, dynamic programming predicts intensity escalation, and string-matching algorithms identify recurring danger patterns in satellite frames. The system supports rapid emergency response and climate-resilient planning.
+      </p>
 
-<h2>10. Autonomous Port Logistics System</h2>
-<p>
-This system aims to automate cargo transfer from the port to warehouses and industries through robotics and intelligent 
-route optimization.
-</p>
-<strong>Contributions:</strong>
-<ul>
-    <li>Speeds up loading and unloading operations</li>
-    <li>Reduces human error and operational costs</li>
-    <li>Cuts emissions through efficient routing</li>
-    <li>Strengthens industrial and commercial supply chains</li>
-</ul>
-<strong>Algorithms Used:</strong>
-<ul>
-    <li>MST (Kruskal/Prim) for designing optimal logistics networks</li>
-    <li>Dijkstra for fastest path determination</li>
-    <li>Knapsack (DP) for cargo loading optimization</li>
-    <li>Priority Queues for scheduling robotic and transport tasks</li>
-</ul>
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 13 – Climate Action, SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure</div>
 
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> 2D grids, graphs, time-series buffers</div>
+        <div class="block"><strong>Algorithms:</strong> BFS/DFS, DP Forecasting, Pattern Matching</div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">5</div>
+          <div><div class="name">Cybersecurity Intelligence &amp; Threat Analytics Center</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Hashing</span>
+        <span class="chip">KMP</span>
+        <span class="chip">Boyer–Moore</span>
+        <span class="chip">Graph Analysis</span>
+        <span class="chip">Crypto Trees</span>
+      </div>
+
+      <p class="desc">
+        The cybersecurity center analyzes network activity to detect intrusions, malware, and abnormal access attempts. Hashing secures authentication, while KMP and Boyer–Moore provide fast malware signature scanning. Graph algorithms trace attacker paths across connected systems, and tree-based cryptographic structures secure communication. This strengthens digital safety across all smart-city services.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 16 – Peace, Justice &amp; Strong Institutions, SDG 11 – Sustainable Cities</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> hash maps, tries, graphs, cryptographic trees</div>
+        <div class="block"><strong>Algorithms:</strong> KMP, Boyer–Moore, Graph Traversal</div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">6</div>
+          <div><div class="name">Autonomous Shuttle Pods &amp; Navigation System</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">A*</span>
+        <span class="chip">Dijkstra</span>
+        <span class="chip">BFS</span>
+        <span class="chip">Priority Queue</span>
+        <span class="chip">Obstacle Detection</span>
+      </div>
+
+      <p class="desc">
+        Autonomous pods navigate the city using optimized pathfinding over a mapped road network. A* and Dijkstra compute efficient travel paths, BFS identifies reachable sectors, and priority queues manage ride scheduling. Onboard obstacle detection supports safe, collision-free driving, improving last-mile mobility and reducing congestion and emissions.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> grids, adjacency lists, min-heaps</div>
+        <div class="block"><strong>Algorithms:</strong> A*, Dijkstra, BFS</div>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">7</div>
+          <div><div class="name">Neural Urban Simulation &amp; Planning Lab</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">DP</span>
+        <span class="chip">Regression</span>
+        <span class="chip">AVL Tree</span>
+        <span class="chip">TSP</span>
+      </div>
+
+      <p class="desc">
+        The simulation lab predicts future city conditions—traffic density, pollution, utility demand—using regression and dynamic programming. AVL and 2–3 trees allow fast scenario-state retrieval, while TSP variants optimize service routes for waste collection, inspection, and maintenance. This supports long-term, evidence-based urban planning.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> AVL tree, 2-3 tree, matrices</div>
+        <div class="block"><strong>Algorithms:</strong> Dynamic Programming, Regression, TSP</div>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">8</div>
+          <div><div class="name">Smart Lighting &amp; Safety Network</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Greedy</span>
+        <span class="chip">BFS</span>
+        <span class="chip">Segment Tree</span>
+      </div>
+
+      <p class="desc">
+        The lighting network uses motion sensors and adaptive LED control to reduce energy usage while enhancing nighttime safety. Greedy strategies adjust lighting intensity for maximum energy savings, BFS identifies safe pedestrian pathways, and segment trees track zone-wise consumption for optimization. This improves sustainability and public safety.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> segment tree, sensor arrays</div>
+        <div class="block"><strong>Algorithms:</strong> Greedy Optimization, BFS</div>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">9</div>
+          <div><div class="name">Data Commerce &amp; Analytics Hub</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Hashing</span>
+        <span class="chip">Trie</span>
+        <span class="chip">Sorting</span>
+        <span class="chip">Pattern Matching</span>
+      </div>
+
+      <p class="desc">
+        This platform provides structured datasets for researchers, startups, and government agencies. Hashing ensures fast indexing, tries support intelligent search and auto-completion, and merge/quick sort prepare data efficiently. Pattern-matching algorithms detect anomalies and trends, enabling high-quality analytics and innovation.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 8 – Decent Work &amp; Economic Growth, SDG 11 – Sustainable Cities</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> hash table, trie, arrays</div>
+        <div class="block"><strong>Algorithms:</strong> Merge Sort, Quick Sort, KMP / Rabin–Karp</div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card">
+      <div class="title-row">
+        <div class="title">
+          <div class="index-badge">10</div>
+          <div><div class="name">Autonomous Port Logistics &amp; Cargo Optimization</div></div>
+        </div>
+      </div>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">MST</span>
+        <span class="chip">Dijkstra</span>
+        <span class="chip">Knapsack</span>
+        <span class="chip">Priority Queue</span>
+      </div>
+
+      <p class="desc">
+        Smart port logistics automates cargo movement between ports, warehouses, and industries. MST constructs low-cost transport networks, Dijkstra identifies the fastest cargo routes, knapsack dynamic programming optimizes container loading, and priority queues schedule automated cranes and robots. This increases operational efficiency while reducing fuel usage and emissions.
+      </p>
+
+      <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 12 – Responsible Consumption &amp; Production, SDG 13 – Climate Action</div>
+
+      <div class="meta">
+        <div class="block"><strong>Data Structures:</strong> adjacency list, min-heap, DP table</div>
+        <div class="block"><strong>Algorithms:</strong> MST, Dijkstra, Knapsack</div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    Generated for you — save as <code>smart_city_case_studies.html</code>. Tell me if you want slide-ready versions or PDF export!
+  </footer>
+</div>
 </body>
 </html>
+
 
