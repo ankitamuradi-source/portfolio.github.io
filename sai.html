@@ -136,8 +136,8 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:14px;
+      grid-template-columns:1fr;
+      gap:18px;
       align-items:start;
     }
     @media (max-width:800px){
@@ -225,18 +225,19 @@
       flex-wrap:wrap;
     }
     .btn{
-      height:var(--btn-h);
-      padding:0 13px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:0.84rem;
-      color:var(--btn-text);
-      background:radial-gradient(circle at top left,#22c55e,#38bdf8);
-      display:inline-flex;
-      align-items:center;
-      border:none;
-      box-shadow:0 0 22px #22c55e60;
+  height:var(--btn-h);
+  padding:0 13px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.84rem;
+  color:#2b120e;
+  background:linear-gradient(135deg,#ffb4a2,#ff8c75);
+  display:inline-flex;
+  align-items:center;
+  border:none;
+  box-shadow:0 0 22px rgba(255,180,162,0.65);
+
     }
 
     /* styles for bottom DS/Algo table */
