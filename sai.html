@@ -3,34 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sai — Smart City Cases | Aarunya</title>
+  <title>Sai — Smart City Case Studies | Aarunya</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --page-bg:#020617;          /* very dark blue-grey */
-      --hero-bg:#0f172a;          /* dark band */
+      --page-bg:#020617;
+      --hero-bg:#0f172a;
       --hero-bg-soft:#020617;
       --text-main:#e5e7eb;
       --muted:#9ca3af;
       --card-bg:#020617;
       --accent-chip:#1e293b;
-      --accent-chip-text:#38bdf8;   /* neon cyan */
+      --accent-chip-text:#38bdf8;
       --accent-chip2:#0f172a;
-      --accent-chip2-text:#a5b4fc;  /* soft neon violet */
+      --accent-chip2-text:#a5b4fc;
       --border-soft:#1f2933;
       --diagram-bg:#020617;
-      --diagram-border:#22c55e;     /* neon green */
-      --btn-bg:#22c55e;             /* neon button */
+      --diagram-border:#22c55e;
+      --btn-bg:#22c55e;
       --btn-bg2:#38bdf8;
       --btn-text:#0f172a;
       --maxw:1040px;
       --btn-h:36px;
-      --table-header:#0f172a;
-      --row-alt:#020617;
-      --row-main:#020617;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
@@ -49,7 +46,6 @@
       gap:20px;
     }
 
-    /* HERO - flat band */
     .hero{
       border-radius:18px;
       padding:18px 20px;
@@ -118,7 +114,6 @@
       box-shadow:0 0 0 1px #22c55e40;
     }
 
-    /* summary strip */
     .summary-strip{
       display:flex;
       flex-wrap:wrap;
@@ -139,67 +134,6 @@
     .pill-label{color:#6b7280}
     .pill-value{color:#e5e7eb;font-weight:600}
 
-    /* overview card */
-    .analysis-shell{
-      border-radius:14px;
-      padding:12px 14px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      box-shadow:0 12px 40px rgba(15,23,42,0.8);
-    }
-    .analysis-title{
-      font-size:0.96rem;
-      font-weight:700;
-      margin-bottom:2px;
-    }
-    .analysis-sub{
-      font-size:0.8rem;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:6px;
-      margin-bottom:8px;
-    }
-    .mini-kv{
-      padding:6px 8px;
-      border-radius:10px;
-      background:#020617;
-      border:1px dashed var(--border-soft);
-      font-size:0.78rem;
-      display:flex;
-      justify-content:space-between;
-      color:var(--muted);
-    }
-    .mini-kv span:last-child{color:#e5e7eb;font-weight:600}
-
-    .table-box{
-      margin-top:6px;
-      padding:6px;
-      border-radius:10px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      font-size:0.76rem;
-      color:var(--muted);
-      max-height:190px;
-      overflow:auto;
-    }
-    .table-box table{width:100%;border-collapse:collapse}
-    .table-box th,
-    .table-box td{
-      padding:4px 5px;
-      border-bottom:1px solid #1f2937;
-      text-align:left;
-    }
-    .table-box th{
-      background:#020617;
-      color:#e5e7eb;
-      position:sticky;top:0;z-index:1;
-    }
-
-    /* cases */
     .grid{
       display:grid;
       grid-template-columns:1fr;
@@ -313,71 +247,9 @@
     .fadein{opacity:0;transform:translateY(10px)}
     .visible{opacity:1;transform:translateY(0);transition:all 260ms ease-out}
 
-    /* big DS/Algo table at bottom */
-    .ds-analysis-section{
-      margin-top:18px;
-      border-radius:14px;
-      padding:12px 14px 14px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      box-shadow:0 14px 48px rgba(15,23,42,0.9);
-    }
-    .ds-analysis-title{
-      font-size:0.98rem;
-      font-weight:800;
-      margin-bottom:4px;
-    }
-    .ds-analysis-sub{
-      font-size:0.8rem;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .ds-analysis-table-wrapper{
-      max-height:260px;
-      overflow:auto;
-      border-radius:10px;
-      border:1px solid var(--border-soft);
-      background:#020617;
-      font-size:0.76rem;
-    }
-    .ds-analysis-table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:720px;
-    }
-    .ds-analysis-table th,
-    .ds-analysis-table td{
-      padding:6px 7px;
-      border-bottom:1px solid #1f2937;
-      text-align:left;
-    }
-    .ds-analysis-table th{
-      background:#020617;
-      color:#e5e7eb;
-      position:sticky;
-      top:0;
-      z-index:1;
-    }
-    .ds-analysis-table tr:nth-child(even){
-      background:#020617;
-    }
-    .ds-analysis-table tr:nth-child(odd){
-      background:#020617;
-    }
-    .ds-used-yes{
-      color:#22c55e;
-      font-weight:700;
-    }
-    .ds-used-no{
-      color:#f97373;
-      font-weight:600;
-    }
-
     @media (max-width:640px){
       .hero{flex-direction:column;align-items:flex-start}
       .hero-right{align-items:flex-start;text-align:left}
-      .mini-grid{grid-template-columns:1fr}
-      .ds-analysis-table{min-width:640px;}
     }
   </style>
 </head>
@@ -385,7 +257,6 @@
 <body>
 <div class="wrap">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <div class="logo"><div class="logo-inner">SA</div></div>
@@ -402,14 +273,12 @@
       <div>Author: <strong>Sai</strong></div>
       <div>Roll: <strong>202</strong></div>
       <div>City: <strong>Aarunya</strong></div>
-      <!-- updated main repo button -->
       <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
         Open GitHub Repository
       </a>
     </div>
   </section>
 
-  <!-- SUMMARY -->
   <section class="summary-strip">
     <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
     <div class="pill"><span class="pill-label">City</span><span class="pill-value">Aarunya</span></div>
@@ -417,44 +286,8 @@
     <div class="pill"><span class="pill-label">Focus</span><span class="pill-value">Real-world DSA applications</span></div>
   </section>
 
-  <!-- OVERVIEW -->
-  <section class="analysis-shell">
-    <div class="analysis-title">Implementation Overview</div>
-    <div class="analysis-sub">
-      Snapshot of the major data structures and algorithms used across all ten Aarunya business cases.
-    </div>
-
-    <div class="mini-grid">
-      <div class="mini-kv"><span>Smart‑city domains</span><span>Energy · Health · Mobility · Ports</span></div>
-      <div class="mini-kv"><span>Cases implemented</span><span>10</span></div>
-      <div class="mini-kv"><span>Core topics</span><span>Graphs · DP · Strings · Trees</span></div>
-    </div>
-
-    <div class="table-box">
-      <table>
-        <thead>
-          <tr><th>DS / Algo</th><th>Used?</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Arrays / Vectors</td><td>Yes</td></tr>
-          <tr><td>Priority Queue</td><td>Yes</td></tr>
-          <tr><td>Hash Tables</td><td>Yes</td></tr>
-          <tr><td>Trie</td><td>Yes</td></tr>
-          <tr><td>Segment Tree</td><td>Yes</td></tr>
-          <tr><td>Union–Find</td><td>Yes</td></tr>
-          <tr><td>Dijkstra / A*</td><td>Yes</td></tr>
-          <tr><td>Floyd–Warshall</td><td>Yes</td></tr>
-          <tr><td>Knapsack DP</td><td>Yes</td></tr>
-          <tr><td>String Matching (KMP, Boyer–Moore, Rabin–Karp)</td><td>Yes</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- CASES -->
   <section class="grid">
 
-    <!-- 1 -->
     <article class="card fadein" id="case1">
       <div class="case-title">1 • Smart Energy Grid</div>
       <div class="meta">
@@ -484,7 +317,6 @@ New Lines → Edge List → Kruskal + Union–Find → Minimum‑Cost Expansion
       </div>
     </article>
 
-    <!-- 2 -->
     <article class="card fadein" id="case2">
       <div class="case-title">2 • AI Healthcare Prediction Hub</div>
       <div class="meta">
@@ -514,7 +346,6 @@ Notes Text → KMP → Alert Phrases
       </div>
     </article>
 
-    <!-- 3 -->
     <article class="card fadein" id="case3">
       <div class="case-title">3 • Smart Mobility &amp; Traffic Control Hub</div>
       <div class="meta">
@@ -544,7 +375,6 @@ Zone Flows → Segment Tree → Range Congestion Queries
       </div>
     </article>
 
-    <!-- 4 -->
     <article class="card fadein" id="case4">
       <div class="case-title">4 • Satellite–IoT Disaster Monitoring Hub</div>
       <div class="meta">
@@ -573,7 +403,6 @@ Snapshots → Huffman Encoder → Compressed Archive
       </div>
     </article>
 
-    <!-- 5 -->
     <article class="card fadein" id="case5">
       <div class="case-title">5 • Cybersecurity Intelligence Center</div>
       <div class="meta">
@@ -602,7 +431,6 @@ Host Graph → Search → Attack Path Visualisation
       </div>
     </article>
 
-    <!-- 6 -->
     <article class="card fadein" id="case6">
       <div class="case-title">6 • Autonomous Shuttle Pods</div>
       <div class="meta">
@@ -631,7 +459,6 @@ Live Obstacles → Cost Updates → Re‑plan if Needed
       </div>
     </article>
 
-    <!-- 7 -->
     <article class="card fadein" id="case7">
       <div class="case-title">7 • Neural Urban Simulation Lab</div>
       <div class="meta">
@@ -660,7 +487,6 @@ Service Points → TSP Heuristic → Efficient Field Route
       </div>
     </article>
 
-    <!-- 8 -->
     <article class="card fadein" id="case8">
       <div class="case-title">8 • Smart Lighting &amp; Safety Network</div>
       <div class="meta">
@@ -689,7 +515,6 @@ Walkway Graph → BFS → Safe Night Routes
       </div>
     </article>
 
-    <!-- 9 -->
     <article class="card fadein" id="case9">
       <div class="case-title">9 • Data Commerce &amp; Analytics Hub</div>
       <div class="meta">
@@ -718,7 +543,6 @@ Access Logs → Sort + Rabin–Karp → Usage / Abuse Insights
       </div>
     </article>
 
-    <!-- 10 -->
     <article class="card fadein" id="case10">
       <div class="case-title">10 • Autonomous Port Logistics System</div>
       <div class="meta">
@@ -747,67 +571,6 @@ Backbone Graph → Dijkstra → Container Routes
       </div>
     </article>
 
-  </section>
-
-  <!-- BIG DS / ALGO TABLE -->
-  <section class="ds-analysis-section">
-    <div class="ds-analysis-title">Data Structures &amp; Algorithms Analysis</div>
-    <div class="ds-analysis-sub">
-      Detailed list of core structures and algorithms across all ten cases, including whether they are used,
-      where they appear, and their asymptotic space and time efficiency.
-    </div>
-
-    <div class="ds-analysis-table-wrapper">
-      <table class="ds-analysis-table">
-        <thead>
-          <tr>
-            <th>Data Structure / Algorithm</th>
-            <th>Used?</th>
-            <th>Where Used</th>
-            <th>Space Efficiency</th>
-            <th>Time Efficiency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases (graphs, grids, matrices, DP tables, lists of records/events)</td><td>O(n)</td><td>O(1) access</td></tr>
-          <tr><td>Structures</td><td class="ds-used-yes">Yes</td><td>All cases (<code>Edge</code>, <code>Node</code>, <code>Zone</code>, <code>Patient</code>, <code>User</code>, <code>Task</code>, etc.)</td><td>O(1) per record</td><td>O(1) field access</td></tr>
-          <tr><td>List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Stack</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Queue</td><td class="ds-used-yes">Yes</td><td>Case 2, 3, 4, 6, 8, 10 (BFS over health graph, traffic, disaster grid, lighting graph, port graph)</td><td>O(V)</td><td>O(1) enqueue / dequeue</td></tr>
-          <tr><td>Binary Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 (key or node relationships)</td><td>O(n)</td><td>O(h) search</td></tr>
-          <tr><td>Binary Search Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 · Case 7 (balanced BST behaviour)</td><td>O(n)</td><td>Average O(log n), worst O(n)</td></tr>
-          <tr><td>AVL Tree</td><td class="ds-used-yes">Yes</td><td>Case 7 (balanced storage for simulation keys)</td><td>O(n)</td><td>O(log n) search / insert / delete</td></tr>
-          <tr><td>2–3 Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Red‑Black Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Trie</td><td class="ds-used-yes">Yes</td><td>Case 9 (dataset prefixes and auto‑complete)</td><td>O(total characters)</td><td>O(k) per search / insert</td></tr>
-          <tr><td>Heap (Min/Max‑Heap) / Priority Queue</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (Dijkstra / A* PQ, request schedulers)</td><td>O(n)</td><td>O(log n) push / pop</td></tr>
-          <tr><td>Lookup Table (Hash Table / Unordered Map)</td><td class="ds-used-yes">Yes</td><td>Cases 2, 5, 9 (patients, credentials, dataset index)</td><td>O(n)</td><td>Expected O(1) lookup / insert</td></tr>
-          <tr><td>Sparse Table</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Fenwick Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Segment Tree</td><td class="ds-used-yes">Yes</td><td>Case 3 (traffic density), Case 8 (lighting energy)</td><td>O(n)</td><td>O(log n) update and range query</td></tr>
-          <tr><td>Skip List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Union‑Find (Disjoint Set)</td><td class="ds-used-yes">Yes</td><td>Case 1 and 10 (irrigation / logistics MST)</td><td>O(n)</td><td>Amortised ≈ O(1) union / find</td></tr>
-          <tr><td>Hashing</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (unordered_map / sets, security hashes)</td><td>O(n)</td><td>O(1) expected per operation</td></tr>
-          <tr><td>DFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 6, 10 (graph / grid exploration)</td><td>O(V)</td><td>O(V + E)</td></tr>
-          <tr><td>BFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 6, 8, 10 (reachability, crowd / safety paths)</td><td>O(V)</td><td>O(V + E)</td></tr>
-          <tr><td>Bubble Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Selection Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Insertion Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Quick Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (sorting datasets / logs)</td><td>O(log n) extra stack</td><td>Average O(n log n)</td></tr>
-          <tr><td>Merge Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (stable sorting of metadata)</td><td>O(n)</td><td>O(n log n)</td></tr>
-          <tr><td>Brute‑Force Pattern Search</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Rabin–Karp</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (log scanning, text analysis)</td><td>O(1) extra per window</td><td>Average O(n + m)</td></tr>
-          <tr><td>Boyer–Moore</td><td class="ds-used-yes">Yes</td><td>Case 5 (malware signature search)</td><td>O(m + Σ) preprocessing</td><td>Sublinear average over text</td></tr>
-          <tr><td>Knuth–Morris–Pratt (KMP)</td><td class="ds-used-yes">Yes</td><td>Cases 2–10 (pattern search in various logs / notes)</td><td>O(m)</td><td>O(n + m)</td></tr>
-          <tr><td>Heap Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (energy and port MST)</td><td>O(E)</td><td>O(E log E)</td></tr>
-          <tr><td>Prim</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (alternate MST construction)</td><td>O(V + E)</td><td>O(V²) with array implementation</td></tr>
-          <tr><td>Dijkstra</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (routing in grids and graphs)</td><td>O(V)</td><td>O(E log V) with PQ</td></tr>
-          <tr><td>Floyd–Warshall</td><td class="ds-used-yes">Yes</td><td>Case 3 (all‑pairs travel times)</td><td>O(n²)</td><td>O(n³)</td></tr>
-          <tr><td>Bellman–Ford</td><td class="ds-used-yes">Yes</td><td>Case 1 (alternative shortest paths under constraints)</td><td>O(V)</td><td>O(V·E)</td></tr>
-        </tbody>
-      </table>
-    </div>
   </section>
 
   <footer>
