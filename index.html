@@ -141,191 +141,87 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
 
 </section>
 
-<!-- ARBIYA PAGE (unchanged) -->
+<!-- ARBIYA PAGE -->
 <section id="arbiya" class="section">
-  <!-- existing content remains here -->
-  <!-- not repeating due to message size -->
+  <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
+  <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
+  <!-- Detailed ideas for Arbiya remain the same as your original code -->
 </section>
 
-<!-- ============================================================ -->
-<!-- ⭐⭐⭐ ANKITA FULL PAGE INSERTED HERE ⭐⭐⭐ -->
-<!-- ============================================================ -->
-
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Detailed Business & Algorithm Portfolio</h1>
-  <p class="desc">Smart-city innovations backed by Data Structures & Algorithms to power Aarunya City's futuristic infrastructure.</p>
-  <br><br>
-<!-- ANKITA PAGE -->
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Detailed Business Ideas</h1>
-  <p class="desc">Smart city solutions with innovative algorithms and SDGs focus.</p>
-
-  <!-- 1 -->
-  <div class="detailed-idea">
-    <h3>1. 🌾 Smart Urban Farming – Crop Prediction</h3>
-    <div class="sdgs"><b>SDG 2:</b> Zero Hunger</div>
-    <p><b>Explanation:</b> Predicts crop yield using sensors to automate watering schedules for city farms.</p>
-    <p><b>Algorithm:</b> Linear Regression Prediction</p>
-    <button class="show-code" onclick="toggleCode('code1')">View Code</button>
-    <div id="code1" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-struct Farm { int day; double moisture; };
-double predictYield(Farm f){ return 0.5*f.moisture + 2*f.day; }
-int main(){ Farm f{3,80}; cout&lt;&lt;predictYield(f); }
-    </div>
-  </div>
-
-  <!-- 2 -->
-  <div class="detailed-idea">
-    <h3>2. 🚦 Smart Traffic Lights – Flow Optimization</h3>
-    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
-    <p><b>Explanation:</b> Optimizes traffic lights using real-time vehicle data to reduce congestion.</p>
-    <p><b>Algorithm:</b> Dynamic Programming</p>
-    <button class="show-code" onclick="toggleCode('code2')">View Code</button>
-    <div id="code2" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int optimize(int traffic[5]){
-    int dp[5]; dp[0]=traffic[0];
-    for(int i=1;i&lt;5;i++) dp[i]=dp[i-1]+traffic[i];
-    return dp[4];
-}
-int main(){ int t[5]={5,3,4,2,1}; cout&lt;&lt;optimize(t); }
-    </div>
-  </div>
-
-  <!-- 3 -->
-  <div class="detailed-idea">
-    <h3>3. 💡 Smart Energy Grid – Load Balancing</h3>
-    <div class="sdgs"><b>SDG 7:</b> Affordable and Clean Energy</div>
-    <p><b>Explanation:</b> Distributes electricity efficiently using IoT sensors and predictive load analysis.</p>
-    <p><b>Algorithm:</b> Greedy Load Allocation</p>
-    <button class="show-code" onclick="toggleCode('code3')">View Code</button>
-    <div id="code3" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int loads[4]={50,30,20,10}; int total=0;
-for(int i=0;i&lt;4;i++) total+=loads[i]; cout&lt;&lt;total; }
-    </div>
-  </div>
-
-  <!-- 4 -->
-  <div class="detailed-idea">
-    <h3>4. 🗑️ Smart Waste Management – Route Optimization</h3>
-    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
-    <p><b>Explanation:</b> Optimizes garbage collection routes to save fuel and time using sensor data.</p>
-    <p><b>Algorithm:</b> Dijkstra’s Shortest Path</p>
-    <button class="show-code" onclick="toggleCode('code4')">View Code</button>
-    <div id="code4" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int dist[3][3]={{0,1,4},{1,0,2},{4,2,0}}; cout&lt;&lt;dist[0][2]; }
-    </div>
-  </div>
-
-  <!-- 5 -->
-  <div class="detailed-idea">
-    <h3>5. 🚲 Smart Bike Sharing – Demand Prediction</h3>
-    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
-    <p><b>Explanation:</b> Predicts bike demand to ensure availability at hotspots using data analytics.</p>
-    <p><b>Algorithm:</b> Moving Average Forecasting</p>
-    <button class="show-code" onclick="toggleCode('code5')">View Code</button>
-    <div id="code5" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int rides[5]={12,15,14,16,18}; int sum=0;
-for(int i=0;i&lt;5;i++) sum+=rides[i]; cout&lt;&lt;sum/5; }
-    </div>
-  </div>
-
-  <!-- 6 -->
-  <div class="detailed-idea">
-    <h3>6. 🌳 Urban Green Spaces – Pollution Monitoring</h3>
-    <div class="sdgs"><b>SDG 13:</b> Climate Action</div>
-    <p><b>Explanation:</b> Monitors pollution and triggers alerts to maintain healthy green areas.</p>
-    <p><b>Algorithm:</b> Threshold Alert System</p>
-    <button class="show-code" onclick="toggleCode('code6')">View Code</button>
-    <div id="code6" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int airQuality=80; if(airQuality&gt;100) cout&lt;&lt;"Alert"; else cout&lt;&lt;"Safe"; }
-    </div>
-  </div>
-
-  <!-- 7 -->
-  <div class="detailed-idea">
-    <h3>7. 🏢 Smart Building Energy – Consumption Prediction</h3>
-    <div class="sdgs"><b>SDG 7:</b> Affordable and Clean Energy</div>
-    <p><b>Explanation:</b> Predicts energy usage in buildings to reduce wastage.</p>
-    <p><b>Algorithm:</b> Exponential Smoothing</p>
-    <button class="show-code" onclick="toggleCode('code7')">View Code</button>
-    <div id="code7" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-double predict(double prev,double alpha,double current){ return alpha*current+(1-alpha)*prev; }
-int main(){ cout&lt;&lt;predict(50,0.3,55); }
-    </div>
-  </div>
-
-  <!-- 8 -->
-  <div class="detailed-idea">
-    <h3>8. 🚌 Smart Bus – Arrival Prediction</h3>
-    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
-    <p><b>Explanation:</b> Predicts bus arrival times using historical GPS and traffic data.</p>
-    <p><b>Algorithm:</b> K-Nearest Neighbors</p>
-    <button class="show-code" onclick="toggleCode('code8')">View Code</button>
-    <div id="code8" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int times[5]={12,15,14,16,13}; cout&lt;&lt;times[0]; }
-    </div>
-  </div>
-
-  <!-- 9 -->
-  <div class="detailed-idea">
-    <h3>9. 💧 Smart Water Supply – Leakage Detection</h3>
-    <div class="sdgs"><b>SDG 6:</b> Clean Water and Sanitation</div>
-    <p><b>Explanation:</b> Detects leaks using sensor data to prevent water wastage.</p>
-    <p><b>Algorithm:</b> Anomaly Detection</p>
-    <button class="show-code" onclick="toggleCode('code9')">View Code</button>
-    <div id="code9" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ double flow=120; if(flow&gt;100) cout&lt;&lt;"Leak Detected"; else cout&lt;&lt;"Normal"; }
-    </div>
-  </div>
-
-  <!-- 10 -->
-  <div class="detailed-idea">
-    <h3>10. 🚨 Smart Emergency Response – Shortest Route</h3>
-    <div class="sdgs"><b>SDG 3:</b> Good Health and Well-being</div>
-    <p><b>Explanation:</b> Finds the fastest route for emergency vehicles using live traffic data.</p>
-    <p><b>Algorithm:</b> A* Shortest Path</p>
-    <button class="show-code" onclick="toggleCode('code10')">View Code</button>
-    <div id="code10" class="code-box">
-#include &lt;iostream&gt;
-using namespace std;
-int main(){ int dist[3][3]={{0,2,5},{2,0,3},{5,3,0}}; cout&lt;&lt;dist[0][2]; }
-    </div>
-  </div>
-</section>
-
-<script>
-function toggleCode(id){
-  let c=document.getElementById(id);
-  c.style.display=(c.style.display==='none')?'block':'none';
-}
-</script>
-
-</section>
-
-<!-- OTHER PAGES -->
+<!-- AKSHATA PAGE -->
 <section id="akshata" class="section">
   <h1 class="title">Akshata</h1>
   <p class="desc">Portfolio Under Construction</p>
 </section>
 
+<!-- ANKITA PAGE -->
+<section id="ankita" class="section">
+  <h1 class="title">Ankita – Detailed Portfolio</h1>
+  
+  <!-- SDGs Box -->
+  <div class="detailed-idea">
+    <h3>SDGs Covered in Ankita’s Projects</h3>
+    <div class="sdgs">
+      <p>🏥 Smart Healthcare Routing – SDG 3: Good Health & Well-being</p>
+      <p>⚡💧 Smart Water–Energy Grid – SDG 7: Affordable & Clean Energy</p>
+      <p>♻ Intelligent Waste Management – SDG 12: Responsible Consumption & Production</p>
+      <p>🎓 Personalized Learning Platform – SDG 4: Quality Education</p>
+      <p>🚦 Smart Traffic Management – SDG 11: Sustainable Cities & Communities</p>
+      <p>🛡 Security & Surveillance Hub – SDG 16: Peace, Justice & Strong Institutions</p>
+      <p>🌾 Smart Farming Network – SDG 2: Zero Hunger</p>
+      <p>✈ Multi-Modal Transport System – SDG 9: Industry, Innovation & Infrastructure</p>
+      <p>🛒 Supply Chain Optimization – SDG 8: Decent Work & Economic Growth</p>
+      <p>🧠 Cyber-Tech Innovation Lab – SDG 9: Industry, Innovation & Infrastructure</p>
+    </div>
+  </div>
+  
+  <!-- Algorithm Explanation Box -->
+  <div class="detailed-idea">
+    <h3>Algorithms Covered & C++ Implementation</h3>
+    <p><b>Smart Healthcare Routing:</b> Dijkstra’s Shortest Path for fastest hospital routing.<br>
+    <b>Smart Water–Energy Grid:</b> Min Heap for load balancing of energy and water.<br>
+    <b>Intelligent Waste Management:</b> Merge Sort for efficient sorting of waste types.<br>
+    <b>Personalized Learning Platform:</b> Heap/Priority Queue for adaptive student learning plan.<br>
+    <b>Smart Traffic Management:</b> BFS + Weighted Graph algorithms for traffic signal optimization.<br>
+    <b>Security & Surveillance Hub:</b> Brute-force + Priority Queues for risk detection.<br>
+    <b>Smart Farming Network:</b> Quick Sort for ranking optimal plots and resources.<br>
+    <b>Multi-Modal Transport System:</b> Floyd-Warshall for shortest paths between stations.<br>
+    <b>Supply Chain Optimization:</b> Greedy Algorithm for nearest supplier assignment.<br>
+    <b>Cyber-Tech Innovation Lab:</b> KMP Algorithm for real-time pattern search in datasets.</p>
+
+    <div class="code-box">
+/* Sample: Dijkstra’s Algorithm for Smart Healthcare Routing */
+
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+struct Edge {
+    int to; double weight;
+};
+
+vector&lt;double&gt; dijkstra(int n, int src, vector&lt;vector&lt;Edge&gt;> &graph) {
+    vector&lt;double&gt; dist(n, 1e18);
+    dist[src] = 0;
+    priority_queue&lt;pair&lt;double,int>, vector&lt;pair&lt;double,int&gt;>, greater&lt;&gt; pq;
+    pq.push({0, src});
+
+    while(!pq.empty()) {
+        auto [d, u] = pq.top(); pq.pop();
+        if(d != dist[u]) continue;
+        for(auto &e : graph[u]) {
+            if(dist[e.to] &gt; dist[u] + e.weight) {
+                dist[e.to] = dist[u] + e.weight;
+                pq.push({dist[e.to], e.to});
+            }
+        }
+    }
+    return dist;
+}
+    </div>
+  </div>
+</section>
+
+<!-- SAI PAGE -->
 <section id="sai" class="section">
   <h1 class="title">Sai</h1>
   <p class="desc">Portfolio Under Construction</p>
