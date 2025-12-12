@@ -11,7 +11,8 @@
 /* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 body{
-  background: radial-gradient(circle at top, #2b2b3d 0%, #15151f 45%, #0d0d14 100%);
+  background:
+    linear-gradient(135deg,#2a1b3d 0%, #1e2a4f 40%, #0f1c2e 70%, #090f1f 100%);
   color:#e2e8f0;
   overflow-x:hidden;
 }
@@ -20,15 +21,15 @@ body{
 nav{
   position:sticky;
   top:0;
-  background:linear-gradient(90deg,#1e1e2e,#26263b);
+  background:linear-gradient(90deg,#24143a,#1c2b52);
   padding:18px;
   text-align:center;
-  border-bottom:1px solid #3a3a55;
-  box-shadow:0 0 12px rgba(120,220,255,0.35);
+  border-bottom:1px solid #3d2c6d;
+  box-shadow:0 0 14px rgba(180,150,255,0.4);
   z-index:50;
 }
 nav a{
-  color:#e4eaff;
+  color:#e6ddff;
   margin:0 20px;
   font-weight:500;
   font-size:18px;
@@ -37,8 +38,8 @@ nav a{
   transition:0.3s;
 }
 nav a:hover{
-  color:#7df9ff;
-  text-shadow:0 0 10px rgba(125,249,255,0.9);
+  color:#e0c9ff;
+  text-shadow:0 0 10px rgba(224,201,255,0.9);
 }
 
 /* SECTIONS */
@@ -47,10 +48,10 @@ nav a:hover{
   max-width:1100px;
   margin:40px auto;
   padding:40px;
-  background:linear-gradient(160deg,#1e1e2d,#181822);
+  background:linear-gradient(160deg,#1b1933,#151526);
   border-radius:20px;
-  border:1px solid #3a3a55;
-  box-shadow:0 0 28px rgba(0,0,0,0.8);
+  border:1px solid #3b2f63;
+  box-shadow:0 0 30px rgba(0,0,0,0.85);
   animation:fadeIn 0.7s ease forwards;
 }
 .section.active{display:block;}
@@ -59,7 +60,7 @@ nav a:hover{
   to{opacity:1;transform:translateY(0);}
 }
 
-/* MAIN HEADINGS – BRIGHT CYAN NEON */
+/* MAIN HEADINGS (unchanged from previous version) */
 .title{
   text-align:center;
   font-size:34px;
@@ -79,30 +80,32 @@ nav a:hover{
   color:#d6dcf0;
 }
 
-/* NAME / ROLL / USN – HIGH CONTRAST NEON */
+/* NAME – NEON LAVENDER */
 .neon-name{
-  color:#ffdd57;
+  color:#d6b4ff;
   font-weight:400;
   text-shadow:
-    0 0 8px rgba(255,221,87,0.9),
-    0 0 18px rgba(255,221,87,0.6);
+    0 0 8px rgba(214,180,255,0.95),
+    0 0 18px rgba(214,180,255,0.65);
 }
+
+/* ROLL NO & USN – NEON PINK */
 .neon-info{
-  color:#00ffd5;
+  color:#ff6ec7;
   font-weight:400;
   text-shadow:
-    0 0 7px rgba(0,255,213,0.85),
-    0 0 16px rgba(0,255,213,0.55);
+    0 0 7px rgba(255,110,199,0.9),
+    0 0 16px rgba(255,110,199,0.6);
 }
 
 /* MEMBER BOX */
 .member-box{
-  background:linear-gradient(160deg,#1a1a28,#14141d);
+  background:linear-gradient(160deg,#17152a,#111124);
   padding:25px;
   border-radius:15px;
-  border:1px solid #33334d;
+  border:1px solid #332a5c;
   margin-bottom:20px;
-  box-shadow:0 0 22px rgba(0,0,0,0.7);
+  box-shadow:0 0 24px rgba(0,0,0,0.75);
 }
 .member-box h2{margin-bottom:8px;}
 .idea-list{
