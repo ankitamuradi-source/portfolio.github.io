@@ -1,1 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbiya Naaz – Detailed Business Ideas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        .section { max-width: 900px; margin: auto; }
+        .title { font-size: 32px; margin-bottom: 10px; }
+        .desc { font-size: 18px; color: #444; }
+        .detailed-idea { margin-bottom: 50px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+        .sdgs { background: #f3f3f3; padding: 6px 10px; display: inline-block; margin-bottom: 10px; border-radius: 4px; }
+        .code-box {
+            background: #1e1e1e;
+            color: #eaeaea;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            overflow-x: auto;
+            white-space: pre;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+<section id="arbiya" class="section">
+  <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
+  <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
+  <br><br>
+
+  <!-- 1. LOGISTICS HUB -->
+  <div class="detailed-idea">
+    <h3>1. ⚡ Logistics Hub – Smart Route Optimization</h3>
+    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
+    <p><b>Problem Statement:</b> Trucks inside the logistics hub waste fuel and time taking bad routes. We need a system to compute the shortest and safest routes between any warehouses or loading points.</p>
+    <p><b>Algorithm Used:</b> Floyd–Warshall (All-Pairs Shortest Path)</p>
+
+    <div class="code-box">
+/* REALISTIC IMPLEMENTATION OF A LOGISTICS HUB ROUTING ENGINE */
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+struct Node { int id; string name; };
+struct Hub {
+    vector&lt;Node&gt; points;
+    vector&lt;vector&lt;double&gt;&gt; dist;
+    
+    Hub(int n){
+        dist.assign(n, vector&lt;double&gt;(n, 1e18));
+        for(int i = 0; i &lt; n; i++) dist[i][i] = 0;
+    }
+    
+    void addRoad(int a, int b, double cost){
+        dist[a][b] = cost;
+        dist[b][a] = cost;
+    }
+    
+    void computeOptimalPaths(){
+        int n = dist.size();
+        for(int k = 0; k &lt; n; k++)
+            for(int i = 0; i &lt; n; i++)
+                for(int j = 0; j &lt; n; j++)
+                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+    }
+    
+    double routeCost(int a, int b){ 
+        return dist[a][b]; 
+    }
+};
+    </div>
+
+    <p><b>Application Logic:</b> Each warehouse/dock is a node; roads are edges; Floyd–Warshall gives shortest paths for all pairs. Trucks follow optimal routes to save fuel & time.</p>
+  </div>
+
+  <!-- 2. ECO RESORT -->
+  <div class="detailed-idea">
+    <h3>2. 🏕 Eco Resort – Nature Trail Recommendation</h3>
+    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
+    <p><b>Problem Statement:</b> Guests need the safest and shortest trekking or cycling trail inside the eco-resort. Trails have different terrain difficulty and environmental safety ratings.</p>
+    <p><b>Algorithm Used:</b> Dijkstra’s Shortest Path</p>
+
+    <div class="code-box">
+struct TrailEdge { int to; double distanceKm; double difficulty; };
+
+struct EcoResort {
+    vector&lt;vector&lt;TrailEdge&gt;&gt; graph;
+
+    EcoResort(int n){ graph.resize(n); }
+
+    void addTrail(int a, int b, double dist, double diff){
+        graph[a].push_back({b, dist, diff});
+        graph[b].push_back({a, dist, diff});
+    }
+
+    vector&lt;double&gt; bestTrail(int src){
+        int n = graph.size();
+        vector&lt;double&gt; cost(n, 1e18);
+        
+        priority_queue&lt;pair&lt;double,int&gt;, 
+                       vector&lt;pair&lt;double,int&gt;&gt;, 
+                       greater&lt;&gt;&gt; pq;
+
+        cost[src] = 0;
+        pq.push({0, src});
+
+        while(!pq.empty()){
+            auto [c, u] = pq.top();
+            pq.pop();
+
+            if(c != cost[u]) continue;
+
+            for(auto &e : graph[u]){
+                double w = e.distanceKm + e.difficulty * 0.3;
+                if(cost[e.to] > cost[u] + w){
+                    cost[e.to] = cost[u] + w;
+                    pq.push({cost[e.to], e.to});
+                }
+            }
+        }
+        return cost;
+    }
+};
+    </div>
+
+    <p><b>Application Logic:</b> Trails weighted by distance & difficulty; Dijkstra finds safest & shortest path for visitors.</p>
+  </div>
+
+  <!-- 3. IT TRAINING CENTER -->
+  <div class="detailed-idea">
+    <h3>3. 💻 IT Training Center – Smart Batch Scheduling</h3>
+    <div class="sdgs"><b>SDG 4:</b> Quality Education</div>
+    <p><b>Problem Statement:</b> Schedule course batches efficiently based on student demand and ratings.</p>
+    <p><b>Algorithm Used:</b> Heap Sort (priority-based)</p>
+
+    <div class="code-box">
+struct Course { int id; string name; int demand; double rating; };
+
+bool operator&lt;(const Course &a, const Course &b){
+    if(a.demand == b.demand) return a.rating &lt; b.rating;
+    return a.demand &lt; b.demand;
+}
+
+vector&lt;Course&gt; scheduleBatches(vector&lt;Course&gt; courses){
+    priority_queue&lt;Course&gt; maxHeap;
+
+    for(auto &c : courses) maxHeap.push(c);
+
+    vector&lt;Course&gt; sorted;
+    while(!maxHeap.empty()){
+        sorted.push_back(maxHeap.top());
+        maxHeap.pop();
+    }
+    
+    return sorted;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Heap prioritizes high-demand, high-rating courses; schedules batches efficiently.</p>
+  </div>
+
+  <!-- 4. COLD STORAGE -->
+  <div class="detailed-idea">
+    <h3>4. ❄ Cold Storage – Inventory Expiry Management</h3>
+    <div class="sdgs"><b>SDG 12:</b> Responsible Consumption & Production</div>
+    <p><b>Problem Statement:</b> Sort perishable goods by expiry date to avoid waste.</p>
+    <p><b>Algorithm Used:</b> Merge Sort</p>
+
+    <div class="code-box">
+struct Item { string name; long long expiry; };
+
+bool cmp(const Item &a, const Item &b){ 
+    return a.expiry &lt; b.expiry; 
+}
+
+vector&lt;Item&gt; mergeSort(vector&lt;Item&gt; arr){
+    if(arr.size() &lt;= 1) return arr;
+
+    int mid = arr.size() / 2;
+
+    vector&lt;Item&gt; left(arr.begin(), arr.begin() + mid);
+    vector&lt;Item&gt; right(arr.begin() + mid, arr.end());
+
+    left = mergeSort(left);
+    right = mergeSort(right);
+
+    vector&lt;Item&gt; merged;
+    int i = 0, j = 0;
+
+    while(i &lt; left.size() && j &lt; right.size()){
+        if(cmp(left[i], right[j])) merged.push_back(left[i++]);
+        else merged.push_back(right[j++]);
+    }
+
+    while(i &lt; left.size()) merged.push_back(left[i++]);
+    while(j &lt; right.size()) merged.push_back(right[j++]);
+
+    return merged;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Sorted items ensure FIFO distribution, reduce spoilage, optimize storage.</p>
+  </div>
+
+  <!-- 5. CO-WORKING HUB -->
+  <div class="detailed-idea">
+    <h3>5. 🏢 Co-working Hub – Smart Desk Allocation</h3>
+    <div class="sdgs"><b>SDG 8:</b> Decent Work & Economic Growth</div>
+    <p><b>Problem Statement:</b> Assign desks based on comfort factors (light, noise, power outlet).</p>
+    <p><b>Algorithm Used:</b> Quick Sort</p>
+
+    <div class="code-box">
+struct Desk{ int id, noiseLevel, lightLevel; bool nearPower; };
+
+double score(const Desk &d){
+    return d.lightLevel * 2 - d.noiseLevel * 1.5 + (d.nearPower ? 10 : 0);
+}
+
+int partition(vector&lt;Desk&gt; &a, int low, int high){
+    double pivot = score(a[high]);
+    int i = low - 1;
+
+    for(int j = low; j &lt; high; j++){
+        if(score(a[j]) > pivot){
+            i++;
+            swap(a[i], a[j]);
+        }
+    }
+
+    swap(a[i + 1], a[high]);
+    return i + 1;
+}
+
+void quickSort(vector&lt;Desk&gt; &a, int low, int high){
+    if(low &lt; high){
+        int pi = partition(a, low, high);
+        quickSort(a, low, pi - 1);
+        quickSort(a, pi + 1, high);
+    }
+}
+    </div>
+
+    <p><b>Application Logic:</b> Desks ranked by score; Quick Sort assigns best available desk.</p>
+  </div>
+
+  <!-- 6. RETAIL MALL -->
+  <div class="detailed-idea">
+    <h3>6. 🛍 Retail Mall – Product Search System</h3>
+    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
+    <p><b>Problem Statement:</b> Fast search through large product inventory.</p>
+    <p><b>Algorithm Used:</b> KMP String Search</p>
+
+    <div class="code-box">
+vector&lt;int&gt; computeLPS(string pattern){
+    vector&lt;int&gt; lps(pattern.size());
+    int len = 0;
+
+    for(int i = 1; i &lt; pattern.size(); i++){
+        while(len > 0 && pattern[i] != pattern[len])
+            len = lps[len - 1];
+
+        if(pattern[i] == pattern[len])
+            len++;
+
+        lps[i] = len;
+    }
+    return lps;
+}
+
+bool searchProduct(string text, string pattern){
+    auto lps = computeLPS(pattern);
+    int j = 0;
+
+    for(int i = 0; i &lt; text.size(); i++){
+        while(j > 0 && text[i] != pattern[j])
+            j = lps[j - 1];
+
+        if(text[i] == pattern[j])
+            j++;
+
+        if(j == pattern.size())
+            return true;
+    }
+    return false;
+}
+    </div>
+
+    <p><b>Application Logic:</b> KMP enables instant product lookup; shoppers find items quickly.</p>
+  </div>
+
+  <!-- 7. MULTI-SPECIALTY HOSPITAL -->
+  <div class="detailed-idea">
+    <h3>7. 🏥 Multi-specialty Hospital – Patient Risk Detection</h3>
+    <div class="sdgs"><b>SDG 3:</b> Good Health & Well-Being</div>
+    <p><b>Problem Statement:</b> Identify high-risk patients early.</p>
+    <p><b>Algorithm Used:</b> Rule-Based + Brute Force</p>
+
+    <div class="code-box">
+struct Patient{ int id, age; double temperature, bp; bool chestPain; };
+
+int computeRisk(const Patient &p){
+    int risk = 0;
+    
+    if(p.age > 60) risk += 20;
+    if(p.temperature > 38) risk += 30;
+    if(p.bp > 150) risk += 25;
+    if(p.chestPain) risk += 40;
+
+    return risk;
+}
+
+vector&lt;Patient&gt; findHighRisk(vector&lt;Patient&gt; &list){
+    vector&lt;Patient&gt; high;
+
+    for(auto &p : list)
+        if(computeRisk(p) >= 60) 
+            high.push_back(p);
+
+    return high;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Scan all patients; flag high-risk for immediate care.</p>
+  </div>
+
+  <!-- 8. EV CHARGING -->
+  <div class="detailed-idea">
+    <h3>8. ⚡ EV Charging Stations – Load Balancing</h3>
+    <div class="sdgs"><b>SDG 7:</b> Affordable & Clean Energy</div>
+    <p><b>Problem Statement:</b> Balance load across multiple stations to avoid overload.</p>
+    <p><b>Algorithm Used:</b> Min Heap (priority scheduling)</p>
+
+    <div class="code-box">
+struct Station{ int id; double currentLoad, capacity; };
+
+struct CompareLoad{
+    bool operator()(const Station &a, const Station &b){
+        return a.currentLoad > b.currentLoad;
+    }
+};
+
+int assignStation(vector&lt;Station&gt; stations, double carLoad){
+    priority_queue&lt;Station, vector&lt;Station&gt;, CompareLoad&gt; pq(stations.begin(), stations.end());
+
+    Station s = pq.top();
+    pq.pop();
+
+    if(s.currentLoad + carLoad > s.capacity)
+        return -1;
+
+    s.currentLoad += carLoad;
+    pq.push(s);
+
+    return s.id;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Assign EV to station with minimum load; prevent overload; fair energy use.</p>
+  </div>
+
+  <!-- 9. WATERFRONT TOURISM -->
+  <div class="detailed-idea">
+    <h3>9. 🚤 Waterfront Tourism – Boat Path Safety</h3>
+    <div class="sdgs"><b>SDG 14:</b> Life Below Water</div>
+    <p><b>Problem Statement:</b> Boats must avoid shallow water or wildlife zones.</p>
+    <p><b>Algorithm Used:</b> Bellman-Ford</p>
+
+    <div class="code-box">
+struct Edge{ int u, v; double cost; };
+
+vector&lt;double&gt; computeSafeRoute(int n, vector&lt;Edge&gt; edges, int src){
+    vector&lt;double&gt; dist(n, 1e18);
+    dist[src] = 0;
+
+    for(int i = 0; i &lt; n - 1; i++)
+        for(auto &e : edges)
+            if(dist[e.u] + e.cost &lt; dist[e.v])
+                dist[e.v] = dist[e.u] + e.cost;
+
+    return dist;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Negative weights for dangerous zones; Bellman-Ford avoids hazards; boats get safest routes.</p>
+  </div>
+
+  <!-- 10. E-COMMERCE HUB -->
+  <div class="detailed-idea">
+    <h3>10. 📦 E-commerce Distribution Center – Courier Assignment</h3>
+    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
+    <p><b>Problem Statement:</b> Assign packages to couriers efficiently based on distance, load, and energy.</p>
+    <p><b>Algorithm Used:</b> Greedy + Spatial Assignment</p>
+
+    <div class="code-box">
+struct Courier{ int id; double energy, maxLoad, x, y; };
+struct Package{ int id; double weight, px, py; };
+
+double distance(double x1, double y1, double x2, double y2){
+    return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+}
+
+bool canDeliver(const Courier &c, const Package &p){
+    return p.weight &lt;= c.maxLoad 
+        && c.energy &gt;= distance(c.x, c.y, p.px, p.py) * 0.5;
+}
+
+int assignPackage(const vector&lt;Courier&gt; &cs, const Package &p){
+    int best = -1;
+    double bestDist = 1e18;
+
+    for(int i = 0; i &lt; cs.size(); i++){
+        if(canDeliver(cs[i], p)){
+            double d = distance(cs[i].x, cs[i].y, p.px, p.py);
+            if(d &lt; bestDist){
+                bestDist = d;
+                best = i;
+            }
+        }
+    }
+    return best;
+}
+    </div>
+
+    <p><b>Application Logic:</b> Greedy nearest courier selection; efficient real-time delivery assignment.</p>
+  </div>
+
+</section>
+
+</body>
+</html>
 
