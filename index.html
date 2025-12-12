@@ -13,25 +13,101 @@
 body{background:#0a0f1a;color:#e2e8f0;overflow-x:hidden;}
 
 /* NAV */
-nav{position:sticky;top:0;background:#0d1627;padding:18px;text-align:center;border-bottom:2px solid #1c2d45;box-shadow:0 0 12px rgba(0,150,255,0.25);z-index:50;}
-nav a{color:#cbd5e1;margin:0 20px;font-weight:600;font-size:18px;text-decoration:none;cursor:pointer;transition:0.3s;}
-nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
+nav{
+  position:sticky;
+  top:0;
+  background:#0d1627;
+  padding:18px;
+  text-align:center;
+  border-bottom:2px solid #1c2d45;
+  box-shadow:0 0 12px rgba(0,150,255,0.25);
+  z-index:50;
+}
+nav a{
+  color:#cbd5e1;
+  margin:0 20px;
+  font-weight:600;
+  font-size:18px;
+  text-decoration:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+nav a:hover{
+  color:#4dabff;
+  text-shadow:0 0 8px #268cff;
+}
 
 /* SECTIONS */
-.section{display:none;max-width:1100px;margin:40px auto;padding:40px;background:#0d1627;border-radius:20px;border:1px solid #1e3454;box-shadow:0 0 25px rgba(0,150,255,0.15);animation:fadeIn 0.7s ease forwards;}
-.section.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.section{
+  display:none;
+  max-width:1100px;
+  margin:40px auto;
+  padding:40px;
+  background:#0d1627;
+  border-radius:20px;
+  border:1px solid #1e3454;
+  box-shadow:0 0 25px rgba(0,150,255,0.15);
+  animation:fadeIn 0.7s ease forwards;
+}
+.section.active{
+  display:block;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
 
 /* TITLES */
-.title{text-align:center;font-size:34px;margin-bottom:25px;color:#ffb703;text-shadow:0 0 8px rgba(255,183,3,0.4);}
-.desc{text-align:center;font-size:19px;max-width:750px;margin:auto;line-height:1.6;color:#cbd5e1;}
+.title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:25px;
+  color:#ffb703;
+  text-shadow:0 0 8px rgba(255,183,3,0.4);
+}
+.desc{
+  text-align:center;
+  font-size:19px;
+  max-width:750px;
+  margin:auto;
+  line-height:1.6;
+  color:#cbd5e1;
+}
 
 /* MEMBER BOX */
-.member-box{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:20px;box-shadow:0 0 20px rgba(38,140,255,0.2);}
-.member-box h2{color:#4dabff;margin-bottom:8px;}
-.idea-list{margin-top:10px;padding-left:20px;line-height:1.8;font-size:17px;}
-.view-btn{margin-top:15px;padding:10px 18px;background:#268cff;border:none;color:white;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
-.view-btn:hover{background:#4dabff;box-shadow:0 0 10px #1e90ff;}
+.member-box{
+  background:#0b1320;
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #1e3454;
+  margin-bottom:20px;
+  box-shadow:0 0 20px rgba(38,140,255,0.2);
+}
+.member-box h2{
+  color:#4dabff;
+  margin-bottom:8px;
+}
+.idea-list{
+  margin-top:10px;
+  padding-left:20px;
+  line-height:1.8;
+  font-size:17px;
+}
+.view-btn{
+  margin-top:15px;
+  padding:10px 18px;
+  background:#268cff;
+  border:none;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+.view-btn:hover{
+  background:#4dabff;
+  box-shadow:0 0 10px #1e90ff;
+}
 </style>
 </head>
 
@@ -41,9 +117,14 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
 <nav>
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+
+  <!-- UPDATED: Arbiya now links to ArbiyaNaaz.html -->
+  <a href="arbiya.html">Arbiya Naaz</a>
+
   <a onclick="showPage('akshata')">Akshata</a>
   <a onclick="showPage('ankita')">Ankita</a>
+  
+  <!-- Sai already separate -->
   <a href="sai.html">Sai</a>
 </nav>
 
@@ -74,7 +155,11 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
       <p>🚤 Waterfront Tourism</p>
       <p>📦 E-commerce Distribution Center</p>
     </div>
-    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
+
+    <!-- UPDATED BUTTON: Now goes to arbiya.html -->
+    <button class="view-btn" onclick="window.location.href='arbiya.html'">
+      View Portfolio
+    </button>
   </div>
 
   <!-- AKSHATA -->
@@ -140,7 +225,7 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
 
 <script>
 function showPage(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 </script>
