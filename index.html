@@ -10,163 +10,34 @@
 <style>
 /* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{
-    background:linear-gradient(135deg,#04080f 0%,#09101e 40%,#0b1f33 100%);
-    color:#e6f1ff;
-    overflow-x:hidden;
-}
-
-/* DIGITAL GLOW */
-:root{
-    --neon-blue:#4dd2ff;
-    --neon-pink:#ff4df2;
-    --glass-bg:rgba(20,25,40,0.45);
-    --glass-border:rgba(255,255,255,0.08);
-}
+body{background:#0a0f1a;color:#e2e8f0;overflow-x:hidden;}
 
 /* NAV */
-nav{
-    position:sticky;
-    top:0;
-    background:rgba(10,15,28,0.7);
-    padding:18px;
-    text-align:center;
-    border-bottom:1px solid var(--glass-border);
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 18px rgba(0,217,255,0.2);
-    z-index:50;
-}
-nav a{
-    color:#d6eaff;
-    margin:0 20px;
-    font-weight:600;
-    font-size:18px;
-    text-decoration:none;
-    cursor:pointer;
-    transition:0.3s;
-    padding:8px 14px;
-    border-radius:6px;
-}
-nav a:hover{
-    background:linear-gradient(45deg,var(--neon-blue),var(--neon-pink));
-    color:#000;
-    box-shadow:0 0 12px var(--neon-blue),0 0 12px var(--neon-pink);
-}
+nav{position:sticky;top:0;background:#0d1627;padding:18px;text-align:center;border-bottom:2px solid #1c2d45;box-shadow:0 0 12px rgba(0,150,255,0.25);z-index:50;}
+nav a{color:#cbd5e1;margin:0 20px;font-weight:600;font-size:18px;text-decoration:none;cursor:pointer;transition:0.3s;}
+nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
 
 /* SECTIONS */
-.section{
-    display:none;
-    max-width:1100px;
-    margin:40px auto;
-    padding:40px;
-    background:var(--glass-bg);
-    border-radius:20px;
-    border:1px solid var(--glass-border);
-    backdrop-filter:blur(12px);
-    box-shadow:0 0 35px rgba(0,217,255,0.15);
-    animation:fadeIn 0.7s ease forwards;
-}
+.section{display:none;max-width:1100px;margin:40px auto;padding:40px;background:#0d1627;border-radius:20px;border:1px solid #1e3454;box-shadow:0 0 25px rgba(0,150,255,0.15);animation:fadeIn 0.7s ease forwards;}
 .section.active{display:block;}
-
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* TITLES */
-.title{
-    text-align:center;
-    font-size:36px;
-    margin-bottom:25px;
-    background:linear-gradient(45deg,var(--neon-blue),var(--neon-pink));
-    -webkit-background-clip:text;
-    color:transparent;
-    text-shadow:0 0 16px rgba(0,247,255,0.4);
-}
-.desc{
-    text-align:center;
-    font-size:19px;
-    max-width:750px;
-    margin:auto;
-    line-height:1.6;
-    color:#cbd8ee;
-}
+.title{text-align:center;font-size:34px;margin-bottom:25px;color:#ffb703;text-shadow:0 0 8px rgba(255,183,3,0.4);}
+.desc{text-align:center;font-size:19px;max-width:750px;margin:auto;line-height:1.6;color:#cbd5e1;}
 
 /* MEMBER BOX */
-.member-box{
-    background:var(--glass-bg);
-    padding:25px;
-    border-radius:15px;
-    border:1px solid var(--glass-border);
-    margin-bottom:20px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 25px rgba(0,217,255,0.15);
-    transition:0.3s;
-}
-.member-box:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 28px rgba(0,217,255,0.25);
-}
-.member-box h2{
-    color:var(--neon-blue);
-    margin-bottom:8px;
-}
-.idea-list{
-    margin-top:10px;
-    padding-left:20px;
-    line-height:1.8;
-    font-size:17px;
-}
-.view-btn{
-    margin-top:15px;
-    padding:10px 18px;
-    background:linear-gradient(45deg,var(--neon-blue),var(--neon-pink));
-    border:none;
-    color:#000;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
-}
-.view-btn:hover{
-    filter:brightness(1.2);
-    box-shadow:0 0 15px var(--neon-blue),0 0 15px var(--neon-pink);
-}
+.member-box{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:20px;box-shadow:0 0 20px rgba(38,140,255,0.2);}
+.member-box h2{color:#4dabff;margin-bottom:8px;}
+.idea-list{margin-top:10px;padding-left:20px;line-height:1.8;font-size:17px;}
+.view-btn{margin-top:15px;padding:10px 18px;background:#268cff;border:none;color:white;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
+.view-btn:hover{background:#4dabff;box-shadow:0 0 10px #1e90ff;}
 
 /* DETAILED IDEAS */
-.detailed-idea{
-    background:var(--glass-bg);
-    padding:25px;
-    border-radius:15px;
-    border:1px solid var(--glass-border);
-    margin-bottom:28px;
-    backdrop-filter:blur(12px);
-    box-shadow:0 0 25px rgba(0,217,255,0.18);
-}
-.detailed-idea h3{
-    background:linear-gradient(45deg,var(--neon-blue),var(--neon-pink));
-    -webkit-background-clip:text;
-    color:transparent;
-}
-.sdgs{
-    color:var(--neon-blue);
-    margin-bottom:12px;
-    font-weight:600;
-}
-
-.code-box{
-    background:#06101e;
-    padding:18px;
-    border-left:4px solid var(--neon-blue);
-    margin-top:12px;
-    white-space:pre-wrap;
-    font-family:monospace;
-    font-size:15px;
-    color:#d1eaff;
-    border-radius:8px;
-    line-height:1.5;
-    box-shadow:0 0 15px rgba(0,217,255,0.15);
-}
+.detailed-idea{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:28px;box-shadow:0 0 25px rgba(38,140,255,0.25);}
+.detailed-idea h3{color:#ffb703;margin-bottom:10px;}
+.sdgs{color:#4dabff;margin-bottom:12px;font-weight:600;}
+.code-box{background:#0a1322;padding:18px;border-left:4px solid #4dabff;margin-top:12px;white-space:pre-wrap;font-family:monospace;font-size:15px;color:#d1eaff;border-radius:8px;line-height:1.5;}
 </style>
 </head>
 
@@ -185,7 +56,7 @@ nav a:hover{
 <!-- HOME -->
 <section id="home" class="section active">
   <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">A futuristic smart city built on sustainability, innovation, and advanced digital technology.</p>
+  <p class="desc">A futuristic smart city built on sustainability, innovation, and advanced technology.</p>
 </section>
 
 <!-- PROJECT PAGE -->
@@ -270,19 +141,13 @@ nav a:hover{
 
 </section>
 
-<!-- ========================= -->
-<!-- ARBIYA PAGE (FULL)       -->
-<!-- ========================= -->
+<!-- ARBIYA PAGE -->
 <section id="arbiya" class="section">
   <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
   <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
   <br><br>
 
-<!-- SAME CONTENT AS BEFORE (UNCHANGED EXCEPT COLORS) -->
-<!-- I kept your detailed ideas + code exactly as you provided -->
-<!-- Only design colors changed above -->
 
-<!-- YOUR 10 SECTIONS ARE HERE (unchanged code from before) -->
 
 <!-- ============================================================ -->
 <!-- 1. LOGISTICS HUB -->
@@ -302,13 +167,565 @@ nav a:hover{
 <div class="code-box">
 /* REALISTIC IMPLEMENTATION OF A LOGISTICS HUB ROUTING ENGINE */
 
-... (ALL YOUR ORIGINAL CODE BLOCKS REMAIN SAME) ...
-</div>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+struct Node {
+    int id;
+    string name;
+};
+
+struct Hub {
+    vector&lt;Node&gt; points;
+    vector&lt;vector&lt;double&gt;&gt; dist;     // distance matrix
+
+    Hub(int n) {
+        dist.assign(n, vector&lt;double&gt;(n, 1e18));
+        for(int i=0;i<n;i++) dist[i][i] = 0;
+    }
+
+    // add bidirectional road
+    void addRoad(int a, int b, double cost) {
+        dist[a][b] = cost;
+        dist[b][a] = cost;
+    }
+
+    // All-pairs shortest path
+    void computeOptimalPaths() {
+        int n = dist.size();
+        for(int k=0;k<n;k++)
+            for(int i=0;i<n;i++)
+                for(int j=0;j<n;j++)
+                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+    }
+
+    double routeCost(int a, int b) {
+        return dist[a][b];
+    }
+};
 </div>
 
-<!-- I am not pasting again all 10 blocks here because message will overflow -->
-<!-- BUT IN YOUR FINAL FILE, it will contain ALL EXACT code blocks you gave -->
-<!-- Nothing removed, only the CSS above is updated -->
+  <p><b>Application Logic (Explained):</b><br>
+  • Each point (warehouse, dock, gate) becomes a node.<br>
+  • Roads are weighted edges based on travel time/fuel.<br>
+  • Floyd–Warshall computes the best route between ALL points.<br>
+  • Trucks always take the globally shortest path, reducing pollution and cost.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 2. ECO RESORT -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>2. 🏕 Eco Resort – Nature Trail Recommendation</h3>
+
+  <div class="sdgs">
+    <b>SDG 11:</b> Sustainable Cities & Communities  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Guests need the safest and shortest trekking or cycling trail inside the eco-resort. Trails have different terrain difficulty and environmental safety ratings.</p>
+
+  <p><b>Algorithm Used:</b> Dijkstra’s Shortest Path</p>
+
+<div class="code-box">
+/* DIJKSTRA FOR RECOMMENDING BEST ECO-FRIENDLY TRAIL */
+
+struct TrailEdge {
+    int to;
+    double distanceKm;
+    double difficulty;   // 1=easy, 5=hard
+};
+
+struct EcoResort {
+    vector&lt;vector&lt;TrailEdge&gt;&gt; graph;
+
+    EcoResort(int n) { graph.resize(n); }
+
+    void addTrail(int a, int b, double dist, double diff) {
+        graph[a].push_back({b, dist, diff});
+        graph[b].push_back({a, dist, diff});
+    }
+
+    vector&lt;double&gt; bestTrail(int src) {
+        int n = graph.size();
+        vector&lt;double&gt; cost(n, 1e18);
+        priority_queue&lt;pair&lt;double,int&gt;, vector&lt;pair&lt;double,int&gt;&gt;, greater&lt;&gt;&gt; pq;
+
+        cost[src] = 0;
+        pq.push({0, src});
+
+        while(!pq.empty()) {
+            auto [c, u] = pq.top(); pq.pop();
+            if(c != cost[u]) continue;
+
+            for(auto &e : graph[u]) {
+                double w = e.distanceKm + e.difficulty*0.3;
+                if(cost[e.to] > cost[u] + w) {
+                    cost[e.to] = cost[u] + w;
+                    pq.push({cost[e.to], e.to});
+                }
+            }
+        }
+        return cost;
+    }
+};
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Trails have distance + difficulty weight.<br>
+  • Dijkstra finds safest + shortest combined trail.<br>
+  • Resort app shows recommended eco-trail for visitors.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 3. IT TRAINING CENTER -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>3. 💻 IT Training Center – Smart Batch Scheduling</h3>
+
+  <div class="sdgs">
+    <b>SDG 4:</b> Quality Education  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Many students register for different IT courses. We must schedule batches based on demand, rating, and priority.</p>
+
+  <p><b>Algorithm Used:</b> Heap Sort (priority-based scheduling)</p>
+
+<div class="code-box">
+/* USING MAX HEAP TO SORT COURSES BY PRIORITY */
+
+struct Course {
+    int id;
+    string name;
+    int demand;      // number of registrations
+    double rating;   // 1–5
+};
+
+// custom priority: (higher demand, higher rating)
+bool operator&lt;(const Course &a, const Course &b) {
+    if(a.demand == b.demand)
+        return a.rating < b.rating;
+    return a.demand < b.demand;
+}
+
+vector&lt;Course&gt; scheduleBatches(vector&lt;Course&gt;&gt; courses) {
+    priority_queue&lt;Course&gt; maxHeap;
+
+    for(auto &c : courses) maxHeap.push(c);
+
+    vector&lt;Course&gt; sorted;
+    while(!maxHeap.empty()) {
+        sorted.push_back(maxHeap.top());
+        maxHeap.pop();
+    }
+    return sorted;   // highest priority first
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Popular courses rise to the top of the heap.<br>
+  • Training center schedules high-demand, high-rating courses first.<br>
+  • Ensures efficient resource usage & student satisfaction.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 4. COLD STORAGE -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>4. ❄ Cold Storage – Inventory Expiry Management</h3>
+
+  <div class="sdgs">
+    <b>SDG 12:</b> Responsible Consumption & Production  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Perishable goods must be sorted by expiry date to avoid waste.</p>
+
+  <p><b>Algorithm Used:</b> Merge Sort (stable, good for large datasets)</p>
+
+<div class="code-box">
+/* MERGE SORT FOR SORTING PERISHABLE GOODS BY EXPIRY DATE */
+
+struct Item {
+    string name;
+    long long expiry; // timestamp
+};
+
+bool cmp(const Item &a, const Item &b) {
+    return a.expiry < b.expiry;
+}
+
+vector&lt;Item&gt; mergeSort(vector&lt;Item&gt; arr) {
+    if(arr.size() <= 1) return arr;
+
+    int mid = arr.size() / 2;
+    vector&lt;Item&gt; left(arr.begin(), arr.begin()+mid);
+    vector&lt;Item&gt; right(arr.begin()+mid, arr.end());
+
+    left = mergeSort(left);
+    right = mergeSort(right);
+
+    // merge
+    vector&lt;Item&gt; merged;
+    int i=0,j=0;
+    while(i < left.size() && j < right.size()) {
+        if(cmp(left[i], right[j])) merged.push_back(left[i++]);
+        else merged.push_back(right[j++]);
+    }
+    while(i < left.size()) merged.push_back(left[i++]);
+    while(j < right.size()) merged.push_back(right[j++]);
+
+    return merged;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Items sorted by expiry help cold storage release goods FIFO.<br>
+  • Reduces food spoilage and increases revenue efficiency.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 5. CO-WORKING HUB -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>5. 🏢 Co-working Hub – Smart Desk Allocation</h3>
+
+  <div class="sdgs">
+    <b>SDG 8:</b> Decent Work & Economic Growth  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Workers prefer desks near power outlets, windows, or quiet zones. We must assign best desk using Quick Sort on multiple factors.</p>
+
+  <p><b>Algorithm Used:</b> Quick Sort</p>
+
+<div class="code-box">
+/* QUICK SORT FOR RANKING DESKS BASED ON SCORE */
+
+struct Desk {
+    int id;
+    int noiseLevel;   // lower = better
+    int lightLevel;   // higher = better
+    bool nearPower;
+};
+
+double score(const Desk &d) {
+    return (d.lightLevel*2) - (d.noiseLevel*1.5) + (d.nearPower ? 10 : 0);
+}
+
+int partition(vector&lt;Desk&gt; &a, int low, int high) {
+    double pivot = score(a[high]);
+    int i = low - 1;
+
+    for(int j=low;j&lt;high;j++) {
+        if(score(a[j]) > pivot) { // descending
+            i++;
+            swap(a[i], a[j]);
+        }
+    }
+    swap(a[i+1], a[high]);
+    return i+1;
+}
+
+void quickSort(vector&lt;Desk&gt; &a, int low, int high) {
+    if(low < high) {
+        int pi = partition(a, low, high);
+        quickSort(a, low, pi-1);
+        quickSort(a, pi+1, high);
+    }
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Each desk gets a score based on comfort and utility.<br>
+  • Quick sort ranks all desks fastest.<br>
+  • System assigns highest-scoring desk to worker.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 6. RETAIL MALL -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>6. 🛍 Retail Mall – Product Search System</h3>
+
+  <div class="sdgs">
+    <b>SDG 9:</b> Industry, Innovation & Infrastructure 
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Shoppers want fast search through thousands of product names.</p>
+
+  <p><b>Algorithm Used:</b> KMP String Search</p>
+
+<div class="code-box">
+/* KMP ALGORITHM FOR FAST PRODUCT SEARCH */
+
+vector&lt;int&gt; computeLPS(string pattern) {
+    vector&lt;int&gt; lps(pattern.size());
+    int len = 0;
+
+    for(int i=1;i<pattern.size();i++) {
+        while(len > 0 && pattern[i] != pattern[len])
+            len = lps[len-1];
+
+        if(pattern[i] == pattern[len]) len++;
+
+        lps[i] = len;
+    }
+    return lps;
+}
+
+bool searchProduct(string text, string pattern) {
+    auto lps = computeLPS(pattern);
+    int j = 0;
+
+    for(int i=0;i<text.size();i++) {
+        while(j > 0 && text[i] != pattern[j])
+            j = lps[j-1];
+
+        if(text[i] == pattern[j]) j++;
+
+        if(j == pattern.size()) return true;
+    }
+    return false;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • KMP enables instant product lookup in large mall inventory databases.<br>
+  • Shoppers find items quickly using the mall’s app.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 7. MULTI-SPECIALTY HOSPITAL -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>7. 🏥 Multi-specialty Hospital – Patient Risk Detection</h3>
+
+  <div class="sdgs">
+    <b>SDG 3:</b> Good Health & Well-Being  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Hospital must identify risky patients early based on symptoms, vitals, and age.</p>
+
+  <p><b>Algorithm Used:</b> Brute Force + Medical Rule Matching</p>
+
+<div class="code-box">
+/* SIMPLE RULE-BASED RISK SCORING ENGINE */
+
+struct Patient {
+    int id;
+    int age;
+    double temperature;
+    double bp;
+    bool chestPain;
+};
+
+int computeRisk(const Patient &p) {
+    int risk = 0;
+
+    if(p.age > 60) risk += 20;
+    if(p.temperature > 38) risk += 30;
+    if(p.bp > 150) risk += 25;
+    if(p.chestPain) risk += 40;
+
+    return risk;
+}
+
+// brute force scan through all patients
+vector&lt;Patient&gt; findHighRisk(vector&lt;Patient&gt; &list) {
+    vector&lt;Patient&gt; high;
+    for(auto &p : list) {
+        if(computeRisk(p) >= 60)
+            high.push_back(p);
+    }
+    return high;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Simple brute-force rule engine scans patient list.<br>
+  • High-risk patients are flagged for immediate attention.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 8. EV CHARGING -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>8. ⚡ EV Charging Stations – Load Balancing</h3>
+
+  <div class="sdgs">
+    <b>SDG 7:</b> Affordable & Clean Energy  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Many EVs arrive at different times. The system must balance charging load so that no station overloads.</p>
+
+  <p><b>Algorithm Used:</b> Min Heap (priority scheduling)</p>
+
+<div class="code-box">
+/* MIN HEAP FOR DISTRIBUTING CHARGING LOAD */
+
+struct Station {
+    int id;
+    double currentLoad;  // kW
+    double capacity;     // kW
+};
+
+struct CompareLoad {
+    bool operator()(const Station &a, const Station &b) {
+        return a.currentLoad > b.currentLoad; // min load first
+    }
+};
+
+int assignStation(vector&lt;Station&gt; stations, double carLoad) {
+    priority_queue&lt;Station, vector&lt;Station&gt;, CompareLoad&gt; pq(stations.begin(), stations.end());
+
+    Station s = pq.top();
+    pq.pop();
+
+    if(s.currentLoad + carLoad > s.capacity)
+        return -1; // no station available
+
+    s.currentLoad += carLoad;
+    pq.push(s);
+
+    return s.id;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • EVs are assigned to the station with lowest load.<br>
+  • Prevents overload & ensures fair energy distribution.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 9. WATERFRONT TOURISM -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>9. 🚤 Waterfront Tourism – Boat Path Safety</h3>
+
+  <div class="sdgs">
+    <b>SDG 14:</b> Life Below Water  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Boats must avoid no-go zones such as shallow water or wildlife zones.</p>
+
+  <p><b>Algorithm Used:</b> Bellman-Ford (handles negative risk zones)</p>
+
+<div class="code-box">
+/* BELLMAN-FORD TO HANDLE NEGATIVE SAFETY ZONES */
+
+struct Edge {
+    int u, v;
+    double cost; // risk score, negative means dangerous
+};
+
+vector&lt;double&gt; computeSafeRoute(int n, vector&lt;Edge&gt; edges, int src) {
+    vector&lt;double&gt; dist(n, 1e18);
+    dist[src] = 0;
+
+    for(int i=0;i<n-1;i++) {
+        for(auto &e : edges) {
+            if(dist[e.u] + e.cost < dist[e.v])
+                dist[e.v] = dist[e.u] + e.cost;
+        }
+    }
+
+    return dist;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Shallow/danger zones have negative weights.<br>
+  • Bellman-Ford safely avoids them.<br>
+  • Boats always receive safest recommended route.</p>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- 10. E-COMMERCE HUB -->
+<!-- ============================================================ -->
+<div class="detailed-idea">
+  <h3>10. 📦 E-commerce Distribution Center – Courier Assignment</h3>
+
+  <div class="sdgs">
+    <b>SDG 9:</b> Industry, Innovation & Infrastructure  
+  </div>
+
+  <p><b>Problem Statement:</b><br>
+  Packages must be assigned to delivery agents based on distance, load capacity, and fuel/energy levels.</p>
+
+  <p><b>Algorithm Used:</b> Greedy Selection + Spatial Search</p>
+
+<div class="code-box">
+/* DRONE/BIKE COURIER ASSIGNMENT SYSTEM */
+
+struct Courier {
+    int id;
+    double energy;         // battery %
+    double maxLoad;
+    double x, y;           // current location
+};
+
+struct Package {
+    int id;
+    double weight;
+    double px, py;         // delivery point
+};
+
+double distance(double x1,double y1,double x2,double y2){
+    return sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+}
+
+bool canDeliver(const Courier &c, const Package &p) {
+    if(p.weight > c.maxLoad) return false;
+    double dist = distance(c.x, c.y, p.px, p.py);
+    return c.energy >= dist * 0.5; // energy rule
+}
+
+int assignPackage(const vector&lt;Courier&gt; &cs, const Package &p) {
+    int best = -1;
+    double bestDist = 1e18;
+
+    for(int i=0;i&lt;cs.size();i++){
+        if(canDeliver(cs[i], p)) {
+            double d = distance(cs[i].x, cs[i].y, p.px, p.py);
+            if(d < bestDist) {
+                bestDist = d;
+                best = i;
+            }
+        }
+    }
+    return best;
+}
+</div>
+
+  <p><b>Application Logic:</b><br>
+  • Greedy approach: choose nearest courier who can carry the load.<br>
+  • Fast, real-time assignment for thousands of packages.<br>
+  • Improves delivery efficiency and saves energy.</p>
+</div>
 
 </section>
 
@@ -336,4 +753,4 @@ function showPage(id){
 </script>
 
 </body>
-</html>
+</html>    make some color changes of background make it look asthetic and unique and give the full code to me it shld be like digtal and u know masttt
