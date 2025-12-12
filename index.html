@@ -51,8 +51,8 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
   <a onclick="showPage('akshata')">Akshata</a>
   <a onclick="showPage('ankita')">Ankita</a>
 
-  <!-- CHANGED: direct link to sai.html -->
-  <a href="sai.html">Sai</a>
+  <!-- SAI: direct external link -->
+  <a href="https://ankitamuradi-source.github.io/portfolio.github.io/sai.html">Sai</a>
 </nav>
 
 <!-- HOME -->
@@ -139,8 +139,8 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
       <p>📊 Data Commerce Hub</p>
     </div>
 
-    <!-- CHANGED: button also goes to sai.html -->
-    <button class="view-btn" onclick="window.location.href='sai.html'">View Portfolio</button>
+    <!-- SAI button goes to external sai.html -->
+    <button class="view-btn" onclick="window.location.href='https://ankitamuradi-source.github.io/portfolio.github.io/sai.html'">View Portfolio</button>
   </div>
 
 </section>
@@ -151,21 +151,17 @@ nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
   <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
   <br><br>
 
-  <!-- ============================================================ -->
+  <!-- 1–10 detailed ideas exactly as you had (unchanged) -->
+
   <!-- 1. LOGISTICS HUB -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>1. ⚡ Logistics Hub – Smart Route Optimization</h3>
-
     <div class="sdgs">
       <b>SDG 9:</b> Industry, Innovation & Infrastructure
     </div>
-
     <p><b>Problem Statement:</b><br>
     Trucks inside the logistics hub waste fuel and time taking bad routes. We need a system to compute the shortest and safest routes between any warehouses or loading points.</p>
-
     <p><b>Algorithm Used:</b> Floyd–Warshall (All-Pairs Shortest Path)</p>
-
     <div class="code-box">
 /* REALISTIC IMPLEMENTATION OF A LOGISTICS HUB ROUTING ENGINE */
 
@@ -206,7 +202,6 @@ struct Hub {
     }
 };
     </div>
-
     <p><b>Application Logic (Explained):</b><br>
     • Each point (warehouse, dock, gate) becomes a node.<br>
     • Roads are weighted edges based on travel time/fuel.<br>
@@ -214,21 +209,15 @@ struct Hub {
     • Trucks always take the globally shortest path, reducing pollution and cost.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 2. ECO RESORT -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>2. 🏕 Eco Resort – Nature Trail Recommendation</h3>
-
     <div class="sdgs">
       <b>SDG 11:</b> Sustainable Cities & Communities
     </div>
-
     <p><b>Problem Statement:</b><br>
     Guests need the safest and shortest trekking or cycling trail inside the eco-resort. Trails have different terrain difficulty and environmental safety ratings.</p>
-
     <p><b>Algorithm Used:</b> Dijkstra’s Shortest Path</p>
-
     <div class="code-box">
 /* DIJKSTRA FOR RECOMMENDING BEST ECO-FRIENDLY TRAIL */
 
@@ -272,28 +261,24 @@ struct EcoResort {
     }
 };
     </div>
-
     <p><b>Application Logic:</b><br>
     • Trails have distance + difficulty weight.<br>
     • Dijkstra finds safest + shortest combined trail.<br>
     • Resort app shows recommended eco-trail for visitors.</p>
   </div>
 
-  <!-- ============================================================ -->
+  <!-- 3–10 detailed ideas remain exactly the same as in your code -->
+  <!-- (omitted here only for brevity when you paste you will keep them unchanged) -->
+
   <!-- 3. IT TRAINING CENTER -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>3. 💻 IT Training Center – Smart Batch Scheduling</h3>
-
     <div class="sdgs">
       <b>SDG 4:</b> Quality Education
     </div>
-
     <p><b>Problem Statement:</b><br>
     Many students register for different IT courses. We must schedule batches based on demand, rating, and priority.</p>
-
     <p><b>Algorithm Used:</b> Heap Sort (priority-based scheduling)</p>
-
     <div class="code-box">
 /* USING MAX HEAP TO SORT COURSES BY PRIORITY */
 
@@ -324,28 +309,21 @@ vector&lt;Course&gt; scheduleBatches(vector&lt;Course&gt; courses) {
     return sorted;   // highest priority first
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Popular courses rise to the top of the heap.<br>
     • Training center schedules high-demand, high-rating courses first.<br>
     • Ensures efficient resource usage & student satisfaction.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 4. COLD STORAGE -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>4. ❄ Cold Storage – Inventory Expiry Management</h3>
-
     <div class="sdgs">
       <b>SDG 12:</b> Responsible Consumption & Production
     </div>
-
     <p><b>Problem Statement:</b><br>
     Perishable goods must be sorted by expiry date to avoid waste.</p>
-
     <p><b>Algorithm Used:</b> Merge Sort (stable, good for large datasets)</p>
-
     <div class="code-box">
 /* MERGE SORT FOR SORTING PERISHABLE GOODS BY EXPIRY DATE */
 
@@ -381,27 +359,20 @@ vector&lt;Item&gt; mergeSort(vector&lt;Item&gt; arr) {
     return merged;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Items sorted by expiry help cold storage release goods FIFO.<br>
     • Reduces food spoilage and increases revenue efficiency.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 5. CO-WORKING HUB -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>5. 🏢 Co-working Hub – Smart Desk Allocation</h3>
-
     <div class="sdgs">
       <b>SDG 8:</b> Decent Work & Economic Growth
     </div>
-
     <p><b>Problem Statement:</b><br>
     Workers prefer desks near power outlets, windows, or quiet zones. We must assign best desk using Quick Sort on multiple factors.</p>
-
     <p><b>Algorithm Used:</b> Quick Sort</p>
-
     <div class="code-box">
 /* QUICK SORT FOR RANKING DESKS BASED ON SCORE */
 
@@ -438,28 +409,21 @@ void quickSort(vector&lt;Desk&gt; &a, int low, int high) {
     }
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Each desk gets a score based on comfort and utility.<br>
     • Quick sort ranks all desks fastest.<br>
     • System assigns highest-scoring desk to worker.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 6. RETAIL MALL -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>6. 🛍 Retail Mall – Product Search System</h3>
-
     <div class="sdgs">
       <b>SDG 9:</b> Industry, Innovation & Infrastructure
     </div>
-
     <p><b>Problem Statement:</b><br>
     Shoppers want fast search through thousands of product names.</p>
-
     <p><b>Algorithm Used:</b> KMP String Search</p>
-
     <div class="code-box">
 /* KMP ALGORITHM FOR FAST PRODUCT SEARCH */
 
@@ -493,27 +457,20 @@ bool searchProduct(string text, string pattern) {
     return false;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • KMP enables instant product lookup in large mall inventory databases.<br>
     • Shoppers find items quickly using the mall’s app.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 7. MULTI-SPECIALTY HOSPITAL -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>7. 🏥 Multi-specialty Hospital – Patient Risk Detection</h3>
-
     <div class="sdgs">
       <b>SDG 3:</b> Good Health & Well-Being
     </div>
-
     <p><b>Problem Statement:</b><br>
     Hospital must identify risky patients early based on symptoms, vitals, and age.</p>
-
     <p><b>Algorithm Used:</b> Brute Force + Medical Rule Matching</p>
-
     <div class="code-box">
 /* SIMPLE RULE-BASED RISK SCORING ENGINE */
 
@@ -546,27 +503,20 @@ vector&lt;Patient&gt; findHighRisk(vector&lt;Patient&gt; &list) {
     return high;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Simple brute-force rule engine scans patient list.<br>
     • High-risk patients are flagged for immediate attention.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 8. EV CHARGING -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>8. ⚡ EV Charging Stations – Load Balancing</h3>
-
     <div class="sdgs">
       <b>SDG 7:</b> Affordable & Clean Energy
     </div>
-
     <p><b>Problem Statement:</b><br>
     Many EVs arrive at different times. The system must balance charging load so that no station overloads.</p>
-
     <p><b>Algorithm Used:</b> Min Heap (priority scheduling)</p>
-
     <div class="code-box">
 /* MIN HEAP FOR DISTRIBUTING CHARGING LOAD */
 
@@ -597,27 +547,20 @@ int assignStation(vector&lt;Station&gt; stations, double carLoad) {
     return s.id;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • EVs are assigned to the station with lowest load.<br>
     • Prevents overload & ensures fair energy distribution.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 9. WATERFRONT TOURISM -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>9. 🚤 Waterfront Tourism – Boat Path Safety</h3>
-
     <div class="sdgs">
       <b>SDG 14:</b> Life Below Water
     </div>
-
     <p><b>Problem Statement:</b><br>
     Boats must avoid no-go zones such as shallow water or wildlife zones.</p>
-
     <p><b>Algorithm Used:</b> Bellman-Ford (handles negative risk zones)</p>
-
     <div class="code-box">
 /* BELLMAN-FORD TO HANDLE NEGATIVE SAFETY ZONES */
 
@@ -640,28 +583,21 @@ vector&lt;double&gt; computeSafeRoute(int n, vector&lt;Edge&gt; edges, int src) 
     return dist;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Shallow/danger zones have negative weights.<br>
     • Bellman-Ford safely avoids them.<br>
     • Boats always receive safest recommended route.</p>
   </div>
 
-  <!-- ============================================================ -->
   <!-- 10. E-COMMERCE HUB -->
-  <!-- ============================================================ -->
   <div class="detailed-idea">
     <h3>10. 📦 E-commerce Distribution Center – Courier Assignment</h3>
-
     <div class="sdgs">
       <b>SDG 9:</b> Industry, Innovation & Infrastructure
     </div>
-
     <p><b>Problem Statement:</b><br>
     Packages must be assigned to delivery agents based on distance, load capacity, and fuel/energy levels.</p>
-
     <p><b>Algorithm Used:</b> Greedy Selection + Spatial Search</p>
-
     <div class="code-box">
 /* DRONE/BIKE COURIER ASSIGNMENT SYSTEM */
 
@@ -704,7 +640,6 @@ int assignPackage(const vector&lt;Courier&gt; &cs, const Package &p) {
     return best;
 }
     </div>
-
     <p><b>Application Logic:</b><br>
     • Greedy approach: choose nearest courier who can carry the load.<br>
     • Fast, real-time assignment for thousands of packages.<br>
@@ -723,12 +658,7 @@ int assignPackage(const vector&lt;Courier&gt; &cs, const Package &p) {
   <p class="desc">Portfolio Under Construction</p>
 </section>
 
-<!-- SAI SECTION NO LONGER NEEDED BUT KEPT OPTIONAL
-<section id="sai" class="section">
-  <h1 class="title">Sai</h1>
-  <p class="desc">Portfolio Under Construction</p>
-</section>
--->
+<!-- SAI SECTION REMOVED (business cases are on external sai.html only) -->
 
 <script>
 function showPage(id){
