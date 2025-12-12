@@ -1,1 +1,284 @@
+// SmartTraffic_IncidentDetection.cpp
+// Educational prototype for: Smart Traffic Automation & Incident Detection System
+//
+// Algorithms demonstrated:
+//  - Dijkstra (shortest path / fastest route)
+//  - BFS (zone/region expansion to find affected area)
+//  - Sliding-window moving-average anomaly detection (simple streaming anomaly detector)
+//  - Greedy nearest-resource assignment (uses Dijkstra distances)
+//
+// Compile: g++ -std=c++17 SmartTraffic_IncidentDetection.cpp -O2 -o smart_traffic
+// Run: ./smart_traffic
+//
+// Notes:
+//  - Replace toy graph and simulated telemetry with real map & sensor feeds.
+//  - Use geographic heuristics for A* in large maps (not included here).
+//  - Use more advanced anomaly detection (statistical or ML) in production.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+using pii = pair<int,int>;
+const int INF = 1e9;
+
+// ---------- Graph utilities ----------
+struct Edge {
+    int to;
+    int w;      // weight (e.g., travel time in seconds)
+    int segId;  // segment id (optional) used for speed telemetry mapping
+};
+
+using Graph = vector<vector<Edge>>;
+
+// Dijkstra: returns distance vector (from src) and optionally parent to recover path
+vector<int> dijkstra(const Graph &g, int src, vector<int> *parent = nullptr) {
+    int n = (int)g.size();
+    vector<int> dist(n, INF);
+    if (parent) parent->assign(n, -1);
+    dist[src] = 0;
+    using T = pair<int,int>; // (dist, node)
+    priority_queue<T, vector<T>, greater<T>> pq;
+    pq.push({0, src});
+    while (!pq.empty()) {
+        auto [d, u] = pq.top(); pq.pop();
+        if (d != dist[u]) continue;
+        for (const auto &e : g[u]) {
+            int v = e.to;
+            int nd = d + e.w;
+            if (nd < dist[v]) {
+                dist[v] = nd;
+                if (parent) (*parent)[v] = u;
+                pq.push({nd, v});
+            }
+        }
+    }
+    return dist;
+}
+
+// Recover path from parent vector (if reachable), else empty
+vector<int> recover_path(int target, const vector<int> &parent) {
+    vector<int> path;
+    int cur = target;
+    while (cur != -1) {
+        path.push_back(cur);
+        cur = parent[cur];
+    }
+    reverse(path.begin(), path.end());
+    return path;
+}
+
+// ---------- BFS region expansion (affected zone) ----------
+// We find nodes within 'maxHops' from incident node or within distance threshold using distances.
+vector<int> bfs_with_hops(const Graph &g, int start, int maxHops) {
+    int n = (int)g.size();
+    vector<int> distHop(n, -1);
+    queue<int>q;
+    q.push(start);
+    distHop[start] = 0;
+    vector<int> nodes;
+    while(!q.empty()) {
+        int u = q.front(); q.pop();
+        nodes.push_back(u);
+        if (distHop[u] >= maxHops) continue;
+        for (auto &e : g[u]) {
+            int v = e.to;
+            if (distHop[v] == -1) {
+                distHop[v] = distHop[u] + 1;
+                q.push(v);
+            }
+        }
+    }
+    return nodes;
+}
+
+// ---------- Sliding-window anomaly detector for traffic speeds ----------
+// For each road segment we maintain last K speeds and report anomaly if current speed deviates below (mean - alpha*std)
+struct SlidingWindowDetector {
+    int K;
+    double alpha; // sensitivity factor
+    // store last K values and maintain running sum & sqsum
+    deque<double> window;
+    double sum = 0.0;
+    double sqsum = 0.0;
+
+    SlidingWindowDetector(int windowSize = 10, double a = 2.0) : K(windowSize), alpha(a) {}
+
+    // push new speed (km/h). returns true if anomaly detected
+    bool push(double speed) {
+        if ((int)window.size() == K) {
+            double old = window.front();
+            window.pop_front();
+            sum -= old;
+            sqsum -= old*old;
+        }
+        window.push_back(speed);
+        sum += speed;
+        sqsum += speed*speed;
+        if ((int)window.size() < 4) return false; // not enough data to decide
+
+        int n = (int)window.size();
+        double mean = sum / n;
+        double var = (sqsum / n) - (mean*mean);
+        if (var < 0) var = 0;
+        double stddev = sqrt(var);
+
+        // anomaly: speed significantly lower than expected (e.g., incident causing slowdown)
+        if (speed < mean - alpha * stddev) return true;
+        return false;
+    }
+
+    double get_mean() const { if (window.empty()) return 0.0; return sum / window.size(); }
+};
+
+// ---------- Greedy dispatcher (assign nearest available vehicle) ----------
+// vehicles: vector of node positions (indices). availability: bool
+struct Vehicle {
+    int id;
+    int node;      // position in graph (node index)
+    bool available;
+};
+
+int assign_nearest_vehicle(const Graph &g, const vector<Vehicle> &vehicles, int incidentNode, vector<int> *outPath = nullptr) {
+    // compute distances from incident? We want distance from vehicle to incident -> run multi-source? Simpler: run Dijkstra from incident and get distances to nodes.
+    vector<int> parent;
+    auto distFromIncident = dijkstra(g, incidentNode, &parent);
+    int bestIdx = -1;
+    int bestDist = INF;
+    for (const auto &v : vehicles) {
+        if (!v.available) continue;
+        int dv = distFromIncident[v.node]; // distance from incident to vehicle node (symmetric if undirected)
+        if (dv < bestDist) { bestDist = dv; bestIdx = v.id; }
+    }
+    if (bestIdx != -1 && outPath) {
+        // recover path from incident to vehicle (we have parent from Dijkstra starting at incident)
+        // path is incident -> ... -> vehicle.node
+        *outPath = recover_path(vehicles[bestIdx].node, parent);
+    }
+    return bestIdx; // returns vehicle id or -1 if none
+}
+
+// ---------- Demo / Simulation ----------
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cout << "=== Smart Traffic Automation & Incident Detection Demo ===\n\n";
+
+    // --- Build a toy undirected weighted graph (road network)
+    // Nodes: intersections 0..8
+    // For simplicity, segment weight = travel time (seconds)
+    int n = 9;
+    Graph g(n);
+    auto addEdge = [&](int u, int v, int w, int segId=-1){
+        g[u].push_back({v,w,segId});
+        g[v].push_back({u,w,segId});
+    };
+
+    addEdge(0,1,60, 0); addEdge(1,2,40,1); addEdge(2,3,50,2);
+    addEdge(1,4,70,3); addEdge(4,5,30,4); addEdge(5,6,40,5);
+    addEdge(2,7,80,6); addEdge(7,8,60,7); addEdge(3,8,90,8);
+
+    cout << "Graph constructed with " << n << " nodes.\n";
+
+    // --- Simulated real-time speed telemetry per segment (segId -> detector)
+    // Map segId -> detector
+    unordered_map<int, SlidingWindowDetector> detectors;
+    for (int seg = 0; seg <= 8; ++seg) detectors[seg] = SlidingWindowDetector(6, 1.5); // window 6
+
+    // Simulate some normal speeds (km/h) then a sudden slowdown on segment 2 (between nodes 2-3)
+    vector<vector<pair<int,double>>> telemetrySteps = {
+        // step 0: normal
+        { {0,50}, {1,45}, {2,48}, {3,50}, {4,52}, {5,47}, {6,46}, {7,49}, {8,50} },
+        // step 1: normal
+        { {0,49}, {1,44}, {2,50}, {3,51}, {4,50}, {5,45}, {6,47}, {7,50}, {8,49} },
+        // step 2: normal
+        { {0,51}, {1,46}, {2,49}, {3,50}, {4,53}, {5,48}, {6,48}, {7,51}, {8,50} },
+        // step 3: incident occurs on seg 2 -> speed drops
+        { {0,50}, {1,45}, {2,15}, {3,14}, {4,51}, {5,47}, {6,46}, {7,49}, {8,50} },
+        // step 4: still slow on seg 2
+        { {0,50}, {1,44}, {2,18}, {3,16}, {4,52}, {5,48}, {6,46}, {7,49}, {8,50} },
+    };
+
+    // segId mapping for simplicity: segId = assigned in addEdge
+    // In real system, telemetry would map to segments by sensors on links.
+
+    // Simulate vehicles (responders) at certain nodes
+    vector<Vehicle> vehicles = {
+        {0, 0, true}, // vehicle 0 at node 0
+        {1, 5, true}, // vehicle 1 at node 5
+        {2, 6, true}  // vehicle 2 at node 6
+    };
+
+    // Run telemetry steps and detect anomalies
+    for (int step = 0; step < (int)telemetrySteps.size(); ++step) {
+        cout << "\n--- Telemetry Step " << step << " ---\n";
+        auto &measurements = telemetrySteps[step];
+
+        // feed detectors
+        vector<int> anomalySegments;
+        for (auto &m : measurements) {
+            int segId = m.first;
+            double speed = m.second;
+            bool isAnomaly = detectors[segId].push(speed);
+            if (isAnomaly) anomalySegments.push_back(segId);
+            // print mean for visibility
+            double mean = detectors[segId].get_mean();
+            //cout << "Seg " << segId << " mean: " << mean << " cur: " << speed << "\n";
+        }
+
+        if (!anomalySegments.empty()) {
+            cout << "Anomaly detected on segments: ";
+            for (int s : anomalySegments) cout << s << " ";
+            cout << "\n";
+
+            // For each anomalous segment, map to nearest node(s) and find affected zone (BFS)
+            for (int segId : anomalySegments) {
+                // Simple mapping: our toy segId corresponded to edges added in order.
+                // Choose a node near the seg (we'll pick node 2 for seg 2 in this demo)
+                int incidentNode = 2; // in real system, map segment -> edge endpoints
+                cout << "Mapping seg " << segId << " to incident node " << incidentNode << "\n";
+
+                // Find affected nodes within 2 hops
+                int hops = 2;
+                auto affectedNodes = bfs_with_hops(g, incidentNode, hops);
+                cout << "Affected nodes (within " << hops << " hops): ";
+                for (int u : affectedNodes) cout << u << " ";
+                cout << "\n";
+
+                // Now assign nearest available vehicle
+                vector<int> path;
+                int assignedVehicleId = assign_nearest_vehicle(g, vehicles, incidentNode, &path);
+                if (assignedVehicleId != -1) {
+                    cout << "Assigned vehicle id: " << assignedVehicleId << " (node " << vehicles[assignedVehicleId].node << ")\n";
+                    cout << "Route from incident to vehicle (incident -> ... -> vehicle): ";
+                    for (int x : path) cout << x << " ";
+                    cout << "\n";
+                    // Mark vehicle unavailable (dispatched)
+                    // In real system you'd set available=false and update when back
+                    // Here mark unavailable to simulate dispatch
+                    // find which vector index corresponds to vehicle id:
+                    for (auto &v : vehicles) if (v.id == assignedVehicleId) v.available = false;
+                } else {
+                    cout << "No available vehicles to dispatch!\n";
+                }
+
+                // Also compute shortest paths from a central dispatch (node 0) to all nodes for routing estimates
+                vector<int> parent;
+                auto distFromDispatch = dijkstra(g, 0, &parent);
+                cout << "Shortest travel time from dispatch (node 0) to nodes: ";
+                for (int i = 0; i < n; ++i) {
+                    if (distFromDispatch[i] >= INF) cout << "INF ";
+                    else cout << distFromDispatch[i] << " ";
+                }
+                cout << "\n";
+            }
+        } else {
+            cout << "No anomalies detected this step.\n";
+        }
+    }
+
+    cout << "\nDemo finished. Integrate with real telemetry and mapping services for production.\n";
+    return 0;
+}
 
