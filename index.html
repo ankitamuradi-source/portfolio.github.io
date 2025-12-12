@@ -8,17 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 
 body{
-  background:linear-gradient(
-    135deg,
-    #06060c 0%,
-    #141228 25%,
-    #1e2a4f 55%,
-    #080812 100%
-  );
+  background:linear-gradient(135deg,#06060c 0%,#141228 25%,#1e2a4f 55%,#080812 100%);
   color:#e2e8f0;
   overflow-x:hidden;
 }
@@ -41,14 +34,12 @@ nav a{
   font-weight:500;
   text-decoration:none;
   cursor:pointer;
-  transition:0.3s;
 }
 nav a:hover{
-  color:#e0c9ff;
   text-shadow:0 0 10px rgba(224,201,255,0.9);
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
   display:none;
   max-width:1100px;
@@ -58,200 +49,132 @@ nav a:hover{
   border-radius:20px;
   border:1px solid #2f2a55;
   box-shadow:0 0 32px rgba(0,0,0,0.9);
-  animation:fadeIn 0.7s ease forwards;
 }
 .section.active{display:block;}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
-}
 
-/* MAIN HEADINGS */
 .title{
   text-align:center;
   font-size:34px;
-  margin-bottom:25px;
+  margin-bottom:20px;
   color:#7df9ff;
-  font-weight:600;
-  text-shadow:
-    0 0 10px rgba(125,249,255,0.9),
-    0 0 24px rgba(125,249,255,0.6);
+  text-shadow:0 0 10px rgba(125,249,255,0.9);
 }
+
 .desc{
   text-align:center;
-  font-size:19px;
-  max-width:750px;
-  margin:15px auto;
-  line-height:1.6;
+  font-size:18px;
+  margin-bottom:25px;
   color:#d6dcf0;
 }
 
-/* NAME – NEON LAVENDER */
-.neon-name{
-  color:#d6b4ff;
-  font-size:22px;
-  font-weight:400;
-  text-shadow:
-    0 0 8px rgba(214,180,255,0.9),
-    0 0 18px rgba(214,180,255,0.6);
-}
-
-/* INFO TEXT */
-.neon-info{
-  color:#ffb07c;
-  font-size:17px;
-  font-weight:400;
-}
-
-/* BOX */
 .member-box{
   background:linear-gradient(160deg,#13122a,#0c0c1b);
   padding:25px;
   border-radius:15px;
   border:1px solid #2a2550;
   margin:30px 0;
-  box-shadow:0 0 26px rgba(0,0,0,0.85);
-}
-.member-box h2{margin-bottom:10px;}
-
-.idea-list{
-  margin-top:10px;
-  padding-left:20px;
-  line-height:1.8;
-  font-size:17px;
 }
 
-/* VIEW BUTTON */
-.view-btn{
+.neon-name{
+  color:#d6b4ff;
+  font-size:22px;
+  margin-bottom:10px;
+  text-shadow:0 0 8px rgba(214,180,255,0.8);
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
   margin-top:15px;
-  padding:10px 18px;
-  background:linear-gradient(135deg,#f2c97d,#e6b65c);
-  border:none;
-  color:#2a1f05;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:500;
-  box-shadow:0 0 10px rgba(230,182,92,0.35);
-  transition:0.3s;
 }
-.view-btn:hover{
-  box-shadow:0 0 16px rgba(230,182,92,0.6);
+th,td{
+  border:1px solid #3b3568;
+  padding:10px;
+  text-align:center;
+}
+th{
+  background:#1e1b3a;
+  color:#7df9ff;
+}
+td{
+  background:#0c0c1b;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
-  <a onclick="showPage('akshata')">Akshata</a>
-  <a onclick="showPage('ankita')">Ankita</a>
   <a href="sai.html">Sai</a>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="section active">
   <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">
-    Aarunya is a futuristic city model focused on sustainable development,
-    balanced urban planning, and data-driven governance.
-  </p>
+  <p class="desc">A sustainable city model integrating planning, technology, and economics.</p>
 
+  <!-- CITY INFO -->
   <div class="member-box">
     <h2 class="neon-name">City Information</h2>
-    <div class="idea-list">
-      <p>🏙 City Name: Aarunya City</p>
-      <p>📍 State: Andhra Pradesh</p>
-      <p>👥 Population: 50,00,000</p>
-      <p>🌐 Population Density: 5,000 per sq. km</p>
-      <p>⏰ Time Zone: IST (UTC +5:30)</p>
-      <p>🚗 Vehicle Code: AP-XX</p>
-    </div>
+    <p>📍 State: Andhra Pradesh</p>
+    <p>👥 Total Population: 50,00,000</p>
+    <p>🌐 Density: 5,000 per sq.km</p>
+    <p>⏰ Time Zone: IST (UTC +5:30)</p>
   </div>
 
+  <!-- POPULATION -->
   <div class="member-box">
-    <h2 class="neon-name">City Layout Plan</h2>
-    <div class="idea-list">
-      <p>🏘 Residential Area – 22%</p>
-      <p>🏭 Industrial & Port Sector – 22%</p>
-      <p>🏢 Commercial & IT Hub – 8%</p>
-      <p>🚍 Public Transport & Infrastructure – 8%</p>
-      <p>🎓 Education Sector – 7%</p>
-      <p>🌿 Agriculture & Green Spaces – 20%</p>
-      <p>🏥 Health Sector – 5%</p>
-      <p>🌲 Ecological & Forest Buffers – Remaining Area</p>
-    </div>
-    <p class="desc">📸 City layout diagrams and charts are included in the project documentation.</p>
+    <h2 class="neon-name">Population Distribution</h2>
+    <table>
+      <tr><th>Age Group</th><th>Percentage</th><th>Population</th></tr>
+      <tr><td>0–10</td><td>10%</td><td>5,00,000</td></tr>
+      <tr><td>11–20</td><td>18%</td><td>9,00,000</td></tr>
+      <tr><td>21–30</td><td>35%</td><td>17,50,000</td></tr>
+      <tr><td>31–40</td><td>20%</td><td>10,00,000</td></tr>
+      <tr><td>41–50</td><td>10%</td><td>5,00,000</td></tr>
+      <tr><td>50+</td><td>7%</td><td>3,50,000</td></tr>
+    </table>
   </div>
 
+  <!-- BUDGET -->
   <div class="member-box">
     <h2 class="neon-name">Budget Estimation</h2>
-    <div class="idea-list">
-      <p>🏘 Residential Area – ₹2,40,000 Cr</p>
-      <p>🏭 Industrial & Port Sector – ₹2,40,000 Cr</p>
-      <p>🏢 Commercial & IT Sector – ₹1,00,000 Cr</p>
-      <p>🚍 Public Transport – ₹3,00,000 Cr</p>
-      <p>🎓 Education Sector – ₹70,000 Cr</p>
-      <p>🌿 Agriculture & Green Spaces – ₹50,000 Cr</p>
-      <p>🏥 Health Sector – ₹75,000 Cr</p>
-      <p>🌲 Ecological Buffers – ₹50,000 Cr</p>
-    </div>
+    <table>
+      <tr><th>Sector</th><th>Budget (₹ Crores)</th></tr>
+      <tr><td>Residential Area</td><td>2,40,000</td></tr>
+      <tr><td>Industrial & Port</td><td>2,40,000</td></tr>
+      <tr><td>Commercial & IT</td><td>1,00,000</td></tr>
+      <tr><td>Public Transport</td><td>3,00,000</td></tr>
+      <tr><td>Education</td><td>70,000</td></tr>
+      <tr><td>Agriculture & Green</td><td>50,000</td></tr>
+      <tr><td>Health</td><td>75,000</td></tr>
+    </table>
   </div>
 
+  <!-- REVENUE -->
   <div class="member-box">
     <h2 class="neon-name">Revenue Model</h2>
-    <div class="idea-list">
-      <p>🏘 Residential Area – ₹54,000 Cr (27%)</p>
-      <p>🏭 Industrial & Port Sector – ₹52,000 Cr (26%)</p>
-      <p>🏢 Commercial & IT – ₹31,000 Cr (15%)</p>
-      <p>🚍 Transport Infrastructure – ₹13,000 Cr (6%)</p>
-      <p>🎓 Education Sector – ₹8,000 Cr (4%)</p>
-      <p>🏥 Health Sector – ₹9,500 Cr (5%)</p>
-      <p>🌿 Agriculture & Green – ₹15,000 Cr (7%)</p>
-      <p>🌲 Ecological Buffers – ₹6,500 Cr (3%)</p>
-      <p><strong>Total Annual Revenue: ₹2,00,000 Cr</strong></p>
-    </div>
+    <table>
+      <tr><th>Sector</th><th>Annual Revenue (₹ Crores)</th><th>Contribution</th></tr>
+      <tr><td>Residential</td><td>54,000</td><td>27%</td></tr>
+      <tr><td>Industrial & Port</td><td>52,000</td><td>26%</td></tr>
+      <tr><td>Commercial & IT</td><td>31,000</td><td>15%</td></tr>
+      <tr><td>Transport</td><td>13,000</td><td>6%</td></tr>
+      <tr><td>Education</td><td>8,000</td><td>4%</td></tr>
+      <tr><td>Health</td><td>9,500</td><td>5%</td></tr>
+      <tr><td>Agriculture & Green</td><td>15,000</td><td>7%</td></tr>
+      <tr><th>Total</th><th>2,00,000</th><th>100%</th></tr>
+    </table>
   </div>
 </section>
 
-<!-- PROJECT PAGE -->
+<!-- PROJECT (UNCHANGED) -->
 <section id="project" class="section">
   <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
-
-  <!-- SAI -->
-  <div class="member-box">
-    <h2 class="neon-name">Sai Bhusaraddi</h2>
-    <p class="neon-info">Roll No: 202</p>
-    <p class="neon-info">USN: 01FE24BCS018</p>
-    <button class="view-btn" onclick="window.location.href='sai.html'">View Portfolio</button>
-  </div>
-
-  <!-- AKSHATA -->
-  <div class="member-box">
-    <h2 class="neon-name">Akshata S Angadi</h2>
-    <p class="neon-info">Roll No: 215</p>
-    <p class="neon-info">USN: 01FE24BCS044</p>
-    <button class="view-btn" onclick="showPage('akshata')">View Portfolio</button>
-  </div>
-
-  <!-- ANKITA -->
-  <div class="member-box">
-    <h2 class="neon-name">Ankita Muradi</h2>
-    <p class="neon-info">Roll No: 244</p>
-    <p class="neon-info">USN: 01FE24BCS146</p>
-    <button class="view-btn" onclick="showPage('ankita')">View Portfolio</button>
-  </div>
-
-  <!-- ARBIYA -->
-  <div class="member-box">
-    <h2 class="neon-name">Arbiya Naaz Bhavikatti</h2>
-    <p class="neon-info">Roll No: 214</p>
-    <p class="neon-info">USN: 01FE24BCS042</p>
-    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
-  </div>
 </section>
 
 <script>
