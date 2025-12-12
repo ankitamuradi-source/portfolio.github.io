@@ -1,238 +1,582 @@
-<!DOCTYPE html>
+<!--
+Aarunya — Updated bundle with upgraded, unique, and catchy animations.
+Files included (copy each section to separate files):
+- index.html
+- about.html
+- arbiya.html
+- akshata.html
+- ankita.html
+- sai.html
+- assets/style.css
+- assets/script.js
+
+Notes: The main animation upgrades are:
+- Canvas particle field in hero with interactive parallax + linking glow to mouse
+- 3D tilt + layered parallax for profile cards on mousemove (unique interactive effect)
+- Springy entrance animation (cards pop in with staggered spring curve)
+- Neon outline pulse on hovered card (gives special impact)
+- Floating soft-blobs (CSS) behind cards for depth
+- Modal detail viewer for business ideas with smooth morph and backdrop blur
+
+Make sure to place images in assets/images/ or adjust paths.
+-->
+
+<!-- FILE: index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AARUNYA CITY – Smart City Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
-<style>
-/* GLOBAL */
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{background:#0a0f1a;color:#e2e8f0;overflow-x:hidden;}
-
-/* NAV */
-nav{position:sticky;top:0;background:#0d1627;padding:18px;text-align:center;border-bottom:2px solid #1c2d45;box-shadow:0 0 12px rgba(0,150,255,0.25);z-index:50;}
-nav a{color:#cbd5e1;margin:0 20px;font-weight:600;font-size:18px;text-decoration:none;cursor:pointer;transition:0.3s;}
-nav a:hover{color:#4dabff;text-shadow:0 0 8px #268cff;}
-
-/* SECTIONS */
-.section{display:none;max-width:1100px;margin:40px auto;padding:40px;background:#0d1627;border-radius:20px;border:1px solid #1e3454;box-shadow:0 0 25px rgba(0,150,255,0.15);animation:fadeIn 0.7s ease forwards;}
-.section.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-
-/* TITLES */
-.title{text-align:center;font-size:34px;margin-bottom:25px;color:#ffb703;text-shadow:0 0 8px rgba(255,183,3,0.4);}
-.desc{text-align:center;font-size:19px;max-width:750px;margin:auto;line-height:1.6;color:#cbd5e1;}
-
-/* MEMBER BOX */
-.member-box{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:20px;box-shadow:0 0 20px rgba(38,140,255,0.2);}
-.member-box h2{color:#4dabff;margin-bottom:8px;}
-.idea-list{margin-top:10px;padding-left:20px;line-height:1.8;font-size:17px;}
-.view-btn{margin-top:15px;padding:10px 18px;background:#268cff;border:none;color:white;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
-.view-btn:hover{background:#4dabff;box-shadow:0 0 10px #1e90ff;}
-
-/* DETAILED IDEAS */
-.detailed-idea{background:#0b1320;padding:25px;border-radius:15px;border:1px solid #1e3454;margin-bottom:28px;box-shadow:0 0 25px rgba(38,140,255,0.25);}
-.detailed-idea h3{color:#ffb703;margin-bottom:10px;}
-.sdgs{color:#4dabff;margin-bottom:12px;font-weight:600;}
-.code-box{background:#0a1322;padding:18px;border-left:4px solid #4dabff;margin-top:12px;white-space:pre-wrap;font-family:monospace;font-size:15px;color:#d1eaff;border-radius:8px;line-height:1.5;}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aarunya — Smart City Simulation</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-  <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('project')">Project</a>
-  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
-  <a onclick="showPage('akshata')">Akshata</a>
-  <a onclick="showPage('ankita')">Ankita</a>
-  <a onclick="showPage('sai')">Sai</a>
-</nav>
-
-<!-- HOME -->
-<section id="home" class="section active">
-  <h1 class="title">WELCOME TO AARUNYA CITY</h1>
-  <p class="desc">A futuristic smart city built on sustainability, innovation, and advanced technology.</p>
-</section>
-
-<!-- PROJECT PAGE -->
-<section id="project" class="section">
-  <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
-
-  <!-- ARBIYA -->
-  <div class="member-box">
-    <h2>Arbiya Naaz</h2>
-    <p><b>Roll No:</b> 214</p>
-    <div class="idea-list">
-      <p>⚡ Logistics Hub</p>
-      <p>🏕 Eco Resort</p>
-      <p>💻 IT Training Center</p>
-      <p>❄ Cold Storage</p>
-      <p>🏢 Co-working Hub</p>
-      <p>🛍 Retail Mall</p>
-      <p>🏥 Multi-specialty Hospital</p>
-      <p>⚡ EV Charging Stations</p>
-      <p>🚤 Waterfront Tourism</p>
-      <p>📦 E-commerce Distribution Center</p>
+<body class="site-dark">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Aarunya</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About / Team</a>
+        <a href="#layout">Layout</a>
+        <a href="#budget">Budget</a>
+      </nav>
     </div>
-    <button class="view-btn" onclick="showPage('arbiya')">View Portfolio</button>
-  </div>
+  </header>
 
-  <!-- AKSHATA -->
-  <div class="member-box">
-    <h2>Akshata</h2>
-    <p><b>Roll No:</b> 215</p>
-    <div class="idea-list">
-      <p>🦾 Floating Micro-Farms</p>
-      <p>🛒 XR Hologram Shops</p>
-      <p>🎵 AI Sound Trails</p>
-      <p>🚴‍♂ Energy-Bike Café</p>
-      <p>⏳ Simulation Pods</p>
-      <p>🧱 Eco-Bricks</p>
-      <p>🗺 Scent Navigation Maps</p>
-      <p>🚁 Drone Dining</p>
-      <p>🌈 Smart Sidewalks</p>
-      <p>🧘‍♀ Meditation Pods</p>
+  <main>
+    <section class="hero dark-hero">
+      <canvas id="hero-canvas" aria-hidden></canvas>
+      <div class="container hero-inner">
+        <h2 class="hero-title">A Data Structures & Algorithms Based Smart City Model</h2>
+        <p class="hero-sub">Turning algorithms into urban solutions — Aarunya</p>
+        <div class="hero-cta">
+          <a class="btn" href="#team">Meet the team</a>
+          <a class="btn ghost" href="#layout">See Layout</a>
+        </div>
+      </div>
+      <div class="hero-blobs">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+      </div>
+    </section>
+
+    <section id="overview" class="page-section container">
+      <h2 class="reveal">Overview</h2>
+      <div class="content-card dark-card reveal delay-1">
+        <p>
+          The “Aarunya City” project explores how principles of data structures and algorithms can meaningfully influence the way a modern city grows, functions, and responds to its people.
+        </p>
+        <p>
+          Instead of treating DAA as purely theoretical, Aarunya City uses algorithmic thinking as a practical design tool — from optimising road connectivity with graph structures, to using searching and sorting logic for resource distribution, and applying predictive models to anticipate urban challenges. Through these approaches, Aarunya City demonstrates how a data‑driven mindset can enhance planning decisions, improve efficiency, and create a city that adapts intelligently while remaining sustainable.
+        </p>
+      </div>
+    </section>
+
+    <section id="images" class="page-section container">
+      <h2 class="reveal">Posters & Business Ideas</h2>
+      <p class="muted reveal delay-1">(Team posters placed sequentially)</p>
+      <div class="image-stack dark-panel reveal delay-2">
+        <img src="assets/images/Screenshot 2025-12-11 094529.png" alt="arbiya-ideas">
+        <img src="assets/images/Screenshot 2025-12-11 094536.png" alt="akshata-ideas">
+        <img src="assets/images/Screenshot 2025-12-11 094547.png" alt="ankita-ideas">
+        <img src="assets/images/Screenshot 2025-12-11 094559.png" alt="sai-ideas">
+      </div>
+    </section>
+
+    <section id="team" class="page-section container">
+      <h2 class="reveal">Team — Quick Links</h2>
+      <p class="muted reveal delay-1">Click a profile card to open the member's portfolio page. Tip: press 1–4 to jump.</p>
+      <div class="team-grid">
+
+        <a class="member-card arbiya-accent interactive-card reveal delay-2" href="arbiya.html" data-name="Arbiya Naaz Bhavikatti">
+          <div class="avatar">AN</div>
+          <h3>Arbiya Naaz Bhavikatti</h3>
+          <div class="meta">01FE24BCS042 | Role: Business Ideas & Product</div>
+          <div class="role">Focus: Logistics, E‑commerce, Tourism</div>
+        </a>
+
+        <a class="member-card akshata-accent interactive-card reveal delay-3" href="akshata.html" data-name="Akshata S Angadi">
+          <div class="avatar">AK</div>
+          <h3>Akshata S Angadi</h3>
+          <div class="meta">01FE24BCS044 | Role: Innovation & UX</div>
+          <div class="role">Focus: Micro‑farms, XR, Experience Design</div>
+        </a>
+
+        <a class="member-card ankita-accent interactive-card reveal delay-4" href="ankita.html" data-name="Ankita Muradi">
+          <div class="avatar">AM</div>
+          <h3>Ankita Muradi</h3>
+          <div class="meta">01FE24BCS146 | Role: Sustainability & Community</div>
+          <div class="role">Focus: Recycling, Skills, Solar</div>
+        </a>
+
+        <a class="member-card sai-accent interactive-card reveal delay-5" href="sai.html" data-name="Sai Bhusaraddi">
+          <div class="avatar">SB</div>
+          <h3>Sai Bhusaraddi</h3>
+          <div class="meta">01FE24BCS018 | Role: Tech & Data</div>
+          <div class="role">Focus: AI, IoT, Autonomous Systems</div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="layout" class="page-section container">
+      <h2 class="reveal">City Layout</h2>
+      <div class="map-row dark-panel reveal delay-2">
+        <img src="assets/images/map1.jpg" alt="city map 1" class="map">
+        <img src="assets/images/map2.jpg" alt="city map 2" class="map">
+      </div>
+    </section>
+
+    <section id="budget" class="page-section container">
+      <h2 class="reveal">Budget Estimation</h2>
+      <div class="table-container dark-panel reveal delay-3">
+        <table>
+          <thead>
+            <tr><th>Sector</th><th>Cost (₹ Cr / km)</th><th>Total Cost (₹ Cr)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Residential Infrastructure</td><td>250</td><td>112,500</td></tr>
+            <tr><td>Industrial Area</td><td>400</td><td>66,000</td></tr>
+            <tr><td>Renewable Energy</td><td>450</td><td>67,500</td></tr>
+            <tr><td>Public & Transport</td><td>500</td><td>75,000</td></tr>
+            <tr><td>Agriculture & Green Zones</td><td>150</td><td>22,500</td></tr>
+            <tr><td>Health & Education</td><td>350</td><td>28,350</td></tr>
+            <tr><td>Commercial Sector</td><td>450</td><td>40,500</td></tr>
+            <tr><td>Waste Management</td><td>350</td><td>26,250</td></tr>
+            <tr><td>Tech Park & Data Centres</td><td>500</td><td>49,500</td></tr>
+            <tr class="total"><td>Total</td><td></td><td>4,88,100</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Aarunya Project | Smart City Simulation</p>
+      <p><a href="https://atharva-in-bits.github.io/DAA-2025/" target="_blank">Friend's project on GitHub Pages</a></p>
     </div>
-    <button class="view-btn" onclick="showPage('akshata')">View Portfolio</button>
-  </div>
+  </footer>
 
-  <!-- ANKITA -->
-  <div class="member-box">
-    <h2>Ankita</h2>
-    <p><b>Roll No:</b> 244</p>
-    <div class="idea-list">
-      <p>🏥 Smart Healthcare Routing</p>
-      <p>⚡💧 Smart Water–Energy Grid</p>
-      <p>♻ Intelligent Waste Management</p>
-      <p>🎓 Personalized Learning Platform</p>
-      <p>🚦 Smart Traffic Management</p>
-      <p>🛡 Security & Surveillance Hub</p>
-      <p>🌾 Smart Farming Network</p>
-      <p>✈ Multi-Modal Transport System</p>
-      <p>🛒 Supply Chain Optimization</p>
-      <p>🧠 Cyber-Tech Innovation Lab</p>
-    </div>
-    <button class="view-btn" onclick="showPage('ankita')">View Portfolio</button>
-  </div>
-
-  <!-- SAI -->
-  <div class="member-box">
-    <h2>Sai</h2>
-    <p><b>Roll No:</b> 202</p>
-    <div class="idea-list">
-      <p>🔋 Smart Energy Grid</p>
-      <p>🚚 Autonomous Port Logistics</p>
-      <p>🛰 Satellite-IoT Monitoring</p>
-      <p>🛡 Cybersecurity Intelligence</p>
-      <p>🚦 Smart Mobility Control</p>
-      <p>🚐 Autonomous Shuttle Pods</p>
-      <p>🧠 Neural Simulation Lab</p>
-      <p>🏥 AI Healthcare Prediction</p>
-      <p>💡 Smart Lighting Network</p>
-      <p>📊 Data Commerce Hub</p>
-    </div>
-    <button class="view-btn" onclick="showPage('sai')">View Portfolio</button>
-  </div>
-
-</section>
-
-<!-- ARBIYA PAGE -->
-<section id="arbiya" class="section">
-  <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
-  <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
-  <!-- Detailed ideas for Arbiya remain the same as your original code -->
-</section>
-
-<!-- AKSHATA PAGE -->
-<section id="akshata" class="section">
-  <h1 class="title">Akshata</h1>
-  <p class="desc">Portfolio Under Construction</p>
-</section>
-
-<!-- ANKITA PAGE -->
-<section id="ankita" class="section">
-  <h1 class="title">Ankita – Detailed Portfolio</h1>
-  
-  <!-- SDGs Box -->
-  <div class="detailed-idea">
-    <h3>SDGs Covered in Ankita’s Projects</h3>
-    <div class="sdgs">
-      <p>🏥 Smart Healthcare Routing – SDG 3: Good Health & Well-being</p>
-      <p>⚡💧 Smart Water–Energy Grid – SDG 7: Affordable & Clean Energy</p>
-      <p>♻ Intelligent Waste Management – SDG 12: Responsible Consumption & Production</p>
-      <p>🎓 Personalized Learning Platform – SDG 4: Quality Education</p>
-      <p>🚦 Smart Traffic Management – SDG 11: Sustainable Cities & Communities</p>
-      <p>🛡 Security & Surveillance Hub – SDG 16: Peace, Justice & Strong Institutions</p>
-      <p>🌾 Smart Farming Network – SDG 2: Zero Hunger</p>
-      <p>✈ Multi-Modal Transport System – SDG 9: Industry, Innovation & Infrastructure</p>
-      <p>🛒 Supply Chain Optimization – SDG 8: Decent Work & Economic Growth</p>
-      <p>🧠 Cyber-Tech Innovation Lab – SDG 9: Industry, Innovation & Infrastructure</p>
-    </div>
-  </div>
-  
-  <!-- Algorithm Explanation Box -->
-  <div class="detailed-idea">
-    <h3>Algorithms Covered & C++ Implementation</h3>
-    <p><b>Smart Healthcare Routing:</b> Dijkstra’s Shortest Path for fastest hospital routing.<br>
-    <b>Smart Water–Energy Grid:</b> Min Heap for load balancing of energy and water.<br>
-    <b>Intelligent Waste Management:</b> Merge Sort for efficient sorting of waste types.<br>
-    <b>Personalized Learning Platform:</b> Heap/Priority Queue for adaptive student learning plan.<br>
-    <b>Smart Traffic Management:</b> BFS + Weighted Graph algorithms for traffic signal optimization.<br>
-    <b>Security & Surveillance Hub:</b> Brute-force + Priority Queues for risk detection.<br>
-    <b>Smart Farming Network:</b> Quick Sort for ranking optimal plots and resources.<br>
-    <b>Multi-Modal Transport System:</b> Floyd-Warshall for shortest paths between stations.<br>
-    <b>Supply Chain Optimization:</b> Greedy Algorithm for nearest supplier assignment.<br>
-    <b>Cyber-Tech Innovation Lab:</b> KMP Algorithm for real-time pattern search in datasets.</p>
-
-    <div class="code-box">
-/* Sample: Dijkstra’s Algorithm for Smart Healthcare Routing */
-
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-struct Edge {
-    int to; double weight;
-};
-
-vector&lt;double&gt; dijkstra(int n, int src, vector&lt;vector&lt;Edge&gt;> &graph) {
-    vector&lt;double&gt; dist(n, 1e18);
-    dist[src] = 0;
-    priority_queue&lt;pair&lt;double,int>, vector&lt;pair&lt;double,int&gt;>, greater&lt;&gt; pq;
-    pq.push({0, src});
-
-    while(!pq.empty()) {
-        auto [d, u] = pq.top(); pq.pop();
-        if(d != dist[u]) continue;
-        for(auto &e : graph[u]) {
-            if(dist[e.to] &gt; dist[u] + e.weight) {
-                dist[e.to] = dist[u] + e.weight;
-                pq.push({dist[e.to], e.to});
-            }
-        }
-    }
-    return dist;
-}
+  <div id="idea-modal" class="modal" aria-hidden>
+    <div class="modal-panel">
+      <button class="modal-close">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
     </div>
   </div>
-</section>
 
-<!-- SAI PAGE -->
-<section id="sai" class="section">
-  <h1 class="title">Sai</h1>
-  <p class="desc">Portfolio Under Construction</p>
-</section>
-
-<script>
-function showPage(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-</script>
-
+  <script src="assets/script.js"></script>
 </body>
 </html>
+
+
+<!-- FILE: about.html -->
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Aarunya Team</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="site-dark">
+  <header class="site-header small dark-hero">
+    <div class="container">
+      <h1 class="logo">Aarunya — Team</h1>
+      <nav class="main-nav"><a href="index.html">Home</a><a href="#">Contact</a></nav>
+    </div>
+  </header>
+
+  <main class="container page-section">
+    <h2 class="reveal">About / Team Members</h2>
+    <p class="muted reveal delay-1">Floating profile cards — hover to tilt and click to open that member's portfolio page.</p>
+
+    <div class="floating-profiles">
+
+      <a class="float-card arbiya-accent interactive-card reveal delay-2" href="arbiya.html">
+        <div class="float-avatar">AN</div>
+        <div class="float-info">
+          <h3>Arbiya Naaz Bhavikatti</h3>
+          <p class="meta">01FE24BCS042 | Role: Business Ideas & Product</p>
+          <p class="skill">Key ideas: Logistics Hub, Cold Storage, EV Charging, E‑commerce Center, Waterfront Tourism</p>
+        </div>
+      </a>
+
+      <a class="float-card akshata-accent interactive-card reveal delay-3" href="akshata.html">
+        <div class="float-avatar">AK</div>
+        <div class="float-info">
+          <h3>Akshata S Angadi</h3>
+          <p class="meta">01FE24BCS044 | Role: Innovation & UX</p>
+          <p class="skill">Key ideas: Floating Micro‑Farms, XR Hologram Shops, Drone Dining, Meditation Pods</p>
+        </div>
+      </a>
+
+      <a class="float-card ankita-accent interactive-card reveal delay-4" href="ankita.html">
+        <div class="float-avatar">AM</div>
+        <div class="float-info">
+          <h3>Ankita Muradi</h3>
+          <p class="meta">01FE24BCS146 | Role: Sustainability & Community</p>
+          <p class="skill">Key ideas: Recycling Automation, Women Skill Center, Organic Market, VR Meditation Studio, Bike Sharing</p>
+        </div>
+      </a>
+
+      <a class="float-card sai-accent interactive-card reveal delay-5" href="sai.html">
+        <div class="float-avatar">SB</div>
+        <div class="float-info">
+          <h3>Sai Bhusaraddi</h3>
+          <p class="meta">01FE24BCS018 | Role: Tech & Data</p>
+          <p class="skill">Key ideas: Battery Recycling, Autonomous Vehicles, Satellite IoT, Neural Software, Data Marketing</p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="site-footer small"><div class="container">© 2025 Aarunya Team</div></footer>
+  <script src="assets/script.js"></script>
+</body></html>
+
+
+<!-- FILE: arbiya.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Arbiya Naaz Bhavikatti — Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css"></head>
+<body class="site-dark">
+  <header class="site-header small dark-hero"><div class="container"><a href="index.html" class="logo">← Aarunya</a></div></header>
+  <main class="container page-section reveal">
+    <h2>Arbiya Naaz Bhavikatti</h2>
+    <p class="meta">01FE24BCS042 | Role: Business Ideas & Product</p>
+    <h3>Focus Areas</h3>
+    <p>Logistics, Cold Storage, Co‑working, EV Charging, Waterfront Tourism and E‑commerce Centres — practical business models for city growth.</p>
+
+    <h3>Business Ideas (selected)</h3>
+    <ul class="ideas-list interactive-ideas">
+      <li data-title="Logistics Hub" data-desc="Centralised logistics node connecting warehouses with optimized routing algorithms.">Logistics Hub</li>
+      <li data-title="Waterfront Tourism" data-desc="Eco-resorts and responsible waterfront tourism with low-impact transport">Waterfront Tourism</li>
+      <li data-title="E-commerce Center" data-desc="Fulfillment centers integrated with last-mile micro-robots">E‑commerce Center</li>
+    </ul>
+
+    <div class="portfolio-actions">
+      <a class="btn" href="https://github.com/atharva-in-bits/DAA-2025/blob/main/arbiya.cpp" target="_blank">View .cpp on GitHub</a>
+      <a class="btn ghost" href="https://atharva-in-bits.github.io/DAA-2025/" target="_blank">Open Friend's Project</a>
+    </div>
+  </main>
+  <footer class="site-footer small"><div class="container">© 2025 Arbiya</div></footer>
+  <script src="assets/script.js"></script>
+</body></html>
+
+
+<!-- FILE: akshata.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Akshata S Angadi — Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css"></head>
+<body class="site-dark">
+  <header class="site-header small dark-hero"><div class="container"><a href="index.html" class="logo">← Aarunya</a></div></header>
+  <main class="container page-section reveal delay-1">
+    <h2>Akshata S Angadi</h2>
+    <p class="meta">01FE24BCS044 | Role: Innovation & UX</p>
+    <h3>Focus Areas</h3>
+    <p>Experience-first ideas: XR, sensory trails, micro‑farms, drone dining and mindful spaces.</p>
+
+    <h3>Business Ideas (selected)</h3>
+    <ul class="ideas-list interactive-ideas">
+      <li data-title="Floating Micro‑Farms" data-desc="Compact hydroponic farms integrated into canals and rooftops">Floating Micro‑Farms</li>
+      <li data-title="Drone Dining" data-desc="On-demand drone delivery experiences for open-air dining">Drone Dining</li>
+      <li data-title="Meditation Pods" data-desc="Quiet, sensor-managed pods for guided mindfulness">Meditation Pods</li>
+    </ul>
+
+    <div class="portfolio-actions">
+      <a class="btn" href="https://github.com/atharva-in-bits/DAA-2025/blob/main/akshata.cpp" target="_blank">View .cpp on GitHub</a>
+      <a class="btn ghost" href="https://atharva-in-bits.github.io/DAA-2025/" target="_blank">Open Friend's Project</a>
+    </div>
+  </main>
+  <footer class="site-footer small"><div class="container">© 2025 Akshata</div></footer>
+  <script src="assets/script.js"></script>
+</body></html>
+
+
+<!-- FILE: ankita.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ankita Muradi — Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css"></head>
+<body class="site-dark">
+  <header class="site-header small dark-hero"><div class="container"><a href="index.html" class="logo">← Aarunya</a></div></header>
+  <main class="container page-section reveal delay-2">
+    <h2>Ankita Muradi</h2>
+    <p class="meta">01FE24BCS146 | Role: Sustainability & Community</p>
+    <h3>Focus Areas</h3>
+    <p>Recycling, community skill centres, renewable tech and social impact models.</p>
+
+    <h3>Business Ideas (selected)</h3>
+    <ul class="ideas-list interactive-ideas">
+      <li data-title="Recycling Automation" data-desc="Modular automated sorting with AI-powered classification">Recycling Automation</li>
+      <li data-title="Women Skill Center" data-desc="Training hubs focused on local employment and entrepreneurship">Women Skill Center</li>
+      <li data-title="Bike Sharing" data-desc="Smart dockless bike-sharing integrated with transit passes">Bike Sharing</li>
+    </ul>
+
+    <div class="portfolio-actions">
+      <a class="btn" href="https://github.com/atharva-in-bits/DAA-2025/blob/main/ankita.cpp" target="_blank">View .cpp on GitHub</a>
+      <a class="btn ghost" href="https://atharva-in-bits.github.io/DAA-2025/" target="_blank">Open Friend's Project</a>
+    </div>
+  </main>
+  <footer class="site-footer small"><div class="container">© 2025 Ankita</div></footer>
+  <script src="assets/script.js"></script>
+</body></html>
+
+
+<!-- FILE: sai.html -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sai Bhusaraddi — Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css"></head>
+<body class="site-dark">
+  <header class="site-header small dark-hero"><div class="container"><a href="index.html" class="logo">← Aarunya</a></div></header>
+  <main class="container page-section reveal delay-3">
+    <h2>Sai Bhusaraddi</h2>
+    <p class="meta">01FE24BCS018 | Role: Tech & Data</p>
+    <h3>Focus Areas</h3>
+    <p>AI, IoT, cybersecurity, autonomous systems and data-driven services for the city.</p>
+
+    <h3>Business Ideas (selected)</h3>
+    <ul class="ideas-list interactive-ideas">
+      <li data-title="Autonomous Vehicles" data-desc="Fleet management and simulation backed by route optimization">Autonomous Vehicles</li>
+      <li data-title="Satellite IoT" data-desc="Low-latency telemetry and city-wide sensor network">Satellite IoT</li>
+      <li data-title="Data Marketing" data-desc="Privacy-first analytics to match services and users">Data Marketing</li>
+    </ul>
+
+    <div class="portfolio-actions">
+      <a class="btn" href="https://github.com/atharva-in-bits/DAA-2025/blob/main/sai.cpp" target="_blank">View .cpp on GitHub</a>
+      <a class="btn ghost" href="https://atharva-in-bits.github.io/DAA-2025/" target="_blank">Open Friend's Project</a>
+    </div>
+  </main>
+  <footer class="site-footer small"><div class="container">© 2025 Sai</div></footer>
+  <script src="assets/script.js"></script>
+</body></html>
+
+
+<!-- FILE: assets/style.css -->
+:root{
+  --accent-1: #7bd389; /* arbiya accent */
+  --accent-2: #ffd96b; /* ankita accent */
+  --accent-3: #b6f0ff; /* sai accent */
+  --accent-4: #ffb6e0; /* akshata accent */
+  --bg-1: #031426;
+  --bg-2: #071028;
+  --muted: #9aa6bd;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;color:#e6eef8;background:linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 60%)}
+.container{max-width:1100px;margin:0 auto;padding:22px}
+.site-header{background:transparent;padding:14px 0;color:var(--muted);z-index:30;position:relative}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{color:var(--accent-3);font-weight:700;text-decoration:none;font-size:20px}
+.main-nav{display:flex;gap:16px}
+.main-nav a{color:var(--muted);text-decoration:none;position:relative}
+.dark-hero{position:relative;padding:64px 0 120px;border-radius:12px;overflow:hidden}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-inner{position:relative;z-index:2}
+.hero-title{font-size:30px;margin:0;color:#fff;letter-spacing:0.4px}
+.hero-sub{color:var(--muted);margin-top:8px}
+.hero-cta{margin-top:18px;display:flex;gap:12px}
+.hero-blobs{position:absolute;inset:0;z-index:1;pointer-events:none}
+.blob{position:absolute;filter:blur(40px);opacity:0.7;mix-blend-mode:screen}
+.b1{width:360px;height:360px;left:-8%;top:10%;background:linear-gradient(180deg,var(--accent-1),transparent)}
+.b2{width:420px;height:420px;right:-10%;top:0;background:linear-gradient(180deg,var(--accent-3),transparent)}
+.b3{width:240px;height:240px;left:40%;bottom:-8%;background:linear-gradient(180deg,var(--accent-4),transparent)}
+.page-section{padding:28px 0}
+.dark-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+.image-stack img{width:100%;max-width:900px;border-radius:8px;margin:18px 0;display:block;box-shadow:0 20px 60px rgba(2,6,12,0.6);transform:translateY(26px) scale(0.995);opacity:0;transition:transform .9s cubic-bezier(.2,.9,.3,1),opacity .6s}
+.image-stack.revealed img{transform:none;opacity:1}
+.map-row{display:flex;gap:12px;flex-wrap:wrap}
+.map{width:48%;min-width:220px;border-radius:6px}
+.table-container table{width:100%;border-collapse:collapse;background:transparent;color:#dce9ff}
+.table-container th,.table-container td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
+.table-container .total{background:rgba(255,255,255,0.02)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:16px}
+.member-card{position:relative;display:block;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:16px;text-decoration:none;color:inherit;box-shadow:0 30px 80px rgba(2,6,12,0.6);border:1px solid rgba(255,255,255,0.04);transform-style:preserve-3d;transition:transform .4s cubic-bezier(.2,.9,.3,1),box-shadow .28s}
+.member-card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.02));pointer-events:none;mix-blend-mode:overlay}
+.member-card:hover{transform:translateY(-18px) rotateX(4deg) rotateY(-2deg);box-shadow:0 50px 120px rgba(2,6,12,0.8)}
+.member-card .avatar{width:72px;height:72px;border-radius:14px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:10px;color:#071028;transition:transform .3s}
+.member-card h3{margin:0;color:#fff}
+.member-card .meta{color:var(--muted);font-size:13px}
+.member-card .role{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* Neon outline pulse */
+.member-card:hover::after{content:'';position:absolute;inset:-2px;border-radius:18px;box-shadow:0 0 40px rgba(123,211,137,0.12),0 0 80px rgba(123,211,137,0.06);opacity:1;pointer-events:none}
+
+.floating-profiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.float-card{position:relative;display:flex;gap:12px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:16px;text-decoration:none;color:inherit;align-items:center;box-shadow:0 26px 70px rgba(2,6,12,0.6);transform-style:preserve-3d}
+.float-card:hover{transform:translateY(-12px)}
+.float-avatar{width:80px;height:80px;border-radius:14px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700;color:#071028}
+.float-info h3{margin:0;color:#fff}
+.float-info p{margin:6px 0;color:var(--muted)}
+.ideas-list{list-style:disc;margin-left:20px;color:#e6eef8}
+.interactive-ideas li{cursor:pointer;padding:10px;border-radius:8px;transition:background .12s ease,transform .12s}
+.interactive-ideas li:hover{background:rgba(255,255,255,0.02);transform:translateX(6px)}
+.portfolio-actions{display:flex;gap:10px;margin-top:18px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent-3);color:#071028;text-decoration:none;box-shadow:0 10px 30px rgba(2,6,12,0.45);transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(2px)}
+.btn.ghost{background:transparent;color:var(--accent-3);border:1px solid rgba(255,255,255,0.06)}
+.site-footer{padding:24px 0;margin-top:36px;color:var(--muted)}
+.muted{color:var(--muted)}
+
+/* Accent utility classes */
+.arbiya-accent .avatar, .arbiya-accent .float-avatar{background:linear-gradient(180deg, rgba(123,211,137,0.18), rgba(123,211,137,0.06));border:1px solid rgba(123,211,137,0.24)}
+.akshata-accent .avatar, .akshata-accent .float-avatar{background:linear-gradient(180deg, rgba(255,182,224,0.18), rgba(255,182,224,0.06));border:1px solid rgba(255,182,224,0.24)}
+.ankita-accent .avatar, .ankita-accent .float-avatar{background:linear-gradient(180deg, rgba(255,217,107,0.18), rgba(255,217,107,0.06));border:1px solid rgba(255,217,107,0.24)}
+.sai-accent .avatar, .sai-accent .float-avatar{background:linear-gradient(180deg, rgba(182,240,255,0.18), rgba(182,240,255,0.06));border:1px solid rgba(182,240,255,0.24)}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,6,10,0.5);backdrop-filter:blur(6px);z-index:120}
+.modal.open{display:flex}
+.modal-panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:12px;max-width:720px;width:92%;box-shadow:0 40px 100px rgba(2,6,12,0.8);transform:translateY(20px);opacity:0;transition:transform .36s cubic-bezier(.2,.9,.3,1),opacity .36s}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--muted);font-size:18px}
+
+/* reveal helpers */
+.reveal{opacity:0;transform:translateY(18px) scale(.996);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.9,.3,1)}
+.reveal.active{opacity:1;transform:none}
+.reveal.delay-1{transition-delay:.08s}
+.reveal.delay-2{transition-delay:.16s}
+.reveal.delay-3{transition-delay:.24s}
+.reveal.delay-4{transition-delay:.32s}
+.reveal.delay-5{transition-delay:.4s}
+
+/* responsive tweaks */
+@media(max-width:940px){.team-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.map{width:100%}}
+@media(max-width:560px){.float-avatar{width:56px;height:56px}.member-card{padding:12px}.avatar{width:48px;height:48px}}
+
+
+<!-- FILE: assets/script.js -->
+/*
+  Advanced animations + interactions:
+  - Canvas particle field (hero)
+  - 3D tilt + layered parallax on interactive cards
+  - Staggered springy entrance using IntersectionObserver
+  - Modal for business idea details
+*/
+
+// Canvas particle field
+(function heroCanvas(){
+  const canvas = document.getElementById('hero-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = canvas.offsetWidth;
+  let h = canvas.height = canvas.offsetHeight;
+  const particles = [];
+  const PARTICLE_COUNT = Math.max(18, Math.floor(w*h/60000));
+
+  function rand(min,max){return Math.random()*(max-min)+min}
+  for(let i=0;i<PARTICLE_COUNT;i++){
+    particles.push({x:rand(0,w),y:rand(0,h),r:rand(2,8),vx:rand(-0.2,0.2),vy:rand(-0.2,0.2),phase:rand(0,Math.PI*2)});
+  }
+
+  function resize(){w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight}
+  window.addEventListener('resize', ()=>{resize();});
+
+  let mouse = {x:w/2,y:h/2};
+  canvas.addEventListener('mousemove', e=>{ const r = canvas.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  canvas.addEventListener('mouseleave', ()=>{ mouse.x = w/2; mouse.y = h/2 });
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    // draw soft gradient background overlay built-in via CSS; draw particles
+    for(let p of particles){
+      // slight orbit towards mouse
+      const dx = (mouse.x - p.x)*0.0008; const dy = (mouse.y - p.y)*0.0008;
+      p.vx += dx; p.vy += dy;
+      p.x += p.vx; p.y += p.vy; p.phase += 0.02;
+      if(p.x < -50) p.x = w+50; if(p.x> w+50) p.x=-50; if(p.y<-50) p.y=h+50; if(p.y>h+50) p.y=-50;
+
+      // glow circle
+      ctx.beginPath(); ctx.fillStyle = `rgba(255,255,255,${0.06 + Math.sin(p.phase)*0.03})`; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    }
+
+    // draw subtle connecting lines between close particles
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const a = particles[i], b = particles[j];
+        const d = (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y);
+        if(d < 16000){ ctx.beginPath(); ctx.strokeStyle = 'rgba(182,240,255,'+ (0.06 - d/16000*0.04) +')'; ctx.lineWidth = 1; ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Entrance reveal and staggered "spring" (we add a small wiggle using transform)
+(function entranceReveals(){
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        el.classList.add('active');
+        // pop animation using spring via keyframes applied inline
+        el.animate([
+          {transform: 'translateY(18px) scale(.98)', opacity:0},
+          {transform: 'translateY(-8px) scale(1.01)', opacity:1},
+          {transform: 'translateY(0) scale(1)', opacity:1}
+        ], {duration:700, easing:'cubic-bezier(0.2,0.9,0.3,1)'});
+        io.unobserve(el);
+      }
+    });
+  },{threshold:0.12});
+  reveals.forEach(r=> io.observe(r));
+})();
+
+// 3D tilt + layered parallax for cards
+(function cardTilt(){
+  function applyTilt(el, e){
+    const rect = el.getBoundingClientRect();
+    const cx = rect.left + rect.width/2; const cy = rect.top + rect.height/2;
+    const dx = e.clientX - cx; const dy = e.clientY - cy; const tiltx = (dy/rect.height)*10; const tilty = -(dx/rect.width)*12;
+    el.style.transform = `perspective(1000px) rotateX(${tiltx}deg) rotateY(${tilty}deg) translateZ(6px)`;
+    // layered parallax on children
+    const avatar = el.querySelector('.avatar, .float-avatar'); if(avatar) avatar.style.transform = `translateZ(20px) rotateZ(${tilty/6}deg)`;
+  }
+  function resetTilt(el){ el.style.transform = ''; const avatar = el.querySelector('.avatar, .float-avatar'); if(avatar) avatar.style.transform = '' }
+
+  document.querySelectorAll('.interactive-card').forEach(card=>{
+    card.addEventListener('mousemove', (e)=> applyTilt(card,e));
+    card.addEventListener('mouseleave', ()=> resetTilt(card));
+    // small entrance animation stagger already handled by reveal
+  });
+})();
+
+// Modal for ideas
+(function ideasModal(){
+  const modal = document.getElementById('idea-modal'); const title = document.getElementById('modal-title'); const body = document.getElementById('modal-body');
+  function open(t,b){ title.textContent = t; body.textContent = b; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
+  function close(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+  document.querySelectorAll('.interactive-ideas li').forEach(li=>{
+    li.addEventListener('click', ()=> open(li.dataset.title, li.dataset.desc));
+  });
+  document.querySelectorAll('.modal-close, #idea-modal').forEach(el=> el.addEventListener('click', (ev)=>{
+    if(ev.target === el || el.classList.contains('modal-close')) close();
+  }));
+  document.querySelector('.modal-panel')?.addEventListener('click', e=> e.stopPropagation());
+})();
+
+// Small ripple effect & keyboard shortcuts
+(function misc(){
+  document.querySelectorAll('.btn').forEach(btn=> btn.addEventListener('click', ()=>{
+    const r = document.createElement('span'); r.className='ripple'; btn.appendChild(r); setTimeout(()=> r.remove(),500);
+  }));
+  window.addEventListener('keydown', (e)=>{
+    if(document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+    if(e.key === '1') window.location.href = 'arbiya.html';
+    if(e.key === '2') window.location.href = 'akshata.html';
+    if(e.key === '3') window.location.href = 'ankita.html';
+    if(e.key === '4') window.location.href = 'sai.html';
+  });
+})();
+
+/* end of script */
