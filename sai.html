@@ -1,696 +1,551 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sai — Smart City Cases | Aarunya</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sai Bhusaraddi — Portfolio & Case Studies</title>
+<style>
+  :root{
+    --bg-1: #030612;
+    --bg-2: #071427;
+    --card-bg: rgba(255,255,255,0.02);
+    --muted: rgba(255,255,255,0.66);
+    --white: #ffffff;
+    --neon-cyan: #18ffff;
+    --neon-magenta: #ff3ca6;
+    --neon-yellow: #ffd200;
+    --accent-start: #06b6d4;
+    --accent-end: #7c3aed;
+    --ui: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --hand-cs: "Comic Sans MS", "Comic Sans", "Segoe Print", cursive, sans-serif;
+  }
 
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  /* Page */
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:var(--ui);
+    background:
+      radial-gradient(800px 300px at 10% 5%, rgba(24,38,66,0.14), transparent),
+      radial-gradient(700px 240px at 90% 95%, rgba(112,52,180,0.06), transparent),
+      linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
 
-  <style>
-    :root{
-      --bg:#020617;
-      --surface:#020617;
-      --card:#0b1020;
-      --muted:#9ca3af;
-      --accent1:#34d399; /* green */
-      --accent2:#22d3ee; /* cyan */
-      --accent3:#818cf8; /* indigo */
-      --border-soft:#1f2937;
-      --shadow-soft:0 18px 45px rgba(15,23,42,0.8);
-      --maxw:1040px;
-      --btn-h:38px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(52,211,153,0.28) 0, transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(56,189,248,0.28) 0, transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(129,140,248,0.32) 0, transparent 55%),
-        linear-gradient(180deg,#020617 0%,#020617 100%);
-      color:#e5e7eb;
-      padding:26px 12px 32px;
-      line-height:1.7;
-    }
+  .wrap{
+    max-width:1100px;
+    margin:28px auto;
+    padding:0 20px 80px;
+  }
 
-    .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:22px;
-    }
+  /* HERO / PERSONAL BANNER */
+  .hero {
+    margin-top:12px;
+    padding:44px 28px;
+    position: relative;
+    border-radius:22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
+    box-shadow: 0 18px 60px rgba(2,6,23,0.75);
+    border: 1px solid rgba(255,255,255,0.03);
+    overflow: visible;
+  }
 
-    /* header */
-    .hero{
-      border-radius:24px;
-      padding:20px 22px 18px;
-      background:radial-gradient(circle at 0 0,rgba(34,211,238,0.18),transparent 60%),
-                 radial-gradient(circle at 100% 100%,rgba(52,211,153,0.16),transparent 60%),
-                 #020617;
-      border:1px solid rgba(148,163,184,0.5);
-      box-shadow:var(--shadow-soft);
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .hero-left{display:flex;gap:14px;align-items:flex-start}
-    .logo{
-      width:64px;height:64px;border-radius:20px;
-      background:conic-gradient(from 200deg,var(--accent1),var(--accent2),var(--accent3),var(--accent1));
-      display:flex;align-items:center;justify-content:center;
-      color:#020617;font-weight:900;font-size:24px;
-      box-shadow:0 0 0 3px rgba(15,23,42,0.9);
-    }
-    .hero-tag{
-      color:var(--accent2);
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.12em;
-      margin-bottom:4px;
-    }
-    h1{
-      font-size:1.45rem;
-      margin-bottom:4px;
-      color:#f9fafb;
-    }
-    .hero-sub{
-      color:var(--muted);
-      font-size:0.95rem;
-      max-width:540px;
-    }
-    .hero-right{
-      text-align:right;
-      font-size:0.86rem;
-      color:var(--muted);
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      align-items:flex-end;
-    }
-    .hero-right strong{color:#e5e7eb}
-    .hero-git-btn{
-      margin-top:6px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 13px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.6);
-      background:linear-gradient(120deg,#020617,#020617);
-      color:#e5e7eb;
-      font-size:0.78rem;
-      text-decoration:none;
-      font-weight:600;
-    }
+  /* neon border glow container */
+  .hero-glow{
+    position: absolute;
+    inset: -8px;
+    z-index:0;
+    border-radius:26px;
+    pointer-events:none;
+    background:
+      linear-gradient(90deg, rgba(24,161,255,0.06), rgba(255,60,166,0.05), rgba(255,210,0,0.04));
+    filter: blur(18px);
+    opacity:0.9;
+    transition: transform .25s ease, opacity .25s ease;
+  }
 
-    /* summary pills */
-    .summary-strip{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:5px 12px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.9);
-      border:1px dashed rgba(148,163,184,0.6);
-      font-size:0.82rem;
-      color:var(--muted);
-    }
-    .pill-label{color:#9ca3af}
-    .pill-value{color:#e5e7eb;font-weight:600}
+  /* subtle animated pulse on hover */
+  .hero:hover + .hero-glow, .hero:focus-within + .hero-glow {
+    transform: scale(1.02);
+    opacity:1;
+    filter: blur(22px) saturate(1.05);
+  }
 
-    /* overview box */
-    .analysis-shell{
-      border-radius:18px;
-      padding:14px 16px 14px;
-      background:rgba(15,23,42,0.98);
-      border:1px solid rgba(148,163,184,0.5);
-      box-shadow:0 14px 38px rgba(15,23,42,0.9);
-    }
-    .analysis-title{
-      font-size:0.96rem;
-      font-weight:700;
-      margin-bottom:4px;
-      color:#e5e7eb;
-    }
-    .analysis-sub{
-      font-size:0.8rem;
-      color:var(--muted);
-      margin-bottom:10px;
-    }
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:8px;
-      margin-bottom:10px;
-    }
-    .mini-kv{
-      padding:7px 9px;
-      border-radius:10px;
-      background:#020617;
-      border:1px solid rgba(55,65,81,0.9);
-      font-size:0.8rem;
-      display:flex;
-      justify-content:space-between;
-      color:#9ca3af;
-    }
-    .mini-kv span:last-child{color:#e5e7eb;font-weight:600}
+  .hero-inner{
+    position: relative;
+    z-index:2;
+    text-align:center;
+    max-width:980px;
+    margin:0 auto;
+  }
 
-    .table-box{
-      margin-top:8px;
-      padding:8px;
-      border-radius:12px;
-      background:#020617;
-      border:1px solid rgba(55,65,81,0.9);
-      font-size:0.78rem;
-      color:#9ca3af;
-      max-height:210px;
-      overflow:auto;
-    }
-    .table-box table{width:100%;border-collapse:collapse}
-    .table-box th,
-    .table-box td{
-      padding:4px 6px;
-      border-bottom:1px solid rgba(31,41,55,0.9);
-      text-align:left;
-    }
-    .table-box th{
-      position:sticky;top:0;
-      background:#020617;
-      color:#e5e7eb;
-      font-size:0.78rem;
-      z-index:1;
-    }
+  .tag{
+    display:block;
+    margin-bottom:8px;
+    font-size:12px;
+    font-weight:800;
+    color:var(--neon-yellow);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    opacity:0.98;
+  }
 
-    /* cases */
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-    }
-    .card{
-      padding:16px 16px 15px;
-      border-radius:16px;
-      background:radial-gradient(circle at 0 0,rgba(34,211,238,0.08),transparent 55%),
-                 radial-gradient(circle at 100% 100%,rgba(52,211,153,0.08),transparent 55%),
-                 #020617;
-      border:1px solid rgba(55,65,81,0.9);
-      box-shadow:0 16px 40px rgba(15,23,42,0.9);
-    }
-    .case-title{
-      font-size:1.02rem;
-      font-weight:800;
-      color:#f9fafb;
-      margin-bottom:6px;
-    }
-    .meta{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-      margin-bottom:8px;
-    }
-    .badge{
-      padding:3px 10px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.95);
-      border:1px solid rgba(75,85,99,0.95);
-      color:#d1d5db;
-      font-size:0.76rem;
-    }
-    .desc{
-      color:#e5e7eb;
-      font-size:0.93rem;
-      line-height:1.75;
-      margin-bottom:9px;
-    }
-    .desc span.sdg-text{
-      color:#cbd5f5;
-      font-size:0.86rem;
-    }
-    .ds-list{
-      background:#020617;
-      padding:7px 9px;
-      border-radius:10px;
-      border:1px solid rgba(55,65,81,0.9);
-      margin-bottom:8px;
-      font-size:0.82rem;
-      color:#cbd5f5;
-    }
-    .ds-list code{color:#38bdf8;font-weight:700}
+  /* Name in Comic Sans style (formal friendly handwriting) */
+  .hero h1{
+    margin:0;
+    font-family: var(--hand-cs);
+    font-size:56px;
+    color:var(--white);
+    letter-spacing:1px;
+    display:inline-block;
+    padding:8px 20px;
+    border-radius:12px;
+    /* small inner highlight */
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+    text-shadow:
+      0 2px 0 rgba(0,0,0,0.55),
+      0 6px 28px rgba(255,191,0,0.06);
+  }
 
-    .diagram{
-      background:#020617;
-      padding:8px 9px;
-      border-radius:10px;
-      font-family:ui-monospace,monospace;
-      color:#a5b4fc;
-      font-size:0.8rem;
-      overflow:auto;
-      white-space:pre;
-      border:1px dashed rgba(56,189,248,0.8);
-      margin-bottom:8px;
-    }
+  /* thin neon outline around the name */
+  .hero h1::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top: calc(50% - 28px);
+    width: calc(100% + 48px);
+    height: calc(100% + 18px);
+    z-index:-1;
+    border-radius:14px;
+    box-shadow:
+      0 0 28px rgba(24,255,255,0.06),
+      0 0 56px rgba(255,60,166,0.04),
+      0 0 100px rgba(255,210,0,0.03);
+    opacity:0.9;
+  }
 
-    .actions{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-top:6px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      height:var(--btn-h);
-      padding:0 14px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:0.86rem;
-      color:#020617;
-      background:linear-gradient(120deg,var(--accent1),var(--accent2));
-      display:inline-flex;
-      align-items:center;
-      box-shadow:0 12px 28px rgba(56,189,248,0.45);
-    }
+  .subtitle{
+    margin-top:12px;
+    font-size:16px;
+    font-weight:800;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing:0.6px;
+  }
 
-    footer{
-      margin-top:24px;
-      padding:10px 12px;
-      border-radius:12px;
-      text-align:center;
-      color:#9ca3af;
-      border:1px solid rgba(55,65,81,0.9);
-      background:#020617;
-      font-size:0.8rem;
-    }
+  .lead{
+    margin-top:12px;
+    color:var(--white);
+    font-size:14px;
+    line-height:1.6;
+    opacity:0.95;
+    max-width:840px;
+    margin-left:auto;margin-right:auto;
+  }
 
-    .fadein{opacity:0;transform:translateY(16px)}
-    .visible{opacity:1;transform:translateY(0);transition:all 380ms cubic-bezier(.2,.9,.3,1)}
+  .meta-row{
+    margin-top:14px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    font-weight:700;
+    font-family: "Courier New", monospace;
+  }
 
-    @media (max-width:640px){
-      .hero{flex-direction:column;align-items:flex-start}
-      .hero-right{align-items:flex-start;text-align:left}
-    }
-  </style>
+  .pill{
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    padding:9px 14px;
+    border-radius:999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.04);
+    font-size:13px;
+    color:var(--white);
+    position:relative;
+    transition: transform .18s ease;
+  }
+  .pill:hover{ transform: translateY(-4px); }
+
+  .pill .dot{
+    width:10px;height:10px;border-radius:50%;
+    box-shadow: 0 0 12px currentColor, 0 0 22px currentColor;
+    opacity:0.95;
+  }
+  .pill.roll .dot{ background: var(--neon-cyan); color: var(--neon-cyan); }
+  .pill.usn .dot{ background: var(--neon-magenta); color: var(--neon-magenta); }
+
+  /* main cards grid */
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:18px;
+    margin-top:26px;
+  }
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.55);
+    overflow:hidden;
+  }
+
+  .title-row{ display:flex; align-items:center; gap:12px; }
+  .index-badge{
+    background: linear-gradient(90deg,var(--accent-start),var(--accent-end));
+    padding:6px 10px;border-radius:10px;font-weight:700;font-size:13px;color:white;
+  }
+  .name{ font-size:16px; font-weight:700; color:#f3f9ff; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .chip{
+    background: rgba(255,255,255,0.03);
+    padding:7px 10px;border-radius:999px;font-size:12px;color:#cfe9ff;
+    border:1px solid rgba(255,255,255,0.02);
+  }
+
+  .desc{ margin-top:12px; color:#e8f4ff; line-height:1.5; font-size:14px; }
+  .sdg{ margin-top:14px; font-size:13px; color:var(--muted); }
+  .sdg strong{ color:#fff; font-weight:700; }
+
+  .meta{ margin-top:12px; display:flex; flex-direction:column; gap:6px; }
+  .meta .block{
+    background: rgba(255,255,255,0.015);
+    padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);
+    font-family: "Courier New", monospace; font-size:13px; color:#cfe9ff;
+  }
+
+  footer{
+    margin-top:30px; color:var(--muted); font-size:13px; text-align:center;
+  }
+
+  /* Responsive */
+  @media (max-width:880px){
+    .hero h1{ font-size:40px; padding:6px 14px; }
+    .hero{ padding:28px 18px; border-radius:18px; }
+    .subtitle{ font-size:15px; }
+    .lead{ font-size:13px; }
+  }
+  @media (max-width:520px){
+    .hero h1{ font-size:32px; }
+    .pill { padding:8px 10px; font-size:12px; }
+  }
+</style>
 </head>
-
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="logo">SA</div>
-      <div>
-        <div class="hero-tag">Design &amp; Analysis of Algorithms · Lab Project</div>
-        <h1>Smart City Case Studies — Aarunya</h1>
-        <p class="hero-sub">
-          Engineering implementations of 10 smart city systems, mapping real-world urban operations
-          to advanced data structures and algorithms in <code>Sai/</code>.
+    <!-- HERO -->
+    <div style="position:relative;">
+      <section class="hero" role="banner" aria-label="Sai Bhusaraddi Portfolio">
+        <div class="hero-inner">
+          <span class="tag">Portfolio</span>
+
+          <!-- Name in Comic Sans style handwriting -->
+          <h1>SAI BHUSARADDI</h1>
+
+          <div class="subtitle">Smart City Case Studies & Projects</div>
+
+          <p class="lead">Curated projects showcasing algorithms, data structures, and sustainable technology designed for smart urban systems.</p>
+
+          <div class="meta-row" aria-hidden="false">
+            <div class="pill roll">
+              <span class="dot" aria-hidden="true"></span>
+              202 (Roll No)
+            </div>
+
+            <div class="pill usn">
+              <span class="dot" aria-hidden="true"></span>
+              USN: 01FE24BCS018
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Glow layer behind hero -->
+      <div class="hero-glow" aria-hidden="true"></div>
+    </div>
+
+    <!-- CONTENT GRID (case study cards) -->
+    <main class="grid" role="main" aria-label="Case Studies">
+
+      <!-- 1 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">1</div>
+          <div class="name">Smart Energy Grid &amp; Load Balancing</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Solar</span>
+          <span class="chip">Wind</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">MST</span>
+          <span class="chip">Greedy</span>
+          <span class="chip">Knapsack</span>
+        </div>
+
+        <p class="desc">
+          The Smart Energy Grid integrates renewable sources with intelligent load balancing across the city. Power plants and substations form a weighted graph, where MST algorithms minimize infrastructure cost and Dijkstra computes efficient real-time energy routing. Knapsack-based dynamic programming improves peak-hour renewable allocation, while greedy policies prioritize clean energy dispatch. This ensures reliable, low-loss, and sustainable energy distribution.
         </p>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div>Author: <strong>Sai</strong></div>
-      <div>Roll: <strong>202</strong></div>
-      <div>City: <strong>Aarunya</strong></div>
-      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
-        Open GitHub Repository
-      </a>
-    </div>
-  </section>
 
-  <!-- SUMMARY -->
-  <section class="summary-strip">
-    <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
-    <div class="pill"><span class="pill-label">City</span><span class="pill-value">Aarunya</span></div>
-    <div class="pill"><span class="pill-label">Cases</span><span class="pill-value">10 business modules</span></div>
-    <div class="pill"><span class="pill-label">Focus</span><span class="pill-value">Real-world DSA applications</span></div>
-  </section>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
 
-  <!-- OVERVIEW -->
-  <section class="analysis-shell">
-    <div class="analysis-title">Implementation Overview</div>
-    <div class="analysis-sub">
-      Snapshot of the main data structures and algorithms implemented across the ten Aarunya business cases. [attached_file:1]
-    </div>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency list, priority_queue, arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Dijkstra, Prim/Kruskal (MST), Knapsack DP, Greedy</div>
+        </div>
+      </article>
 
-    <div class="mini-grid">
-      <div class="mini-kv"><span>Smart-city domains</span><span>Energy, Health, Mobility, Ports</span></div>
-      <div class="mini-kv"><span>Cases implemented</span><span>10</span></div>
-      <div class="mini-kv"><span>Core topics</span><span>Graphs, DP, String, Trees</span></div>
-    </div>
+      <!-- 2 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">2</div>
+          <div class="name">AI Healthcare Prediction &amp; Outbreak Monitoring Hub</div>
+        </div>
 
-    <div class="table-box">
-      <table>
-        <thead>
-          <tr><th>DS / Algo</th><th>Used?</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Arrays / Vectors</td><td>Yes</td></tr>
-          <tr><td>Priority Queue</td><td>Yes</td></tr>
-          <tr><td>Hash Tables</td><td>Yes</td></tr>
-          <tr><td>Trie</td><td>Yes</td></tr>
-          <tr><td>Segment Tree</td><td>Yes</td></tr>
-          <tr><td>Union–Find</td><td>Yes</td></tr>
-          <tr><td>Dijkstra</td><td>Yes</td></tr>
-          <tr><td>Floyd–Warshall</td><td>Yes</td></tr>
-          <tr><td>Knapsack DP</td><td>Yes</td></tr>
-          <tr><td>String Matching (KMP / Boyer–Moore / Rabin–Karp)</td><td>Yes</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Decision Tree</span>
+          <span class="chip">Hashing</span>
+          <span class="chip">DP</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
 
-  <!-- CASES -->
-  <section class="grid">
+        <p class="desc">
+          The Healthcare Prediction Hub analyzes hospital data, symptoms, and demographic trends to detect early disease outbreaks. Hashing enables rapid medical record retrieval, decision trees classify high-risk groups, dynamic programming models infection spread, and KMP/Rabin–Karp detect unusual patterns in health logs. This strengthens early intervention and hospital preparedness.
+        </p>
 
-    <!-- 1 Smart Energy Grid -->
-    <article class="card fadein" id="case1">
-      <div class="case-title">1 • Smart Energy Grid</div>
-      <div class="meta">
-        <div class="badge">Adjacency List · Priority Queue</div>
-        <div class="badge">Dijkstra · Kruskal · Knapsack DP</div>
-      </div>
-      <p class="desc">
-        Aarunya’s Smart Energy Grid links solar rooftops, wind farms and substations into a unified network that must
-        move electricity from where it is generated to where it is needed with minimal loss. Sensor streams describe
-        generation, demand and line limits, and the grid is modelled as a weighted graph so that Dijkstra can route
-        energy along low-loss paths between critical nodes like hospitals and industrial clusters. Kruskal’s algorithm
-        designs new transmission links as a minimum‑spanning tree to minimise construction cost, while a knapsack-style
-        DP distributes limited battery and renewable capacity across time slots to flatten peaks.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 7 – Affordable and Clean Energy, SDG 11 – Sustainable Cities and Communities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>vector&lt;Node&gt;</code>, <code>vector&lt;vector&lt;pair&lt;int,double&gt;&gt;&gt;</code>, <code>priority_queue</code> —
-        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Kruskal MST</code>, <code>0/1 Knapsack DP</code>
-      </div>
-      <div class="diagram">
-Loads → Demand Profile → Knapsack DP → Time‑slot Allocation
-Grid Topology → Adjacency List → Dijkstra → Low‑loss Routes
-New Lines → Edge List → Kruskal + Union–Find → Minimum‑Cost Expansion
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case1.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 3 – Good Health &amp; Well-being, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 11 – Sustainable Cities</div>
 
-    <!-- 2 AI Healthcare Prediction Hub -->
-    <article class="card fadein" id="case2">
-      <div class="case-title">2 • AI Healthcare Prediction Hub</div>
-      <div class="meta">
-        <div class="badge">Decision Tree · Hash Tables</div>
-        <div class="badge">DP Outbreak Model · KMP</div>
-      </div>
-      <p class="desc">
-        The healthcare hub ingests hospital visit logs, lab reports and ward-level demographics to flag potential
-        disease outbreaks before they become visible on the ground. Categorical features such as symptoms, age bands
-        and locality are binned into arrays and hash tables, and a decision‑tree style classifier labels each ward as
-        low, medium or high risk. A dynamic‑programming based compartment model then projects how many cases can emerge
-        over the next few days, while KMP-style pattern matching scans health notes for dangerous keyword combinations
-        like clusters of fever and rash that merit manual review.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 3 – Good Health and Well‑being, SDG 11 – Sustainable Cities and Communities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>vector&lt;Record&gt;</code>, <code>unordered_map&lt;string,int&gt;</code> —
-        <strong>Algorithms:</strong> <code>Decision‑tree classification</code>, <code>DP epidemic projection</code>, <code>KMP string matching</code>
-      </div>
-      <div class="diagram">
-Ward Data → Hash Tables → Feature Vectors → Decision Tree → Risk Labels
-Risk Timeline → DP Model → Outbreak Curve
-Notes Text → KMP → Alert Phrases
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case2.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash tables, matrices, trees</div>
+          <div class="block"><strong>Algorithms:</strong> Decision Tree, DP Spread Modeling, KMP / Rabin–Karp</div>
+        </div>
+      </article>
 
-    <!-- 3 Smart Mobility -->
-    <article class="card fadein" id="case3">
-      <div class="case-title">3 • Smart Mobility &amp; Traffic Control Hub</div>
-      <div class="meta">
-        <div class="badge">Graph · Adjacency Matrix</div>
-        <div class="badge">Dijkstra · Floyd–Warshall · Segment Tree</div>
-      </div>
-      <p class="desc">
-        Aarunya’s traffic control centre receives live speeds from road sensors and must keep vehicles, buses and
-        emergency services moving through hundreds of junctions. A dense adjacency matrix between key hubs feeds a
-        Floyd–Warshall run that precomputes all‑pairs travel times for planning dashboards, while per‑request routing
-        for cars and ambulances uses Dijkstra on a more detailed adjacency‑list graph. Segment trees maintain rolling
-        traffic densities for corridors so that congestion alerts and signal timing changes can be performed with fast
-        range queries and updates.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 9 – Industry, Innovation and Infrastructure</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>adjacency list</code>, <code>adjacency matrix</code>, <code>segment tree</code> —
-        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Floyd–Warshall</code>
-      </div>
-      <div class="diagram">
-Sensor Speeds → Graph Weights → Dijkstra → Live Shortest Routes
-Hub Matrix → Floyd–Warshall → All‑Pairs Travel Table
-Zone Flows → Segment Tree → Fast Range Congestion Queries
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case3.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+      <!-- 3 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">3</div>
+          <div class="name">Smart Mobility &amp; Traffic Control Hub</div>
+        </div>
 
-    <!-- 4 Satellite–IoT Disaster Monitoring -->
-    <article class="card fadein" id="case4">
-      <div class="case-title">4 • Satellite–IoT Disaster Monitoring Hub</div>
-      <div class="meta">
-        <div class="badge">Grid · Graph</div>
-        <div class="badge">BFS / DFS · DP Forecast · Huffman</div>
-      </div>
-      <p class="desc">
-        The disaster hub fuses rainfall gauges, river‑level sensors and satellite pixels to understand how floods or
-        landslides might spread across Aarunya. The terrain is discretised into a grid where BFS or DFS steps outward
-        from a breach point to mark which cells will be affected next. A dynamic‑programming layer estimates hazard
-        intensity over time by accumulating upstream inflows, and Huffman coding compresses large sensor snapshots
-        before archiving so that historical simulations remain storage‑efficient.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 13 – Climate Action, SDG 11 – Sustainable Cities and Communities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>2D grid</code>, <code>adjacency list</code> —
-        <strong>Algorithms:</strong> <code>BFS / DFS</code>, <code>DP hazard forecasting</code>, <code>Huffman coding</code>
-      </div>
-      <div class="diagram">
-Sensors + DEM → Grid → BFS/DFS → Reachable Flood Cells
-Cell History → DP → Intensity Timeline
-Snapshots → Huffman Encoder → Compressed Archive
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case4.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Dijkstra</span>
+          <span class="chip">Floyd–Warshall</span>
+          <span class="chip">BFS</span>
+          <span class="chip">DFS</span>
+          <span class="chip">Segment Tree</span>
+        </div>
 
-    <!-- 5 Cybersecurity Intelligence -->
-    <article class="card fadein" id="case5">
-      <div class="case-title">5 • Cybersecurity Intelligence Center</div>
-      <div class="meta">
-        <div class="badge">Hash Tables · Graph</div>
-        <div class="badge">Pattern Matching · Attack-Path Search</div>
-      </div>
-      <p class="desc">
-        Aarunya’s cybersecurity centre continuously scans network traffic from databases, cameras and IoT devices that
-        support city operations. Hash‑based authentication tables validate device keys quickly, while KMP or
-        Boyer–Moore pattern matching engines compare traffic payloads against known malware signatures. A graph of
-        hosts and connections is used to trace likely attack paths so that security teams can see how a breach in one
-        subsystem might pivot to others and can isolate critical nodes in time.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation and Infrastructure, SDG 16 – Peace, Justice and Strong Institutions</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>unordered_map&lt;string,string&gt;</code>, <code>adjacency list</code> —
-        <strong>Algorithms:</strong> <code>KMP / Boyer–Moore</code>, <code>graph traversal</code>, <code>hashing</code>
-      </div>
-      <div class="diagram">
-Login / Device ID → Hash Table → Valid / Reject
-Packet Stream → Pattern Matcher → Threat Alerts
-Host Graph → Search → Attack Path Visualisation
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case5.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <p class="desc">
+          The traffic hub models the city’s road network as a weighted graph to optimize travel efficiency. Dijkstra provides real-time shortest paths, Floyd–Warshall supports full-network planning, and BFS/DFS simulate congestion under peak loads. Segment trees maintain live traffic density metrics, enabling adaptive signaling and emergency-routing decisions.
+        </p>
 
-    <!-- 6 Autonomous Shuttle Pods -->
-    <article class="card fadein" id="case6">
-      <div class="case-title">6 • Autonomous Shuttle Pods</div>
-      <div class="meta">
-        <div class="badge">Graph · Grid</div>
-        <div class="badge">A* / Dijkstra · Priority Queue</div>
-      </div>
-      <p class="desc">
-        Electric shuttle pods in Aarunya provide last‑mile connectivity between metro stations, offices and
-        residential clusters. Each pod treats the street map as a weighted graph and uses A* or Dijkstra to plan safe,
-        near‑optimal routes around blocked roads and dynamic obstacles. A global scheduler maintains a priority queue
-        of pending ride requests, assigning pods based on proximity and waiting time so that average passenger delay
-        stays low even during peak hours.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 7 – Affordable and Clean Energy</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>adjacency list</code>, <code>priority_queue</code> —
-        <strong>Algorithms:</strong> <code>A* search</code>, <code>Dijkstra</code>
-      </div>
-      <div class="diagram">
-Requests → Priority Queue → Next Passenger
-City Graph → A* / Dijkstra → Pod Route
-Live Obstacles → Cost Updates → Re‑plan if Needed
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case6.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
 
-    <!-- 7 Neural Urban Simulation Lab -->
-    <article class="card fadein" id="case7">
-      <div class="case-title">7 • Neural Urban Simulation Lab</div>
-      <div class="meta">
-        <div class="badge">AVL / Balanced Trees</div>
-        <div class="badge">DP Simulation · TSP</div>
-      </div>
-      <p class="desc">
-        The simulation lab runs what‑if experiments for Aarunya’s planners, from new bus corridors to relocating
-        waste‑processing plants. Historical metrics are indexed in balanced trees so that queries over any time window
-        are efficient. Dynamic‑programming based models approximate how traffic, pollution and service access evolve
-        over simulated years, and travelling‑salesperson style solvers optimise inspection or maintenance tours so that
-        ground teams can validate assumptions with minimal travel.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 9 – Industry, Innovation and Infrastructure</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>AVL / ordered maps</code> —
-        <strong>Algorithms:</strong> <code>DP‑based simulation</code>, <code>TSP heuristics</code>, <code>regression forecasting</code>
-      </div>
-      <div class="diagram">
-Historical Data → Balanced Trees → Fast Range Queries
-Scenario Inputs → DP Engine → Multi‑year Projections
-Service Points → TSP Heuristic → Efficient Field Route
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case7.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency matrix/list, segment tree, priority_queue</div>
+          <div class="block"><strong>Algorithms:</strong> Dijkstra, Floyd–Warshall, BFS/DFS</div>
+        </div>
+      </article>
 
-    <!-- 8 Smart Lighting & Safety -->
-    <article class="card fadein" id="case8">
-      <div class="case-title">8 • Smart Lighting &amp; Safety Network</div>
-      <div class="meta">
-        <div class="badge">Segment Tree · Graph</div>
-        <div class="badge">Greedy Energy Policy · BFS</div>
-      </div>
-      <p class="desc">
-        Aarunya’s street‑lighting system links thousands of solar‑powered poles with motion and ambient‑light sensors.
-        A segment tree keeps aggregated energy use for neighbourhoods so that demand caps and savings can be tracked
-        quickly over ranges of streets. A greedy controller dims or brightens lights based on time of night and
-        pedestrian activity, while BFS on a walkway graph ensures that there is always at least one safe, well‑lit
-        path between key points such as bus stops and hospitals.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 7 – Affordable and Clean Energy, SDG 11 – Sustainable Cities and Communities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>segment tree</code>, <code>adjacency list</code> —
-        <strong>Algorithms:</strong> <code>greedy scheduling</code>, <code>BFS connectivity</code>
-      </div>
-      <div class="diagram">
-Pole Sensors → Segment Tree → Zone Energy Stats
-Policy Rules → Greedy Controller → Dim / Brighten Commands
-Walkway Graph → BFS → Safe Night Routes
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case8.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+      <!-- 4 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">4</div>
+          <div class="name">Satellite–IoT Disaster Detection &amp; Response Hub</div>
+        </div>
 
-    <!-- 9 Data Commerce & Analytics Hub -->
-    <article class="card fadein" id="case9">
-      <div class="case-title">9 • Data Commerce &amp; Analytics Hub</div>
-      <div class="meta">
-        <div class="badge">Hash Index · Trie</div>
-        <div class="badge">Sort · Rabin–Karp</div>
-      </div>
-      <p class="desc">
-        The data hub exposes Aarunya’s curated datasets—traffic, air quality, utilities and more—to startups and
-        researchers. Metadata about each dataset is indexed using tries to support instant auto‑completion when users
-        type keywords, while hash tables map IDs to file locations for near constant‑time retrieval. Large logs are
-        preprocessed with efficient sorting and Rabin–Karp style scanning so that abuse patterns and popular access
-        paths can be analysed without re‑reading every character on each query.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation and Infrastructure, SDG 17 – Partnerships for the Goals</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>Trie</code>, <code>unordered_map</code>, <code>vector</code> —
-        <strong>Algorithms:</strong> <code>Merge / Quick Sort</code>, <code>Rabin–Karp</code>
-      </div>
-      <div class="diagram">
-Dataset Tags → Trie → Search Suggestions
-ID → Hash Index → Dataset Location
-Access Logs → Sort + Rabin–Karp → Usage / Abuse Insights
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case9.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">IoT</span>
+          <span class="chip">BFS</span>
+          <span class="chip">DFS</span>
+          <span class="chip">DP Forecast</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
 
-    <!-- 10 Autonomous Port Logistics -->
-    <article class="card fadein" id="case10">
-      <div class="case-title">10 • Autonomous Port Logistics System</div>
-      <div class="meta">
-        <div class="badge">Graph · Edge List</div>
-        <div class="badge">Kruskal · Dijkstra · Knapsack</div>
-      </div>
-      <p class="desc">
-        Aarunya’s port needs to move containers efficiently between berths, yards and nearby warehouses using automated
-        vehicles. The yard layout and road network are represented as weighted graphs where Dijkstra finds fast,
-        fuel‑efficient routes for each vehicle. Kruskal’s algorithm constructs a minimum‑spanning tree over candidate
-        conveyor or track segments to keep infrastructure cost down, and knapsack‑style DP fills each vehicle with
-        containers so that weight and priority constraints are respected while trips are used to near capacity.
-        <br><br>
-        <span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation and Infrastructure, SDG 8 – Decent Work and Economic Growth</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>vector&lt;Edge&gt;</code>, <code>Union–Find</code>, <code>adjacency list</code> —
-        <strong>Algorithms:</strong> <code>Kruskal MST</code>, <code>Dijkstra</code>, <code>0/1 Knapsack DP</code>
-      </div>
-      <div class="diagram">
-Berths / Yards → Edge List → Kruskal + DSU → Logistics Backbone
-Requests → Knapsack DP → Vehicle Load Plan
-Backbone Graph → Dijkstra → Container Routes
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Sai/Case10.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        <p class="desc">
+          This disaster-monitoring hub merges IoT sensor alerts and satellite imagery to detect floods, storms, and ecological hazards. BFS/DFS track spatial hazard spread, dynamic programming predicts intensity escalation, and string-matching algorithms identify recurring danger patterns in satellite frames. The system supports rapid emergency response and climate-resilient planning.
+        </p>
 
-  </section>
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 13 – Climate Action, SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure</div>
 
-  <footer>
-    © 2025 Aarunya — Sai (Roll 202) · All source files located in <code>Sai/</code>
-  </footer>
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> 2D grids, graphs, time-series buffers</div>
+          <div class="block"><strong>Algorithms:</strong> BFS/DFS, DP Forecasting, Pattern Matching</div>
+        </div>
+      </article>
 
-</div>
+      <!-- 5 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">5</div>
+          <div class="name">Cybersecurity Intelligence &amp; Threat Analytics Center</div>
+        </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fadein').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 70 * i);
-    });
-  });
-</script>
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Hashing</span>
+          <span class="chip">KMP</span>
+          <span class="chip">Boyer–Moore</span>
+          <span class="chip">Graph Analysis</span>
+          <span class="chip">Crypto Trees</span>
+        </div>
 
+        <p class="desc">
+          The cybersecurity center analyzes network activity to detect intrusions, malware, and abnormal access attempts. Hashing secures authentication, while KMP and Boyer–Moore provide fast malware signature scanning. Graph algorithms trace attacker paths across connected systems, and tree-based cryptographic structures secure communication. This strengthens digital safety across all smart-city services.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 16 – Peace, Justice &amp; Strong Institutions, SDG 11 – Sustainable Cities</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash maps, tries, graphs, cryptographic trees</div>
+          <div class="block"><strong>Algorithms:</strong> KMP, Boyer–Moore, Graph Traversal</div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">6</div>
+          <div class="name">Autonomous Shuttle Pods &amp; Navigation System</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">A*</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">BFS</span>
+          <span class="chip">Priority Queue</span>
+          <span class="chip">Obstacle Detection</span>
+        </div>
+
+        <p class="desc">
+          Autonomous pods navigate the city using optimized pathfinding over a mapped road network. A* and Dijkstra compute efficient travel paths, BFS identifies reachable sectors, and priority queues manage ride scheduling. Onboard obstacle detection supports safe, collision-free driving, improving last-mile mobility and reducing congestion and emissions.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> grids, adjacency lists, min-heaps</div>
+          <div class="block"><strong>Algorithms:</strong> A*, Dijkstra, BFS</div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">7</div>
+          <div class="name">Neural Urban Simulation &amp; Planning Lab</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">DP</span>
+          <span class="chip">Regression</span>
+          <span class="chip">AVL Tree</span>
+          <span class="chip">TSP</span>
+        </div>
+
+        <p class="desc">
+          The simulation lab predicts future city conditions—traffic density, pollution, utility demand—using regression and dynamic programming. AVL and 2–3 trees allow fast scenario-state retrieval, while TSP variants optimize service routes for waste collection, inspection, and maintenance. This supports long-term, evidence-based urban planning.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 13 – Climate Action</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> AVL tree, 2-3 tree, matrices</div>
+          <div class="block"><strong>Algorithms:</strong> Dynamic Programming, Regression, TSP</div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">8</div>
+          <div class="name">Smart Lighting &amp; Safety Network</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Greedy</span>
+          <span class="chip">BFS</span>
+          <span class="chip">Segment Tree</span>
+        </div>
+
+        <p class="desc">
+          The lighting network uses motion sensors and adaptive LED control to reduce energy usage while enhancing nighttime safety. Greedy strategies adjust lighting intensity for maximum energy savings, BFS identifies safe pedestrian pathways, and segment trees track zone-wise consumption for optimization. This improves sustainability and public safety.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 7 – Affordable &amp; Clean Energy, SDG 11 – Sustainable Cities, SDG 13 – Climate Action</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> segment tree, sensor arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Greedy Optimization, BFS</div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">9</div>
+          <div class="name">Data Commerce &amp; Analytics Hub</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">Hashing</span>
+          <span class="chip">Trie</span>
+          <span class="chip">Sorting</span>
+          <span class="chip">Pattern Matching</span>
+        </div>
+
+        <p class="desc">
+          This platform provides structured datasets for researchers, startups, and government agencies. Hashing ensures fast indexing, tries support intelligent search and auto-completion, and merge/quick sort prepare data efficiently. Pattern-matching algorithms detect anomalies and trends, enabling high-quality analytics and innovation.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 8 – Decent Work &amp; Economic Growth, SDG 11 – Sustainable Cities</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> hash table, trie, arrays</div>
+          <div class="block"><strong>Algorithms:</strong> Merge Sort, Quick Sort, KMP / Rabin–Karp</div>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card">
+        <div class="title-row">
+          <div class="index-badge">10</div>
+          <div class="name">Autonomous Port Logistics &amp; Cargo Optimization</div>
+        </div>
+
+        <div class="chips" aria-hidden="true">
+          <span class="chip">MST</span>
+          <span class="chip">Dijkstra</span>
+          <span class="chip">Knapsack</span>
+          <span class="chip">Priority Queue</span>
+        </div>
+
+        <p class="desc">
+          Smart port logistics automates cargo movement between ports, warehouses, and industries. MST constructs low-cost transport networks, Dijkstra identifies the fastest cargo routes, knapsack dynamic programming optimizes container loading, and priority queues schedule automated cranes and robots. This increases operational efficiency while reducing fuel usage and emissions.
+        </p>
+
+        <div class="sdg"><strong>Aligned SDGs:</strong> SDG 9 – Industry, Innovation &amp; Infrastructure, SDG 12 – Responsible Consumption &amp; Production, SDG 13 – Climate Action</div>
+
+        <div class="meta">
+          <div class="block"><strong>Data Structures:</strong> adjacency list, min-heap, DP table</div>
+          <div class="block"><strong>Algorithms:</strong> MST, Dijkstra, Knapsack</div>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>Generated for you — save as <code>smart_city_case_studies.html</code>. Want this exported to slides or PDF next?</footer>
+  </div>
 </body>
 </html>
