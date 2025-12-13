@@ -22,220 +22,304 @@
       --accent-chip2-text:#a5b4fc;
       --border-soft:#1f2933;
       --diagram-bg:#020617;
-      --diagram-border:#22c55e;
-      --btn-bg:#22c55e;
-      --btn-bg2:#38bdf8;
+      --diagram-border:#38bdf8;  /* CHANGED: Cyan accent */
+      --btn-bg:#38bdf8;          /* CHANGED: Cyan buttons */
+      --btn-bg2:#22c55e;
       --btn-text:#0f172a;
       --maxw:1040px;
       --btn-h:36px;
-      
-      /* SAI FORMAT - SLIGHT CYAN TWIST */
-      --neon-cyan:#38bdf8;
-      --neon-teal:#22c55e;
-      --neon-gold:#eab308;
     }
-    
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);
-      background-attachment:fixed;
       color:var(--text-main);
       padding:24px 10px 32px;
       line-height:1.7;
-      position:relative;
-      overflow-x:hidden;
     }
-    
-    body::before{
-      content:'';
-      position:fixed;top:0;left:0;width:100%;height:100%;
-      background-image: 
-        radial-gradient(2px 2px at 20px 30px, #38bdf833, transparent),
-        radial-gradient(2px 2px at 40px 70px, #22c55e33, transparent),
-        radial-gradient(1px 1px at 90px 40px, #eab30833, transparent);
-      background-repeat:repeat;background-size:200px 100px;
-      animation:particles 20s linear infinite;pointer-events:none;z-index:-1;
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
     }
-    
-    @keyframes particles{
-      0%{transform:translateY(0) rotate(0deg);}
-      100%{transform:translateY(-100px) rotate(360deg);}
-    }
-    
-    .wrap{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:20px;position:relative;z-index:1;}
 
     .hero{
       border-radius:18px;
       padding:18px 20px;
-      background:radial-gradient(circle at top left,#38bdf820 0,#0f172a 45%,#020617 100%);
+      background:radial-gradient(circle at top left,#38bdf820 0,#0f172a 45%,#020617 100%);  /* CHANGED: Cyan gradient */
       color:#e5e7eb;
       display:flex;
       justify-content:space-between;
       gap:18px;
-      border:1px solid #38bdf840;
+      border:1px solid #38bdf840;  /* CHANGED: Cyan border */
       box-shadow:0 18px 60px rgba(15,23,42,0.9);
-      position:relative;overflow:hidden;
     }
-    
-    .hero::before{
-      content:'';
-      position:absolute;inset:0;border-radius:18px;padding:2px;
-      background:linear-gradient(45deg, var(--neon-cyan), var(--neon-teal), var(--neon-gold), var(--neon-cyan));
-      -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite:exclude;
-      mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite:exclude;
-      animation:border-glow 3s linear infinite;
-    }
-    
-    @keyframes border-glow{
-      0%,100%{opacity:1; transform:rotate(0deg);}
-      50%{opacity:0.7; transform:rotate(180deg);}
-    }
-    
     .hero-left{display:flex;gap:14px;align-items:flex-start}
+    
     .hero-tag{
-      font-size:0.8rem;font-weight:600;letter-spacing:0.06em;
-      text-transform:none;color:#cbd5f5;margin-bottom:6px;
-      background:linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      font-size:0.8rem;
+      font-weight:600;
+      letter-spacing:0.06em;
+      text-transform:none;
+      color:#cbd5f5;
+      margin-bottom:6px;
     }
     
-    h1{font-size:1.35rem;margin-bottom:4px;background:linear-gradient(135deg, #e5e7eb, var(--neon-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .hero-sub{font-size:0.92rem;opacity:0.9;max-width:540px;}
-    .hero-right{text-align:right;font-size:0.86rem;opacity:0.9;display:flex;flex-direction:column;gap:3px;align-items:flex-end;}
-    .hero-right strong{color:#fefce8;background:linear-gradient(135deg, var(--neon-teal), var(--neon-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    
+    h1{
+      font-size:1.35rem;
+      margin-bottom:4px;
+    }
+    .hero-sub{
+      font-size:0.92rem;
+      opacity:0.9;
+      max-width:540px;
+    }
+    .hero-right{
+      text-align:right;
+      font-size:0.86rem;
+      opacity:0.9;
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      align-items:flex-end;
+    }
+    .hero-right strong{color:#fefce8}
     .hero-git-btn{
-      margin-top:6px;display:inline-flex;align-items:center;gap:6px;
-      padding:6px 14px;border-radius:999px;border:1px solid rgba(148,163,184,0.7);
+      margin-top:6px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.7);
       background:linear-gradient(120deg,#020617,#0f172a);
-      color:#e5e7eb;font-size:0.78rem;text-decoration:none;font-weight:600;
-      box-shadow:0 0 0 1px var(--neon-cyan);
-      transition:all 0.3s ease;
+      color:#e5e7eb;
+      font-size:0.78rem;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 0 0 1px #38bdf840;  /* CHANGED: Cyan glow */
     }
-    .hero-git-btn:hover{box-shadow:0 0 20px var(--neon-cyan);transform:translateY(-2px);}
 
     .summary-strip{
-      display:flex;flex-wrap:wrap;gap:8px;background:rgba(56,189,248,0.1);
-      padding:16px;border-radius:20px;border:1px solid rgba(56,189,248,0.3);
-      backdrop-filter:blur(15px);
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
     }
     .pill{
-      display:inline-flex;align-items:center;gap:6px;padding:4px 10px;
-      border-radius:999px;background:#020617;border:1px solid var(--border-soft);
-      font-size:0.8rem;color:var(--muted);box-shadow:0 0 0 1px #1e293b;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#020617;
+      border:1px solid var(--border-soft);
+      font-size:0.8rem;
+      color:var(--muted);
+      box-shadow:0 0 0 1px #1e293b;
     }
-    .pill-label{color:#6b7280}.pill-value{color:#e5e7eb;font-weight:600}
+    .pill-label{color:#6b7280}
+    .pill-value{color:#e5e7eb;font-weight:600}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start;}
-    @media (max-width:800px){.grid{grid-template-columns:1fr;}}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width:800px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
 
     .card{
-      padding:14px 14px 13px;border-radius:12px;
-      background:radial-gradient(circle at top left,#38bdf810 0,#020617 55%);
-      border:1px solid var(--border-soft);border-left:none;
+      padding:14px 14px 13px;
+      border-radius:12px;
+      background:radial-gradient(circle at top left,#38bdf810 0,#020617 55%);  /* CHANGED: Cyan card gradient */
+      border:1px solid var(--border-soft);
+      border-left:none;
       box-shadow:0 10px 32px rgba(15,23,42,0.9);
-      position:relative;overflow:hidden;
     }
-    .card::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:4px;
-      background:linear-gradient(90deg, var(--neon-cyan), var(--neon-teal), var(--neon-gold));
-      animation:card-shine 4s linear infinite;
+    .case-title{
+      font-size:1.0rem;
+      font-weight:800;
+      color:var(--text-main);
+      margin-bottom:4px;
     }
-    @keyframes card-shine{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
-    
-    .case-title{font-size:1.0rem;font-weight:800;color:var(--text-main);margin-bottom:4px;}
-    .meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;}
+    .meta{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      margin-bottom:6px;
+    }
     .badge{
-      padding:3px 10px;border-radius:999px;font-size:0.74rem;font-weight:600;
+      padding:3px 10px;
+      border-radius:999px;
+      font-size:0.74rem;
+      font-weight:600;
     }
     .badge:nth-child(1){
-      background:var(--accent-chip);color:var(--accent-chip-text);
+      background:var(--accent-chip);
+      color:var(--accent-chip-text);
       box-shadow:0 0 0 1px #38bdf880;
     }
     .badge:nth-child(2){
-      background:var(--accent-chip2);color:var(--accent-chip2-text);
+      background:var(--accent-chip2);
+      color:var(--accent-chip2-text);
       box-shadow:0 0 0 1px #a855f780;
     }
-    
-    .desc{color:#e5e7eb;font-size:0.9rem;line-height:1.7;margin-bottom:7px;}
-    .desc span.sdg-text{color:#9ca3af;font-size:0.84rem;}
-    
-    .ds-visual{
-      background:linear-gradient(135deg,#1e293b,#0f172a);padding:12px;
-      border-radius:12px;border:2px solid rgba(56,189,248,0.4);
-      margin-bottom:10px;position:relative;overflow:hidden;
+    .desc{
+      color:#e5e7eb;
+      font-size:0.9rem;
+      line-height:1.7;
+      margin-bottom:7px;
     }
-    .ds-visual::before{
-      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-      background:radial-gradient(circle at top left, rgba(56,189,248,0.1) 0%, transparent 50%);
-      pointer-events:none;
+    .desc span.sdg-text{
+      color:#9ca3af;
+      font-size:0.84rem;
     }
-    .ds-visual-content{position:relative;z-index:1;font-family:ui-monospace,monospace;font-size:0.75rem;line-height:1.4;color:#e5e7eb;}
-    .ds-icon{display:inline-block;width:16px;height:16px;margin-right:6px;background:#38bdf8;border-radius:3px;vertical-align:middle;}
-    .ds-grid{background:#22c55e !important;}.ds-tree{background:#a5b4fc !important;}.ds-graph{background:#eab308 !important;}.ds-queue{background:#10b981 !important;}
-    
+    .ds-list{
+      background:#020617;
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px dashed var(--border-soft);
+      margin-bottom:7px;
+      font-size:0.8rem;
+      color:#e5e7eb;
+    }
+    .ds-list code{color:#38bdf8;font-weight:700}  /* CHANGED: Cyan code highlight */
+
     .diagram{
-      background:var(--diagram-bg);padding:7px 8px;border-radius:8px;
-      font-family:ui-monospace,monospace;color:#e5e7eb;font-size:0.78rem;
-      overflow:auto;white-space:pre;border:1px solid rgba(255,255,255,0.12);
-      margin-bottom:6px;box-shadow:none;
+      background:var(--diagram-bg);
+      padding:7px 8px;
+      border-radius:8px;
+      font-family:ui-monospace,monospace;
+      color:#e5e7eb;
+      font-size:0.78rem;
+      overflow:auto;
+      white-space:pre;
+      border:1px solid rgba(255,255,255,0.12);
+      margin-bottom:6px;
+      box-shadow:none;
     }
 
-    .actions{display:flex;gap:8px;align-items:center;margin-top:4px;flex-wrap:wrap;}
+    .actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-top:4px;
+      flex-wrap:wrap;
+    }
     .btn{
-      height:var(--btn-h);padding:0 13px;border-radius:999px;text-decoration:none;
-      font-weight:600;font-size:0.84rem;color:var(--btn-text);
-      background:linear-gradient(135deg,#38bdf8,#22c55e);
-      display:inline-flex;align-items:center;border:none;
-      box-shadow:0 0 10px rgba(56,189,248,0.35);
-      transition:all 0.3s ease;
+      height:var(--btn-h);
+      padding:0 13px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.84rem;
+      color:#071b24;
+      background:linear-gradient(135deg,#38bdf8,#22c55e);  /* CHANGED: Cyan-primary gradient */
+      display:inline-flex;
+      align-items:center;
+      border:none;
+      box-shadow:0 0 10px rgba(56,189,248,0.35);  /* CHANGED: Cyan glow */
     }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(56,189,248,0.6);}
 
+    /* styles for bottom DS/Algo table */
     .ds-analysis-section{
-      margin-top:18px;border-radius:14px;padding:12px 14px 14px;
-      background:#020617;border:1px solid var(--border-soft);
+      margin-top:18px;
+      border-radius:14px;
+      padding:12px 14px 14px;
+      background:#020617;
+      border:1px solid var(--border-soft);
       box-shadow:0 14px 48px rgba(15,23,42,0.9);
     }
-    .ds-analysis-title{font-size:0.98rem;font-weight:800;margin-bottom:4px;}
-    .ds-analysis-sub{font-size:0.8rem;color:var(--muted);margin-bottom:8px;}
-    
-    .dataset-section{
-      margin-top:32px;border-radius:20px;padding:20px;
-      background:linear-gradient(145deg, rgba(30,41,59,0.6), rgba(15,23,42,0.8));
-      border:2px solid rgba(56,189,248,0.4);backdrop-filter:blur(20px);
-      box-shadow:0 25px 80px rgba(56,189,248,0.3);
+    .ds-analysis-title{
+      font-size:0.98rem;
+      font-weight:800;
+      margin-bottom:4px;
     }
-    .dataset-title{font-size:1.1rem;font-weight:800;color:var(--text-main);margin-bottom:12px;text-align:center;}
-    .code-container{max-height:500px;overflow:auto;border-radius:16px;border:1px solid rgba(56,189,248,0.4);background:rgba(2,6,23,0.95);box-shadow:inset 0 0 20px rgba(56,189,248,0.2);}
-    .code-block{font-family:'Courier New',monospace;font-size:0.7rem;line-height:1.4;color:#b0d7ff;padding:20px;background:rgba(2,6,23,0.98);white-space:pre;overflow-x:auto;}
-    
-    footer{
-      margin-top:24px;padding:16px 20px;border-radius:16px;text-align:center;
-      color:var(--muted);border:2px solid rgba(56,189,248,0.3);
-      background:linear-gradient(145deg, rgba(2,6,23,0.8), rgba(15,23,42,0.8));
-      font-size:0.82rem;box-shadow:0 15px 50px rgba(56,189,248,0.25);
+    .ds-analysis-sub{
+      font-size:0.8rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .ds-analysis-table-wrapper{
+      max-height:260px;
+      overflow:auto;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      background:#020617;
+      font-size:0.76rem;
+    }
+    .ds-analysis-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:720px;
+    }
+    .ds-analysis-table th,
+    .ds-analysis-table td{
+      padding:6px 7px;
+      border-bottom:1px solid #1f2937;
+      text-align:left;
+    }
+    .ds-analysis-table th{
+      background:#020617;
+      color:#e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:1;
+    }
+    .ds-analysis-table tr:nth-child(even){
+      background:#020617;
+    }
+    .ds-analysis-table tr:nth-child(odd){
+      background:#020617;
+    }
+    .ds-used-yes{
+      color:#38bdf8;  /* CHANGED: Cyan yes */
+      font-weight:700;
+    }
+    .ds-used-no{
+      color:#f97373;
+      font-weight:600;
     }
 
-    .fadein{opacity:0;transform:translateY(20px)}
-    .visible{opacity:1;transform:translateY(0);transition:all 400ms cubic-bezier(0.4,0,0.2,1)}
-    @media (max-width:640px){.hero{flex-direction:column;align-items:flex-start;padding:20px;}.hero-right{align-items:flex-start;text-align:left;}}
+    footer{
+      margin-top:18px;
+      padding:8px 10px;
+      border-radius:10px;
+      text-align:center;
+      color:var(--muted);
+      border:1px solid var(--border-soft);
+      background:#020617;
+      font-size:0.78rem;
+      box-shadow:0 8px 26px rgba(15,23,42,0.9);
+    }
+
+    .fadein{opacity:0;transform:translateY(10px)}
+    .visible{opacity:1;transform:translateY(0);transition:all 260ms ease-out}
+
+    @media (max-width:640px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero-right{align-items:flex-start;text-align:left}
+      .ds-analysis-table{min-width:640px;}
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
-  <!-- HERO - SAI FORMAT -->
+
   <section class="hero">
     <div class="hero-left">
       <div class="hero-tag">Design and Analysis of Algorithms</div>
       <h1>Business Case Studies — Aarunya</h1>
       <p class="hero-sub">
-        Engineering implementations of 10 urban systems mapping real-world operations
+        Engineering implementations of 10 urban systems, mapping real-world operations
         to advanced data structures and algorithms in <code>Ankita/</code>.
       </p>
     </div>
@@ -249,7 +333,6 @@
     </div>
   </section>
 
-  <!-- SUMMARY STRIP - SAI FORMAT -->
   <section class="summary-strip">
     <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
     <div class="pill"><span class="pill-label">City</span><span class="pill-value">Aarunya</span></div>
@@ -257,25 +340,22 @@
     <div class="pill"><span class="pill-label">Focus</span><span class="pill-value">Real-world DSA</span></div>
   </section>
 
-  <!-- 10 CASE STUDIES - SAI FORMAT -->
   <section class="grid">
-    <article class="card fadein">
-      <div class="case-title">1 • Smart Traffic Automation & Incident Detection</div>
+
+    <!-- 1 -->
+    <article class="card fadein" id="case1">
+      <div class="case-title">1 • Smart Traffic Automation</div>
       <div class="meta">
         <div class="badge">Graph · Segment Tree</div>
         <div class="badge">Dijkstra · A* · KMP</div>
       </div>
       <p class="desc">
-        Aarunya's traffic system processes live camera feeds across 500+ intersections to detect accidents and congestion in real-time. Road networks form weighted graphs where Dijkstra finds fastest emergency routes while A* handles dynamic obstacles. Segment trees aggregate traffic density for instant range queries, KMP scans license plates to identify offenders.
-        <span class="sdg-text"><strong>SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Innovation</span>
+        Aarunya's traffic system processes live camera feeds across 500+ intersections detecting accidents and congestion. Road networks form weighted graphs where Dijkstra finds fastest emergency routes while A* handles dynamic obstacles. Segment trees aggregate traffic density for instant range queries, KMP scans license plates identifying offenders.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Innovation</span>
       </p>
-      <div class="ds-visual">
-        <div class="ds-visual-content">
-          <span class="ds-icon ds-graph"></span><strong>Graph:</strong> Road Network (500+ nodes)<br>
-          <span class="ds-icon ds-grid"></span><strong>Segment Tree:</strong> Traffic Density Ranges<br>
-          <span class="ds-icon ds-queue"></span><strong>Priority Queue:</strong> Emergency Calls<br>
-          <code>vector&lt;vector&lt;pair&lt;int,double&gt;&gt;&gt; adj;</code>
-        </div>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>vector&lt;Node&gt;</code>, <code>priority_queue</code> —
+        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Segment Tree</code>, <code>KMP</code>
       </div>
       <div class="diagram">
 Camera → KMP Plates → Alerts
@@ -287,23 +367,20 @@ Emergency → Graph A*/Dijkstra → Routes
       </div>
     </article>
 
-    <!-- CASE 2 -->
-    <article class="card fadein">
-      <div class="case-title">2 • Smart Water–Energy Optimization Grid</div>
+    <!-- 2 -->
+    <article class="card fadein" id="case2">
+      <div class="case-title">2 • Water-Energy Optimization Grid</div>
       <div class="meta">
-        <div class="badge">Graph · Priority Queue</div>
+        <div class="badge">Edge List · Union-Find</div>
         <div class="badge">Kruskal · Knapsack DP · BFS</div>
       </div>
       <p class="desc">
-        Balances pumping costs against storage across reservoirs and pipes during peak demand. Kruskal builds minimum-cost pipe networks, knapsack DP optimally fills reservoirs given energy budgets. BFS validates network connectivity during maintenance.
-        <span class="sdg-text"><strong>SDGs:</strong> SDG 6 – Clean Water, SDG 7 – Clean Energy</span>
+        Balances 150 reservoirs, 1200km pipes during peak demand. Kruskal constructs minimum-cost pipe networks using Union-Find. Knapsack DP optimally allocates energy across time slots. BFS validates connectivity during maintenance.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 6 – Clean Water, SDG 7 – Clean Energy</span>
       </p>
-      <div class="ds-visual">
-        <div class="ds-visual-content">
-          <span class="ds-icon ds-graph"></span><strong>Edge List:</strong> Pipe Network (1000+ edges)<br>
-          <span class="ds-icon ds-queue"></span><strong>UnionFind:</strong> Connectivity Check<br>
-          <code>vector&lt;Edge&gt; pipes; int parent[1001];</code>
-        </div>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>vector&lt;Edge&gt;</code>, <code>DP table</code> —
+        <strong>Algorithms:</strong> <code>Kruskal MST</code>, <code>0/1 Knapsack</code>
       </div>
       <div class="diagram">
 Pipes → Kruskal → Optimal Network
@@ -315,49 +392,259 @@ Maintenance → BFS → Continuity Check
       </div>
     </article>
 
-    <!-- Continue with all 10 cases in exact SAI format... -->
-    <!-- [Cases 3-10 follow identical structure with unique DSA/business content] -->
+    <!-- 3 -->
+    <article class="card fadein" id="case3">
+      <div class="case-title">3 • Intelligent Waste Collection</div>
+      <div class="meta">
+        <div class="badge">HashMap · Priority Queue</div>
+        <div class="badge">TSP · Dijkstra</div>
+      </div>
+      <p class="desc">
+        Optimizes 2500+ smart bins, 75 trucks with capacity constraints. TSP heuristics generate routes prioritizing overflow bins. Dijkstra reroutes around traffic. Hash tables track fill levels/material types.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 12 – Responsible Consumption</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>unordered_map</code>, <code>priority_queue</code> —
+        <strong>Algorithms:</strong> <code>TSP heuristic</code>, <code>Dijkstra</code>
+      </div>
+      <div class="diagram">
+Sensors → Hash → Priority Bins
+Priority → TSP → Truck Routes
+Traffic → Dijkstra → Rerouting
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case3.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card fadein" id="case4">
+      <div class="case-title">4 • Edu-Tech Learning Platform</div>
+      <div class="meta">
+        <div class="badge">Trie · Segment Tree</div>
+        <div class="badge">Decision Tree · DP Progress</div>
+      </div>
+      <p class="desc">
+        Serves 50K+ students with adaptive paths across 500+ courses. Tries enable instant multilingual search. Segment trees track class progress O(log n). Decision trees recommend lessons based on mastery gaps.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 4 – Quality Education, SDG 9 – Innovation</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Trie</code>, <code>Segment Tree</code> —
+        <strong>Algorithms:</strong> <code>Decision Tree</code>, <code>Range Query</code>
+      </div>
+      <div class="diagram">
+Search → Trie → Suggestions
+Quiz → Decision Tree → Lessons
+Progress → Segment Tree → Dashboard
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case4.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card fadein" id="case5">
+      <div class="case-title">5 • Urban Security Intelligence</div>
+      <div class="meta">
+        <div class="badge">Graph · HashSet</div>
+        <div class="badge">BFS · Rabin-Karp</div>
+      </div>
+      <p class="desc">
+        Analyzes 1200+ CCTV feeds with pattern recognition. Graphs trace suspect movement between cameras using BFS. Rabin-Karp scans metadata. HashSets validate 50K+ watchlist entries instantly.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace & Justice, SDG 11 – Cities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>HashSet</code>, <code>Graph</code> —
+        <strong>Algorithms:</strong> <code>BFS</code>, <code>Rabin-Karp</code>
+      </div>
+      <div class="diagram">
+CCTV → Rabin-Karp → Patterns
+Camera Zones → Graph BFS → Suspect Path
+Faces → Hash → Watchlist Matches
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case5.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card fadein" id="case6">
+      <div class="case-title">6 • AgroTech Smart Farming</div>
+      <div class="meta">
+        <div class="badge">2D Grid · AVL Tree</div>
+        <div class="badge">DP Yield · KMP</div>
+      </div>
+      <p class="desc">
+        5000+ IoT sensors track soil/crop health. 2D grids model field layouts. AVL trees index historical data. KMP analyzes soil test sequences for nutrient patterns.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 2 – Zero Hunger, SDG 13 – Climate Action</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>2D Grid</code>, <code>AVL Tree</code> —
+        <strong>Algorithms:</strong> <code>DP Yield</code>, <code>KMP Soil</code>
+      </div>
+      <div class="diagram">
+Sensors → 2D Grid → Moisture Heatmap
+History → AVL Tree → Comparisons
+Soil → KMP → Nutrient Patterns
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case6.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card fadein" id="case7">
+      <div class="case-title">7 • Multi-Modal Transport</div>
+      <div class="meta">
+        <div class="badge">Graph · Priority Queue</div>
+        <div class="badge">Dijkstra · Floyd-Warshall</div>
+      </div>
+      <p class="desc">
+        Integrates buses/metros/bikes across 10K+ stops. Multi-modal graphs use Dijkstra for door-to-door trips. Floyd-Warshall precomputes hub distances. Segment trees track crowding.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Innovation</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Graph</code>, <code>Priority Queue</code> —
+        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Floyd-Warshall</code>
+      </div>
+      <div class="diagram">
+ETAs → Multi-modal Graph → Dijkstra
+Hubs → Floyd-Warshall → Transfer Tables
+Crowding → Segment Tree → Alerts
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case7.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card fadein" id="case8">
+      <div class="case-title">8 • Healthcare Emergency Routing</div>
+      <div class="meta">
+        <div class="badge">Graph · HashMap</div>
+        <div class="badge">A* · Decision Tree</div>
+      </div>
+      <p class="desc">
+        Routes ambulances to 150+ hospitals considering bed availability/traffic. A* finds fastest specialty paths. Decision trees match symptoms to facilities. Hash tables provide instant bed lookups.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 3 – Good Health, SDG 11 – Cities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>HashMap</code>, <code>Graph</code> —
+        <strong>Algorithms:</strong> <code>A*</code>, <code>Decision Tree</code>
+      </div>
+      <div class="diagram">
+Symptoms → Decision Tree → Hospital
+Beds → Hash Table → Availability
+Traffic → A* → Route Assignment
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case8.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card fadein" id="case9">
+      <div class="case-title">9 • E-Commerce Supply Chain</div>
+      <div class="meta">
+        <div class="badge">Trie · Graph</div>
+        <div class="badge">Knapsack · QuickSort</div>
+      </div>
+      <p class="desc">
+        Optimizes delivery across 200+ warehouses, 1M orders/day. Graphs model road networks (Dijkstra routes). Tries provide instant product search. Knapsack maximizes truck loads. QuickSort picking priority.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 8 – Economic Growth, SDG 9 – Innovation</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Trie</code>, <code>Graph</code> —
+        <strong>Algorithms:</strong> <code>Knapsack</code>, <code>QuickSort</code>
+      </div>
+      <div class="diagram">
+Orders → Trie → Product Matches
+Stock → QuickSort → Picking Priority
+Trucks → Knapsack → Load Optimization
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case9.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card fadein" id="case10">
+      <div class="case-title">10 • Public Safety Command Center</div>
+      <div class="meta">
+        <div class="badge">Grid · Segment Tree</div>
+        <div class="badge">BFS · Huffman · DP</div>
+      </div>
+      <p class="desc">
+        Coordinates police/fire/medical response using live feeds. 2D grids model response zones (BFS nearest units). Huffman compresses camera streams. DP assigns response teams optimally.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace & Justice, SDG 11 – Cities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Grid</code>, <code>Segment Tree</code> —
+        <strong>Algorithms:</strong> <code>BFS</code>, <code>Huffman</code>, <code>DP</code>
+      </div>
+      <div class="diagram">
+Incidents → Grid BFS → Responders
+Resources → Segment Tree → Availability
+Cameras → Huffman → Archive
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case10.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
   </section>
 
-  <!-- DATA ANALYSIS - SAI FORMAT -->
+  <!-- BIG DATA STRUCTURE / ALGO TABLE -->
   <section class="ds-analysis-section">
     <div class="ds-analysis-title">Data Structures & Algorithms Analysis</div>
-    <div class="ds-analysis-sub">Comprehensive usage across all 10 cases with asymptotic complexity metrics.</div>
-  </section>
+    <div class="ds-analysis-sub">
+      Detailed list of core structures and algorithms across all ten cases with asymptotic complexity.
+    </div>
 
-  <!-- DATASET SECTION - SAI FORMAT -->
-  <section class="dataset-section">
-    <div class="dataset-title">📊 Complete Dataset & Production Code (700+ Lines)</div>
-    <div class="code-container">
-      <pre class="code-block">// AARUNYA DAA PORTFOLIO - ANKITA ROLL 244
-// Complete production implementations + datasets
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-// Case 1: Traffic Graph + Segment Tree (200+ lines)
-// Case 2: Kruskal + Knapsack DP (150+ lines)
-// ... [Complete 700+ lines across all cases]
-int main() {
-  cout &lt;&lt; "Aarunya DAA Portfolio Complete ✅" &lt;&lt; endl;
-  return 0;
-}
-</pre>
+    <div class="ds-analysis-table-wrapper">
+      <table class="ds-analysis-table">
+        <thead>
+          <tr>
+            <th>Data Structure / Algorithm</th>
+            <th>Used?</th>
+            <th>Where Used</th>
+            <th>Space Efficiency</th>
+            <th>Time Efficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases</td><td>O(n)</td><td>O(1) access</td></tr>
+          <tr><td>Graphs</td><td class="ds-used-yes">Yes</td><td>1,2,3,5,7,8,9</td><td>O(V+E)</td><td>O(E log V)</td></tr>
+          <tr><td>Segment Trees</td><td class="ds-used-yes">Yes</td><td>1,4,7,10</td><td>O(n)</td><td>O(log n)</td></tr>
+          <tr><td>Tries</td><td class="ds-used-yes">Yes</td><td>4,9</td><td>O(chars)</td><td>O(k)</td></tr>
+          <tr><td>Priority Queue</td><td class="ds-used-yes">Yes</td><td>1,2,7,8</td><td>O(n)</td><td>O(log n)</td></tr>
+          <tr><td>Hash Tables</td><td class="ds-used-yes">Yes</td><td>3,5,8,9</td><td>O(n)</td><td>O(1) avg</td></tr>
+          <tr><td>AVL Trees</td><td class="ds-used-yes">Yes</td><td>6</td><td>O(n)</td><td>O(log n)</td></tr>
+          <tr><td>BFS/DFS</td><td class="ds-used-yes">Yes</td><td>2,5,6,10</td><td>O(V)</td><td>O(V+E)</td></tr>
+          <tr><td>Dijkstra/A*</td><td class="ds-used-yes">Yes</td><td>1,3,7,8,9</td><td>O(V)</td><td>O(E log V)</td></tr>
+          <tr><td>DP (Knapsack)</td><td class="ds-used-yes">Yes</td><td>2,9,10</td><td>O(nW)</td><td>O(nW)</td></tr>
+          <tr><td>KMP/Rabin-Karp</td><td class="ds-used-yes">Yes</td><td>1,5,6</td><td>O(m)</td><td>O(n+m)</td></tr>
+          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>2</td><td>O(E)</td><td>O(E log E)</td></tr>
+          <tr><td>Floyd-Warshall</td><td class="ds-used-yes">Yes</td><td>7</td><td>O(n²)</td><td>O(n³)</td></tr>
+          <tr><td>QuickSort</td><td class="ds-used-yes">Yes</td><td>9</td><td>O(log n)</td><td>O(n log n)</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- FOOTER - SAI FORMAT -->
   <footer>
     © 2025 Aarunya — Ankita (Roll 244) · All source files in <code>Ankita/</code> ✨
   </footer>
+
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fadein').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 80 * i);
+      setTimeout(() => el.classList.add('visible'), 60 * i);
     });
   });
 </script>
+
 </body>
 </html>
