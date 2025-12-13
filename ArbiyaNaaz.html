@@ -111,9 +111,6 @@ nav a:hover{
   border:1px solid #2a2550;
   margin:30px 0;
   box-shadow:0 0 26px rgba(0,0,0,0.85);
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
 }
 .member-box h2{margin-bottom:15px;}
 
@@ -122,6 +119,25 @@ nav a:hover{
   padding-left:20px;
   line-height:1.8;
   font-size:17px;
+}
+
+/* TABLES */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+th,td{
+  border:1px solid #3a3566;
+  padding:10px;
+  text-align:center;
+}
+th{
+  background:#1f1b3a;
+  color:#7df9ff;
+}
+td{
+  background:#0c0c1b;
 }
 
 /* VIEW BUTTON */
@@ -136,8 +152,6 @@ nav a:hover{
   font-weight:500;
   box-shadow:0 0 10px rgba(230,182,92,0.35);
   transition:0.3s;
-  text-decoration:none;
-  display:inline-block;
 }
 .view-btn:hover{
   box-shadow:0 0 16px rgba(230,182,92,0.6);
@@ -163,97 +177,117 @@ nav a:hover{
   <!-- Business Idea 1 -->
   <div class="member-box">
     <h2 class="neon-name">⚡ Logistics Hub</h2>
-    <p class="neon-info">A centralized facility for efficient storage, transport, and delivery, minimizing delays and costs. Revenue comes from storage fees and transport charges. Advanced tracking systems and predictive analytics ensure smooth operations.</p>
+    <p class="neon-info">A centralized facility for efficient storage, transport, and delivery...</p>
     <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Graph</p>
-      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm for shortest delivery paths</p>
+      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm</p>
     </div>
-    <a class="view-btn" href="ArbiyaNaaz/case1.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case01.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 2 -->
   <div class="member-box">
     <h2 class="neon-name">🏕 Eco Resort</h2>
-    <p class="neon-info">Sustainable lodging with eco-friendly accommodations, organic meals, and immersive eco-tours. Revenue through room bookings and guided eco-tours. Solar energy, rainwater harvesting, and waste recycling are implemented.</p>
+    <p class="neon-info">Sustainable lodging with eco-friendly accommodations...</p>
     <p class="neon-info"><strong>SDG:</strong> 12 – Responsible Consumption & Production</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Array/List</p>
       <p><strong>Algorithm:</strong> Sorting rooms by price, occupancy, or amenities</p>
     </div>
-    <a class="view-btn" href="ArbiyaNaaz/case2.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case02.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 3 -->
   <div class="member-box">
     <h2 class="neon-name">💻 IT Training Center</h2>
-    <p class="neon-info">Professional IT courses, including programming, cloud computing, and cybersecurity. Revenue via tuition fees and corporate training. Hands-on labs, mentorship, and placement partnerships with tech companies enhance learning.</p>
+    <p class="neon-info">Professional IT courses including programming, cloud computing, and cybersecurity...</p>
     <p class="neon-info"><strong>SDG:</strong> 4 – Quality Education</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Linked List</p>
       <p><strong>Algorithm:</strong> Traversal and insertion to track enrollments</p>
     </div>
-    <a class="view-btn" href="ArbiyaNaaz/case3.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case03.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 4 -->
   <div class="member-box">
     <h2 class="neon-name">❄ Cold Storage</h2>
-    <p class="neon-info">Facility to preserve perishable goods, reducing waste and ensuring timely supply. Revenue from storage fees and temperature-controlled logistics services. IoT-based monitoring maintains quality.</p>
+    <p class="neon-info">Facility to preserve perishable goods...</p>
     <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Queue</p>
       <p><strong>Algorithm:</strong> FIFO approach for dispatching items</p>
     </div>
-    <a class="view-btn" href="ArbiyaNaaz/case4.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case04.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 5 -->
   <div class="member-box">
     <h2 class="neon-name">🌿 Green Energy Startup</h2>
-    <p class="neon-info">Promotes renewable energy solutions like solar and wind. Revenue from installations and government incentives.</p>
+    <p class="neon-info">Promotes renewable energy solutions like solar and wind...</p>
     <p class="neon-info"><strong>SDG:</strong> 7 – Affordable and Clean Energy</p>
-    <a class="view-btn" href="ArbiyaNaaz/case5.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case05.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 6 -->
   <div class="member-box">
     <h2 class="neon-name">🏥 Telemedicine Platform</h2>
-    <p class="neon-info">Online healthcare consultations, reducing hospital congestion. Revenue via subscriptions and service fees.</p>
+    <p class="neon-info">Online healthcare consultations, reducing hospital congestion...</p>
     <p class="neon-info"><strong>SDG:</strong> 3 – Good Health & Well-being</p>
-    <a class="view-btn" href="ArbiyaNaaz/case6.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case06.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 7 -->
   <div class="member-box">
     <h2 class="neon-name">🍎 Organic Food Delivery</h2>
-    <p class="neon-info">Delivers farm-fresh organic produce to homes. Revenue through subscriptions and direct sales.</p>
+    <p class="neon-info">Delivers farm-fresh organic produce to homes...</p>
     <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
-    <a class="view-btn" href="ArbiyaNaaz/case7.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case07.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 8 -->
   <div class="member-box">
     <h2 class="neon-name">🚍 Smart Transport App</h2>
-    <p class="neon-info">Optimizes city transport routes using real-time data. Revenue via app subscriptions and partnerships.</p>
+    <p class="neon-info">Optimizes city transport routes using real-time data...</p>
     <p class="neon-info"><strong>SDG:</strong> 11 – Sustainable Cities & Communities</p>
-    <a class="view-btn" href="ArbiyaNaaz/case8.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case08.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 9 -->
   <div class="member-box">
     <h2 class="neon-name">🏫 Skill Development Hub</h2>
-    <p class="neon-info">Provides vocational training and workshops. Revenue via course fees and corporate partnerships.</p>
+    <p class="neon-info">Provides vocational training and workshops...</p>
     <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work & Economic Growth</p>
-    <a class="view-btn" href="ArbiyaNaaz/case9.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case09.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
   <!-- Business Idea 10 -->
   <div class="member-box">
     <h2 class="neon-name">📦 E-Commerce Platform</h2>
-    <p class="neon-info">Online marketplace for local products. Revenue from commissions and advertising.</p>
+    <p class="neon-info">Online marketplace for local products...</p>
     <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
-    <a class="view-btn" href="ArbiyaNaaz/case10.cpp" target="_blank">View Code</a>
+    <a href="ArbiyaNaaz/Case10.cpp" target="_blank">
+      <button class="view-btn">View Code</button>
+    </a>
   </div>
 
 </section>
