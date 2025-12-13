@@ -1,196 +1,219 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
-#include <algorithm>
+#include <queue>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
+#include <algorithm>
 #include <iomanip>
+#include <map>
+#include <set>
 
 using namespace std;
 
-// --------------------------- Lesson Class ---------------------------
-class Lesson {
+// --------------------------- Camera Class ---------------------------
+class Camera {
 public:
     int id;
-    double difficulty; // 0 to 100
-    string topic;
+    double x, y;
+    double radius;
+    bool active;
 
-    Lesson(int id, double diff, string topic) {
+    Camera(int id, double x, double y, double r) {
         this->id = id;
-        difficulty = diff;
-        this->topic = topic;
+        this->x = x;
+        this->y = y;
+        radius = r;
+        active = true;
+    }
+
+    double distance(double px, double py) {
+        return sqrt(pow(px-x,2) + pow(py-y,2));
+    }
+
+    bool covers(double px, double py) {
+        return distance(px, py) <= radius;
     }
 };
 
-// --------------------------- Student Class ---------------------------
-class Student {
+// --------------------------- Event Class ---------------------------
+class Event {
 public:
     int id;
-    string name;
-    double skillLevel; // 0 to 100
-    vector<int> completedLessons;
-    vector<double> scores;
-    bool alert; // falling behind
+    double x, y;
+    double severity; // 0-100
+    int timestamp;
+    int clusterID;
 
-    Student(int id, string name) {
+    Event(int id, double x, double y, double severity, int ts) {
         this->id = id;
-        this->name = name;
-        skillLevel = rand() % 50 + 25; // initial skill between 25-75
-        alert = false;
-    }
-
-    void completeLesson(int lessonID, double score) {
-        completedLessons.push_back(lessonID);
-        scores.push_back(score);
-        skillLevel = min(100.0, skillLevel + score*0.1); // increase skill based on performance
-    }
-
-    double averageScore() {
-        if(scores.empty()) return 0;
-        double sum = 0;
-        for(double s: scores) sum += s;
-        return sum / scores.size();
+        this->x = x;
+        this->y = y;
+        this->severity = severity;
+        timestamp = ts;
+        clusterID = -1;
     }
 };
 
-// --------------------------- KNN Recommendation ---------------------------
-vector<int> recommendLessons(Student &s, vector<Lesson> &lessons, int k=3) {
-    vector<pair<double,int>> diff;
-    for(auto &l: lessons) {
-        double d = abs(l.difficulty - s.skillLevel);
-        diff.push_back({d,l.id});
-    }
-    sort(diff.begin(), diff.end());
-    vector<int> recommended;
-    for(int i=0;i<min(k,(int)diff.size());i++) recommended.push_back(diff[i].second);
-    return recommended;
-}
-
-// --------------------------- Adaptive Learning Path ---------------------------
-int selectNextLesson(Student &s, vector<Lesson> &lessons) {
-    // Greedy: choose lesson closest to student's skill level that is not completed
-    double minDiff = 1e9;
-    int nextLessonID = -1;
-    for(auto &l: lessons) {
-        if(find(s.completedLessons.begin(), s.completedLessons.end(), l.id) != s.completedLessons.end()) continue;
-        double diff = abs(l.difficulty - s.skillLevel);
-        if(diff < minDiff) {
-            minDiff = diff;
-            nextLessonID = l.id;
-        }
-    }
-    return nextLessonID;
-}
-
-// --------------------------- Difficulty Matching ---------------------------
-int findLessonByDifficulty(vector<Lesson> &lessons, double targetSkill) {
-    // Binary Search to find closest difficulty
-    int left = 0, right = lessons.size()-1;
-    int bestID = -1;
-    double bestDiff = 1e9;
-    while(left <= right) {
-        int mid = (left+right)/2;
-        double diff = abs(lessons[mid].difficulty - targetSkill);
-        if(diff < bestDiff) {
-            bestDiff = diff;
-            bestID = lessons[mid].id;
-        }
-        if(lessons[mid].difficulty < targetSkill) left = mid+1;
-        else right = mid-1;
-    }
-    return bestID;
-}
-
-// --------------------------- Personalized Learning Platform ---------------------------
-class EduTech {
+// --------------------------- Alert Class ---------------------------
+class Alert {
 public:
-    vector<Student> students;
-    vector<Lesson> lessons;
+    int eventID;
+    double riskScore;
+    int level;
+
+    Alert(int eid, double score) {
+        eventID = eid;
+        riskScore = score;
+        level = score > 80 ? 3 : score > 60 ? 2 : 1;
+    }
+
+    bool operator<(const Alert &other) const {
+        return level < other.level; // Higher alert level = higher priority
+    }
+};
+
+// --------------------------- Security Hub ---------------------------
+class SecurityHub {
+public:
+    vector<Camera> cameras;
+    vector<Event> events;
+    priority_queue<Alert> alertsQueue;
     int timeStep;
 
-    EduTech() { timeStep = 0; }
+    SecurityHub() { timeStep = 0; }
 
-    void generateStudents(int n) {
+    void deployCameras(int n) {
         for(int i=0;i<n;i++) {
-            students.push_back(Student(i,"Student_"+to_string(i+1)));
+            double x = rand()%100;
+            double y = rand()%100;
+            double radius = 10 + rand()%15;
+            cameras.push_back(Camera(i,x,y,radius));
         }
     }
 
-    void generateLessons(int n) {
-        string topics[] = {"Math","Science","Programming","History","Art"};
+    void generateEvents(int n) {
         for(int i=0;i<n;i++) {
-            double diff = rand()%101;
-            string topic = topics[rand()%5];
-            lessons.push_back(Lesson(i,diff,topic));
+            double x = rand()%100;
+            double y = rand()%100;
+            double severity = rand()%101;
+            events.push_back(Event(events.size(),x,y,severity,timeStep));
         }
-        sort(lessons.begin(), lessons.end(), [](Lesson a, Lesson b){return a.difficulty < b.difficulty;});
     }
 
-    // ---------------- Simulate Student Learning ----------------
-    void simulateLearning() {
-        for(auto &s: students) {
-            vector<int> rec = recommendLessons(s, lessons, 2);
-            for(int lid: rec) {
-                double score = rand()%51 + 50; // 50-100
-                s.completeLesson(lid, score);
+    // ---------------- Sliding Window + EMA Risk Scoring ----------------
+    void detectIntrusions() {
+        for(auto &e: events) {
+            int coverageCount = 0;
+            for(auto &c: cameras) if(c.active && c.covers(e.x,e.y)) coverageCount++;
+            double baseRisk = coverageCount==0 ? min(100.0,e.severity+50) : max(0.0,e.severity-coverageCount*10);
+            double emaRisk = 0.3*baseRisk + 0.7*(timeStep>0 ? e.severity : baseRisk);
+            alertsQueue.push(Alert(e.id, emaRisk));
+        }
+    }
+
+    // ---------------- Zone-based Camera Optimization ----------------
+    void optimizeCameras() {
+        map<int,int> coverageCount;
+        for(auto &c: cameras) coverageCount[c.id]=0;
+        for(auto &c: cameras) {
+            for(auto &e: events) if(c.covers(e.x,e.y)) coverageCount[c.id]++;
+        }
+        vector<int> counts;
+        for(auto &kv: coverageCount) counts.push_back(kv.second);
+        sort(counts.begin(), counts.end());
+        int median = counts[counts.size()/2];
+        for(auto &c: cameras) if(coverageCount[c.id]<median) c.active=false;
+    }
+
+    // ---------------- Event Clustering (Distance-based) ----------------
+    void clusterEvents(double threshold=10.0) {
+        int clusterID = 0;
+        for(auto &e: events) {
+            if(e.clusterID != -1) continue;
+            e.clusterID = clusterID;
+            for(auto &other: events) {
+                if(other.clusterID == -1 && e.distance(other.x,other.y)<threshold) other.clusterID = clusterID;
             }
-            int nextLesson = selectNextLesson(s, lessons);
-            if(nextLesson != -1) {
-                double score = rand()%51 + 50;
-                s.completeLesson(nextLesson, score);
-            }
-            // Check alert
-            s.alert = s.averageScore() < 65;
+            clusterID++;
         }
     }
 
-    // ---------------- Print Status ----------------
-    void printStatus() {
-        cout << "----- Personalized Learning Status (TimeStep " << timeStep << ") -----" << endl;
-        for(auto &s: students) {
-            cout << s.name << " Skill: " << fixed << setprecision(2) << s.skillLevel
-                 << " AvgScore: " << s.averageScore()
-                 << (s.alert ? " [ALERT: Falling behind]" : "")
-                 << " Completed Lessons: ";
-            for(int l: s.completedLessons) cout << l << " ";
-            cout << endl;
+    // ---------------- Process Alerts ----------------
+    void processAlerts() {
+        cout << "Processing Alerts:" << endl;
+        while(!alertsQueue.empty()) {
+            Alert a = alertsQueue.top(); alertsQueue.pop();
+            Event &e = events[a.eventID];
+            cout << "Event " << e.id << " at (" << e.x << "," << e.y << ") Severity=" << e.severity 
+                 << " RiskScore=" << a.riskScore << " Level=" << a.level 
+                 << " ClusterID=" << e.clusterID << endl;
         }
-        cout << "--------------------------------------------------------" << endl;
     }
 
-    // ---------------- Student Performance Analytics ----------------
-    void printAnalytics() {
-        double avgSkill = 0;
-        int alertCount = 0;
-        for(auto &s: students) {
-            avgSkill += s.skillLevel;
-            if(s.alert) alertCount++;
+    // ---------------- Simulate Random Events ----------------
+    void simulateRandomEvents() {
+        int n = 1 + rand()%3;
+        generateEvents(n);
+        cout << n << " new events generated." << endl;
+    }
+
+    // ---------------- Print Camera Status ----------------
+    void printCameraStatus() {
+        cout << "Cameras Status:" << endl;
+        for(auto &c: cameras) {
+            cout << "Camera " << c.id << " (" << c.x << "," << c.y << ") Radius=" 
+                 << c.radius << (c.active?" Active":" Inactive") << endl;
         }
-        avgSkill /= students.size();
-        cout << "=== Analytics ===" << endl;
-        cout << "Average Skill Level: " << avgSkill << endl;
-        cout << "Students Falling Behind: " << alertCount << "/" << students.size() << endl;
-        cout << "=================" << endl;
+    }
+
+    // ---------------- Print Hotspot Map ----------------
+    void printHotspotMap() {
+        const int size = 20;
+        char map[size][size];
+        for(int i=0;i<size;i++) for(int j=0;j<size;j++) map[i][j]='.';
+        for(auto &e: events) {
+            int x = min(size-1,(int)(e.x/5));
+            int y = min(size-1,(int)(e.y/5));
+            map[y][x] = 'E';
+        }
+        for(auto &c: cameras) {
+            int x = min(size-1,(int)(c.x/5));
+            int y = min(size-1,(int)(c.y/5));
+            map[y][x] = c.active ? 'C' : 'c';
+        }
+        cout << "Hotspot Map (E=Event, C=Active Camera, c=Inactive Camera)" << endl;
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++) cout<<map[i][j];
+            cout<<endl;
+        }
+    }
+
+    // ---------------- Run Simulation Step ----------------
+    void simulateStep() {
+        timeStep++;
+        simulateRandomEvents();
+        detectIntrusions();
+        optimizeCameras();
+        clusterEvents();
+        processAlerts();
+        printCameraStatus();
+        printHotspotMap();
+        cout << "---------------------------------------------" << endl;
     }
 
     // ---------------- Run Simulation ----------------
     void runSimulation(int steps) {
-        for(int t=0;t<steps;t++) {
-            timeStep++;
-            simulateLearning();
-            printStatus();
-        }
-        printAnalytics();
+        for(int t=0;t<steps;t++) simulateStep();
     }
 };
 
 // --------------------------- Main Function ---------------------------
 int main() {
     srand(time(0));
-    EduTech platform;
-    platform.generateStudents(8);
-    platform.generateLessons(20);
-    platform.runSimulation(20);
+    SecurityHub hub;
+    hub.deployCameras(12);
+    hub.generateEvents(5);
+    hub.runSimulation(20);
     return 0;
 }
-
