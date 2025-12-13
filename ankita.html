@@ -1,310 +1,298 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ankita — Business Case Studies | Aarunya</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-body{
-font-family:Inter,system-ui;
-background:linear-gradient(135deg,#090910,#141228,#1e2a4f,#05050c);
-color:#e5e7eb;
-padding:24px 10px;
-line-height:1.7;
-}
-.wrap{max-width:1040px;margin:auto;display:flex;flex-direction:column;gap:20px}
-.hero{
-border-radius:18px;
-padding:18px 20px;
-background:radial-gradient(circle at top left,#22c55e20,#0f172a,#020617);
-border:1px solid #22c55e40;
-display:flex;
-justify-content:space-between;
-}
-.hero-tag{font-size:.8rem;color:#cbd5f5;margin-bottom:6px}
-h1{font-size:1.35rem}
-.hero-sub{font-size:.92rem;max-width:540px}
-.hero-right{text-align:right;font-size:.85rem}
-.card{
-background:#020617;
-border:1px solid #1f2937;
-border-radius:12px;
-padding:14px;
-box-shadow:0 10px 32px rgba(0,0,0,.6)
-}
-.case-title{font-weight:800;margin-bottom:4px}
-.badge{
-display:inline-block;
-padding:3px 10px;
-border-radius:999px;
-font-size:.74rem;
-background:#0f172a;
-color:#38bdf8;
-margin-right:6px
-}
-.desc{font-size:.9rem;margin-bottom:8px}
-.ds-list,.diagram{
-font-family:monospace;
-background:#020617;
-border:1px dashed #1f2937;
-padding:6px 8px;
-border-radius:8px;
-font-size:.78rem;
-margin-bottom:6px
-}
-.btn{
-display:inline-block;
-padding:6px 14px;
-border-radius:999px;
-background:#38bdf8;
-color:#020617;
-font-weight:600;
-text-decoration:none;
-font-size:.82rem
-}
-footer{
-margin-top:20px;
-padding:8px;
-text-align:center;
-font-size:.78rem;
-color:#9ca3af;
-border:1px solid #1f2937;
-border-radius:10px
-}
-</style>
-</head>
-
-<body>
-<div class="wrap">
-
-<section class="hero">
-<div>
-<div class="hero-tag">Design and Analysis of Algorithms</div>
-<h1>Business Case Studies — Aarunya</h1>
-<p class="hero-sub">
-Engineering implementations of 10 scalable business systems designed by Ankita,
-mapping real-world operations to advanced data structures and algorithms.
-</p>
-</div>
-<div class="hero-right">
-<div>Author: <strong>Ankita</strong></div>
-<div>City: <strong>Aarunya</strong></div>
-</div>
-</section>
+<h1>Business Case Studies – Design & Analysis of Algorithms<br>Ankita (Aarunya)</h1>
 
 <!-- CASE 1 -->
-<article class="card">
-<div class="case-title">1 • Smart Waste Collection Management System</div>
-<div class="badge">Graph · Priority Queue</div>
-<div class="badge">Dijkstra · Greedy</div>
-<p class="desc">
-This system optimizes municipal waste collection by modeling city roads and waste
-bins as a weighted graph. Each bin reports fill levels in real time, and collection
-vehicles must visit the most critical bins while minimizing fuel usage and time.
-Dijkstra’s algorithm computes shortest paths between bins, while a greedy strategy
-prioritizes bins nearing capacity.
-<br><br><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 12 – Responsible Consumption
+<div class="case">
+<h2>1. Smart Waste Collection Management System</h2>
+
+<div class="section-title">Problem Statement</div>
+<p>
+In many cities, waste collection vehicles follow fixed routes irrespective of
+bin fill levels. This leads to unnecessary fuel consumption, delayed waste
+collection in critical areas, overflowing bins, and poor sanitation.
 </p>
-<div class="ds-list">
-DS: adjacency list, priority_queue —
-Algo: Dijkstra, greedy scheduling
+
+<div class="section-title">Business Objective</div>
+<p>
+The objective is to design a smart waste collection system that dynamically
+optimizes vehicle routes based on real-time waste levels, distance, and
+priority zones such as hospitals and markets.
+</p>
+
+<div class="section-title">Data Structures Used</div>
+<p>
+Graph (Adjacency List) to represent road networks, Priority Queue to select
+high-priority bins, and Arrays to store bin status.
+</p>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Dijkstra’s Algorithm combined with a Greedy Scheduling strategy.
+</p>
+
+<div class="section-title">Algorithm Steps</div>
+<div class="code-box">
+1. Represent the city map as a weighted graph.<br>
+2. Assign edge weights based on distance and traffic.<br>
+3. Store bin fill levels and urgency values.<br>
+4. Run Dijkstra’s algorithm from the waste depot.<br>
+5. Use a greedy approach to pick the nearest critical bins first.<br>
+6. Update routes dynamically after each collection.
 </div>
-<div class="diagram">
-Bins → Graph → Dijkstra → Optimized Collection Route
+
+<div class="section-title">Complexity Analysis</div>
+<p>
+Time Complexity: O((V + E) log V)<br>
+Space Complexity: O(V + E)
+</p>
+
+<div class="section-title">Outcome</div>
+<p>
+Fuel-efficient routes, timely waste collection, improved hygiene, and reduced
+operational costs for municipalities.
+</p>
+
+<div class="section-title">Real-World Impact</div>
+<p>
+Supports smart city cleanliness initiatives and promotes sustainable urban
+living.
+</p>
 </div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 2 -->
-<article class="card">
-<div class="case-title">2 • AI-Driven Retail Demand Forecasting</div>
-<div class="badge">Hash Tables</div>
-<div class="badge">Dynamic Programming</div>
-<p class="desc">
-Small retailers struggle with over-stocking and under-stocking. This system
-analyzes historical sales stored in hash tables and applies dynamic programming
-to predict daily demand trends, helping shop owners plan inventory efficiently.
-<br><br><strong>Aligned SDGs:</strong> SDG 8 – Economic Growth, SDG 9 – Innovation
+<div class="case">
+<h2>2. AI-Based Retail Demand Forecasting System</h2>
+
+<div class="section-title">Problem Statement</div>
+<p>
+Retail businesses often suffer losses due to inaccurate demand prediction,
+leading to overstocking or stock shortages.
 </p>
-<div class="ds-list">
-DS: unordered_map, arrays —
-Algo: DP time-series forecasting
+
+<div class="section-title">Business Objective</div>
+<p>
+To forecast future product demand accurately using historical sales data so
+that inventory management becomes efficient and cost-effective.
+</p>
+
+<div class="section-title">Data Structures Used</div>
+<p>
+Hash Tables for fast data retrieval, Arrays for storing time-series data.
+</p>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Dynamic Programming with trend optimization.
+</p>
+
+<div class="section-title">Algorithm Steps</div>
+<div class="code-box">
+1. Store historical sales data in hash tables.<br>
+2. Define DP states representing demand at time t.<br>
+3. Use recurrence relations to predict future demand.<br>
+4. Optimize results by minimizing prediction error.
 </div>
-<div class="diagram">
-Sales Logs → Hash Table → DP → Demand Curve
+
+<div class="section-title">Complexity</div>
+<p>
+Time Complexity: O(n)<br>
+Space Complexity: O(n)
+</p>
+
+<div class="section-title">Outcome</div>
+<p>
+Accurate inventory planning, reduced wastage, and improved profit margins.
+</p>
 </div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 3 -->
-<article class="card">
-<div class="case-title">3 • Smart Parking Allocation Platform</div>
-<div class="badge">Segment Tree</div>
-<div class="badge">Greedy Allocation</div>
-<p class="desc">
-Parking sensors stream occupancy data across city zones. A segment tree allows
-fast range queries to identify available slots, while greedy selection assigns
-drivers to the nearest feasible parking space.
-<br><br><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities
+<div class="case">
+<h2>3. Smart Parking Allocation Platform</h2>
+
+<div class="section-title">Problem Statement</div>
+<p>
+Urban drivers waste significant time searching for parking, increasing traffic
+congestion and fuel consumption.
 </p>
-<div class="ds-list">
-DS: segment tree —
-Algo: greedy resource allocation
+
+<div class="section-title">Business Objective</div>
+<p>
+To instantly assign the nearest available parking slot to drivers.
+</p>
+
+<div class="section-title">Data Structure Used</div>
+<p>
+Segment Tree for efficient range queries on parking availability.
+</p>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Greedy Allocation with Range Query Optimization.
+</p>
+
+<div class="section-title">Algorithm Steps</div>
+<div class="code-box">
+1. Build a segment tree of parking slots.<br>
+2. Update slot availability in real time.<br>
+3. Query nearest free slot using range minimum query.<br>
+4. Allocate slot using greedy strategy.
 </div>
-<div class="diagram">
-Sensors → Segment Tree → Nearest Slot
+
+<div class="section-title">Complexity</div>
+<p>
+Time: O(log n) per query<br>
+Space: O(n)
+</p>
+
+<div class="section-title">Outcome</div>
+<p>
+Reduced congestion, faster parking, and better urban mobility.
+</p>
 </div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 4 -->
-<article class="card">
-<div class="case-title">4 • Freelancer Skill-Matching Marketplace</div>
-<div class="badge">Trie</div>
-<div class="badge">Sorting</div>
-<p class="desc">
-This platform connects freelancers to projects using prefix-based skill search.
-Tries enable fast auto-completion of skills, while sorted rankings ensure the
-best matches are recommended.
-<br><br><strong>Aligned SDGs:</strong> SDG 8 – Decent Work
+<div class="case">
+<h2>4. Freelancer Skill-Matching Marketplace</h2>
+
+<div class="section-title">Problem Statement</div>
+<p>
+Manual job-to-skill matching is slow and inefficient on freelance platforms.
 </p>
-<div class="ds-list">
-DS: Trie, vector —
-Algo: Merge Sort
+
+<div class="section-title">Business Objective</div>
+<p>
+To automatically match freelancers to projects based on skill relevance.
+</p>
+
+<div class="section-title">Data Structures Used</div>
+<p>
+Trie for skill searching, Vectors for candidate storage.
+</p>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Trie Search and Merge Sort.
+</p>
+
+<div class="section-title">Complexity</div>
+<p>
+Search: O(m)<br>
+Sort: O(n log n)
+</p>
+
+<div class="section-title">Outcome</div>
+<p>
+Faster hiring, accurate matches, and increased platform efficiency.
+</p>
 </div>
-<div class="diagram">
-Skills → Trie → Ranked Matches
-</div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 5 -->
-<article class="card">
-<div class="case-title">5 • Digital Fraud Detection System</div>
-<div class="badge">Graph</div>
-<div class="badge">DFS</div>
-<p class="desc">
-Financial transactions are modeled as a graph where nodes represent accounts.
-Depth-first search detects suspicious cycles indicating fraud chains.
-<br><br><strong>Aligned SDGs:</strong> SDG 16 – Strong Institutions
+<div class="case">
+<h2>5. Cyber Fraud Detection System</h2>
+
+<div class="section-title">Problem Statement</div>
+<p>
+Fraudulent transactions often involve cyclic money transfers across accounts.
 </p>
-<div class="ds-list">
-DS: adjacency list —
-Algo: DFS, cycle detection
+
+<div class="section-title">Data Structure Used</div>
+<p>
+Directed Graph representing transactions.
+</p>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Depth First Search (DFS) for cycle detection.
+</p>
+
+<div class="section-title">Algorithm Steps</div>
+<div class="code-box">
+1. Represent transactions as directed edges.<br>
+2. Perform DFS traversal.<br>
+3. Detect cycles indicating fraudulent behavior.
 </div>
-<div class="diagram">
-Transactions → Graph → DFS → Fraud Alert
+
+<div class="section-title">Complexity</div>
+<p>
+Time: O(V + E)
+</p>
+
+<div class="section-title">Outcome</div>
+<p>
+Early fraud detection and financial risk reduction.
+</p>
 </div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 6 -->
-<article class="card">
-<div class="case-title">6 • Autonomous Delivery Robot Service</div>
-<div class="badge">Graph</div>
-<div class="badge">A* / Dijkstra</div>
-<p class="desc">
-Delivery robots navigate city streets using heuristic-based A* search to avoid
-obstacles and reduce delivery time.
-<br><br><strong>Aligned SDGs:</strong> SDG 9 – Infrastructure
+<div class="case">
+<h2>6. Autonomous Delivery Robot Service</h2>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+A* Search Algorithm for optimal path planning.
 </p>
-<div class="ds-list">
-DS: graph, priority_queue —
-Algo: A* search
+
+<div class="section-title">Outcome</div>
+<p>
+Fast, safe, and energy-efficient autonomous deliveries.
+</p>
 </div>
-<div class="diagram">
-Map → A* → Robot Path
-</div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 7 -->
-<article class="card">
-<div class="case-title">7 • Smart Water Distribution System</div>
-<div class="badge">Graph</div>
-<div class="badge">Flow Algorithms</div>
-<p class="desc">
-Optimizes water distribution across pipelines using flow networks to minimize
-leakage and ensure equitable supply.
-<br><br><strong>Aligned SDGs:</strong> SDG 6 – Clean Water
+<div class="case">
+<h2>7. Smart Water Distribution System</h2>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Maximum Flow Algorithm to balance water supply.
 </p>
-<div class="ds-list">
-DS: graph —
-Algo: max-flow
+
+<div class="section-title">Outcome</div>
+<p>
+Leakage reduction and equitable water distribution.
+</p>
 </div>
-<div class="diagram">
-Pipes → Flow Network → Balanced Supply
-</div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 8 -->
-<article class="card">
-<div class="case-title">8 • Personalized E-Learning Platform</div>
-<div class="badge">DP</div>
-<div class="badge">Hashing</div>
-<p class="desc">
-Learner progress is tracked to recommend adaptive learning paths using DP-based
-optimization.
-<br><br><strong>Aligned SDGs:</strong> SDG 4 – Quality Education
+<div class="case">
+<h2>8. Personalized E-Learning Platform</h2>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Dynamic Programming for adaptive learning paths.
 </p>
-<div class="ds-list">
-DS: hash table —
-Algo: DP recommendation
+
+<div class="section-title">Outcome</div>
+<p>
+Improved learning efficiency and student engagement.
+</p>
 </div>
-<div class="diagram">
-User Data → DP → Course Path
-</div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 9 -->
-<article class="card">
-<div class="case-title">9 • Urban Air Quality Analytics</div>
-<div class="badge">Segment Tree</div>
-<div class="badge">BFS</div>
-<p class="desc">
-Analyzes pollution spread across city zones using BFS over sensor graphs.
-<br><br><strong>Aligned SDGs:</strong> SDG 13 – Climate Action
+<div class="case">
+<h2>9. Urban Air Quality Analytics</h2>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Breadth First Search for pollution spread analysis.
 </p>
-<div class="ds-list">
-DS: segment tree, graph —
-Algo: BFS
+
+<div class="section-title">Outcome</div>
+<p>
+Better pollution control and policy planning.
+</p>
 </div>
-<div class="diagram">
-Sensors → BFS → Pollution Spread
-</div>
-<a class="btn">View Code</a>
-</article>
 
 <!-- CASE 10 -->
-<article class="card">
-<div class="case-title">10 • Smart Warehouse Optimization System</div>
-<div class="badge">Graph</div>
-<div class="badge">Knapsack DP</div>
-<p class="desc">
-Optimizes storage and order picking by combining shortest-path routing and
-knapsack-based packing.
-<br><br><strong>Aligned SDGs:</strong> SDG 9 – Industry
+<div class="case">
+<h2>10. Smart Warehouse Optimization</h2>
+
+<div class="section-title">Algorithm Applied</div>
+<p>
+Dijkstra’s Algorithm + Knapsack Dynamic Programming.
 </p>
-<div class="ds-list">
-DS: graph —
-Algo: Dijkstra, Knapsack DP
-</div>
-<div class="diagram">
-Orders → Knapsack → Optimal Packing
-</div>
-<a class="btn">View Code</a>
-</article>
 
-<footer>
-© 2025 Aarunya — Ankita · Business Case Studies
-</footer>
-
+<div class="section-title">Outcome</div>
+<p>
+Efficient storage, faster order processing, reduced cost.
+</p>
 </div>
-</body>
-</html>
