@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sai — Business Case Studies | Aarunya</title>
+  <title>Ankita — Business Case Studies | Aarunya</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
     html,body{height:100%}
     body{
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);
+      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);;
       color:var(--text-main);
       padding:24px 10px 32px;
       line-height:1.7;
@@ -60,13 +60,13 @@
     .hero-left{display:flex;gap:14px;align-items:flex-start}
     
     .hero-tag{
-      font-size:0.8rem;
-      font-weight:600;
-      letter-spacing:0.06em;
-      text-transform:none;
-      color:#cbd5f5;
-      margin-bottom:6px;
-    }
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:none;
+  color:#cbd5f5;
+  margin-bottom:6px;
+}
     
     h1{
       font-size:1.35rem;
@@ -214,19 +214,19 @@
       flex-wrap:wrap;
     }
     .btn{
-      height:var(--btn-h);
-      padding:0 13px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:0.84rem;
-      color:#071b24;
-      background:linear-gradient(135deg,#8fd3f4,#6bbcd6);
-      display:inline-flex;
-      align-items:center;
-      border:none;
-      box-shadow:0 0 10px rgba(107,188,214,0.35);
-    }
+  height:var(--btn-h);
+  padding:0 13px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.84rem;
+  color:#071b24;
+  background:linear-gradient(135deg,#8fd3f4,#6bbcd6);
+  display:inline-flex;
+  align-items:center;
+  border:none;
+  box-shadow:0 0 10px rgba(107,188,214,0.35);
+}
 
     /* styles for bottom DS/Algo table */
     .ds-analysis-section{
@@ -317,18 +317,19 @@
   <section class="hero">
     <div class="hero-left">
       <div class="hero-tag">Design and Analysis of Algorithms</div>
-      <h1>Business Case Studies — Aarunya</h1>
-      <p class="hero-sub">
-        Engineering implementations of 10 urban systems, mapping real-world operations
-        to advanced data structures and algorithms in <code>Sai/</code>.
-        <br><strong>Expanded:</strong> Each system aligns with specific <strong>SDGs (Sustainable Development Goals)</strong> to drive societal impact and employs <strong>DAA principles</strong> for efficiency, optimization, and scalability.
-      </p>
+
+<h1>Business Case Studies — Aarunya</h1>
+
+<p class="hero-sub">
+  Engineering implementations of 10 urban systems, mapping real-world operations
+  to advanced data structures and algorithms in <code>Ankita/</code>.
+</p>
     </div>
     <div class="hero-right">
-      <div>Author: <strong>Sai</strong></div>
-      <div>Roll: <strong>202</strong></div>
+      <div>Author: <strong>Ankita</strong></div>
+      <div>Roll: <strong>201</strong></div>
       <div>City: <strong>Aarunya</strong></div>
-      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank" title="Open full GitHub repository with all case codes">
+      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
         Open GitHub Repository
       </a>
     </div>
@@ -343,94 +344,265 @@
 
   <section class="grid">
 
-<!-- Example updated card for Case 1 -->
-<article class="card">
-<div class="case-title">1 • Smart Traffic Automation & Incident Detection System</div>
-<p class="desc">
-<strong>SDG 9 – Industry, Innovation and Infrastructure:</strong> Enhances urban infrastructure with smart traffic control.<br>
-<strong>SDG 11 – Sustainable Cities and Communities:</strong> Reduces congestion and improves commuter safety.<br>
-<strong>SDG 13 – Climate Action:</strong> Reduces emissions via optimized traffic flows.<br>
-<strong>DAA Implementation:</strong> Graphs model road networks, Queues manage vehicle streams, Hash Maps index traffic data. Dijkstra and BFS/DFS optimize routing and detect incidents in real-time.
-</p>
-<div class="ds-list">
-<strong>Data Structure:</strong> Graph, Queue, Hash Map<br>
-<strong>Algorithm:</strong> Dijkstra’s Algorithm, BFS/DFS, Anomaly Detection Algorithms
-</div>
-<a class="btn" href="Case01.cpp" target="_blank" title="Open Case01.cpp code for Smart Traffic System">View Code</a>
-</article>
+    <!-- 1 -->
+    <article class="card fadein" id="case1">
+      <div class="case-title">1 • Smart Traffic Automation & Incident Detection System</div>
+      <div class="meta">
+        <div class="badge">Graph · Segment Tree</div>
+        <div class="badge">Dijkstra · A* · KMP</div>
+      </div>
+      <p class="desc">
+        Aarunya's traffic system processes live camera feeds and sensor data across 500+ intersections to detect accidents, breakdowns and unusual congestion patterns in real-time. Road networks form weighted graphs where Dijkstra finds fastest emergency routes while A* handles dynamic obstacles for ambulances. Segment trees aggregate traffic density across road segments for instant range queries, and KMP scans license plate sequences to identify repeat offenders or stolen vehicles automatically.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 9 – Industry, Innovation and Infrastructure</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>adjacency list</code>, <code>segment tree</code>, <code>priority_queue</code> —
+        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>A* search</code>, <code>KMP pattern matching</code>
+      </div>
+      <div class="diagram">
+Camera Feeds → KMP → License Plate Matches → Alert List
+Traffic Density → Segment Tree → Congestion Ranges
+Emergency Calls → Graph + A*/Dijkstra → Fastest Routes
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case1.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- Repeat similar updates for all 10 cases: -->
-<!-- 2 -->
-<article class="card">
-<div class="case-title">2 • Aarunya Smart Water–Energy Optimization Grid</div>
-<p class="desc">
-<strong>SDG 6 – Clean Water and Sanitation:</strong> Optimizes water usage across the city.<br>
-<strong>SDG 7 – Affordable and Clean Energy:</strong> Reduces energy wastage with smart grid monitoring.<br>
-<strong>SDG 12 – Responsible Consumption and Production:</strong> Promotes sustainable resource consumption.<br>
-<strong>DAA Implementation:</strong> Arrays and Linked Lists store sensor streams; Optimization Algorithms and Linear Programming improve resource allocation; Predictive Analytics forecasts consumption.
-</p>
-<div class="ds-list">
-<strong>Data Structure:</strong> Arrays, Linked Lists, Sensor Data Streams<br>
-<strong>Algorithm:</strong> Optimization Algorithms, Linear Programming, Predictive Analytics
-</div>
-<a class="btn" href="Case02.cpp" target="_blank" title="Open Case02.cpp code for Smart Water-Energy Grid">View Code</a>
-</article>
+    <!-- 2 -->
+    <article class="card fadein" id="case2">
+      <div class="case-title">2 • Aarunya Smart Water–Energy Optimization Grid</div>
+      <div class="meta">
+        <div class="badge">Graph · Priority Queue</div>
+        <div class="badge">Kruskal · Knapsack DP · BFS</div>
+      </div>
+      <p class="desc">
+        The water-energy grid balances pumping costs against storage capacity across Aarunya's reservoirs, treatment plants and distribution pipes during peak demand. Kruskal builds minimum-cost pipe networks connecting water sources to high-demand zones, while knapsack DP optimally fills reservoirs given limited pumping energy budgets. BFS validates network connectivity during maintenance shutdowns to ensure no neighborhood loses service entirely.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 6 – Clean Water and Sanitation, SDG 7 – Affordable and Clean Energy</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>vector&lt;Edge&gt;</code>, <code>priority_queue</code>, <code>UnionFind</code> —
+        <strong>Algorithms:</strong> <code>Kruskal MST</code>, <code>0/1 Knapsack DP</code>, <code>BFS connectivity</code>
+      </div>
+      <div class="diagram">
+Pipe Proposals → Kruskal + UnionFind → Optimal Network
+Daily Demand → Knapsack DP → Reservoir Fill Plan
+Maintenance Zones → BFS → Service Continuity Check
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case2.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- 3 -->
-<article class="card">
-<div class="case-title">3 • Intelligent Waste Collection & Recycling Network</div>
-<p class="desc">
-<strong>SDG 11 – Sustainable Cities and Communities:</strong> Smart routing and waste monitoring.<br>
-<strong>SDG 12 – Responsible Consumption and Production:</strong> Maximizes recycling efficiency.<br>
-<strong>SDG 13 – Climate Action:</strong> Minimizes landfill usage and reduces emissions.<br>
-<strong>DAA Implementation:</strong> Graphs represent streets, Heaps prioritize collection routes, Queues manage bins, K-Means Clustering optimizes recycling, and predictive analytics forecasts waste levels.
-</p>
-<div class="ds-list">
-<strong>Data Structure:</strong> Graphs, Heaps, Queues<br>
-<strong>Algorithm:</strong> Route Optimization, K-Means Clustering, Predictive Analytics
-</div>
-<a class="btn" href="Case03.cpp" target="_blank" title="Open Case03.cpp code for Waste Collection Network">View Code</a>
-</article>
+    <!-- 3 -->
+    <article class="card fadein" id="case3">
+      <div class="case-title">3 • Intelligent Waste Collection & Recycling Network</div>
+      <div class="meta">
+        <div class="badge">Graph · Priority Queue</div>
+        <div class="badge">TSP Heuristic · Dijkstra · Hash Tables</div>
+      </div>
+      <p class="desc">
+        Waste collection trucks serve 2,500+ bins across Aarunya with fixed capacity and time windows, maximizing collection while minimizing fuel. Travelling Salesman Problem heuristics generate efficient routes between high-priority overflowing bins, while Dijkstra reroutes trucks around traffic or road closures. Hash tables track bin fill levels and material types for optimal truck loading and sorting plant assignments.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 12 – Responsible Consumption and Production</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>adjacency matrix</code>, <code>unordered_map</code> —
+        <strong>Algorithms:</strong> <code>TSP nearest neighbor</code>, <code>Dijkstra</code>, <code>hash lookups</code>
+      </div>
+      <div class="diagram">
+Bin Sensors → Hash Table → Fill Levels + Priority
+High Priority Bins → TSP Heuristic → Truck Routes
+Live Traffic → Dijkstra → Route Adjustments
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case3.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- 4 -->
-<article class="card">
-<div class="case-title">4 • Aarunya Edu-Tech Personalized Learning Platform</div>
-<p class="desc">
-<strong>SDG 4 – Quality Education:</strong> Provides personalized learning paths.<br>
-<strong>SDG 5 – Gender Equality:</strong> Ensures equal access to educational resources.<br>
-<strong>SDG 10 – Reduced Inequalities:</strong> Supports learners of all backgrounds.<br>
-<strong>DAA Implementation:</strong> Trees and Graphs store course modules and relationships; Hash Maps for fast student lookup; Recommendation Systems and Adaptive Testing Algorithms personalize content; Collaborative Filtering predicts learner preferences.
-</p>
-<div class="ds-list">
-<strong>Data Structure:</strong> Trees, Graphs, Hash Maps<br>
-<strong>Algorithm:</strong> Recommendation Systems, Adaptive Testing Algorithms, Collaborative Filtering
-</div>
-<a class="btn" href="Case04.cpp" target="_blank" title="Open Case04.cpp code for Edu-Tech Platform">View Code</a>
-</article>
+    <!-- 4 -->
+    <article class="card fadein" id="case4">
+      <div class="case-title">4 • Aarunya Edu-Tech Personalized Learning Platform</div>
+      <div class="meta">
+        <div class="badge">Trie · Segment Tree</div>
+        <div class="badge">Decision Tree · DP Progress Model</div>
+      </div>
+      <p class="desc">
+        The learning platform serves 50,000+ students with adaptive lesson paths based on quiz performance and study patterns. Tries enable instant course/topic search across multilingual content while segment trees track class/section progress for teacher dashboards. Decision tree classifiers recommend next lessons based on mastery gaps, and DP models forecast completion timelines given daily study hours.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 4 – Quality Education, SDG 9 – Industry, Innovation and Infrastructure</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Trie</code>, <code>segment tree</code> —
+        <strong>Algorithms:</strong> <code>Decision tree classification</code>, <code>DP timeline projection</code>
+      </div>
+      <div class="diagram">
+Search Queries → Trie → Course Suggestions
+Quiz Scores → Decision Tree → Next Lesson
+Class Progress → Segment Tree → Teacher Dashboard
+Daily Hours → DP Model → Completion Timeline
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case4.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- 5 -->
-<article class="card">
-<div class="case-title">5 • Urban Security & Surveillance Intelligence Hub</div>
-<p class="desc">
-<strong>SDG 11 – Sustainable Cities and Communities:</strong> Safer urban areas through monitoring.<br>
-<strong>SDG 16 – Peace, Justice and Strong Institutions:</strong> Improves law enforcement and security.<br>
-<strong>SDG 9 – Industry, Innovation and Infrastructure:</strong> Smart infrastructure integration.<br>
-<strong>DAA Implementation:</strong> Arrays, Queues, Graphs for real-time data; Object Detection and Face Recognition algorithms enhance threat identification.
-</p>
-<div class="ds-list">
-<strong>Data Structure:</strong> Arrays, Queues, Graphs<br>
-<strong>Algorithm:</strong> Object Detection, Face Recognition, Event Detection Algorithms
-</div>
-<a class="btn" href="Case05.cpp" target="_blank" title="Open Case05.cpp code for Security Hub">View Code</a>
-</article>
+    <!-- 5 -->
+    <article class="card fadein" id="case5">
+      <div class="case-title">5 • Urban Security & Surveillance Intelligence Hub</div>
+      <div class="meta">
+        <div class="badge">Graph · Hash Tables</div>
+        <div class="badge">BFS · Rabin-Karp · Union-Find</div>
+      </div>
+      <p class="desc">
+        1,200+ CCTV cameras feed the security hub where AI flags suspicious activities and license plates across Aarunya. Graphs model camera visibility zones so BFS traces suspect movement between overlapping fields of view. Rabin-Karp scans video metadata for known criminal patterns while hash tables validate faces against watchlists in constant time.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace, Justice and Strong Institutions, SDG 11 – Sustainable Cities and Communities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>adjacency list</code>, <code>unordered_set</code> —
+        <strong>Algorithms:</strong> <code>BFS suspect tracking</code>, <code>Rabin-Karp pattern scan</code>
+      </div>
+      <div class="diagram">
+CCTV Feeds → Rabin-Karp → Suspicious Patterns
+Camera Zones → Graph BFS → Suspect Movement Path
+Faces → Hash Table → Watchlist Matches
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case5.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- Continue similarly for cases 6–10 -->
+    <!-- 6 -->
+    <article class="card fadein" id="case6">
+      <div class="case-title">6 • Aarunya AgroTech Smart Farming Network</div>
+      <div class="meta">
+        <div class="badge">Grid · AVL Tree</div>
+        <div class="badge">DP Yield Optimization · KMP Soil Analysis</div>
+      </div>
+      <p class="desc">
+        5,000+ IoT sensors across Aarunya's peri-urban farms track soil moisture, temperature and crop health in real-time. 2D grids model field layouts where DP optimizes irrigation schedules balancing water availability against yield forecasts. AVL trees index historical sensor data by timestamp-crop type for instant range queries, while KMP analyzes soil test sequences for nutrient deficiency patterns.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 2 – Zero Hunger, SDG 13 – Climate Action</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>2D grid</code>, <code>AVL tree</code> —
+        <strong>Algorithms:</strong> <code>DP irrigation planning</code>, <code>KMP soil pattern analysis</code>
+      </div>
+      <div class="diagram">
+Field Sensors → 2D Grid → Moisture Heatmap
+Water Budget → DP Model → Irrigation Schedule
+Historical Data → AVL Tree → Crop Comparisons
+Soil Tests → KMP → Nutrient Deficiency Patterns
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case6.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-</section>
+    <!-- 7 -->
+    <article class="card fadein" id="case7">
+      <div class="case-title">7 • Multi-Modal Transportation & Mobility System</div>
+      <div class="meta">
+        <div class="badge">Graph · Priority Queue</div>
+        <div class="badge">Dijkstra · Floyd-Warshall · Segment Tree</div>
+      </div>
+      <p class="desc">
+        Aarunya's mobility platform integrates buses, metros, bikes and ride-sharing with live ETAs across 10,000+ stops/stations. Multi-modal graphs use Dijkstra for fastest door-to-door trips while Floyd-Warshall precomputes popular hub-to-hub matrices. Segment trees track real-time crowding levels across vehicle types and routes for capacity planning.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities and Communities, SDG 9 – Industry, Innovation and Infrastructure</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>adjacency list</code>, <code>segment tree</code> —
+        <strong>Algorithms:</code> <code>Dijkstra multi-modal</code>, <code>Floyd-Warshall hubs</code>
+      </div>
+      <div class="diagram">
+Live ETAs → Multi-modal Graph → Dijkstra Routes
+Popular Hubs → Floyd-Warshall → Transfer Tables
+Vehicle Loads → Segment Tree → Crowding Alerts
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case7.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
 
-<!-- Keep DS/Algo table and footer as is -->
+    <!-- 8 -->
+    <article class="card fadein" id="case8">
+      <div class="case-title">8 • Smart Healthcare & Emergency Routing Center</div>
+      <div class="meta">
+        <div class="badge">Graph · Hash Tables</div>
+        <div class="badge">A* · Decision Tree · Priority Queue</div>
+      </div>
+      <p class="desc">
+        The emergency center routes ambulances to 150+ hospitals considering bed availability, traffic and patient condition severity. A* search finds fastest paths accounting for hospital specialties while decision trees match symptoms to optimal facilities. Priority queues manage incoming calls by urgency, and hash tables provide instant bed status lookups across the network.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 3 – Good Health and Well-being, SDG 11 – Sustainable Cities and Communities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>priority_queue</code>, <code>unordered_map</code> —
+        <strong>Algorithms:</strong> <code>A* ambulance routing</code>, <code>decision tree triage</code>
+      </div>
+      <div class="diagram">
+Call Details → Decision Tree → Hospital Match
+Bed Status → Hash Table → Availability Check
+Traffic + Urgency → A* Priority Queue → Route Assignment
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case8.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card fadein" id="case9">
+      <div class="case-title">9 • E-Commerce & Supply Chain Optimization Platform</div>
+      <div class="meta">
+        <div class="badge">Graph · Trie</div>
+        <div class="badge">Dijkstra · Knapsack · QuickSort</div>
+      </div>
+      <p class="desc">
+        Aarunya's e-commerce platform optimizes delivery across 200+ warehouses and 1M daily orders. Graphs model road networks where Dijkstra finds optimal warehouse-to-customer routes while knapsack DP maximizes truck loads by order priority and size. Tries provide instant product search while QuickSort prioritizes hot-selling items for warehouse picking.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 8 – Decent Work and Economic Growth, SDG 9 – Industry, Innovation and Infrastructure</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>Trie</code>, <code>vector&lt;Order&gt;</code> —
+        <strong>Algorithms:</strong> <code>Dijkstra delivery routes</code>, <code>QuickSort hot items</code>
+      </div>
+      <div class="diagram">
+Customer Orders → Trie Search → Product Matches
+Warehouse Stock → QuickSort → Picking Priority
+Truck Capacity → Knapsack DP → Load Optimization
+Delivery Graph → Dijkstra → Route Planning
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case9.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card fadein" id="case10">
+      <div class="case-title">10 • Real-Time Public Safety Command Center</div>
+      <div class="meta">
+        <div class="badge">Grid · Segment Tree</div>
+        <div class="badge">BFS · Huffman · DP Resource Allocation</div>
+      </div>
+      <p class="desc">
+        The safety center coordinates police, fire and medical response across Aarunya using live incident feeds from citizens and sensors. 2D grids model response zones where BFS finds nearest available units while segment trees track resource utilization across neighborhoods. Huffman coding compresses live camera streams for archival, and DP optimally assigns multi-skilled response teams to incident clusters.
+        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace, Justice and Strong Institutions, SDG 11 – Sustainable Cities and Communities</span>
+      </p>
+      <div class="ds-list">
+        <strong>Data Structures:</strong> <code>2D grid</code>, <code>segment tree</code> —
+        <strong>Algorithms:</strong> <code>BFS unit dispatch</code>, <code>DP team assignment</code>
+      </div>
+      <div class="diagram">
+Incident Reports → Grid BFS → Nearest Responders
+Resource Status → Segment Tree → Availability Ranges
+Camera Feeds → Huffman → Compressed Archive
+Incident Clusters → DP → Optimal Team Assignment
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case10.cpp" target="_blank">View Code</a>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- DATA STRUCTURE / ALGO TABLE -->
   <section class="ds-analysis-section">
-    <div class="ds-analysis-title">Data Structures &amp; Algorithms Analysis</div>
+    <div class="ds-analysis-title">Data Structures & Algorithms Analysis</div>
     <div class="ds-analysis-sub">
       Detailed list of core structures and algorithms across all ten cases, including whether they are used,
       where they appear, and their asymptotic space and time efficiency.
@@ -442,4 +614,51 @@
           <tr>
             <th>Data Structure / Algorithm</th>
             <th>Used?</th>
-            <
+            <th>Where Used</th>
+            <th>Space Efficiency</th>
+            <th>Time Efficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases (graphs, grids, order lists, sensor data)</td><td>O(n)</td><td>O(1) access</td></tr>
+          <tr><td>Structures</td><td class="ds-used-yes">Yes</td><td>All cases (Edge, Node, Order, Incident, Patient records)</td><td>O(1) per record</td><td>O(1) field access</td></tr>
+          <tr><td>List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Stack</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Queue</td><td class="ds-used-yes">Yes</td><td>Cases 1-10 (BFS, priority queues for routing/dispatch)</td><td>O(V)</td><td>O(1) enqueue/dequeue</td></tr>
+          <tr><td>Binary Tree</td><td class="ds-used-yes">Yes</td><td>Cases 4,6 (decision trees, AVL trees)</td><td>O(n)</td><td>O(h) search</td></tr>
+          <tr><td>Binary Search Tree</td><td class="ds-used-yes">Yes</td><td>Case 6 (historical sensor indexing)</td><td>O(n)</td><td>Avg O(log n)</td></tr>
+          <tr><td>AVL Tree</td><td class="ds-used-yes">Yes</td><td>Case 6 (balanced farm sensor storage)</td><td>O(n)</td><td>O(log n) operations</td></tr>
+          <tr><td>Trie</td><td class="ds-used-yes">Yes</td><td>Cases 4,9 (course/product search)</td><td>O(total chars)</td><td>O(k) search/insert</td></tr>
+          <tr><td>Heap/Priority Queue</td><td class="ds-used-yes">Yes</td><td>Cases 1,2,5,7,8 (routing, dispatch prioritization)</td><td>O(n)</td><td>O(log n) push/pop</td></tr>
+          <tr><td>Hash Table</td><td class="ds-used-yes">Yes</td><td>Cases 1,3,5,8,9 (license plates, beds, watchlists)</td><td>O(n)</td><td>O(1) expected lookup</td></tr>
+          <tr><td>Segment Tree</td><td class="ds-used-yes">Yes</td><td>Cases 1,4,7,10 (traffic, progress, crowding tracking)</td><td>O(n)</td><td>O(log n) range query</td></tr>
+          <tr><td>Union-Find</td><td class="ds-used-yes">Yes</td><td>Case 2 (water pipe network connectivity)</td><td>O(n)</td><td>Amortized O(1)</td></tr>
+          <tr><td>DFS</td><td class="ds-used-yes">Yes</td><td>Cases 2,5 (network validation, camera zone analysis)</td><td>O(V)</td><td>O(V+E)</td></tr>
+          <tr><td>BFS</td><td class="ds-used-yes">Yes</td><td>Cases 1,2,5,6,10 (routing, connectivity, dispatch)</td><td>O(V)</td><td>O(V+E)</td></tr>
+          <tr><td>Quick Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (order/warehouse prioritization)</td><td>O(log n) stack</td><td>Avg O(n log n)</td></tr>
+          <tr><td>Rabin-Karp</td><td class="ds-used-yes">Yes</td><td>Cases 1,5 (license plates, video metadata)</td><td>O(1) per window</td><td>Avg O(n+m)</td></tr>
+          <tr><td>KMP</td><td class="ds-used-yes">Yes</td><td>Cases 1,4,6 (plates, soil tests, logs)</td><td>O(m)</td><td>O(n+m)</td></tr>
+          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>Case 2 (water pipe network MST)</td><td>O(E)</td><td>O(E log E)</td></tr>
+          <tr><td>Dijkstra</td><td class="ds-used-yes">Yes</td><td>Cases 1,3,7,9 (all routing scenarios)</td><td>O(V)</td><td>O(E log V)</td></tr>
+          <tr><td>Floyd-Warshall</td><td class="ds-used-yes">Yes</td><td>Case 7 (multi-modal hub distances)</td><td>O(n²)</td><td>O(n³)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Aarunya — Ankita (Roll 201) · All source files located in <code>Ankita/</code>
+  </footer>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fadein').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 60 * i);
+    });
+  });
+</script>
+
+</body>
+</html>
