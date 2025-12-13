@@ -1,216 +1,258 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ankita — Business Case Studies | Aarunya</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aarunya Business Case Studies | Arbiya & Ankita</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- NOTE:
-       This file is intentionally kept in EXACT SAME COLOR THEME & LAYOUT as Sai's page.
-       Only CONTENT, AUTHOR NAME, and CODE LINKS are changed for Ankita.
-  -->
-
-  <style>
-    /* ===== SAME THEME AS SAI (DO NOT CHANGE COLORS) ===== */
-    :root{
-      --page-bg:#020617;
-      --hero-bg:#0f172a;
-      --hero-bg-soft:#020617;
-      --text-main:#e5e7eb;
-      --muted:#9ca3af;
-      --card-bg:#020617;
-      --accent-chip:#1e293b;
-      --accent-chip-text:#38bdf8;
-      --accent-chip2:#0f172a;
-      --accent-chip2-text:#a5b4fc;
-      --border-soft:#1f2933;
-      --diagram-bg:#020617;
-      --diagram-border:#22c55e;
-      --btn-bg:#22c55e;
-      --btn-bg2:#38bdf8;
-      --btn-text:#0f172a;
-      --maxw:1040px;
-      --btn-h:36px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui;
-      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);
-      color:var(--text-main);
-      padding:24px 10px 32px;
-      line-height:1.7;
-    }
-    .wrap{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:20px}
-
-    .hero{border-radius:18px;padding:18px 20px;background:radial-gradient(circle at top left,#22c55e20 0,#0f172a 45%,#020617 100%);border:1px solid #22c55e40;display:flex;justify-content:space-between}
-    h1{font-size:1.35rem}
-    .hero-sub{font-size:.92rem;opacity:.9;max-width:540px}
-    .hero-right{font-size:.86rem;text-align:right}
-    .hero-git-btn{margin-top:6px;display:inline-flex;padding:6px 14px;border-radius:999px;border:1px solid rgba(148,163,184,.7);color:#e5e7eb;text-decoration:none;font-size:.78rem}
-
-    .summary-strip{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{padding:4px 10px;border-radius:999px;border:1px solid var(--border-soft);font-size:.8rem}
-
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    .card{padding:14px;border-radius:12px;background:radial-gradient(circle at top left,#22c55e10 0,#020617 55%);border:1px solid var(--border-soft)}
-    .case-title{font-size:1rem;font-weight:800;margin-bottom:4px}
-    .meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
-    .badge{padding:3px 10px;border-radius:999px;font-size:.74rem;font-weight:600}
-    .badge:nth-child(1){background:var(--accent-chip);color:var(--accent-chip-text)}
-    .badge:nth-child(2){background:var(--accent-chip2);color:var(--accent-chip2-text)}
-    .desc{font-size:.9rem;margin-bottom:7px}
-    .sdg-text{font-size:.84rem;color:#9ca3af}
-    .ds-list{font-size:.8rem;border:1px dashed var(--border-soft);padding:6px 8px;border-radius:8px;margin-bottom:7px}
-    .diagram{font-family:ui-monospace,monospace;font-size:.78rem;white-space:pre;margin-bottom:6px}
-    .btn{height:var(--btn-h);padding:0 13px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.84rem;color:#071b24;background:linear-gradient(135deg,#8fd3f4,#6bbcd6)}
-
-    footer{text-align:center;font-size:.78rem;color:var(--muted);margin-top:20px}
-  </style>
+<style>
+:root{
+  --page-bg:#020617;
+  --text-main:#e5e7eb;
+  --muted:#9ca3af;
+  --border-soft:#1f2933;
+  --maxw:1040px;
+  --btn-h:36px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui;
+  background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);
+  color:var(--text-main);
+  padding:24px 10px 32px;
+}
+.wrap{max-width:var(--maxw);margin:auto;display:flex;flex-direction:column;gap:20px}
+.hero{border-radius:18px;padding:18px;background:#020617;border:1px solid #22c55e40}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+.card{padding:14px;border-radius:12px;background:#020617;border:1px solid var(--border-soft)}
+.case-title{font-weight:800}
+.desc{font-size:0.9rem;line-height:1.7}
+.ds-list{font-size:0.8rem;border:1px dashed var(--border-soft);padding:8px;border-radius:8px}
+.actions{margin-top:6px}
+.btn{
+  height:var(--btn-h);
+  padding:0 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#8fd3f4,#6bbcd6);
+  color:#071b24;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+}
+footer{margin-top:20px;text-align:center;font-size:0.78rem;color:var(--muted)}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-<!-- ================= HERO ================= -->
 <section class="hero">
-  <div>
-    <div class="hero-tag">Design and Analysis of Algorithms</div>
-    <h1>Business Case Studies — Aarunya</h1>
-    <p class="hero-sub">
-      Real‑world smart‑city business ideas mapped to core DAA algorithms.
-      All implementations are stored inside <code>Ankita/</code> folder.
-    </p>
-  </div>
-  <div class="hero-right">
-    <div>Author: <strong>Ankita</strong></div>
-    <div>Course: <strong>DAA</strong></div>
-    <div>City: <strong>Aarunya</strong></div>
-    <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">Open GitHub Repository</a>
-  </div>
+  <h1>Business Case Studies — Aarunya & Ankita</h1>
+  <p>Design and Analysis of Algorithms · Authors: <strong>Arbiya Naaz & Ankita</strong></p>
 </section>
 
-<!-- ================= SUMMARY ================= -->
-<section class="summary-strip">
-  <div class="pill">Course: DAA</div>
-  <div class="pill">Cases: 10 Business Ideas</div>
-  <div class="pill">Focus: SDGs + Algorithms</div>
-</section>
-
-<!-- ================= CASES ================= -->
 <section class="grid">
+
+<!-- Aarunya Ideas -->
 
 <!-- 1 -->
 <article class="card">
-  <div class="case-title">1 • Smart Traffic Automation & Incident Detection</div>
-  <div class="meta"><div class="badge">Graph · Priority Queue</div><div class="badge">Dijkstra · BFS · Segment Tree</div></div>
-  <p class="desc">
-    Traffic intersections and sensors are modelled as a weighted graph.
-    Dijkstra computes fastest emergency routes, BFS detects congestion spread,
-    and a segment tree maintains real‑time traffic density.
-    <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 11, SDG 9, SDG 3</span>
-  </p>
-  <div class="ds-list"><strong>Algorithms:</strong> Dijkstra, BFS, Segment Tree</div>
-  <div class="diagram">Sensors → Graph → Shortest Paths & Alerts</div>
-  <a class="btn" href="Ankita/Case1.cpp">View Code</a>
+<div class="case-title">1 • Smart Traffic Automation & Incident Detection System</div>
+<p class="desc">
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+<strong>SDG 13 – Climate Action</strong><br>
+This system automates traffic monitoring, predicts congestion, and detects incidents in real-time.
+It reduces traffic jams, improves road safety, and lowers emissions.
+Revenue streams include city contracts, licensing, and analytics services.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Graph, Queue, Hash Map<br>
+<strong>Algorithm:</strong> Dijkstra’s Algorithm, BFS/DFS, Anomaly Detection Algorithms
+</div>
+<a class="btn" href="Case01.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 2 -->
 <article class="card">
-  <div class="case-title">2 • Smart Water–Energy Optimization Grid</div>
-  <div class="meta"><div class="badge">Graph · DP</div><div class="badge">Kruskal · Dijkstra · Knapsack</div></div>
-  <p class="desc">Optimizes water and energy distribution using MST, shortest paths, and capacity allocation.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 6, SDG 7, SDG 11</span></p>
-  <div class="ds-list">Algorithms: Kruskal, Dijkstra, Knapsack DP</div>
-  <a class="btn" href="Ankita/Case2.cpp">View Code</a>
+<div class="case-title">2 • Aarunya Smart Water–Energy Optimization Grid</div>
+<p class="desc">
+<strong>SDG 6 – Clean Water and Sanitation</strong><br>
+<strong>SDG 7 – Affordable and Clean Energy</strong><br>
+<strong>SDG 12 – Responsible Consumption and Production</strong><br>
+Optimizes water and energy usage across smart grids using IoT and AI.
+Reduces wastage, lowers bills, and promotes sustainability.
+Revenue comes from utility partnerships and grid analytics.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Arrays, Linked Lists, Sensor Data Streams<br>
+<strong>Algorithm:</strong> Optimization Algorithms, Linear Programming, Predictive Analytics
+</div>
+<a class="btn" href="Case02.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 3 -->
 <article class="card">
-  <div class="case-title">3 • Intelligent Waste Collection & Recycling</div>
-  <div class="meta"><div class="badge">Graph · Heap</div><div class="badge">Dijkstra · Greedy · Union‑Find</div></div>
-  <p class="desc">Optimizes garbage routes and recycling centers.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 11, SDG 12, SDG 13</span></p>
-  <div class="ds-list">Algorithms: Dijkstra, Greedy, Union‑Find</div>
-  <a class="btn" href="Ankita/Case3.cpp">View Code</a>
+<div class="case-title">3 • Intelligent Waste Collection & Recycling Network</div>
+<p class="desc">
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+<strong>SDG 12 – Responsible Consumption and Production</strong><br>
+<strong>SDG 13 – Climate Action</strong><br>
+Automates waste collection routes, monitors bin fill levels, and optimizes recycling.
+Reduces landfill use and improves recycling efficiency.
+Revenue comes from municipal contracts and recycling data services.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Graphs, Heaps, Queues<br>
+<strong>Algorithm:</strong> Route Optimization, K-Means Clustering, Predictive Analytics
+</div>
+<a class="btn" href="Case03.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 4 -->
 <article class="card">
-  <div class="case-title">4 • Edu‑Tech Personalized Learning Platform</div>
-  <div class="meta"><div class="badge">Tree · Hashing</div><div class="badge">DP · KMP · Greedy</div></div>
-  <p class="desc">Personalizes content delivery based on learning patterns.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 4, SDG 9, SDG 10</span></p>
-  <div class="ds-list">Algorithms: DP, KMP, Greedy</div>
-  <a class="btn" href="Ankita/Case4.cpp">View Code</a>
+<div class="case-title">4 • Aarunya Edu-Tech Personalized Learning Platform</div>
+<p class="desc">
+<strong>SDG 4 – Quality Education</strong><br>
+<strong>SDG 5 – Gender Equality</strong><br>
+<strong>SDG 10 – Reduced Inequalities</strong><br>
+A platform that personalizes learning using AI, tracking student progress and recommending content.
+Revenue from subscriptions, licensing to schools, and online courses.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Trees, Graphs, Hash Maps<br>
+<strong>Algorithm:</strong> Recommendation Systems, Adaptive Testing Algorithms, Collaborative Filtering
+</div>
+<a class="btn" href="Case04.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 5 -->
 <article class="card">
-  <div class="case-title">5 • Urban Security & Surveillance Hub</div>
-  <div class="meta"><div class="badge">Graph · Hash Map</div><div class="badge">DFS · Pattern Matching · BFS</div></div>
-  <p class="desc">Analyzes surveillance feeds for threat detection.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 16, SDG 11, SDG 9</span></p>
-  <div class="ds-list">Algorithms: DFS, BFS, KMP</div>
-  <a class="btn" href="Ankita/Case5.cpp">View Code</a>
+<div class="case-title">5 • Urban Security & Surveillance Intelligence Hub</div>
+<p class="desc">
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+<strong>SDG 16 – Peace, Justice and Strong Institutions</strong><br>
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+Uses AI-powered cameras and analytics to detect threats and manage urban security.
+Revenue from government contracts and SaaS security solutions.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Arrays, Queues, Graphs<br>
+<strong>Algorithm:</strong> Object Detection, Face Recognition, Event Detection Algorithms
+</div>
+<a class="btn" href="Case05.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 6 -->
 <article class="card">
-  <div class="case-title">6 • AgroTech Smart Farming Network</div>
-  <div class="meta"><div class="badge">Tree · DP</div><div class="badge">Greedy · DP · BFS</div></div>
-  <p class="desc">Optimizes irrigation and crop planning.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 2, SDG 12, SDG 13</span></p>
-  <div class="ds-list">Algorithms: Greedy, DP, BFS</div>
-  <a class="btn" href="Ankita/Case6.cpp">View Code</a>
+<div class="case-title">6 • Aarunya AgroTech Smart Farming Network</div>
+<p class="desc">
+<strong>SDG 2 – Zero Hunger</strong><br>
+<strong>SDG 12 – Responsible Consumption and Production</strong><br>
+<strong>SDG 13 – Climate Action</strong><br>
+Connects farmers with AI-driven monitoring for irrigation, pests, and yield prediction.
+Revenue from subscriptions, crop analytics, and IoT device sales.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Matrices, Hash Maps, Linked Lists<br>
+<strong>Algorithm:</strong> Machine Learning Regression, IoT Data Analysis, Predictive Modeling
+</div>
+<a class="btn" href="Case06.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 7 -->
 <article class="card">
-  <div class="case-title">7 • Multi‑Modal Transportation System</div>
-  <div class="meta"><div class="badge">Graph · Matrix</div><div class="badge">Floyd‑Warshall · Dijkstra · Greedy</div></div>
-  <p class="desc">Integrates buses, metros, and cabs.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 11, SDG 9, SDG 3</span></p>
-  <div class="ds-list">Algorithms: Floyd‑Warshall, Dijkstra, Greedy</div>
-  <a class="btn" href="Ankita/Case7.cpp">View Code</a>
+<div class="case-title">7 • Multi-Modal Transportation & Mobility System</div>
+<p class="desc">
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+<strong>SDG 13 – Climate Action</strong><br>
+Integrates buses, trains, e-scooters, and ride-sharing with AI route planning.
+Revenue from app subscriptions, mobility-as-a-service, and ads.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Graphs, Priority Queues, Hash Tables<br>
+<strong>Algorithm:</strong> Shortest Path, A* Search, Demand Forecasting
+</div>
+<a class="btn" href="Case07.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 8 -->
 <article class="card">
-  <div class="case-title">8 • Smart Healthcare & Emergency Routing</div>
-  <div class="meta"><div class="badge">Graph · PQ</div><div class="badge">Dijkstra · BFS · DP</div></div>
-  <p class="desc">Emergency routing for ambulances.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 3, SDG 11, SDG 9</span></p>
-  <div class="ds-list">Algorithms: Dijkstra, BFS, DP</div>
-  <a class="btn" href="Ankita/Case8.cpp">View Code</a>
+<div class="case-title">8 • Smart Healthcare & Emergency Routing Center</div>
+<p class="desc">
+<strong>SDG 3 – Good Health and Well-being</strong><br>
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+AI-driven system that manages patient data, hospital capacity, and emergency routing.
+Revenue via hospital partnerships and software licensing.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Graphs, Priority Queues, Heaps<br>
+<strong>Algorithm:</strong> Dijkstra’s Algorithm, Scheduling, Predictive Analytics
+</div>
+<a class="btn" href="Case08.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 9 -->
 <article class="card">
-  <div class="case-title">9 • E‑Commerce & Supply Chain Optimization</div>
-  <div class="meta"><div class="badge">Graph · DP</div><div class="badge">Knapsack · Dijkstra · Sorting</div></div>
-  <p class="desc">Optimizes delivery routes and inventory.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 8, SDG 9, SDG 12</span></p>
-  <div class="ds-list">Algorithms: Knapsack, Dijkstra, Merge Sort</div>
-  <a class="btn" href="Ankita/Case9.cpp">View Code</a>
+<div class="case-title">9 • E-Commerce & Supply Chain Optimization Platform</div>
+<p class="desc">
+<strong>SDG 8 – Decent Work and Economic Growth</strong><br>
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+<strong>SDG 12 – Responsible Consumption and Production</strong><br>
+AI-based platform for inventory management, delivery optimization, and dynamic pricing.
+Revenue from subscription fees and transaction commissions.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Arrays, Hash Tables, Graphs<br>
+<strong>Algorithm:</strong> Dynamic Programming, Search & Sort, Predictive Analytics
+</div>
+<a class="btn" href="Case09.cpp" target="_blank">View Code</a>
 </article>
 
 <!-- 10 -->
 <article class="card">
-  <div class="case-title">10 • AI‑Driven Environmental Monitoring</div>
-  <div class="meta"><div class="badge">Grid · Graph</div><div class="badge">BFS · DP · Huffman</div></div>
-  <p class="desc">Monitors pollution and climate alerts.
-  <br><br><span class="sdg-text"><strong>SDGs:</strong> SDG 13, SDG 11, SDG 15</span></p>
-  <div class="ds-list">Algorithms: BFS, DP, Huffman Coding</div>
-  <a class="btn" href="Ankita/Case10.cpp">View Code</a>
+<div class="case-title">10 • AI-Driven Environmental Monitoring & Alert System</div>
+<p class="desc">
+<strong>SDG 13 – Climate Action</strong><br>
+<strong>SDG 6 – Clean Water and Sanitation</strong><br>
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+Monitors air, water, and soil quality using IoT and AI, sending alerts for hazards.
+Revenue from environmental agencies and monitoring subscriptions.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Sensor Data Streams, Hash Maps, Queues<br>
+<strong>Algorithm:</strong> Anomaly Detection, Time-Series Analysis, Predictive Modeling
+</div>
+<a class="btn" href="Case10.cpp" target="_blank">View Code</a>
+</article>
+
+<!-- Ankita Card -->
+<article class="card">
+<div class="case-title">Ankita • Smart C++ Project</div>
+<p class="desc">
+<strong>SDG 9 – Industry, Innovation and Infrastructure</strong><br>
+<strong>SDG 4 – Quality Education</strong><br>
+<strong>SDG 11 – Sustainable Cities and Communities</strong><br>
+This project demonstrates a smart C++ implementation with efficient algorithms and data structures.
+It can be a template for educational and real-world applications.
+</p>
+<div class="ds-list">
+<strong>Data Structure:</strong> Arrays / Linked List / Graph<br>
+<strong>Algorithm:</strong> Sorting / Searching / Traversal
+</div>
+<a class="btn" href="Ankita/CaseAnkita.cpp" target="_blank">View Code</a>
 </article>
 
 </section>
 
 <footer>
-  © 2025 Aarunya — Ankita · All source files in <code>Ankita/</code>
+© 2025 Aarunya — Arbiya Naaz & Ankita · All source files in <code>ArbiyaNaaz/</code> & <code>Ankita/</code>
 </footer>
 
 </div>
