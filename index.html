@@ -86,7 +86,7 @@ nav a:hover{
   color:#d6dcf0;
 }
 
-/* NAME */
+/* NAME – NEON LAVENDER */
 .neon-name{
   color:#d6b4ff;
   font-size:22px;
@@ -156,23 +156,6 @@ td{
 .view-btn:hover{
   box-shadow:0 0 16px rgba(230,182,92,0.6);
 }
-
-/* CITY LAYOUT IMAGE */
-.city-map{
-  margin-top:25px;
-  text-align:center;
-}
-.city-map img{
-  width:100%;
-  max-width:900px;
-  background:#ffffff;
-  padding:15px;
-  border-radius:20px;
-  border:3px solid #2f2a55;
-  box-shadow:
-    0 0 20px rgba(125,249,255,0.35),
-    0 0 40px rgba(0,0,0,0.8);
-}
 </style>
 </head>
 
@@ -183,7 +166,7 @@ td{
   <a onclick="showPage('project')">Project</a>
   <a href="ArbiyaNaaz.html">Arbiya Naaz</a>
   <a onclick="showPage('akshata')">Akshata</a>
-  <a href="ankita.html">Ankita</a>
+  <a href="ankita.html">Ankita</a> <!-- Updated -->
   <a href="sai.html">Sai</a>
 </nav>
 
@@ -195,6 +178,7 @@ td{
     balanced urban planning, and data-driven governance.
   </p>
 
+  <!-- CITY INFO -->
   <div class="member-box">
     <h2 class="neon-name">City Information</h2>
     <div class="idea-list">
@@ -206,6 +190,7 @@ td{
     </div>
   </div>
 
+  <!-- POPULATION TABLE -->
   <div class="member-box">
     <h2 class="neon-name">Population Distribution</h2>
     <table>
@@ -221,7 +206,6 @@ td{
   <!-- CITY LAYOUT -->
   <div class="member-box">
     <h2 class="neon-name">City Layout Plan</h2>
-
     <div class="idea-list">
       <p>🏘 Residential Area – 22%</p>
       <p>🏭 Industrial & Port Sector – 22%</p>
@@ -232,10 +216,73 @@ td{
       <p>🏥 Health Sector – 5%</p>
       <p>🌲 Ecological Buffers – Remaining Area</p>
     </div>
+    <p class="desc">📸 Upload city layout charts / zone maps here</p>
+  </div>
 
-    <div class="city-map">
-      <img src="images/city-layout.png" alt="Aarunya City Layout Map">
-    </div>
+  <!-- BUDGET TABLE -->
+  <div class="member-box">
+    <h2 class="neon-name">Budget Estimation</h2>
+    <table>
+      <tr><th>Sector</th><th>Budget (₹ Crores)</th></tr>
+      <tr><td>Residential</td><td>2,40,000</td></tr>
+      <tr><td>Industrial & Port</td><td>2,40,000</td></tr>
+      <tr><td>Commercial & IT</td><td>1,00,000</td></tr>
+      <tr><td>Transport</td><td>3,00,000</td></tr>
+      <tr><td>Education</td><td>70,000</td></tr>
+      <tr><td>Agriculture & Green</td><td>50,000</td></tr>
+      <tr><td>Health</td><td>75,000</td></tr>
+      <tr><td>Ecological Buffers</td><td>50,000</td></tr>
+    </table>
+  </div>
+
+  <!-- REVENUE TABLE -->
+  <div class="member-box">
+    <h2 class="neon-name">Revenue Model</h2>
+    <table>
+      <tr><th>Sector</th><th>Revenue (₹ Crores)</th><th>Share</th></tr>
+      <tr><td>Residential</td><td>54,000</td><td>27%</td></tr>
+      <tr><td>Industrial & Port</td><td>52,000</td><td>26%</td></tr>
+      <tr><td>Commercial & IT</td><td>31,000</td><td>15%</td></tr>
+      <tr><td>Transport</td><td>13,000</td><td>6%</td></tr>
+      <tr><td>Education</td><td>8,000</td><td>4%</td></tr>
+      <tr><td>Health</td><td>9,500</td><td>5%</td></tr>
+      <tr><td>Agriculture & Green</td><td>15,000</td><td>7%</td></tr>
+      <tr><td>Ecological Buffers</td><td>6,500</td><td>3%</td></tr>
+      <tr><th>Total</th><th>2,00,000</th><th>100%</th></tr>
+    </table>
+  </div>
+</section>
+
+<!-- PROJECT PAGE -->
+<section id="project" class="section">
+  <h1 class="title">TEAM PROJECT – BUSINESS IDEAS</h1>
+
+  <div class="member-box">
+    <h2 class="neon-name">Sai Bhusaraddi</h2>
+    <p class="neon-info">Roll No: 202</p>
+    <p class="neon-info">USN: 01FE24BCS018</p>
+    <button class="view-btn" onclick="window.location.href='sai.html'">View Portfolio</button>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">Akshata S Angadi</h2>
+    <p class="neon-info">Roll No: 215</p>
+    <p class="neon-info">USN: 01FE24BCS044</p>
+    <button class="view-btn" onclick="showPage('akshata')">View Portfolio</button>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">Ankita Muradi</h2>
+    <p class="neon-info">Roll No: 244</p>
+    <p class="neon-info">USN: 01FE24BCS146</p>
+    <button class="view-btn" onclick="window.location.href='ankita.html'">View Portfolio</button>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">Arbiya Naaz Bhavikatti</h2>
+    <p class="neon-info">Roll No: 214</p>
+    <p class="neon-info">USN: 01FE24BCS042</p>
+    <button class="view-btn" onclick="window.location.href='ArbiyaNaaz.html'">View Portfolio</button>
   </div>
 </section>
 
