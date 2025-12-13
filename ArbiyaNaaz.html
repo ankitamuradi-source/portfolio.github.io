@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 body{
   background:linear-gradient(135deg,#06060c 0%,#141228 25%,#1e2a4f 55%,#080812 100%);
@@ -19,19 +18,12 @@ nav{
   background:linear-gradient(90deg,#120f24,#1c2b52);
   padding:18px;text-align:center;
   border-bottom:1px solid #2f2a55;
-  box-shadow:0 0 14px rgba(150,140,255,0.35);
-  z-index:50;
 }
-nav a{
-  color:#e6ddff;margin:0 20px;font-size:18px;
-  text-decoration:none;cursor:pointer;transition:0.3s;
-}
-nav a:hover{color:#e0c9ff;text-shadow:0 0 10px rgba(224,201,255,0.9);}
+nav a{color:#e6ddff;margin:0 20px;font-size:18px;text-decoration:none;cursor:pointer;}
 .section{
   display:none;max-width:1100px;margin:40px auto;padding:40px;
   background:linear-gradient(160deg,#141226,#0c0c18);
   border-radius:20px;border:1px solid #2f2a55;
-  box-shadow:0 0 32px rgba(0,0,0,0.9);
 }
 .section.active{display:block;}
 .title{text-align:center;font-size:34px;color:#7df9ff;margin-bottom:25px;}
@@ -59,21 +51,23 @@ nav a:hover{color:#e0c9ff;text-shadow:0 0 10px rgba(224,201,255,0.9);}
 
 <section id="arbiya" class="section active">
 <h1 class="title">Arbiya Naaz – Business Ideas</h1>
-<p class="desc">Business ideas aligned with Sustainable Development Goals and implemented using appropriate data structures and algorithms.</p>
+<p class="desc">Business ideas aligned with Sustainable Development Goals using suitable data structures and algorithms.</p>
 
 <!-- 1 -->
 <div class="member-box">
 <h2 class="neon-name">⚡ Logistics Hub</h2>
 <p class="neon-info"><strong>SDG 9:</strong> Industry, Innovation and Infrastructure</p>
 <p class="neon-info">
-This business focuses on creating a centralized logistics hub that manages storage, transportation, and delivery of goods efficiently.
-It connects warehouses, suppliers, and delivery points through optimized routes to reduce time and fuel consumption.
-The system earns revenue through delivery charges, warehouse storage fees, and logistics service contracts.
-Large-scale businesses and e-commerce platforms act as primary customers.
+This business focuses on creating a centralized logistics hub for storing and transporting goods efficiently.
+It connects warehouses, suppliers, and delivery locations through optimized routes.
+The system reduces delivery time and fuel usage while improving operational efficiency.
+Revenue is generated through delivery charges, storage fees, and logistics service contracts.
 </p>
 <p class="neon-info">
-Graph data structure represents locations and routes, while Dijkstra’s algorithm finds the shortest and most cost-effective delivery paths.
-This ensures faster deliveries and reduced operational costs.
+<strong>Data Structure:</strong> Graph<br>
+<strong>Algorithm:</strong> Dijkstra’s Algorithm<br>
+Graph represents locations and routes, while Dijkstra’s algorithm calculates the shortest delivery path.
+This helps minimize cost and ensures faster and reliable deliveries.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case01.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -84,14 +78,16 @@ This ensures faster deliveries and reduced operational costs.
 <h2 class="neon-name">🏕 Eco Resort</h2>
 <p class="neon-info"><strong>SDG 12:</strong> Responsible Consumption and Production</p>
 <p class="neon-info">
-The eco resort provides environmentally sustainable accommodation using renewable energy and eco-friendly materials.
-It manages room bookings, pricing, and customer preferences efficiently.
-Income is generated through room rentals, eco-tourism packages, and guided nature activities.
-The business also attracts environmentally conscious tourists.
+The eco resort provides sustainable accommodation using eco-friendly materials and renewable energy.
+It manages room bookings, pricing, and customer preferences digitally.
+The resort promotes eco-tourism and responsible travel practices.
+Income is generated through room rentals, eco-tour packages, and guided activities.
 </p>
 <p class="neon-info">
-Rooms are stored using arrays or lists, and sorting algorithms help customers find rooms based on price or availability.
-This improves user experience and booking efficiency.
+<strong>Data Structure:</strong> Array / List<br>
+<strong>Algorithm:</strong> Sorting Algorithm<br>
+Rooms are stored in arrays and sorted based on price or availability.
+This helps customers quickly choose suitable rooms.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case02.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -102,14 +98,16 @@ This improves user experience and booking efficiency.
 <h2 class="neon-name">💻 IT Training Center</h2>
 <p class="neon-info"><strong>SDG 4:</strong> Quality Education</p>
 <p class="neon-info">
-This business provides professional IT training courses such as programming, cloud computing, and cybersecurity.
-It manages student enrollments, courses, and certifications digitally.
-Revenue is generated through course fees, certifications, and corporate training programs.
-It helps bridge the skill gap in the technology sector.
+This business provides professional IT training in programming, cloud computing, and cybersecurity.
+It manages student enrollments, course details, and certifications efficiently.
+The platform supports skill development and career growth.
+Revenue is generated through course fees and corporate training programs.
 </p>
 <p class="neon-info">
-Linked lists allow dynamic student enrollment and removal without shifting data.
-This makes course management flexible and efficient.
+<strong>Data Structure:</strong> Linked List<br>
+<strong>Algorithm:</strong> Traversal and Insertion<br>
+Linked lists allow easy addition and removal of students.
+This makes enrollment management flexible and efficient.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case03.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -120,14 +118,16 @@ This makes course management flexible and efficient.
 <h2 class="neon-name">❄ Cold Storage</h2>
 <p class="neon-info"><strong>SDG 2:</strong> Zero Hunger</p>
 <p class="neon-info">
-Cold storage facilities preserve perishable goods such as fruits, vegetables, and dairy products.
-This reduces food wastage and ensures year-round availability of essential items.
-Revenue is generated through storage fees charged to farmers, wholesalers, and retailers.
-The system supports food security and supply chain stability.
+Cold storage facilities preserve perishable goods such as fruits and vegetables.
+They reduce food wastage and ensure longer shelf life.
+Farmers and retailers use this service to store produce safely.
+Revenue is generated through storage and maintenance charges.
 </p>
 <p class="neon-info">
-Queue data structure follows FIFO order so older stock is dispatched first.
-This minimizes spoilage and maintains product quality.
+<strong>Data Structure:</strong> Queue<br>
+<strong>Algorithm:</strong> FIFO<br>
+Items stored first are dispatched first to avoid spoilage.
+This ensures freshness and quality control.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case04.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -138,14 +138,16 @@ This minimizes spoilage and maintains product quality.
 <h2 class="neon-name">🌿 Green Energy Startup</h2>
 <p class="neon-info"><strong>SDG 7:</strong> Affordable and Clean Energy</p>
 <p class="neon-info">
-This startup focuses on providing renewable energy solutions such as solar and wind power.
-It manages energy generation data and consumption analytics.
-Income is generated through installation services, maintenance contracts, and energy subscriptions.
-The business promotes sustainable energy usage.
+This startup focuses on providing renewable energy solutions like solar and wind power.
+It tracks energy production and consumption efficiently.
+The business promotes clean and sustainable energy usage.
+Revenue is earned through installations, maintenance, and subscriptions.
 </p>
 <p class="neon-info">
-Efficient data handling helps analyze energy production trends.
-This supports optimized energy distribution and planning.
+<strong>Data Structure:</strong> Data Tables<br>
+<strong>Algorithm:</strong> Analysis Algorithms<br>
+Efficient data processing helps analyze energy trends.
+This supports better planning and optimization.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case05.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -156,14 +158,16 @@ This supports optimized energy distribution and planning.
 <h2 class="neon-name">🏥 Telemedicine Platform</h2>
 <p class="neon-info"><strong>SDG 3:</strong> Good Health and Well-being</p>
 <p class="neon-info">
-This platform allows patients to consult doctors remotely through online appointments.
-It reduces hospital crowding and improves access to healthcare.
-Revenue is earned through consultation fees and subscription plans.
-The platform is especially useful for rural and remote areas.
+This platform enables online doctor consultations for patients.
+It improves healthcare accessibility, especially in remote areas.
+The system reduces hospital congestion and waiting time.
+Revenue is generated through consultation fees and subscriptions.
 </p>
 <p class="neon-info">
-Structured scheduling algorithms ensure efficient appointment management.
-This reduces waiting time and improves service quality.
+<strong>Data Structure:</strong> Lists / Records<br>
+<strong>Algorithm:</strong> Scheduling Algorithm<br>
+Appointments are scheduled efficiently to avoid conflicts.
+This improves patient experience and service quality.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case06.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -176,12 +180,14 @@ This reduces waiting time and improves service quality.
 <p class="neon-info">
 This business delivers fresh organic produce directly from farmers to consumers.
 It promotes healthy eating and supports local farmers.
-Income is generated through delivery charges and subscription-based food plans.
-It reduces intermediaries and ensures fair pricing.
+The system reduces middlemen and ensures fair pricing.
+Income is generated through delivery charges and subscriptions.
 </p>
 <p class="neon-info">
-Order processing algorithms help manage multiple deliveries efficiently.
-This ensures timely delivery and minimal wastage.
+<strong>Data Structure:</strong> Queue / List<br>
+<strong>Algorithm:</strong> Order Processing Algorithm<br>
+Orders are processed efficiently for timely delivery.
+This minimizes wastage and delays.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case07.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -193,13 +199,15 @@ This ensures timely delivery and minimal wastage.
 <p class="neon-info"><strong>SDG 11:</strong> Sustainable Cities and Communities</p>
 <p class="neon-info">
 This app optimizes public transport routes using real-time data.
-It reduces traffic congestion and travel time for commuters.
-Revenue comes from advertisements, premium features, and government partnerships.
-It supports eco-friendly urban mobility.
+It reduces traffic congestion and travel time.
+The app improves urban mobility and fuel efficiency.
+Revenue is generated through ads and premium services.
 </p>
 <p class="neon-info">
-Routing algorithms determine the fastest and most efficient paths.
-This saves fuel and improves commuter satisfaction.
+<strong>Data Structure:</strong> Graph<br>
+<strong>Algorithm:</strong> Shortest Path Algorithm<br>
+Routes are represented as graphs for efficient navigation.
+This helps find faster and optimal routes.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case08.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -210,14 +218,16 @@ This saves fuel and improves commuter satisfaction.
 <h2 class="neon-name">🏫 Skill Development Hub</h2>
 <p class="neon-info"><strong>SDG 8:</strong> Decent Work and Economic Growth</p>
 <p class="neon-info">
-This hub provides vocational training and job-oriented skill development programs.
-It focuses on improving employability among youth and professionals.
-Income is generated through course fees and industry partnerships.
-The platform supports workforce development.
+This hub provides vocational and job-oriented training programs.
+It improves employability and workforce skills.
+The platform supports career growth and entrepreneurship.
+Revenue is generated through course fees and partnerships.
 </p>
 <p class="neon-info">
-Structured records help track learner progress and certifications.
-This ensures efficient training management.
+<strong>Data Structure:</strong> Records / Lists<br>
+<strong>Algorithm:</strong> Search and Update Algorithms<br>
+Learner data is managed efficiently for tracking progress.
+This ensures smooth training operations.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case09.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
@@ -228,14 +238,16 @@ This ensures efficient training management.
 <h2 class="neon-name">📦 E-Commerce Platform</h2>
 <p class="neon-info"><strong>SDG 9:</strong> Industry, Innovation and Infrastructure</p>
 <p class="neon-info">
-This platform provides an online marketplace for local businesses.
-It connects sellers directly with customers and supports digital commerce.
-Revenue is generated through commissions, advertisements, and premium listings.
-It strengthens small business growth.
+This platform connects local sellers with customers through online commerce.
+It supports digital payments and product management.
+The platform boosts small business visibility.
+Revenue is generated through commissions and advertisements.
 </p>
 <p class="neon-info">
-Efficient data management ensures fast product search and order handling.
-This improves overall platform performance.
+<strong>Data Structure:</strong> Arrays / Hash Tables<br>
+<strong>Algorithm:</strong> Search and Sorting Algorithms<br>
+Products are searched and sorted efficiently.
+This improves customer experience and performance.
 </p>
 <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case10.cpp" target="_blank">
 <button class="view-btn">View Code</button></a>
