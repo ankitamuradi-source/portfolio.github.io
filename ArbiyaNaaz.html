@@ -1,368 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Ideas with Code</title>
-<style>
-  body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px;}
-  .business-card { background: #fff; padding: 15px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
-  .btn { padding: 8px 12px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;}
-  .btn:hover { background: #218838;}
-  pre { background: #eee; padding: 10px; overflow-x: auto; display: none; border-radius: 5px;}
-  table { border-collapse: collapse; width: 100%; margin-top: 20px;}
-  table, th, td { border: 1px solid #ccc; padding: 8px; text-align: left;}
-  th { background-color: #f2f2f2; }
-</style>
-</head>
-<body>
+<!-- ARBIYA NAZ PAGE -->
+<section id="arbiya" class="section">
+  <h1 class="title">ArbiyaNaaz Business Ideas</h1>
+  <p class="desc">Summary of 10 business ideas with SDG and data structures/algorithms</p>
 
-<h1>Business Ideas with Realistic Code</h1>
+  <!-- Logistics Hub -->
+  <div class="member-box">
+    <h2 class="neon-name">⚡ Logistics Hub</h2>
+    <p class="neon-info">Centralized facility for efficient storage, transport, and delivery. Optimizes supply chain operations. Revenue via storage & transport fees.</p>
+    <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Graph</p>
+      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm for shortest path</p>
+      <p><strong>Time Complexity:</strong> O(V^2)</p>
+      <p><strong>Space Complexity:</strong> O(V+E)</p>
+    </div>
+  </div>
 
-<!-- Business Cards -->
-<div class="business-card">
-  <h2>1. Grocery Delivery App</h2>
-  <p><strong>Income Model:</strong> Delivery charges + store commission.</p>
-  <p><strong>SDG:</strong> Responsible Consumption & Production (SDG 12)</p>
-  <p><strong>DSA Used:</strong> Queue & HashMap</p>
-  <p><strong>Reason:</strong> Queue handles deliveries in order; HashMap provides fast inventory lookup.</p>
-  <button class="btn" onclick="toggleCode('code1')">View Code</button>
-  <pre id="code1">
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;unordered_map&gt;
-using namespace std;
+  <!-- Eco Resort -->
+  <div class="member-box">
+    <h2 class="neon-name">🏕 Eco Resort</h2>
+    <p class="neon-info">Sustainable lodging with eco-friendly accommodations. Revenue from bookings and eco-tours.</p>
+    <p class="neon-info"><strong>SDG:</strong> 12 – Responsible Consumption & Production</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Array/List</p>
+      <p><strong>Algorithm:</strong> Sorting rooms by price or availability</p>
+      <p><strong>Time Complexity:</strong> O(n log n)</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-struct Order { int orderId; string item; };
+  <!-- IT Training Center -->
+  <div class="member-box">
+    <h2 class="neon-name">💻 IT Training Center</h2>
+    <p class="neon-info">Provides professional IT courses. Revenue from tuition and corporate programs.</p>
+    <p class="neon-info"><strong>SDG:</strong> 4 – Quality Education</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Linked List</p>
+      <p><strong>Algorithm:</strong> Traversal/Insertion to track student enrollments</p>
+      <p><strong>Time Complexity:</strong> O(n)</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-int main() {
-    queue&lt;Order&gt; deliveryQueue;
-    unordered_map&lt;string,int&gt; storeInventory;
+  <!-- Cold Storage -->
+  <div class="member-box">
+    <h2 class="neon-name">❄ Cold Storage</h2>
+    <p class="neon-info">Preserves perishable goods. Revenue via storage & cooling services.</p>
+    <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Queue</p>
+      <p><strong>Algorithm:</strong> FIFO to ensure older items are used first</p>
+      <p><strong>Time Complexity:</strong> O(1) per operation</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-    storeInventory["Apple"]=50; storeInventory["Milk"]=20;
-    deliveryQueue.push({1,"Apple"}); deliveryQueue.push({2,"Milk"});
+  <!-- Co-working Hub -->
+  <div class="member-box">
+    <h2 class="neon-name">🏢 Co-working Hub</h2>
+    <p class="neon-info">Shared office spaces for freelancers and startups. Revenue via memberships & rentals.</p>
+    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work and Economic Growth</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Hash Map</p>
+      <p><strong>Algorithm:</strong> Key-Value mapping to assign and track workstations</p>
+      <p><strong>Time Complexity:</strong> O(1) avg</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-    while(!deliveryQueue.empty()) {
-        Order o = deliveryQueue.front(); deliveryQueue.pop();
-        if(storeInventory[o.item]&gt;0){
-            cout &lt;&lt; "Delivered: " &lt;&lt; o.item &lt;&lt; " for order " &lt;&lt; o.orderId &lt;&lt; endl;
-            storeInventory[o.item]--;
-        } else {
-            cout &lt;&lt; o.item &lt;&lt; " is out of stock!" &lt;&lt; endl;
-        }
-    }
-    return 0;
-}
-  </pre>
-</div>
+  <!-- Retail Mall -->
+  <div class="member-box">
+    <h2 class="neon-name">🛍 Retail Mall</h2>
+    <p class="neon-info">Mall with multiple stores. Revenue from rentals, ads, and events.</p>
+    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work and Economic Growth</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Binary Search Tree (BST)</p>
+      <p><strong>Algorithm:</strong> Insertion/Search for fast inventory management</p>
+      <p><strong>Time Complexity:</strong> O(log n) avg</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-<div class="business-card">
-  <h2>2. Online Tutoring Platform</h2>
-  <p><strong>Income Model:</strong> Subscription fees + commission per class.</p>
-  <p><strong>SDG:</strong> Quality Education (SDG 4)</p>
-  <p><strong>DSA Used:</strong> Priority Queue & HashMap</p>
-  <p><strong>Reason:</strong> Priority Queue schedules tutors by rating; HashMap manages student records quickly.</p>
-  <button class="btn" onclick="toggleCode('code2')">View Code</button>
-  <pre id="code2">
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;unordered_map&gt;
-using namespace std;
+  <!-- Multi-specialty Hospital -->
+  <div class="member-box">
+    <h2 class="neon-name">🏥 Multi-specialty Hospital</h2>
+    <p class="neon-info">Offers various medical services. Revenue via treatments, diagnostics, and consultations.</p>
+    <p class="neon-info"><strong>SDG:</strong> 3 – Good Health & Well-being</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Priority Queue</p>
+      <p><strong>Algorithm:</strong> Heap-based to treat severe patients first</p>
+      <p><strong>Time Complexity:</strong> O(log n) per insertion/removal</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-struct Tutor { string name; int rating; };
-struct Compare { bool operator()(Tutor const &a, Tutor const &b){ return a.rating &lt; b.rating; }};
+  <!-- EV Charging Stations -->
+  <div class="member-box">
+    <h2 class="neon-name">⚡ EV Charging Stations</h2>
+    <p class="neon-info">Provides charging services for electric vehicles. Revenue via charging fees & subscriptions.</p>
+    <p class="neon-info"><strong>SDG:</strong> 7 – Affordable & Clean Energy</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Graph</p>
+      <p><strong>Algorithm:</strong> Shortest path to assign EVs to nearest stations</p>
+      <p><strong>Time Complexity:</strong> O(V^2)</p>
+      <p><strong>Space Complexity:</strong> O(V+E)</p>
+    </div>
+  </div>
 
-int main() {
-    priority_queue&lt;Tutor, vector&lt;Tutor&gt;, Compare&gt; tutorQueue;
-    unordered_map&lt;string,string&gt; studentRecords;
+  <!-- Waterfront Tourism -->
+  <div class="member-box">
+    <h2 class="neon-name">🚤 Waterfront Tourism</h2>
+    <p class="neon-info">Offers boat rides and tours at rivers or lakes. Revenue via bookings, rentals, and tours.</p>
+    <p class="neon-info"><strong>SDG:</strong> 8 – Sustainable Tourism</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Array/List</p>
+      <p><strong>Algorithm:</strong> Sorting bookings by date</p>
+      <p><strong>Time Complexity:</strong> O(n log n)</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
 
-    tutorQueue.push({"Alice",95}); tutorQueue.push({"Bob",90});
-    studentRecords["John"]="Math"; studentRecords["Emma"]="Physics";
-
-    while(!tutorQueue.empty()){
-        Tutor t = tutorQueue.top(); tutorQueue.pop();
-        cout &lt;&lt; "Assigned Tutor: " &lt;&lt; t.name &lt;&lt; " with rating " &lt;&lt; t.rating &lt;&lt; endl;
-    }
-
-    for(auto s: studentRecords)
-        cout &lt;&lt; "Student " &lt;&lt; s.first &lt;&lt; " learning " &lt;&lt; s.second &lt;&lt; endl;
-
-    return 0;
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>3. Ride-Sharing App</h2>
-  <p><strong>Income Model:</strong> Commission per ride + surge pricing.</p>
-  <p><strong>SDG:</strong> Sustainable Cities & Communities (SDG 11)</p>
-  <p><strong>DSA Used:</strong> Graph & Dijkstra's Algorithm</p>
-  <p><strong>Reason:</strong> Graph represents roads; Dijkstra finds shortest path for efficient rides.</p>
-  <button class="btn" onclick="toggleCode('code3')">View Code</button>
-  <pre id="code3">
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-using namespace std;
-
-struct Edge { int to, weight; };
-vector&lt;vector&lt;Edge&gt;&gt; graph;
-
-vector&lt;int&gt; dijkstra(int n, int start){
-    vector&lt;int&gt; dist(n, 1e9); dist[start]=0;
-    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq;
-    pq.push({0,start});
-    while(!pq.empty()){
-        int d = pq.top().first, u = pq.top().second; pq.pop();
-        if(d&gt;dist[u]) continue;
-        for(auto e: graph[u]){
-            if(dist[u]+e.weight&lt;dist[e.to]){
-                dist[e.to]=dist[u]+e.weight;
-                pq.push({dist[e.to],e.to});
-            }
-        }
-    }
-    return dist;
-}
-
-int main() {
-    int n=5; graph.resize(n);
-    graph[0].push_back({1,10}); graph[0].push_back({2,3});
-    graph[2].push_back({1,1}); graph[1].push_back({3,2});
-
-    vector&lt;int&gt; shortest = dijkstra(n,0);
-    for(int i=0;i&lt;n;i++) cout &lt;&lt; "Distance to " &lt;&lt; i &lt;&lt; ": " &lt;&lt; shortest[i] &lt;&lt; endl;
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>4. Food Waste Reduction App</h2>
-  <p><strong>Income Model:</strong> Subscription fees + ads.</p>
-  <p><strong>SDG:</strong> Responsible Consumption & Production (SDG 12)</p>
-  <p><strong>DSA Used:</strong> HashMap & Heap</p>
-  <p><strong>Reason:</strong> Heap tracks expiring items; HashMap stores food inventory efficiently.</p>
-  <button class="btn" onclick="toggleCode('code4')">View Code</button>
-  <pre id="code4">
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;unordered_map&gt;
-using namespace std;
-
-struct Food { string name; int expiry; };
-struct Compare { bool operator()(Food const &a, Food const &b){ return a.expiry &gt; b.expiry; }};
-
-int main(){
-    priority_queue&lt;Food, vector&lt;Food&gt;, Compare&gt; foodHeap;
-    unordered_map&lt;string,int&gt; inventory;
-
-    inventory["Bread"]=10; inventory["Milk"]=5;
-    foodHeap.push({"Bread",2}); foodHeap.push({"Milk",1});
-
-    while(!foodHeap.empty()){
-        Food f = foodHeap.top(); foodHeap.pop();
-        if(inventory[f.name]&gt;0){
-            cout &lt;&lt; "Distribute: " &lt;&lt; f.name &lt;&lt; " expiring in " &lt;&lt; f.expiry &lt;&lt; " days" &lt;&lt; endl;
-            inventory[f.name]--;
-        }
-    }
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>5. Fitness App</h2>
-  <p><strong>Income Model:</strong> Premium subscriptions + fitness product ads.</p>
-  <p><strong>SDG:</strong> Good Health & Well-being (SDG 3)</p>
-  <p><strong>DSA Used:</strong> Array & Binary Search</p>
-  <p><strong>Reason:</strong> Array stores workout plans; Binary Search quickly finds user-specific programs.</p>
-  <button class="btn" onclick="toggleCode('code5')">View Code</button>
-  <pre id="code5">
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int main(){
-    vector&lt;int&gt; workouts={5,10,15,20,25};
-    int userGoal=15;
-    if(binary_search(workouts.begin(), workouts.end(), userGoal))
-        cout &lt;&lt; "Workout plan found for goal: " &lt;&lt; userGoal &lt;&lt; endl;
-    else
-        cout &lt;&lt; "No exact workout plan found." &lt;&lt; endl;
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>6. E-Library Platform</h2>
-  <p><strong>Income Model:</strong> Membership fees + pay-per-book.</p>
-  <p><strong>SDG:</strong> Quality Education (SDG 4)</p>
-  <p><strong>DSA Used:</strong> Trie & HashMap</p>
-  <p><strong>Reason:</strong> Trie helps in fast book search; HashMap tracks user borrowing history.</p>
-  <button class="btn" onclick="toggleCode('code6')">View Code</button>
-  <pre id="code6">
-#include &lt;iostream&gt;
-#include &lt;unordered_map&gt;
-using namespace std;
-
-struct TrieNode{
-    unordered_map&lt;char,TrieNode*&gt; children;
-    bool isEnd=false;
-};
-
-void insert(TrieNode* root, string word){
-    TrieNode* node=root;
-    for(char c: word){
-        if(!node-&gt;children[c]) node-&gt;children[c]=new TrieNode();
-        node=node-&gt;children[c];
-    }
-    node-&gt;isEnd=true;
-}
-
-bool search(TrieNode* root, string word){
-    TrieNode* node=root;
-    for(char c: word){
-        if(!node-&gt;children[c]) return false;
-        node=node-&gt;children[c];
-    }
-    return node-&gt;isEnd;
-}
-
-int main(){
-    TrieNode* root=new TrieNode();
-    insert(root,"Physics"); insert(root,"Math"); insert(root,"Biology");
-
-    cout &lt;&lt; "Search Math: " &lt;&lt; (search(root,"Math")?"Found":"Not Found") &lt;&lt; endl;
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>7. Renewable Energy Marketplace</h2>
-  <p><strong>Income Model:</strong> Platform commission + subscriptions.</p>
-  <p><strong>SDG:</strong> Affordable & Clean Energy (SDG 7)</p>
-  <p><strong>DSA Used:</strong> Graph & Priority Queue</p>
-  <p><strong>Reason:</strong> Graph models energy distribution; Priority Queue assigns top suppliers efficiently.</p>
-  <button class="btn" onclick="toggleCode('code7')">View Code</button>
-  <pre id="code7">
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-using namespace std;
-
-struct Supplier{ string name; int capacity; };
-struct Compare{ bool operator()(Supplier a,Supplier b){ return a.capacity&lt;b.capacity; }};
-
-int main(){
-    priority_queue&lt;Supplier, vector&lt;Supplier&gt;, Compare&gt; pq;
-    pq.push({"SolarCo",100}); pq.push({"WindCo",80});
-
-    while(!pq.empty()){
-        Supplier s = pq.top(); pq.pop();
-        cout &lt;&lt; "Assign energy from " &lt;&lt; s.name &lt;&lt; " with capacity " &lt;&lt; s.capacity &lt;&lt; endl;
-    }
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>8. Telemedicine App</h2>
-  <p><strong>Income Model:</strong> Consultation fees + subscription for health packages.</p>
-  <p><strong>SDG:</strong> Good Health & Well-being (SDG 3)</p>
-  <p><strong>DSA Used:</strong> HashMap & Queue</p>
-  <p><strong>Reason:</strong> HashMap stores patient records; Queue manages consultation appointments.</p>
-  <button class="btn" onclick="toggleCode('code8')">View Code</button>
-  <pre id="code8">
-#include &lt;iostream&gt;
-#include &lt;unordered_map&gt;
-#include &lt;queue&gt;
-using namespace std;
-
-int main(){
-    unordered_map&lt;string,string&gt; patients;
-    queue&lt;string&gt; appointments;
-
-    patients["John"]="Flu"; patients["Emma"]="Checkup";
-    appointments.push("John"); appointments.push("Emma");
-
-    while(!appointments.empty()){
-        string p = appointments.front(); appointments.pop();
-        cout &lt;&lt; "Consulting patient: " &lt;&lt; p &lt;&lt; " for " &lt;&lt; patients[p] &lt;&lt; endl;
-    }
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>9. Smart Home Automation</h2>
-  <p><strong>Income Model:</strong> Device sales + subscription for premium features.</p>
-  <p><strong>SDG:</strong> Industry, Innovation & Infrastructure (SDG 9)</p>
-  <p><strong>DSA Used:</strong> Graph & DFS</p>
-  <p><strong>Reason:</strong> Graph models devices & connections; DFS triggers automated tasks efficiently.</p>
-  <button class="btn" onclick="toggleCode('code9')">View Code</button>
-  <pre id="code9">
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-using namespace std;
-
-vector&lt;vector&lt;int&gt;&gt; devices;
-vector&lt;bool&gt; visited;
-
-void dfs(int u){
-    visited[u]=true;
-    cout &lt;&lt; "Activating device " &lt;&lt; u &lt;&lt; endl;
-    for(int v: devices[u]) if(!visited[v]) dfs(v);
-}
-
-int main(){
-    int n=4; devices.resize(n); visited.resize(n,false);
-    devices[0]={1,2}; devices[1]={3};
-
-    dfs(0);
-}
-  </pre>
-</div>
-
-<div class="business-card">
-  <h2>10. Event Management Platform</h2>
-  <p><strong>Income Model:</strong> Ticket commission + vendor ads.</p>
-  <p><strong>SDG:</strong> Decent Work & Economic Growth (SDG 8)</p>
-  <p><strong>DSA Used:</strong> Heap & HashMap</p>
-  <p><strong>Reason:</strong> Heap tracks most popular events; HashMap stores vendor & attendee info.</p>
-  <button class="btn" onclick="toggleCode('code10')">View Code</button>
-  <pre id="code10">
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;unordered_map&gt;
-using namespace std;
-
-struct Event{ string name; int popularity; };
-struct Compare{ bool operator()(Event a, Event b){ return a.popularity&lt;b.popularity; }};
-
-int main(){
-    priority_queue&lt;Event, vector&lt;Event&gt;, Compare&gt; pq;
-    unordered_map&lt;string,int&gt; attendees;
-
-    pq.push({"Concert",500}); pq.push({"Conference",200});
-    attendees["Vendor1"]=50; attendees["Vendor2"]=30;
-
-    while(!pq.empty()){
-        Event e = pq.top(); pq.pop();
-        cout &lt;&lt; "Event: " &lt;&lt; e.name &lt;&lt; ", Popularity: " &lt;&lt; e.popularity &lt;&lt; endl;
-    }
-}
-  </pre>
-</div>
-
-<!-- DSA Table -->
-<h2>DSA Table for All Businesses</h2>
-<table>
-  <tr><th>Business</th><th>DSA Used</th><th>Reason</th></tr>
-  <tr><td>Grocery Delivery App</td><td>Queue, HashMap</td><td>Delivery order & fast inventory access</td></tr>
-  <tr><td>Online Tutoring Platform</td><td>Priority Queue, HashMap</td><td>Assign top-rated tutors & manage student data</td></tr>
-  <tr><td>Ride-Sharing App</td><td>Graph, Dijkstra</td><td>Find shortest route for rides efficiently</td></tr>
-  <tr><td>Food Waste Reduction App</td><td>Heap, HashMap</td><td>Track expiring food & fast inventory management</td></tr>
-  <tr><td>Fitness App</td><td>Array, Binary Search</td><td>Store workout plans & quickly find user-specific goal</td></tr>
-  <tr><td>E-Library Platform</td><td>Trie, HashMap</td><td>Fast book search & track borrowing history</td></tr>
-  <tr><td>Renewable Energy Marketplace</td><td>Graph, Priority Queue</td><td>Energy distribution & assign top suppliers
+  <!-- E-commerce Distribution Center -->
+  <div class="member-box">
+    <h2 class="neon-name">📦 E-commerce Distribution Center</h2>
+    <p class="neon-info">Processes online orders and ships products. Revenue via logistics and fulfillment services.</p>
+    <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation & Infrastructure</p>
+    <div class="idea-list">
+      <p><strong>Data Structure:</strong> Stack</p>
+      <p><strong>Algorithm:</strong> Push/Pop to process urgent orders first</p>
+      <p><strong>Time Complexity:</strong> O(1) per operation</p>
+      <p><strong>Space Complexity:</strong> O(n)</p>
+    </div>
+  </div>
+</section>
