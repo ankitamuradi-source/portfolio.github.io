@@ -643,3 +643,80 @@ Dijkstra’s Algorithm + Knapsack Dynamic Programming.
 Efficient storage, faster order processing, reduced cost.
 </p>
 </div>
+  <!-- BIG DATA STRUCTURE / ALGO TABLE -->
+  <section class="ds-analysis-section">
+    <div class="ds-analysis-title">Data Structures &amp; Algorithms Analysis</div>
+    <div class="ds-analysis-sub">
+      Detailed list of core structures and algorithms across all ten cases, including whether they are used,
+      where they appear, and their asymptotic space and time efficiency.
+    </div>
+
+    <div class="ds-analysis-table-wrapper">
+      <table class="ds-analysis-table">
+        <thead>
+          <tr>
+            <th>Data Structure / Algorithm</th>
+            <th>Used?</th>
+            <th>Where Used</th>
+            <th>Space Efficiency</th>
+            <th>Time Efficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases (graphs, grids, matrices, DP tables, lists of records/events)</td><td>O(n)</td><td>O(1) access</td></tr>
+          <tr><td>Structures</td><td class="ds-used-yes">Yes</td><td>All cases (<code>Edge</code>, <code>Node</code>, <code>Zone</code>, <code>Patient</code>, <code>User</code>, <code>Task</code>, etc.)</td><td>O(1) per record</td><td>O(1) field access</td></tr>
+          <tr><td>List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Stack</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Queue</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 6, 8, 10 (BFS over health graph, traffic, disaster grid, lighting graph, port graph)</td><td>O(V)</td><td>O(1) enqueue / dequeue</td></tr>
+          <tr><td>Binary Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 (key or node relationships)</td><td>O(n)</td><td>O(h) search</td></tr>
+          <tr><td>Binary Search Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 · Case 7 (balanced BST behaviour)</td><td>O(n)</td><td>Average O(log n), worst O(n)</td></tr>
+          <tr><td>AVL Tree</td><td class="ds-used-yes">Yes</td><td>Case 7 (balanced storage for simulation keys)</td><td>O(n)</td><td>O(log n) search / insert / delete</td></tr>
+          <tr><td>2–3 Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Red‑Black Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Trie</td><td class="ds-used-yes">Yes</td><td>Case 9 (dataset prefixes and auto‑complete)</td><td>O(total characters)</td><td>O(k) per search / insert</td></tr>
+          <tr><td>Heap (Min/Max‑Heap) / Priority Queue</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (Dijkstra / A* PQ, request schedulers)</td><td>O(n)</td><td>O(log n) push / pop</td></tr>
+          <tr><td>Lookup Table (Hash Table / Unordered Map)</td><td class="ds-used-yes">Yes</td><td>Cases 2, 5, 9 (patients, credentials, dataset index)</td><td>O(n)</td><td>Expected O(1) lookup / insert</td></tr>
+          <tr><td>Sparse Table</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Fenwick Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Segment Tree</td><td class="ds-used-yes">Yes</td><td>Case 3 (traffic density), Case 8 (lighting energy)</td><td>O(n)</td><td>O(log n) update and range query</td></tr>
+          <tr><td>Skip List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Union‑Find (Disjoint Set)</td><td class="ds-used-yes">Yes</td><td>Case 1 and 10 (irrigation / logistics MST)</td><td>O(n)</td><td>Amortised ≈ O(1) union / find</td></tr>
+          <tr><td>Hashing</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (unordered_map / sets, security hashes)</td><td>O(n)</td><td>O(1) expected per operation</td></tr>
+          <tr><td>DFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 6, 10 (graph / grid exploration)</td><td>O(V)</td><td>O(V + E)</td></tr>
+          <tr><td>BFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 6, 8, 10 (reachability, crowd / safety paths)</td><td>O(V)</td><td>O(V + E)</td></tr>
+          <tr><td>Bubble Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Selection Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Insertion Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Quick Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (sorting datasets / logs)</td><td>O(log n) extra stack</td><td>Average O(n log n)</td></tr>
+          <tr><td>Merge Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (stable sorting of metadata)</td><td>O(n)</td><td>O(n log n)</td></tr>
+          <tr><td>Brute‑Force Pattern Search</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Rabin–Karp</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (log scanning, text analysis)</td><td>O(1) extra per window</td><td>Average O(n + m)</td></tr>
+          <tr><td>Boyer–Moore</td><td class="ds-used-yes">Yes</td><td>Case 5 (malware signature search)</td><td>O(m + Σ) preprocessing</td><td>Sublinear average over text</td></tr>
+          <tr><td>Knuth–Morris–Pratt (KMP)</td><td class="ds-used-yes">Yes</td><td>Cases 2–10 (pattern search in various logs / notes)</td><td>O(m)</td><td>O(n + m)</td></tr>
+          <tr><td>Heap Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
+          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (energy and port MST)</td><td>O(E)</td><td>O(E log E)</td></tr>
+          <tr><td>Prim</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (alternate MST construction)</td><td>O(V + E)</td><td>O(V²) with array implementation</td></tr>
+          <tr><td>Dijkstra</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (routing in grids and graphs)</td><td>O(V)</td><td>O(E log V) with PQ</td></tr>
+          <tr><td>Floyd–Warshall</td><td class="ds-used-yes">Yes</td><td>Case 3 (all‑pairs travel times)</td><td>O(n²)</td><td>O(n³)</td></tr>
+          <tr><td>Bellman–Ford</td><td class="ds-used-yes">Yes</td><td>Case 1 (alternative shortest paths under constraints)</td><td>O(V)</td><td>O(V·E)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Aarunya — Sai (Roll 202) · All source files located in <code>Sai/</code>
+  </footer>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fadein').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 60 * i);
+    });
+  });
+</script>
+
+</body>
+</html>
