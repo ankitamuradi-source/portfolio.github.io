@@ -1,115 +1,268 @@
-<!-- ARBIYA NAZ PAGE -->
-<section id="arbiya" class="section">
-  <h1 class="title">ArbiyaNaaz Business Ideas</h1>
-  <p class="desc">Summary of 10 innovative business ideas aligned with Sustainable Development Goals (SDGs) and data-driven management.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arbiya Naaz – Business Ideas</title>
 
-  <!-- Logistics Hub -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
+body{
+  background:linear-gradient(
+    135deg,
+    #06060c 0%,
+    #141228 25%,
+    #1e2a4f 55%,
+    #080812 100%
+  );
+  color:#e2e8f0;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:linear-gradient(90deg,#120f24,#1c2b52);
+  padding:18px;
+  text-align:center;
+  border-bottom:1px solid #2f2a55;
+  box-shadow:0 0 14px rgba(150,140,255,0.35);
+  z-index:50;
+}
+nav a{
+  color:#e6ddff;
+  margin:0 20px;
+  font-size:18px;
+  font-weight:500;
+  text-decoration:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+nav a:hover{
+  color:#e0c9ff;
+  text-shadow:0 0 10px rgba(224,201,255,0.9);
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+  max-width:1100px;
+  margin:40px auto;
+  padding:40px;
+  background:linear-gradient(160deg,#141226,#0c0c18);
+  border-radius:20px;
+  border:1px solid #2f2a55;
+  box-shadow:0 0 32px rgba(0,0,0,0.9);
+  animation:fadeIn 0.7s ease forwards;
+}
+.section.active{display:block;}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* MAIN HEADINGS */
+.title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:25px;
+  color:#7df9ff;
+  font-weight:600;
+  text-shadow:
+    0 0 10px rgba(125,249,255,0.9),
+    0 0 24px rgba(125,249,255,0.6);
+}
+.desc{
+  text-align:center;
+  font-size:19px;
+  max-width:750px;
+  margin:15px auto;
+  line-height:1.6;
+  color:#d6dcf0;
+}
+
+/* NAME – NEON LAVENDER */
+.neon-name{
+  color:#d6b4ff;
+  font-size:22px;
+  font-weight:400;
+  text-shadow:
+    0 0 8px rgba(214,180,255,0.9),
+    0 0 18px rgba(214,180,255,0.6);
+}
+
+/* INFO TEXT */
+.neon-info{
+  color:#ffb07c;
+  font-size:17px;
+  font-weight:400;
+}
+
+/* BOX */
+.member-box{
+  background:linear-gradient(160deg,#13122a,#0c0c1b);
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #2a2550;
+  margin:30px 0;
+  box-shadow:0 0 26px rgba(0,0,0,0.85);
+}
+.member-box h2{margin-bottom:15px;}
+
+.idea-list{
+  margin-top:10px;
+  padding-left:20px;
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* TABLES */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+th,td{
+  border:1px solid #3a3566;
+  padding:10px;
+  text-align:center;
+}
+th{
+  background:#1f1b3a;
+  color:#7df9ff;
+}
+td{
+  background:#0c0c1b;
+}
+
+/* VIEW BUTTON */
+.view-btn{
+  margin-top:15px;
+  padding:10px 18px;
+  background:linear-gradient(135deg,#f2c97d,#e6b65c);
+  border:none;
+  color:#2a1f05;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:500;
+  box-shadow:0 0 10px rgba(230,182,92,0.35);
+  transition:0.3s;
+}
+.view-btn:hover{
+  box-shadow:0 0 16px rgba(230,182,92,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('project')">Project</a>
+  <a onclick="showPage('arbiya')">Arbiya Naaz</a>
+  <a onclick="showPage('akshata')">Akshata</a>
+  <a onclick="showPage('ankita')">Ankita</a>
+  <a href="sai.html">Sai</a>
+</nav>
+
+<!-- ARBIYA NAZ PAGE -->
+<section id="arbiya" class="section active">
+  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
+  <p class="desc">Summary of innovative business ideas aligned with Sustainable Development Goals (SDGs) and data-driven strategies.</p>
+
+  <!-- Business Idea 1 -->
   <div class="member-box">
     <h2 class="neon-name">⚡ Logistics Hub</h2>
-    <p class="neon-info">A centralized facility for efficient storage, transport, and delivery. It ensures smooth supply chain operations, minimizes delays, and reduces costs. Revenue is generated through storage fees and transport charges. The hub integrates advanced tracking systems, real-time inventory monitoring, and predictive analytics to forecast demand. It also supports partnerships with local manufacturers and retailers, improving regional logistics efficiency.</p>
+    <p class="neon-info">A centralized facility for efficient storage, transport, and delivery, minimizing delays and costs. Revenue comes from storage fees and transport charges. Advanced tracking systems and predictive analytics ensure smooth operations.</p>
     <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Graph</p>
-      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm to find shortest delivery paths and optimize routes</p>
+      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm for shortest delivery paths</p>
     </div>
   </div>
 
-  <!-- Eco Resort -->
+  <!-- Business Idea 2 -->
   <div class="member-box">
     <h2 class="neon-name">🏕 Eco Resort</h2>
-    <p class="neon-info">Sustainable lodging offering eco-friendly accommodations, organic meals, and immersive eco-tours. Focused on environmental conservation and low-impact tourism. Revenue comes from room bookings, guided eco-tours, and sustainable activities. The resort utilizes solar energy, rainwater harvesting, and waste recycling programs. Guests can participate in conservation workshops and cultural experiences, creating a unique blend of education and relaxation.</p>
+    <p class="neon-info">Sustainable lodging with eco-friendly accommodations, organic meals, and immersive eco-tours. Revenue through room bookings and guided eco-tours. Solar energy, rainwater harvesting, and waste recycling are implemented.</p>
     <p class="neon-info"><strong>SDG:</strong> 12 – Responsible Consumption & Production</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Array/List</p>
-      <p><strong>Algorithm:</strong> Sorting rooms by price, occupancy, or amenities to maximize bookings</p>
+      <p><strong>Algorithm:</strong> Sorting rooms by price, occupancy, or amenities</p>
     </div>
   </div>
 
-  <!-- IT Training Center -->
+  <!-- Business Idea 3 -->
   <div class="member-box">
     <h2 class="neon-name">💻 IT Training Center</h2>
-    <p class="neon-info">Provides professional IT courses for students and professionals, including programming, cloud computing, and cybersecurity. Generates revenue through tuition fees, corporate training programs, and certifications. The center offers hands-on labs, project-based learning, and mentorship from industry experts. Partnerships with tech companies ensure placement opportunities and internships. Workshops on emerging technologies help students stay ahead in the rapidly evolving IT industry.</p>
+    <p class="neon-info">Professional IT courses, including programming, cloud computing, and cybersecurity. Revenue via tuition fees and corporate training. Hands-on labs, mentorship, and placement partnerships with tech companies enhance learning.</p>
     <p class="neon-info"><strong>SDG:</strong> 4 – Quality Education</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Linked List</p>
-      <p><strong>Algorithm:</strong> Traversal and insertion to track student enrollments and course schedules</p>
+      <p><strong>Algorithm:</strong> Traversal and insertion to track enrollments</p>
     </div>
   </div>
 
-  <!-- Cold Storage -->
+  <!-- Business Idea 4 -->
   <div class="member-box">
     <h2 class="neon-name">❄ Cold Storage</h2>
-    <p class="neon-info">Facility to preserve perishable goods like fruits, vegetables, and dairy. Maintains freshness, reduces wastage, and ensures timely supply. Revenue comes from storage fees and temperature-controlled logistics services. Implements modern refrigeration technology and IoT-based temperature monitoring. Helps farmers and food suppliers maintain product quality while expanding market reach. Also enables rapid response to seasonal demand fluctuations and emergency supply needs.</p>
+    <p class="neon-info">Facility to preserve perishable goods, reducing waste and ensuring timely supply. Revenue from storage fees and temperature-controlled logistics services. IoT-based monitoring maintains quality.</p>
     <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
     <div class="idea-list">
       <p><strong>Data Structure:</strong> Queue</p>
-      <p><strong>Algorithm:</strong> FIFO approach to ensure older items are dispatched first and reduce spoilage</p>
+      <p><strong>Algorithm:</strong> FIFO approach for dispatching items</p>
     </div>
   </div>
 
-  <!-- Co-working Hub -->
+  <!-- Business Ideas 5–10 Placeholder -->
   <div class="member-box">
-    <h2 class="neon-name">🏢 Co-working Hub</h2>
-    <p class="neon-info">Shared office spaces for freelancers, startups, and remote teams. Provides high-speed internet, meeting rooms, and collaborative workspaces. Revenue comes from memberships, desk rentals, and premium services. Offers networking events, workshops, and mentorship programs to support business growth. Flexible plans cater to different business sizes, from solo entrepreneurs to small teams. Advanced booking and occupancy tracking systems improve space utilization and customer experience.</p>
-    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work and Economic Growth</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Hash Map</p>
-      <p><strong>Algorithm:</strong> Key-Value mapping to assign and track available workstations efficiently</p>
-    </div>
+    <h2 class="neon-name">🌿 Green Energy Startup</h2>
+    <p class="neon-info">Promotes renewable energy solutions like solar and wind. Revenue from installations and government incentives.</p>
+    <p class="neon-info"><strong>SDG:</strong> 7 – Affordable and Clean Energy</p>
   </div>
 
-  <!-- Retail Mall -->
   <div class="member-box">
-    <h2 class="neon-name">🛍 Retail Mall</h2>
-    <p class="neon-info">Multi-store shopping complex with retail outlets, food courts, and entertainment zones. Generates revenue through store rentals, advertisements, and event hosting. Includes digital kiosks and smart inventory management to improve customer experience. Attracts diverse demographics through seasonal promotions, loyalty programs, and cultural events. The mall also incorporates sustainable architecture and energy-efficient systems to reduce operational costs.</p>
-    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work and Economic Growth</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Binary Search Tree (BST)</p>
-      <p><strong>Algorithm:</strong> Efficient insertion and search for inventory and store management</p>
-    </div>
-  </div>
-
-  <!-- Multi-specialty Hospital -->
-  <div class="member-box">
-    <h2 class="neon-name">🏥 Multi-specialty Hospital</h2>
-    <p class="neon-info">Hospital offering a wide range of medical services including surgery, diagnostics, and emergency care. Focused on patient-centered care. Revenue comes from treatments, consultations, and diagnostics. Uses electronic health records (EHR) and AI-assisted diagnostics to improve service efficiency. Implements telemedicine for remote patients and wellness programs for preventive healthcare. Partnerships with research institutions enable clinical trials and advanced treatment options.</p>
+    <h2 class="neon-name">🏥 Telemedicine Platform</h2>
+    <p class="neon-info">Online healthcare consultations, reducing hospital congestion. Revenue via subscriptions and service fees.</p>
     <p class="neon-info"><strong>SDG:</strong> 3 – Good Health & Well-being</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Priority Queue</p>
-      <p><strong>Algorithm:</strong> Heap-based to prioritize treatment of critical patients efficiently</p>
-    </div>
   </div>
 
-  <!-- EV Charging Stations -->
   <div class="member-box">
-    <h2 class="neon-name">⚡ EV Charging Stations</h2>
-    <p class="neon-info">Provides fast and efficient charging for electric vehicles. Supports subscription plans, pay-per-use, and integration with smart apps. Encourages sustainable transportation. Revenue via charging fees and subscription plans. Strategically located for maximum accessibility and minimal wait times. Equipped with real-time monitoring and predictive maintenance to reduce downtime. Promotes green mobility initiatives and integrates with renewable energy sources where possible.</p>
-    <p class="neon-info"><strong>SDG:</strong> 7 – Affordable & Clean Energy</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Graph</p>
-      <p><strong>Algorithm:</strong> Shortest path algorithm to direct EVs to nearest available charging stations</p>
-    </div>
+    <h2 class="neon-name">🍎 Organic Food Delivery</h2>
+    <p class="neon-info">Delivers farm-fresh organic produce to homes. Revenue through subscriptions and direct sales.</p>
+    <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
   </div>
 
-  <!-- Waterfront Tourism -->
   <div class="member-box">
-    <h2 class="neon-name">🚤 Waterfront Tourism</h2>
-    <p class="neon-info">Tourism focused on rivers, lakes, and waterfronts. Offers boat rides, guided tours, and water sports. Promotes eco-friendly tourism and local cultural experiences. Revenue through ticket sales, rentals, and tours. Includes educational programs on aquatic ecology and conservation. Collaborates with local communities to support cultural heritage and small businesses. Seasonal events and packages encourage repeat visits and wider tourist engagement.</p>
-    <p class="neon-info"><strong>SDG:</strong> 8 – Sustainable Tourism</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Array/List</p>
-      <p><strong>Algorithm:</strong> Sorting bookings and schedules to optimize visitor experiences</p>
-    </div>
+    <h2 class="neon-name">🚍 Smart Transport App</h2>
+    <p class="neon-info">Optimizes city transport routes using real-time data. Revenue via app subscriptions and partnerships.</p>
+    <p class="neon-info"><strong>SDG:</strong> 11 – Sustainable Cities & Communities</p>
   </div>
 
-  <!-- E-commerce Distribution Center -->
   <div class="member-box">
-    <h2 class="neon-name">📦 E-commerce Distribution Center</h2>
-    <p class="neon-info">Handles online order processing, inventory management, and timely product dispatch. Focused on optimizing fulfillment operations. Revenue comes from logistics and fulfillment services for e-commerce platforms. Implements automated sorting, scanning, and packaging systems to improve speed and accuracy. Data-driven analytics predict order trends, minimize stockouts, and optimize storage. Supports multiple courier partnerships to ensure rapid delivery and customer satisfaction.</p>
-    <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation & Infrastructure</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Stack</p>
-      <p><strong>Algorithm:</strong> Push/Pop to prioritize urgent or express orders effectively</p>
-    </div>
+    <h2 class="neon-name">🏫 Skill Development Hub</h2>
+    <p class="neon-info">Provides vocational training and workshops. Revenue via course fees and corporate partnerships.</p>
+    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work & Economic Growth</p>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">📦 E-Commerce Platform</h2>
+    <p class="neon-info">Online marketplace for local products. Revenue from commissions and advertising.</p>
+    <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
   </div>
 </section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
