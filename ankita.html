@@ -1,121 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankita | Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ankita — Business Case Studies | Aarunya</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0f172a;
-            color: #e5e7eb;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        header {
-            background: linear-gradient(135deg, #1e293b, #020617);
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #38bdf8;
-        }
-
-        header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h2 {
-            color: #22d3ee;
-            border-bottom: 2px solid #22d3ee;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-
-        .card {
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
-        }
-
-        ul {
-            line-height: 1.8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-    </style>
+<style>
+/* SAME STYLE AS SAI */
+body{
+font-family:Inter,system-ui;
+background:linear-gradient(135deg,#090910,#141228,#1e2a4f,#05050c);
+color:#e5e7eb;
+padding:24px 10px;
+line-height:1.7;
+}
+.wrap{max-width:1040px;margin:auto;display:flex;flex-direction:column;gap:20px}
+.hero{
+border-radius:18px;
+padding:18px 20px;
+background:radial-gradient(circle at top left,#22c55e20,#0f172a,#020617);
+border:1px solid #22c55e40;
+display:flex;
+justify-content:space-between;
+}
+.hero-tag{font-size:.8rem;color:#cbd5f5;margin-bottom:6px}
+h1{font-size:1.35rem}
+.hero-sub{font-size:.92rem;max-width:540px}
+.hero-right{text-align:right;font-size:.85rem}
+.card{
+background:#020617;
+border:1px solid #1f2937;
+border-radius:12px;
+padding:14px;
+box-shadow:0 10px 32px rgba(0,0,0,.6)
+}
+.case-title{font-weight:800;margin-bottom:4px}
+.badge{
+display:inline-block;
+padding:3px 10px;
+border-radius:999px;
+font-size:.74rem;
+background:#0f172a;
+color:#38bdf8;
+margin-right:6px
+}
+.desc{font-size:.9rem;margin-bottom:8px}
+.ds-list,.diagram{
+font-family:monospace;
+background:#020617;
+border:1px dashed #1f2937;
+padding:6px 8px;
+border-radius:8px;
+font-size:.78rem;
+margin-bottom:6px
+}
+.btn{
+display:inline-block;
+padding:6px 14px;
+border-radius:999px;
+background:#38bdf8;
+color:#020617;
+font-weight:600;
+text-decoration:none;
+font-size:.82rem
+}
+footer{
+margin-top:20px;
+padding:8px;
+text-align:center;
+font-size:.78rem;
+color:#9ca3af;
+border:1px solid #1f2937;
+border-radius:10px
+}
+</style>
 </head>
 
 <body>
+<div class="wrap">
 
-<header>
-    <h1>Ankita</h1>
-    <p>Computer Science Student | DAA Project | Smart City Portfolio</p>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am a Computer Science student interested in problem solving,
-            data structures, and algorithm design. This portfolio is created
-            as part of my Design and Analysis of Algorithms (DAA) course project.
-        </p>
-    </div>
-
-    <h2>Skills</h2>
-    <div class="card">
-        <ul>
-            <li>C Programming</li>
-            <li>C++ Programming</li>
-            <li>Data Structures</li>
-            <li>Design and Analysis of Algorithms</li>
-            <li>HTML & CSS</li>
-        </ul>
-    </div>
-
-    <h2>Business Idea (DAA Based)</h2>
-    <div class="card">
-        <p><b>Smart Traffic Automation & Incident Detection System</b></p>
-        <ul>
-            <li>Dijkstra’s Algorithm – shortest path for emergency routing</li>
-            <li>Greedy Algorithm – traffic signal optimization</li>
-            <li>Divide and Conquer – traffic data analysis</li>
-        </ul>
-    </div>
-
-    <h2>Course Details</h2>
-    <div class="card">
-        <ul>
-            <li>Course: Design and Analysis of Algorithms</li>
-            <li>Course Code: 24ECSF102</li>
-            <li>University: KLE Technological University</li>
-        </ul>
-    </div>
+<section class="hero">
+<div>
+<div class="hero-tag">Design and Analysis of Algorithms</div>
+<h1>Business Case Studies — Aarunya</h1>
+<p class="hero-sub">
+Engineering implementations of 10 scalable business systems designed by Ankita,
+mapping real-world operations to advanced data structures and algorithms.
+</p>
+</div>
+<div class="hero-right">
+<div>Author: <strong>Ankita</strong></div>
+<div>City: <strong>Aarunya</strong></div>
+</div>
 </section>
 
+<!-- CASE 1 -->
+<article class="card">
+<div class="case-title">1 • Smart Waste Collection Management System</div>
+<div class="badge">Graph · Priority Queue</div>
+<div class="badge">Dijkstra · Greedy</div>
+<p class="desc">
+This system optimizes municipal waste collection by modeling city roads and waste
+bins as a weighted graph. Each bin reports fill levels in real time, and collection
+vehicles must visit the most critical bins while minimizing fuel usage and time.
+Dijkstra’s algorithm computes shortest paths between bins, while a greedy strategy
+prioritizes bins nearing capacity.
+<br><br><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 12 – Responsible Consumption
+</p>
+<div class="ds-list">
+DS: adjacency list, priority_queue —
+Algo: Dijkstra, greedy scheduling
+</div>
+<div class="diagram">
+Bins → Graph → Dijkstra → Optimized Collection Route
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 2 -->
+<article class="card">
+<div class="case-title">2 • AI-Driven Retail Demand Forecasting</div>
+<div class="badge">Hash Tables</div>
+<div class="badge">Dynamic Programming</div>
+<p class="desc">
+Small retailers struggle with over-stocking and under-stocking. This system
+analyzes historical sales stored in hash tables and applies dynamic programming
+to predict daily demand trends, helping shop owners plan inventory efficiently.
+<br><br><strong>Aligned SDGs:</strong> SDG 8 – Economic Growth, SDG 9 – Innovation
+</p>
+<div class="ds-list">
+DS: unordered_map, arrays —
+Algo: DP time-series forecasting
+</div>
+<div class="diagram">
+Sales Logs → Hash Table → DP → Demand Curve
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 3 -->
+<article class="card">
+<div class="case-title">3 • Smart Parking Allocation Platform</div>
+<div class="badge">Segment Tree</div>
+<div class="badge">Greedy Allocation</div>
+<p class="desc">
+Parking sensors stream occupancy data across city zones. A segment tree allows
+fast range queries to identify available slots, while greedy selection assigns
+drivers to the nearest feasible parking space.
+<br><br><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities
+</p>
+<div class="ds-list">
+DS: segment tree —
+Algo: greedy resource allocation
+</div>
+<div class="diagram">
+Sensors → Segment Tree → Nearest Slot
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 4 -->
+<article class="card">
+<div class="case-title">4 • Freelancer Skill-Matching Marketplace</div>
+<div class="badge">Trie</div>
+<div class="badge">Sorting</div>
+<p class="desc">
+This platform connects freelancers to projects using prefix-based skill search.
+Tries enable fast auto-completion of skills, while sorted rankings ensure the
+best matches are recommended.
+<br><br><strong>Aligned SDGs:</strong> SDG 8 – Decent Work
+</p>
+<div class="ds-list">
+DS: Trie, vector —
+Algo: Merge Sort
+</div>
+<div class="diagram">
+Skills → Trie → Ranked Matches
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 5 -->
+<article class="card">
+<div class="case-title">5 • Digital Fraud Detection System</div>
+<div class="badge">Graph</div>
+<div class="badge">DFS</div>
+<p class="desc">
+Financial transactions are modeled as a graph where nodes represent accounts.
+Depth-first search detects suspicious cycles indicating fraud chains.
+<br><br><strong>Aligned SDGs:</strong> SDG 16 – Strong Institutions
+</p>
+<div class="ds-list">
+DS: adjacency list —
+Algo: DFS, cycle detection
+</div>
+<div class="diagram">
+Transactions → Graph → DFS → Fraud Alert
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 6 -->
+<article class="card">
+<div class="case-title">6 • Autonomous Delivery Robot Service</div>
+<div class="badge">Graph</div>
+<div class="badge">A* / Dijkstra</div>
+<p class="desc">
+Delivery robots navigate city streets using heuristic-based A* search to avoid
+obstacles and reduce delivery time.
+<br><br><strong>Aligned SDGs:</strong> SDG 9 – Infrastructure
+</p>
+<div class="ds-list">
+DS: graph, priority_queue —
+Algo: A* search
+</div>
+<div class="diagram">
+Map → A* → Robot Path
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 7 -->
+<article class="card">
+<div class="case-title">7 • Smart Water Distribution System</div>
+<div class="badge">Graph</div>
+<div class="badge">Flow Algorithms</div>
+<p class="desc">
+Optimizes water distribution across pipelines using flow networks to minimize
+leakage and ensure equitable supply.
+<br><br><strong>Aligned SDGs:</strong> SDG 6 – Clean Water
+</p>
+<div class="ds-list">
+DS: graph —
+Algo: max-flow
+</div>
+<div class="diagram">
+Pipes → Flow Network → Balanced Supply
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 8 -->
+<article class="card">
+<div class="case-title">8 • Personalized E-Learning Platform</div>
+<div class="badge">DP</div>
+<div class="badge">Hashing</div>
+<p class="desc">
+Learner progress is tracked to recommend adaptive learning paths using DP-based
+optimization.
+<br><br><strong>Aligned SDGs:</strong> SDG 4 – Quality Education
+</p>
+<div class="ds-list">
+DS: hash table —
+Algo: DP recommendation
+</div>
+<div class="diagram">
+User Data → DP → Course Path
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 9 -->
+<article class="card">
+<div class="case-title">9 • Urban Air Quality Analytics</div>
+<div class="badge">Segment Tree</div>
+<div class="badge">BFS</div>
+<p class="desc">
+Analyzes pollution spread across city zones using BFS over sensor graphs.
+<br><br><strong>Aligned SDGs:</strong> SDG 13 – Climate Action
+</p>
+<div class="ds-list">
+DS: segment tree, graph —
+Algo: BFS
+</div>
+<div class="diagram">
+Sensors → BFS → Pollution Spread
+</div>
+<a class="btn">View Code</a>
+</article>
+
+<!-- CASE 10 -->
+<article class="card">
+<div class="case-title">10 • Smart Warehouse Optimization System</div>
+<div class="badge">Graph</div>
+<div class="badge">Knapsack DP</div>
+<p class="desc">
+Optimizes storage and order picking by combining shortest-path routing and
+knapsack-based packing.
+<br><br><strong>Aligned SDGs:</strong> SDG 9 – Industry
+</p>
+<div class="ds-list">
+DS: graph —
+Algo: Dijkstra, Knapsack DP
+</div>
+<div class="diagram">
+Orders → Knapsack → Optimal Packing
+</div>
+<a class="btn">View Code</a>
+</article>
+
 <footer>
-    © 2025 Ankita | DAA Smart City Portfolio
+© 2025 Aarunya — Ankita · Business Case Studies
 </footer>
 
+</div>
 </body>
 </html>
