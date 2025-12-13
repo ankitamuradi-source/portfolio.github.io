@@ -1,433 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbiya Naaz – Detailed Business Ideas</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        .section { max-width: 900px; margin: auto; }
-        .title { font-size: 32px; margin-bottom: 10px; }
-        .desc { font-size: 18px; color: #444; }
-        .detailed-idea { margin-bottom: 50px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
-        .sdgs { background: #f3f3f3; padding: 6px 10px; display: inline-block; margin-bottom: 10px; border-radius: 4px; }
-        .code-box {
-            background: #1e1e1e;
-            color: #eaeaea;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-            overflow-x: auto;
-            white-space: pre;
-            font-family: Consolas, monospace;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Ideas with Code</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px;}
+  .business-card { background: #fff; padding: 15px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+  .btn { padding: 8px 12px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;}
+  .btn:hover { background: #218838;}
+  pre { background: #eee; padding: 10px; overflow-x: auto; display: none; border-radius: 5px;}
+  table { border-collapse: collapse; width: 100%; margin-top: 20px;}
+  table, th, td { border: 1px solid #ccc; padding: 8px; text-align: left;}
+  th { background-color: #f2f2f2; }
+</style>
 </head>
-
 <body>
 
-<section id="arbiya" class="section">
-  <h1 class="title">Arbiya Naaz – Detailed Business Ideas</h1>
-  <p class="desc">Algorithm-based smart city business solutions with realistic implementation logic.</p>
-  <br><br>
+<h1>Business Ideas with Realistic Code</h1>
 
-  <!-- 1. LOGISTICS HUB -->
-  <div class="detailed-idea">
-    <h3>1. ⚡ Logistics Hub – Smart Route Optimization</h3>
-    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
-    <p><b>Problem Statement:</b> Trucks inside the logistics hub waste fuel and time taking bad routes. We need a system to compute the shortest and safest routes between any warehouses or loading points.</p>
-    <p><b>Algorithm Used:</b> Floyd–Warshall (All-Pairs Shortest Path)</p>
-
-    <div class="code-box">
-/* REALISTIC IMPLEMENTATION OF A LOGISTICS HUB ROUTING ENGINE */
-#include &lt;bits/stdc++.h&gt;
+<!-- Business Cards -->
+<div class="business-card">
+  <h2>1. Grocery Delivery App</h2>
+  <p><strong>Income Model:</strong> Delivery charges + store commission.</p>
+  <p><strong>SDG:</strong> Responsible Consumption & Production (SDG 12)</p>
+  <p><strong>DSA Used:</strong> Queue & HashMap</p>
+  <p><strong>Reason:</strong> Queue handles deliveries in order; HashMap provides fast inventory lookup.</p>
+  <button class="btn" onclick="toggleCode('code1')">View Code</button>
+  <pre id="code1">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
 using namespace std;
 
-struct Node { int id; string name; };
-struct Hub {
-    vector&lt;Node&gt; points;
-    vector&lt;vector&lt;double&gt;&gt; dist;
-    
-    Hub(int n){
-        dist.assign(n, vector&lt;double&gt;(n, 1e18));
-        for(int i = 0; i &lt; n; i++) dist[i][i] = 0;
+struct Order { int orderId; string item; };
+
+int main() {
+    queue&lt;Order&gt; deliveryQueue;
+    unordered_map&lt;string,int&gt; storeInventory;
+
+    storeInventory["Apple"]=50; storeInventory["Milk"]=20;
+    deliveryQueue.push({1,"Apple"}); deliveryQueue.push({2,"Milk"});
+
+    while(!deliveryQueue.empty()) {
+        Order o = deliveryQueue.front(); deliveryQueue.pop();
+        if(storeInventory[o.item]&gt;0){
+            cout &lt;&lt; "Delivered: " &lt;&lt; o.item &lt;&lt; " for order " &lt;&lt; o.orderId &lt;&lt; endl;
+            storeInventory[o.item]--;
+        } else {
+            cout &lt;&lt; o.item &lt;&lt; " is out of stock!" &lt;&lt; endl;
+        }
     }
-    
-    void addRoad(int a, int b, double cost){
-        dist[a][b] = cost;
-        dist[b][a] = cost;
-    }
-    
-    void computeOptimalPaths(){
-        int n = dist.size();
-        for(int k = 0; k &lt; n; k++)
-            for(int i = 0; i &lt; n; i++)
-                for(int j = 0; j &lt; n; j++)
-                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
-    }
-    
-    double routeCost(int a, int b){ 
-        return dist[a][b]; 
-    }
-};
-    </div>
+    return 0;
+}
+  </pre>
+</div>
 
-    <p><b>Application Logic:</b> Each warehouse/dock is a node; roads are edges; Floyd–Warshall gives shortest paths for all pairs. Trucks follow optimal routes to save fuel & time.</p>
-  </div>
+<div class="business-card">
+  <h2>2. Online Tutoring Platform</h2>
+  <p><strong>Income Model:</strong> Subscription fees + commission per class.</p>
+  <p><strong>SDG:</strong> Quality Education (SDG 4)</p>
+  <p><strong>DSA Used:</strong> Priority Queue & HashMap</p>
+  <p><strong>Reason:</strong> Priority Queue schedules tutors by rating; HashMap manages student records quickly.</p>
+  <button class="btn" onclick="toggleCode('code2')">View Code</button>
+  <pre id="code2">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
 
-  <!-- 2. ECO RESORT -->
-  <div class="detailed-idea">
-    <h3>2. 🏕 Eco Resort – Nature Trail Recommendation</h3>
-    <div class="sdgs"><b>SDG 11:</b> Sustainable Cities & Communities</div>
-    <p><b>Problem Statement:</b> Guests need the safest and shortest trekking or cycling trail inside the eco-resort. Trails have different terrain difficulty and environmental safety ratings.</p>
-    <p><b>Algorithm Used:</b> Dijkstra’s Shortest Path</p>
+struct Tutor { string name; int rating; };
+struct Compare { bool operator()(Tutor const &a, Tutor const &b){ return a.rating &lt; b.rating; }};
 
-    <div class="code-box">
-struct TrailEdge { int to; double distanceKm; double difficulty; };
+int main() {
+    priority_queue&lt;Tutor, vector&lt;Tutor&gt;, Compare&gt; tutorQueue;
+    unordered_map&lt;string,string&gt; studentRecords;
 
-struct EcoResort {
-    vector&lt;vector&lt;TrailEdge&gt;&gt; graph;
+    tutorQueue.push({"Alice",95}); tutorQueue.push({"Bob",90});
+    studentRecords["John"]="Math"; studentRecords["Emma"]="Physics";
 
-    EcoResort(int n){ graph.resize(n); }
-
-    void addTrail(int a, int b, double dist, double diff){
-        graph[a].push_back({b, dist, diff});
-        graph[b].push_back({a, dist, diff});
+    while(!tutorQueue.empty()){
+        Tutor t = tutorQueue.top(); tutorQueue.pop();
+        cout &lt;&lt; "Assigned Tutor: " &lt;&lt; t.name &lt;&lt; " with rating " &lt;&lt; t.rating &lt;&lt; endl;
     }
 
-    vector&lt;double&gt; bestTrail(int src){
-        int n = graph.size();
-        vector&lt;double&gt; cost(n, 1e18);
-        
-        priority_queue&lt;pair&lt;double,int&gt;, 
-                       vector&lt;pair&lt;double,int&gt;&gt;, 
-                       greater&lt;&gt;&gt; pq;
+    for(auto s: studentRecords)
+        cout &lt;&lt; "Student " &lt;&lt; s.first &lt;&lt; " learning " &lt;&lt; s.second &lt;&lt; endl;
 
-        cost[src] = 0;
-        pq.push({0, src});
+    return 0;
+}
+  </pre>
+</div>
 
-        while(!pq.empty()){
-            auto [c, u] = pq.top();
-            pq.pop();
+<div class="business-card">
+  <h2>3. Ride-Sharing App</h2>
+  <p><strong>Income Model:</strong> Commission per ride + surge pricing.</p>
+  <p><strong>SDG:</strong> Sustainable Cities & Communities (SDG 11)</p>
+  <p><strong>DSA Used:</strong> Graph & Dijkstra's Algorithm</p>
+  <p><strong>Reason:</strong> Graph represents roads; Dijkstra finds shortest path for efficient rides.</p>
+  <button class="btn" onclick="toggleCode('code3')">View Code</button>
+  <pre id="code3">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
 
-            if(c != cost[u]) continue;
+struct Edge { int to, weight; };
+vector&lt;vector&lt;Edge&gt;&gt; graph;
 
-            for(auto &e : graph[u]){
-                double w = e.distanceKm + e.difficulty * 0.3;
-                if(cost[e.to] > cost[u] + w){
-                    cost[e.to] = cost[u] + w;
-                    pq.push({cost[e.to], e.to});
-                }
+vector&lt;int&gt; dijkstra(int n, int start){
+    vector&lt;int&gt; dist(n, 1e9); dist[start]=0;
+    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq;
+    pq.push({0,start});
+    while(!pq.empty()){
+        int d = pq.top().first, u = pq.top().second; pq.pop();
+        if(d&gt;dist[u]) continue;
+        for(auto e: graph[u]){
+            if(dist[u]+e.weight&lt;dist[e.to]){
+                dist[e.to]=dist[u]+e.weight;
+                pq.push({dist[e.to],e.to});
             }
         }
-        return cost;
     }
-};
-    </div>
-
-    <p><b>Application Logic:</b> Trails weighted by distance & difficulty; Dijkstra finds safest & shortest path for visitors.</p>
-  </div>
-
-  <!-- 3. IT TRAINING CENTER -->
-  <div class="detailed-idea">
-    <h3>3. 💻 IT Training Center – Smart Batch Scheduling</h3>
-    <div class="sdgs"><b>SDG 4:</b> Quality Education</div>
-    <p><b>Problem Statement:</b> Schedule course batches efficiently based on student demand and ratings.</p>
-    <p><b>Algorithm Used:</b> Heap Sort (priority-based)</p>
-
-    <div class="code-box">
-struct Course { int id; string name; int demand; double rating; };
-
-bool operator&lt;(const Course &a, const Course &b){
-    if(a.demand == b.demand) return a.rating &lt; b.rating;
-    return a.demand &lt; b.demand;
-}
-
-vector&lt;Course&gt; scheduleBatches(vector&lt;Course&gt; courses){
-    priority_queue&lt;Course&gt; maxHeap;
-
-    for(auto &c : courses) maxHeap.push(c);
-
-    vector&lt;Course&gt; sorted;
-    while(!maxHeap.empty()){
-        sorted.push_back(maxHeap.top());
-        maxHeap.pop();
-    }
-    
-    return sorted;
-}
-    </div>
-
-    <p><b>Application Logic:</b> Heap prioritizes high-demand, high-rating courses; schedules batches efficiently.</p>
-  </div>
-
-  <!-- 4. COLD STORAGE -->
-  <div class="detailed-idea">
-    <h3>4. ❄ Cold Storage – Inventory Expiry Management</h3>
-    <div class="sdgs"><b>SDG 12:</b> Responsible Consumption & Production</div>
-    <p><b>Problem Statement:</b> Sort perishable goods by expiry date to avoid waste.</p>
-    <p><b>Algorithm Used:</b> Merge Sort</p>
-
-    <div class="code-box">
-struct Item { string name; long long expiry; };
-
-bool cmp(const Item &a, const Item &b){ 
-    return a.expiry &lt; b.expiry; 
-}
-
-vector&lt;Item&gt; mergeSort(vector&lt;Item&gt; arr){
-    if(arr.size() &lt;= 1) return arr;
-
-    int mid = arr.size() / 2;
-
-    vector&lt;Item&gt; left(arr.begin(), arr.begin() + mid);
-    vector&lt;Item&gt; right(arr.begin() + mid, arr.end());
-
-    left = mergeSort(left);
-    right = mergeSort(right);
-
-    vector&lt;Item&gt; merged;
-    int i = 0, j = 0;
-
-    while(i &lt; left.size() && j &lt; right.size()){
-        if(cmp(left[i], right[j])) merged.push_back(left[i++]);
-        else merged.push_back(right[j++]);
-    }
-
-    while(i &lt; left.size()) merged.push_back(left[i++]);
-    while(j &lt; right.size()) merged.push_back(right[j++]);
-
-    return merged;
-}
-    </div>
-
-    <p><b>Application Logic:</b> Sorted items ensure FIFO distribution, reduce spoilage, optimize storage.</p>
-  </div>
-
-  <!-- 5. CO-WORKING HUB -->
-  <div class="detailed-idea">
-    <h3>5. 🏢 Co-working Hub – Smart Desk Allocation</h3>
-    <div class="sdgs"><b>SDG 8:</b> Decent Work & Economic Growth</div>
-    <p><b>Problem Statement:</b> Assign desks based on comfort factors (light, noise, power outlet).</p>
-    <p><b>Algorithm Used:</b> Quick Sort</p>
-
-    <div class="code-box">
-struct Desk{ int id, noiseLevel, lightLevel; bool nearPower; };
-
-double score(const Desk &d){
-    return d.lightLevel * 2 - d.noiseLevel * 1.5 + (d.nearPower ? 10 : 0);
-}
-
-int partition(vector&lt;Desk&gt; &a, int low, int high){
-    double pivot = score(a[high]);
-    int i = low - 1;
-
-    for(int j = low; j &lt; high; j++){
-        if(score(a[j]) > pivot){
-            i++;
-            swap(a[i], a[j]);
-        }
-    }
-
-    swap(a[i + 1], a[high]);
-    return i + 1;
-}
-
-void quickSort(vector&lt;Desk&gt; &a, int low, int high){
-    if(low &lt; high){
-        int pi = partition(a, low, high);
-        quickSort(a, low, pi - 1);
-        quickSort(a, pi + 1, high);
-    }
-}
-    </div>
-
-    <p><b>Application Logic:</b> Desks ranked by score; Quick Sort assigns best available desk.</p>
-  </div>
-
-  <!-- 6. RETAIL MALL -->
-  <div class="detailed-idea">
-    <h3>6. 🛍 Retail Mall – Product Search System</h3>
-    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
-    <p><b>Problem Statement:</b> Fast search through large product inventory.</p>
-    <p><b>Algorithm Used:</b> KMP String Search</p>
-
-    <div class="code-box">
-vector&lt;int&gt; computeLPS(string pattern){
-    vector&lt;int&gt; lps(pattern.size());
-    int len = 0;
-
-    for(int i = 1; i &lt; pattern.size(); i++){
-        while(len > 0 && pattern[i] != pattern[len])
-            len = lps[len - 1];
-
-        if(pattern[i] == pattern[len])
-            len++;
-
-        lps[i] = len;
-    }
-    return lps;
-}
-
-bool searchProduct(string text, string pattern){
-    auto lps = computeLPS(pattern);
-    int j = 0;
-
-    for(int i = 0; i &lt; text.size(); i++){
-        while(j > 0 && text[i] != pattern[j])
-            j = lps[j - 1];
-
-        if(text[i] == pattern[j])
-            j++;
-
-        if(j == pattern.size())
-            return true;
-    }
-    return false;
-}
-    </div>
-
-    <p><b>Application Logic:</b> KMP enables instant product lookup; shoppers find items quickly.</p>
-  </div>
-
-  <!-- 7. MULTI-SPECIALTY HOSPITAL -->
-  <div class="detailed-idea">
-    <h3>7. 🏥 Multi-specialty Hospital – Patient Risk Detection</h3>
-    <div class="sdgs"><b>SDG 3:</b> Good Health & Well-Being</div>
-    <p><b>Problem Statement:</b> Identify high-risk patients early.</p>
-    <p><b>Algorithm Used:</b> Rule-Based + Brute Force</p>
-
-    <div class="code-box">
-struct Patient{ int id, age; double temperature, bp; bool chestPain; };
-
-int computeRisk(const Patient &p){
-    int risk = 0;
-    
-    if(p.age > 60) risk += 20;
-    if(p.temperature > 38) risk += 30;
-    if(p.bp > 150) risk += 25;
-    if(p.chestPain) risk += 40;
-
-    return risk;
-}
-
-vector&lt;Patient&gt; findHighRisk(vector&lt;Patient&gt; &list){
-    vector&lt;Patient&gt; high;
-
-    for(auto &p : list)
-        if(computeRisk(p) >= 60) 
-            high.push_back(p);
-
-    return high;
-}
-    </div>
-
-    <p><b>Application Logic:</b> Scan all patients; flag high-risk for immediate care.</p>
-  </div>
-
-  <!-- 8. EV CHARGING -->
-  <div class="detailed-idea">
-    <h3>8. ⚡ EV Charging Stations – Load Balancing</h3>
-    <div class="sdgs"><b>SDG 7:</b> Affordable & Clean Energy</div>
-    <p><b>Problem Statement:</b> Balance load across multiple stations to avoid overload.</p>
-    <p><b>Algorithm Used:</b> Min Heap (priority scheduling)</p>
-
-    <div class="code-box">
-struct Station{ int id; double currentLoad, capacity; };
-
-struct CompareLoad{
-    bool operator()(const Station &a, const Station &b){
-        return a.currentLoad > b.currentLoad;
-    }
-};
-
-int assignStation(vector&lt;Station&gt; stations, double carLoad){
-    priority_queue&lt;Station, vector&lt;Station&gt;, CompareLoad&gt; pq(stations.begin(), stations.end());
-
-    Station s = pq.top();
-    pq.pop();
-
-    if(s.currentLoad + carLoad > s.capacity)
-        return -1;
-
-    s.currentLoad += carLoad;
-    pq.push(s);
-
-    return s.id;
-}
-    </div>
-
-    <p><b>Application Logic:</b> Assign EV to station with minimum load; prevent overload; fair energy use.</p>
-  </div>
-
-  <!-- 9. WATERFRONT TOURISM -->
-  <div class="detailed-idea">
-    <h3>9. 🚤 Waterfront Tourism – Boat Path Safety</h3>
-    <div class="sdgs"><b>SDG 14:</b> Life Below Water</div>
-    <p><b>Problem Statement:</b> Boats must avoid shallow water or wildlife zones.</p>
-    <p><b>Algorithm Used:</b> Bellman-Ford</p>
-
-    <div class="code-box">
-struct Edge{ int u, v; double cost; };
-
-vector&lt;double&gt; computeSafeRoute(int n, vector&lt;Edge&gt; edges, int src){
-    vector&lt;double&gt; dist(n, 1e18);
-    dist[src] = 0;
-
-    for(int i = 0; i &lt; n - 1; i++)
-        for(auto &e : edges)
-            if(dist[e.u] + e.cost &lt; dist[e.v])
-                dist[e.v] = dist[e.u] + e.cost;
-
     return dist;
 }
-    </div>
 
-    <p><b>Application Logic:</b> Negative weights for dangerous zones; Bellman-Ford avoids hazards; boats get safest routes.</p>
-  </div>
+int main() {
+    int n=5; graph.resize(n);
+    graph[0].push_back({1,10}); graph[0].push_back({2,3});
+    graph[2].push_back({1,1}); graph[1].push_back({3,2});
 
-  <!-- 10. E-COMMERCE HUB -->
-  <div class="detailed-idea">
-    <h3>10. 📦 E-commerce Distribution Center – Courier Assignment</h3>
-    <div class="sdgs"><b>SDG 9:</b> Industry, Innovation & Infrastructure</div>
-    <p><b>Problem Statement:</b> Assign packages to couriers efficiently based on distance, load, and energy.</p>
-    <p><b>Algorithm Used:</b> Greedy + Spatial Assignment</p>
-
-    <div class="code-box">
-struct Courier{ int id; double energy, maxLoad, x, y; };
-struct Package{ int id; double weight, px, py; };
-
-double distance(double x1, double y1, double x2, double y2){
-    return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+    vector&lt;int&gt; shortest = dijkstra(n,0);
+    for(int i=0;i&lt;n;i++) cout &lt;&lt; "Distance to " &lt;&lt; i &lt;&lt; ": " &lt;&lt; shortest[i] &lt;&lt; endl;
 }
+  </pre>
+</div>
 
-bool canDeliver(const Courier &c, const Package &p){
-    return p.weight &lt;= c.maxLoad 
-        && c.energy &gt;= distance(c.x, c.y, p.px, p.py) * 0.5;
-}
+<div class="business-card">
+  <h2>4. Food Waste Reduction App</h2>
+  <p><strong>Income Model:</strong> Subscription fees + ads.</p>
+  <p><strong>SDG:</strong> Responsible Consumption & Production (SDG 12)</p>
+  <p><strong>DSA Used:</strong> HashMap & Heap</p>
+  <p><strong>Reason:</strong> Heap tracks expiring items; HashMap stores food inventory efficiently.</p>
+  <button class="btn" onclick="toggleCode('code4')">View Code</button>
+  <pre id="code4">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
 
-int assignPackage(const vector&lt;Courier&gt; &cs, const Package &p){
-    int best = -1;
-    double bestDist = 1e18;
+struct Food { string name; int expiry; };
+struct Compare { bool operator()(Food const &a, Food const &b){ return a.expiry &gt; b.expiry; }};
 
-    for(int i = 0; i &lt; cs.size(); i++){
-        if(canDeliver(cs[i], p)){
-            double d = distance(cs[i].x, cs[i].y, p.px, p.py);
-            if(d &lt; bestDist){
-                bestDist = d;
-                best = i;
-            }
+int main(){
+    priority_queue&lt;Food, vector&lt;Food&gt;, Compare&gt; foodHeap;
+    unordered_map&lt;string,int&gt; inventory;
+
+    inventory["Bread"]=10; inventory["Milk"]=5;
+    foodHeap.push({"Bread",2}); foodHeap.push({"Milk",1});
+
+    while(!foodHeap.empty()){
+        Food f = foodHeap.top(); foodHeap.pop();
+        if(inventory[f.name]&gt;0){
+            cout &lt;&lt; "Distribute: " &lt;&lt; f.name &lt;&lt; " expiring in " &lt;&lt; f.expiry &lt;&lt; " days" &lt;&lt; endl;
+            inventory[f.name]--;
         }
     }
-    return best;
 }
-    </div>
+  </pre>
+</div>
 
-    <p><b>Application Logic:</b> Greedy nearest courier selection; efficient real-time delivery assignment.</p>
-  </div>
+<div class="business-card">
+  <h2>5. Fitness App</h2>
+  <p><strong>Income Model:</strong> Premium subscriptions + fitness product ads.</p>
+  <p><strong>SDG:</strong> Good Health & Well-being (SDG 3)</p>
+  <p><strong>DSA Used:</strong> Array & Binary Search</p>
+  <p><strong>Reason:</strong> Array stores workout plans; Binary Search quickly finds user-specific programs.</p>
+  <button class="btn" onclick="toggleCode('code5')">View Code</button>
+  <pre id="code5">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
 
-</section>
+int main(){
+    vector&lt;int&gt; workouts={5,10,15,20,25};
+    int userGoal=15;
+    if(binary_search(workouts.begin(), workouts.end(), userGoal))
+        cout &lt;&lt; "Workout plan found for goal: " &lt;&lt; userGoal &lt;&lt; endl;
+    else
+        cout &lt;&lt; "No exact workout plan found." &lt;&lt; endl;
+}
+  </pre>
+</div>
 
-</body>
-</html>
+<div class="business-card">
+  <h2>6. E-Library Platform</h2>
+  <p><strong>Income Model:</strong> Membership fees + pay-per-book.</p>
+  <p><strong>SDG:</strong> Quality Education (SDG 4)</p>
+  <p><strong>DSA Used:</strong> Trie & HashMap</p>
+  <p><strong>Reason:</strong> Trie helps in fast book search; HashMap tracks user borrowing history.</p>
+  <button class="btn" onclick="toggleCode('code6')">View Code</button>
+  <pre id="code6">
+#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
 
+struct TrieNode{
+    unordered_map&lt;char,TrieNode*&gt; children;
+    bool isEnd=false;
+};
+
+void insert(TrieNode* root, string word){
+    TrieNode* node=root;
+    for(char c: word){
+        if(!node-&gt;children[c]) node-&gt;children[c]=new TrieNode();
+        node=node-&gt;children[c];
+    }
+    node-&gt;isEnd=true;
+}
+
+bool search(TrieNode* root, string word){
+    TrieNode* node=root;
+    for(char c: word){
+        if(!node-&gt;children[c]) return false;
+        node=node-&gt;children[c];
+    }
+    return node-&gt;isEnd;
+}
+
+int main(){
+    TrieNode* root=new TrieNode();
+    insert(root,"Physics"); insert(root,"Math"); insert(root,"Biology");
+
+    cout &lt;&lt; "Search Math: " &lt;&lt; (search(root,"Math")?"Found":"Not Found") &lt;&lt; endl;
+}
+  </pre>
+</div>
+
+<div class="business-card">
+  <h2>7. Renewable Energy Marketplace</h2>
+  <p><strong>Income Model:</strong> Platform commission + subscriptions.</p>
+  <p><strong>SDG:</strong> Affordable & Clean Energy (SDG 7)</p>
+  <p><strong>DSA Used:</strong> Graph & Priority Queue</p>
+  <p><strong>Reason:</strong> Graph models energy distribution; Priority Queue assigns top suppliers efficiently.</p>
+  <button class="btn" onclick="toggleCode('code7')">View Code</button>
+  <pre id="code7">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+struct Supplier{ string name; int capacity; };
+struct Compare{ bool operator()(Supplier a,Supplier b){ return a.capacity&lt;b.capacity; }};
+
+int main(){
+    priority_queue&lt;Supplier, vector&lt;Supplier&gt;, Compare&gt; pq;
+    pq.push({"SolarCo",100}); pq.push({"WindCo",80});
+
+    while(!pq.empty()){
+        Supplier s = pq.top(); pq.pop();
+        cout &lt;&lt; "Assign energy from " &lt;&lt; s.name &lt;&lt; " with capacity " &lt;&lt; s.capacity &lt;&lt; endl;
+    }
+}
+  </pre>
+</div>
+
+<div class="business-card">
+  <h2>8. Telemedicine App</h2>
+  <p><strong>Income Model:</strong> Consultation fees + subscription for health packages.</p>
+  <p><strong>SDG:</strong> Good Health & Well-being (SDG 3)</p>
+  <p><strong>DSA Used:</strong> HashMap & Queue</p>
+  <p><strong>Reason:</strong> HashMap stores patient records; Queue manages consultation appointments.</p>
+  <button class="btn" onclick="toggleCode('code8')">View Code</button>
+  <pre id="code8">
+#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+int main(){
+    unordered_map&lt;string,string&gt; patients;
+    queue&lt;string&gt; appointments;
+
+    patients["John"]="Flu"; patients["Emma"]="Checkup";
+    appointments.push("John"); appointments.push("Emma");
+
+    while(!appointments.empty()){
+        string p = appointments.front(); appointments.pop();
+        cout &lt;&lt; "Consulting patient: " &lt;&lt; p &lt;&lt; " for " &lt;&lt; patients[p] &lt;&lt; endl;
+    }
+}
+  </pre>
+</div>
+
+<div class="business-card">
+  <h2>9. Smart Home Automation</h2>
+  <p><strong>Income Model:</strong> Device sales + subscription for premium features.</p>
+  <p><strong>SDG:</strong> Industry, Innovation & Infrastructure (SDG 9)</p>
+  <p><strong>DSA Used:</strong> Graph & DFS</p>
+  <p><strong>Reason:</strong> Graph models devices & connections; DFS triggers automated tasks efficiently.</p>
+  <button class="btn" onclick="toggleCode('code9')">View Code</button>
+  <pre id="code9">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+vector&lt;vector&lt;int&gt;&gt; devices;
+vector&lt;bool&gt; visited;
+
+void dfs(int u){
+    visited[u]=true;
+    cout &lt;&lt; "Activating device " &lt;&lt; u &lt;&lt; endl;
+    for(int v: devices[u]) if(!visited[v]) dfs(v);
+}
+
+int main(){
+    int n=4; devices.resize(n); visited.resize(n,false);
+    devices[0]={1,2}; devices[1]={3};
+
+    dfs(0);
+}
+  </pre>
+</div>
+
+<div class="business-card">
+  <h2>10. Event Management Platform</h2>
+  <p><strong>Income Model:</strong> Ticket commission + vendor ads.</p>
+  <p><strong>SDG:</strong> Decent Work & Economic Growth (SDG 8)</p>
+  <p><strong>DSA Used:</strong> Heap & HashMap</p>
+  <p><strong>Reason:</strong> Heap tracks most popular events; HashMap stores vendor & attendee info.</p>
+  <button class="btn" onclick="toggleCode('code10')">View Code</button>
+  <pre id="code10">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+struct Event{ string name; int popularity; };
+struct Compare{ bool operator()(Event a, Event b){ return a.popularity&lt;b.popularity; }};
+
+int main(){
+    priority_queue&lt;Event, vector&lt;Event&gt;, Compare&gt; pq;
+    unordered_map&lt;string,int&gt; attendees;
+
+    pq.push({"Concert",500}); pq.push({"Conference",200});
+    attendees["Vendor1"]=50; attendees["Vendor2"]=30;
+
+    while(!pq.empty()){
+        Event e = pq.top(); pq.pop();
+        cout &lt;&lt; "Event: " &lt;&lt; e.name &lt;&lt; ", Popularity: " &lt;&lt; e.popularity &lt;&lt; endl;
+    }
+}
+  </pre>
+</div>
+
+<!-- DSA Table -->
+<h2>DSA Table for All Businesses</h2>
+<table>
+  <tr><th>Business</th><th>DSA Used</th><th>Reason</th></tr>
+  <tr><td>Grocery Delivery App</td><td>Queue, HashMap</td><td>Delivery order & fast inventory access</td></tr>
+  <tr><td>Online Tutoring Platform</td><td>Priority Queue, HashMap</td><td>Assign top-rated tutors & manage student data</td></tr>
+  <tr><td>Ride-Sharing App</td><td>Graph, Dijkstra</td><td>Find shortest route for rides efficiently</td></tr>
+  <tr><td>Food Waste Reduction App</td><td>Heap, HashMap</td><td>Track expiring food & fast inventory management</td></tr>
+  <tr><td>Fitness App</td><td>Array, Binary Search</td><td>Store workout plans & quickly find user-specific goal</td></tr>
+  <tr><td>E-Library Platform</td><td>Trie, HashMap</td><td>Fast book search & track borrowing history</td></tr>
+  <tr><td>Renewable Energy Marketplace</td><td>Graph, Priority Queue</td><td>Energy distribution & assign top suppliers
