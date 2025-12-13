@@ -8,153 +8,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-
 body{
-  background:linear-gradient(
-    135deg,
-    #06060c 0%,
-    #141228 25%,
-    #1e2a4f 55%,
-    #080812 100%
-  );
+  background:linear-gradient(135deg,#06060c 0%,#141228 25%,#1e2a4f 55%,#080812 100%);
   color:#e2e8f0;
   overflow-x:hidden;
 }
-
-/* NAV */
 nav{
-  position:sticky;
-  top:0;
+  position:sticky;top:0;
   background:linear-gradient(90deg,#120f24,#1c2b52);
-  padding:18px;
-  text-align:center;
+  padding:18px;text-align:center;
   border-bottom:1px solid #2f2a55;
   box-shadow:0 0 14px rgba(150,140,255,0.35);
   z-index:50;
 }
 nav a{
-  color:#e6ddff;
-  margin:0 20px;
-  font-size:18px;
-  font-weight:500;
-  text-decoration:none;
-  cursor:pointer;
-  transition:0.3s;
+  color:#e6ddff;margin:0 20px;font-size:18px;
+  text-decoration:none;cursor:pointer;transition:0.3s;
 }
-nav a:hover{
-  color:#e0c9ff;
-  text-shadow:0 0 10px rgba(224,201,255,0.9);
-}
-
-/* SECTIONS */
+nav a:hover{color:#e0c9ff;text-shadow:0 0 10px rgba(224,201,255,0.9);}
 .section{
-  display:none;
-  max-width:1100px;
-  margin:40px auto;
-  padding:40px;
+  display:none;max-width:1100px;margin:40px auto;padding:40px;
   background:linear-gradient(160deg,#141226,#0c0c18);
-  border-radius:20px;
-  border:1px solid #2f2a55;
+  border-radius:20px;border:1px solid #2f2a55;
   box-shadow:0 0 32px rgba(0,0,0,0.9);
   animation:fadeIn 0.7s ease forwards;
 }
 .section.active{display:block;}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* MAIN HEADINGS */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .title{
-  text-align:center;
-  font-size:34px;
-  margin-bottom:25px;
-  color:#7df9ff;
-  font-weight:600;
-  text-shadow:
-    0 0 10px rgba(125,249,255,0.9),
-    0 0 24px rgba(125,249,255,0.6);
+  text-align:center;font-size:34px;margin-bottom:25px;color:#7df9ff;
+  text-shadow:0 0 10px rgba(125,249,255,0.9),0 0 24px rgba(125,249,255,0.6);
 }
-.desc{
-  text-align:center;
-  font-size:19px;
-  max-width:750px;
-  margin:15px auto;
-  line-height:1.6;
-  color:#d6dcf0;
-}
-
-/* NAME – NEON LAVENDER */
+.desc{text-align:center;font-size:19px;max-width:750px;margin:15px auto;color:#d6dcf0;}
 .neon-name{
-  color:#d6b4ff;
-  font-size:22px;
-  font-weight:400;
-  text-shadow:
-    0 0 8px rgba(214,180,255,0.9),
-    0 0 18px rgba(214,180,255,0.6);
+  color:#d6b4ff;font-size:22px;
+  text-shadow:0 0 8px rgba(214,180,255,0.9),0 0 18px rgba(214,180,255,0.6);
 }
-
-/* INFO TEXT */
-.neon-info{
-  color:#ffb07c;
-  font-size:17px;
-  font-weight:400;
-}
-
-/* BOX */
+.neon-info{color:#ffb07c;font-size:17px;}
 .member-box{
   background:linear-gradient(160deg,#13122a,#0c0c1b);
-  padding:25px;
-  border-radius:15px;
-  border:1px solid #2a2550;
-  margin:30px 0;
-  box-shadow:0 0 26px rgba(0,0,0,0.85);
+  padding:25px;border-radius:15px;border:1px solid #2a2550;
+  margin:30px 0;box-shadow:0 0 26px rgba(0,0,0,0.85);
 }
-.member-box h2{margin-bottom:15px;}
-
-.idea-list{
-  margin-top:10px;
-  padding-left:20px;
-  line-height:1.8;
-  font-size:17px;
-}
-
-/* TABLES */
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px;
-}
-th,td{
-  border:1px solid #3a3566;
-  padding:10px;
-  text-align:center;
-}
-th{
-  background:#1f1b3a;
-  color:#7df9ff;
-}
-td{
-  background:#0c0c1b;
-}
-
-/* VIEW BUTTON */
 .view-btn{
-  margin-top:15px;
-  padding:10px 18px;
+  margin-top:15px;padding:10px 18px;
   background:linear-gradient(135deg,#f2c97d,#e6b65c);
-  border:none;
-  color:#2a1f05;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:500;
-  box-shadow:0 0 10px rgba(230,182,92,0.35);
-  transition:0.3s;
-}
-.view-btn:hover{
-  box-shadow:0 0 16px rgba(230,182,92,0.6);
+  border:none;border-radius:8px;cursor:pointer;
 }
 </style>
 </head>
@@ -162,123 +62,152 @@ td{
 <body>
 
 <nav>
-  <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('project')">Project</a>
   <a onclick="showPage('arbiya')">Arbiya Naaz</a>
-  <a onclick="showPage('akshata')">Akshata</a>
-  <a onclick="showPage('ankita')">Ankita</a>
-  <a href="sai.html">Sai</a>
 </nav>
 
 <section id="arbiya" class="section active">
-  <h1 class="title">Arbiya Naaz – Business Ideas</h1>
-  <p class="desc">Summary of innovative business ideas aligned with Sustainable Development Goals (SDGs) and data-driven strategies.</p>
+<h1 class="title">Arbiya Naaz – Business Ideas</h1>
+<p class="desc">Innovative business ideas mapped with SDGs and implemented using suitable data structures & algorithms.</p>
 
-  <div class="member-box">
-    <h2 class="neon-name">⚡ Logistics Hub</h2>
-    <p class="neon-info">A centralized facility for efficient storage, transport, and delivery...</p>
-    <p class="neon-info"><strong>SDG:</strong> 9 – Industry, Innovation, and Infrastructure</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Graph</p>
-      <p><strong>Algorithm:</strong> Dijkstra’s Algorithm</p>
-    </div>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case01.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 1 -->
+<div class="member-box">
+<h2 class="neon-name">⚡ Logistics Hub</h2>
+<p class="neon-info">
+A smart logistics hub that manages package routing, delivery paths, and warehouse connections efficiently.
+</p>
+<p class="neon-info">
+<strong>Why Graph & Dijkstra?</strong><br>
+Locations are represented as nodes and routes as edges. Dijkstra’s Algorithm is used to calculate the shortest and most cost-effective delivery route, reducing fuel usage and delivery time.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case01.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🏕 Eco Resort</h2>
-    <p class="neon-info">Sustainable lodging with eco-friendly accommodations...</p>
-    <p class="neon-info"><strong>SDG:</strong> 12 – Responsible Consumption & Production</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Array/List</p>
-      <p><strong>Algorithm:</strong> Sorting rooms</p>
-    </div>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case02.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 2 -->
+<div class="member-box">
+<h2 class="neon-name">🏕 Eco Resort</h2>
+<p class="neon-info">
+An eco-friendly resort management system that handles room availability, pricing, and guest preferences.
+</p>
+<p class="neon-info">
+<strong>Why Arrays & Sorting?</strong><br>
+Rooms are stored in arrays/lists and sorting algorithms help customers quickly find rooms based on price, capacity, or eco-features.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case02.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">💻 IT Training Center</h2>
-    <p class="neon-info">Professional IT courses including programming, cloud computing, and cybersecurity...</p>
-    <p class="neon-info"><strong>SDG:</strong> 4 – Quality Education</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Linked List</p>
-      <p><strong>Algorithm:</strong> Traversal and insertion</p>
-    </div>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case03.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 3 -->
+<div class="member-box">
+<h2 class="neon-name">💻 IT Training Center</h2>
+<p class="neon-info">
+A digital system to manage student enrollments, course registrations, and certifications.
+</p>
+<p class="neon-info">
+<strong>Why Linked List?</strong><br>
+Enrollments change frequently. Linked lists allow easy insertion and deletion of students without shifting data.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case03.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">❄ Cold Storage</h2>
-    <p class="neon-info">Facility to preserve perishable goods...</p>
-    <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
-    <div class="idea-list">
-      <p><strong>Data Structure:</strong> Queue</p>
-      <p><strong>Algorithm:</strong> FIFO</p>
-    </div>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case04.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 4 -->
+<div class="member-box">
+<h2 class="neon-name">❄ Cold Storage</h2>
+<p class="neon-info">
+Manages perishable goods like fruits and vegetables to minimize food waste.
+</p>
+<p class="neon-info">
+<strong>Why Queue (FIFO)?</strong><br>
+Items stored first must be dispatched first to avoid spoilage, making FIFO the most suitable approach.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case04.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🌿 Green Energy Startup</h2>
-    <p class="neon-info">Promotes renewable energy solutions...</p>
-    <p class="neon-info"><strong>SDG:</strong> 7 – Affordable and Clean Energy</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case05.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 5 -->
+<div class="member-box">
+<h2 class="neon-name">🌿 Green Energy Startup</h2>
+<p class="neon-info">
+Focuses on renewable energy adoption by managing energy production and usage data.
+</p>
+<p class="neon-info">
+<strong>Why Efficient Data Handling?</strong><br>
+Helps analyze power generation trends and optimize clean energy distribution.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case05.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🏥 Telemedicine Platform</h2>
-    <p class="neon-info">Online healthcare consultations...</p>
-    <p class="neon-info"><strong>SDG:</strong> 3 – Good Health & Well-being</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case06.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 6 -->
+<div class="member-box">
+<h2 class="neon-name">🏥 Telemedicine Platform</h2>
+<p class="neon-info">
+Allows patients to consult doctors remotely, improving healthcare accessibility.
+</p>
+<p class="neon-info">
+<strong>Why Structured Scheduling?</strong><br>
+Efficient data handling ensures proper appointment allocation and reduces waiting time.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case06.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🍎 Organic Food Delivery</h2>
-    <p class="neon-info">Delivers farm-fresh organic produce...</p>
-    <p class="neon-info"><strong>SDG:</strong> 2 – Zero Hunger</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case07.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 7 -->
+<div class="member-box">
+<h2 class="neon-name">🍎 Organic Food Delivery</h2>
+<p class="neon-info">
+Connects farmers directly to customers ensuring fresh and healthy food delivery.
+</p>
+<p class="neon-info">
+<strong>Why Organized Order Processing?</strong><br>
+Efficient order tracking reduces delays and food wastage.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case07.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🚍 Smart Transport App</h2>
-    <p class="neon-info">Optimizes city transport routes...</p>
-    <p class="neon-info"><strong>SDG:</strong> 11 – Sustainable Cities</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case08.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 8 -->
+<div class="member-box">
+<h2 class="neon-name">🚍 Smart Transport App</h2>
+<p class="neon-info">
+Optimizes public transport routes to reduce congestion and pollution.
+</p>
+<p class="neon-info">
+<strong>Why Route Optimization?</strong><br>
+Helps determine fastest routes, saving time and fuel for commuters.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case08.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">🏫 Skill Development Hub</h2>
-    <p class="neon-info">Provides vocational training...</p>
-    <p class="neon-info"><strong>SDG:</strong> 8 – Decent Work</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case09.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 9 -->
+<div class="member-box">
+<h2 class="neon-name">🏫 Skill Development Hub</h2>
+<p class="neon-info">
+Provides job-oriented skill training to improve employability.
+</p>
+<p class="neon-info">
+<strong>Why Structured Records?</strong><br>
+Maintains learner progress and certification details efficiently.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case09.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
-  <div class="member-box">
-    <h2 class="neon-name">📦 E-Commerce Platform</h2>
-    <p class="neon-info">Online marketplace for local products...</p>
-    <p class="neon-info"><strong>SDG:</strong> 9 – Industry & Infrastructure</p>
-    <a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case10.cpp" target="_blank">
-      <button class="view-btn">View Code</button>
-    </a>
-  </div>
+<!-- 10 -->
+<div class="member-box">
+<h2 class="neon-name">📦 E-Commerce Platform</h2>
+<p class="neon-info">
+An online marketplace supporting local businesses and sellers.
+</p>
+<p class="neon-info">
+<strong>Why Efficient Data Management?</strong><br>
+Ensures fast product search, order processing, and inventory handling.
+</p>
+<a href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/ArbiyaNaaz/Case10.cpp" target="_blank">
+<button class="view-btn">View Code</button></a>
+</div>
 
 </section>
 
