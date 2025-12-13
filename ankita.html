@@ -1,351 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sai — Business Case Studies | Aarunya</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankita – Business Case Studies | Aarunya</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --page-bg:#020617;
-      --hero-bg:#0f172a;
-      --hero-bg-soft:#020617;
-      --text-main:#e5e7eb;
-      --muted:#9ca3af;
-      --card-bg:#020617;
-      --accent-chip:#1e293b;
-      --accent-chip-text:#38bdf8;
-      --accent-chip2:#0f172a;
-      --accent-chip2-text:#a5b4fc;
-      --border-soft:#1f2933;
-      --diagram-bg:#020617;
-      --diagram-border:#22c55e;
-      --btn-bg:#22c55e;
-      --btn-bg2:#38bdf8;
-      --btn-text:#0f172a;
-      --maxw:1040px;
-      --btn-h:36px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);;
-      color:var(--text-main);
-      padding:24px 10px 32px;
-      line-height:1.7;
-    }
-    .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-    }
-
-    .hero{
-      border-radius:18px;
-      padding:18px 20px;
-      background:radial-gradient(circle at top left,#22c55e20 0,#0f172a 45%,#020617 100%);
-      color:#e5e7eb;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      border:1px solid #22c55e40;
-      box-shadow:0 18px 60px rgba(15,23,42,0.9);
-    }
-    .hero-left{display:flex;gap:14px;align-items:flex-start}
-    
-    .hero-tag{
-  font-size:0.8rem;
-  font-weight:600;
-  letter-spacing:0.06em;
-  text-transform:none;
-  color:#cbd5f5;
-  margin-bottom:6px;
+<style>
+body{
+font-family:Inter,system-ui;
+background:#020617;
+color:#e5e7eb;
+padding:20px;
+line-height:1.75
 }
-    
-    h1{
-      font-size:1.35rem;
-      margin-bottom:4px;
-    }
-    .hero-sub{
-      font-size:0.92rem;
-      opacity:0.9;
-      max-width:540px;
-    }
-    .hero-right{
-      text-align:right;
-      font-size:0.86rem;
-      opacity:0.9;
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-      align-items:flex-end;
-    }
-    .hero-right strong{color:#fefce8}
-    .hero-git-btn{
-      margin-top:6px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 14px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.7);
-      background:linear-gradient(120deg,#020617,#0f172a);
-      color:#e5e7eb;
-      font-size:0.78rem;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 0 0 1px #22c55e40;
-    }
-
-    .summary-strip{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      font-size:0.8rem;
-      color:var(--muted);
-      box-shadow:0 0 0 1px #1e293b;
-    }
-    .pill-label{color:#6b7280}
-    .pill-value{color:#e5e7eb;font-weight:600}
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:start;
-    }
-    @media (max-width:800px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .card{
-      padding:14px 14px 13px;
-      border-radius:12px;
-      background:radial-gradient(circle at top left,#22c55e10 0,#020617 55%);
-      border:1px solid var(--border-soft);
-      border-left:none;
-      box-shadow:0 10px 32px rgba(15,23,42,0.9);
-    }
-    .case-title{
-      font-size:1.0rem;
-      font-weight:800;
-      color:var(--text-main);
-      margin-bottom:4px;
-    }
-    .meta{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-      margin-bottom:6px;
-    }
-    .badge{
-      padding:3px 10px;
-      border-radius:999px;
-      font-size:0.74rem;
-      font-weight:600;
-    }
-    .badge:nth-child(1){
-      background:var(--accent-chip);
-      color:var(--accent-chip-text);
-      box-shadow:0 0 0 1px #38bdf880;
-    }
-    .badge:nth-child(2){
-      background:var(--accent-chip2);
-      color:var(--accent-chip2-text);
-      box-shadow:0 0 0 1px #a855f780;
-    }
-    .desc{
-      color:#e5e7eb;
-      font-size:0.9rem;
-      line-height:1.7;
-      margin-bottom:7px;
-    }
-    .desc span.sdg-text{
-      color:#9ca3af;
-      font-size:0.84rem;
-    }
-    .ds-list{
-      background:#020617;
-      padding:6px 8px;
-      border-radius:8px;
-      border:1px dashed var(--border-soft);
-      margin-bottom:7px;
-      font-size:0.8rem;
-      color:#e5e7eb;
-    }
-    .ds-list code{color:#22c55e;font-weight:700}
-
-    .diagram{
-      background:var(--diagram-bg);
-      padding:7px 8px;
-      border-radius:8px;
-      font-family:ui-monospace,monospace;
-      color:#e5e7eb;
-      font-size:0.78rem;
-      overflow:auto;
-      white-space:pre;
-      border:1px solid rgba(255,255,255,0.12);
-      margin-bottom:6px;
-      box-shadow:none;
-    }
-
-    .actions{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-top:4px;
-      flex-wrap:wrap;
-    }
-    .btn{
-  height:var(--btn-h);
-  padding:0 13px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:0.84rem;
-  color:#071b24;
-  background:linear-gradient(135deg,#8fd3f4,#6bbcd6);
-  display:inline-flex;
-  align-items:center;
-  border:none;
-  box-shadow:0 0 10px rgba(107,188,214,0.35);
+.container{max-width:1100px;margin:auto}
+h1{text-align:center;margin-bottom:24px}
+.case{
+background:#020617;
+border:1px solid #1f2937;
+border-radius:14px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 8px 24px rgba(0,0,0,.4)
 }
-
-    /* styles for bottom DS/Algo table */
-    .ds-analysis-section{
-      margin-top:18px;
-      border-radius:14px;
-      padding:12px 14px 14px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      box-shadow:0 14px 48px rgba(15,23,42,0.9);
-    }
-    .ds-analysis-title{
-      font-size:0.98rem;
-      font-weight:800;
-      margin-bottom:4px;
-    }
-    .ds-analysis-sub{
-      font-size:0.8rem;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .ds-analysis-table-wrapper{
-      max-height:260px;
-      overflow:auto;
-      border-radius:10px;
-      border:1px solid var(--border-soft);
-      background:#020617;
-      font-size:0.76rem;
-    }
-    .ds-analysis-table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:720px;
-    }
-    .ds-analysis-table th,
-    .ds-analysis-table td{
-      padding:6px 7px;
-      border-bottom:1px solid #1f2937;
-      text-align:left;
-    }
-    .ds-analysis-table th{
-      background:#020617;
-      color:#e5e7eb;
-      position:sticky;
-      top:0;
-      z-index:1;
-    }
-    .ds-analysis-table tr:nth-child(even){
-      background:#020617;
-    }
-    .ds-analysis-table tr:nth-child(odd){
-      background:#020617;
-    }
-    .ds-used-yes{
-      color:#22c55e;
-      font-weight:700;
-    }
-    .ds-used-no{
-      color:#f97373;
-      font-weight:600;
-    }
-
-    footer{
-      margin-top:18px;
-      padding:8px 10px;
-      border-radius:10px;
-      text-align:center;
-      color:var(--muted);
-      border:1px solid var(--border-soft);
-      background:#020617;
-      font-size:0.78rem;
-      box-shadow:0 8px 26px rgba(15,23,42,0.9);
-    }
-
-    .fadein{opacity:0;transform:translateY(10px)}
-    .visible{opacity:1;transform:translateY(0);transition:all 260ms ease-out}
-
-    @media (max-width:640px){
-      .hero{flex-direction:column;align-items:flex-start}
-      .hero-right{align-items:flex-start;text-align:left}
-      .ds-analysis-table{min-width:640px;}
-    }
-  </style>
+.case h2{font-size:1.15rem;margin-bottom:10px;color:#f8fafc}
+.section-title{
+font-weight:700;
+color:#38bdf8;
+margin-top:12px;
+font-size:.9rem
+}
+.code-box{
+font-family:ui-monospace,monospace;
+background:#020617;
+border:1px dashed #334155;
+padding:10px;
+border-radius:10px;
+font-size:.82rem;
+margin-top:6px
+}
+footer{
+text-align:center;
+font-size:.8rem;
+color:#9ca3af;
+margin-top:30px
+}
+</style>
 </head>
 
 <body>
-<div class="wrap">
+<div class="container">
 
-  <section class="hero">
-    <div class="hero-left">
-      
-      <div class="hero-tag">Design and Analysis of Algorithms</div>
-
-<h1>Business Case Studies — Aarunya</h1>
-
-<p class="hero-sub">
-  Engineering implementations of 10 urban systems, mapping real-world operations
-  to advanced data structures and algorithms in <code>Sai/</code>.
-</p>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div>Author: <strong>Sai</strong></div>
-      <div>Roll: <strong>202</strong></div>
-      <div>City: <strong>Aarunya</strong></div>
-      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
-        Open GitHub Repository
-      </a>
-    </div>
-  </section>
-
-  <section class="summary-strip">
-    <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
-    <div class="pill"><span class="pill-label">City</span><span class="pill-value">Aarunya</span></div>
-    <div class="pill"><span class="pill-label">Cases</span><span class="pill-value">10 business modules</span></div>
-    <div class="pill"><span class="pill-label">Focus</span><span class="pill-value">Real-world DSA applications</span></div>
-  </section>
-
-  <section class="grid">
-<h1>Business Case Studies – Design & Analysis of Algorithms<br>Ankita (Aarunya)</h1>
+<h1>
+Business Case Studies – Design & Analysis of Algorithms<br>
+Ankita | Aarunya Smart City
+</h1>
 
 <!-- CASE 1 -->
 <div class="case">
@@ -353,37 +64,35 @@
 
 <div class="section-title">Problem Statement</div>
 <p>
-In many cities, waste collection vehicles follow fixed routes irrespective of
-bin fill levels. This leads to unnecessary fuel consumption, delayed waste
-collection in critical areas, overflowing bins, and poor sanitation.
+Traditional municipal waste collection follows static routes without considering
+real-time bin fill levels. This leads to overflow, poor hygiene, unnecessary fuel
+consumption, and inefficient manpower usage.
 </p>
 
 <div class="section-title">Business Objective</div>
 <p>
-The objective is to design a smart waste collection system that dynamically
-optimizes vehicle routes based on real-time waste levels, distance, and
-priority zones such as hospitals and markets.
+Design an intelligent system that dynamically optimizes garbage truck routes
+based on distance, urgency, and bin priority to reduce operational cost.
 </p>
 
 <div class="section-title">Data Structures Used</div>
 <p>
-Graph (Adjacency List) to represent road networks, Priority Queue to select
-high-priority bins, and Arrays to store bin status.
+Graph (Adjacency List), Priority Queue, Arrays
 </p>
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Dijkstra’s Algorithm combined with a Greedy Scheduling strategy.
+Dijkstra’s Shortest Path Algorithm combined with Greedy Scheduling.
 </p>
 
 <div class="section-title">Algorithm Steps</div>
 <div class="code-box">
-1. Represent the city map as a weighted graph.<br>
-2. Assign edge weights based on distance and traffic.<br>
-3. Store bin fill levels and urgency values.<br>
-4. Run Dijkstra’s algorithm from the waste depot.<br>
-5. Use a greedy approach to pick the nearest critical bins first.<br>
-6. Update routes dynamically after each collection.
+1. Represent the city road network as a weighted graph.<br>
+2. Assign edge weights based on distance and traffic conditions.<br>
+3. Store bin fill-level and urgency values in arrays.<br>
+4. Run Dijkstra’s algorithm from the depot location.<br>
+5. Use greedy selection to serve highest priority bins first.<br>
+6. Recompute routes dynamically after each collection.
 </div>
 
 <div class="section-title">Complexity Analysis</div>
@@ -394,14 +103,12 @@ Space Complexity: O(V + E)
 
 <div class="section-title">Outcome</div>
 <p>
-Fuel-efficient routes, timely waste collection, improved hygiene, and reduced
-operational costs for municipalities.
+Reduced fuel consumption, timely waste collection, and improved urban cleanliness.
 </p>
 
-<div class="section-title">Real-World Impact</div>
+<div class="section-title">SDG Impact</div>
 <p>
-Supports smart city cleanliness initiatives and promotes sustainable urban
-living.
+Supports SDG 11 (Sustainable Cities) and SDG 12 (Responsible Consumption).
 </p>
 </div>
 
@@ -411,43 +118,42 @@ living.
 
 <div class="section-title">Problem Statement</div>
 <p>
-Retail businesses often suffer losses due to inaccurate demand prediction,
-leading to overstocking or stock shortages.
+Retailers face losses due to inaccurate demand estimation, resulting in
+overstocking or stock shortages.
 </p>
 
 <div class="section-title">Business Objective</div>
 <p>
-To forecast future product demand accurately using historical sales data so
-that inventory management becomes efficient and cost-effective.
+Predict future product demand using historical sales data to optimize inventory
+management.
 </p>
 
 <div class="section-title">Data Structures Used</div>
 <p>
-Hash Tables for fast data retrieval, Arrays for storing time-series data.
+Hash Tables, Arrays
 </p>
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Dynamic Programming with trend optimization.
+Dynamic Programming for trend-based demand optimization.
 </p>
 
 <div class="section-title">Algorithm Steps</div>
 <div class="code-box">
-1. Store historical sales data in hash tables.<br>
+1. Store historical sales data using hash tables.<br>
 2. Define DP states representing demand at time t.<br>
-3. Use recurrence relations to predict future demand.<br>
-4. Optimize results by minimizing prediction error.
+3. Compute optimal future demand using recurrence relations.<br>
+4. Minimize prediction error using past patterns.
 </div>
 
 <div class="section-title">Complexity</div>
 <p>
-Time Complexity: O(n)<br>
-Space Complexity: O(n)
+Time: O(n) | Space: O(n)
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Accurate inventory planning, reduced wastage, and improved profit margins.
+Reduced wastage, improved stock planning, and higher profit margins.
 </p>
 </div>
 
@@ -457,42 +163,36 @@ Accurate inventory planning, reduced wastage, and improved profit margins.
 
 <div class="section-title">Problem Statement</div>
 <p>
-Urban drivers waste significant time searching for parking, increasing traffic
-congestion and fuel consumption.
+Drivers waste time searching for parking slots, increasing traffic congestion
+and pollution.
 </p>
 
-<div class="section-title">Business Objective</div>
+<div class="section-title">Data Structures Used</div>
 <p>
-To instantly assign the nearest available parking slot to drivers.
-</p>
-
-<div class="section-title">Data Structure Used</div>
-<p>
-Segment Tree for efficient range queries on parking availability.
+Segment Tree, Arrays
 </p>
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Greedy Allocation with Range Query Optimization.
+Greedy Allocation using Segment Tree queries.
 </p>
 
 <div class="section-title">Algorithm Steps</div>
 <div class="code-box">
-1. Build a segment tree of parking slots.<br>
-2. Update slot availability in real time.<br>
-3. Query nearest free slot using range minimum query.<br>
-4. Allocate slot using greedy strategy.
+1. Build segment tree representing parking availability.<br>
+2. Update slot status in real time.<br>
+3. Query nearest free slot using range queries.<br>
+4. Allocate slot greedily to minimize travel distance.
 </div>
 
 <div class="section-title">Complexity</div>
 <p>
-Time: O(log n) per query<br>
-Space: O(n)
+Time: O(log n) per query | Space: O(n)
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Reduced congestion, faster parking, and better urban mobility.
+Reduced congestion and faster parking experience.
 </p>
 </div>
 
@@ -502,33 +202,27 @@ Reduced congestion, faster parking, and better urban mobility.
 
 <div class="section-title">Problem Statement</div>
 <p>
-Manual job-to-skill matching is slow and inefficient on freelance platforms.
-</p>
-
-<div class="section-title">Business Objective</div>
-<p>
-To automatically match freelancers to projects based on skill relevance.
+Manual job matching on freelance platforms is inefficient and slow.
 </p>
 
 <div class="section-title">Data Structures Used</div>
 <p>
-Trie for skill searching, Vectors for candidate storage.
+Trie, Vector, Arrays
 </p>
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Trie Search and Merge Sort.
+Trie-based Search with Merge Sort ranking.
 </p>
 
 <div class="section-title">Complexity</div>
 <p>
-Search: O(m)<br>
-Sort: O(n log n)
+Search: O(m) | Sorting: O(n log n)
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Faster hiring, accurate matches, and increased platform efficiency.
+Accurate job recommendations and reduced hiring time.
 </p>
 </div>
 
@@ -538,12 +232,12 @@ Faster hiring, accurate matches, and increased platform efficiency.
 
 <div class="section-title">Problem Statement</div>
 <p>
-Fraudulent transactions often involve cyclic money transfers across accounts.
+Fraudulent financial transactions often involve circular money transfers.
 </p>
 
-<div class="section-title">Data Structure Used</div>
+<div class="section-title">Data Structures Used</div>
 <p>
-Directed Graph representing transactions.
+Directed Graph
 </p>
 
 <div class="section-title">Algorithm Applied</div>
@@ -553,9 +247,9 @@ Depth First Search (DFS) for cycle detection.
 
 <div class="section-title">Algorithm Steps</div>
 <div class="code-box">
-1. Represent transactions as directed edges.<br>
-2. Perform DFS traversal.<br>
-3. Detect cycles indicating fraudulent behavior.
+1. Model accounts as vertices and transactions as edges.<br>
+2. Perform DFS traversal on transaction graph.<br>
+3. Detect cycles indicating suspicious behavior.
 </div>
 
 <div class="section-title">Complexity</div>
@@ -565,7 +259,7 @@ Time: O(V + E)
 
 <div class="section-title">Outcome</div>
 <p>
-Early fraud detection and financial risk reduction.
+Early fraud detection and reduced financial losses.
 </p>
 </div>
 
@@ -575,12 +269,12 @@ Early fraud detection and financial risk reduction.
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-A* Search Algorithm for optimal path planning.
+A* Search Algorithm for optimal and safe path planning.
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Fast, safe, and energy-efficient autonomous deliveries.
+Faster deliveries with minimal energy consumption.
 </p>
 </div>
 
@@ -590,12 +284,12 @@ Fast, safe, and energy-efficient autonomous deliveries.
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Maximum Flow Algorithm to balance water supply.
+Maximum Flow Algorithm to balance supply across zones.
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Leakage reduction and equitable water distribution.
+Reduced leakage and fair water distribution.
 </p>
 </div>
 
@@ -610,7 +304,7 @@ Dynamic Programming for adaptive learning paths.
 
 <div class="section-title">Outcome</div>
 <p>
-Improved learning efficiency and student engagement.
+Improved learning efficiency and engagement.
 </p>
 </div>
 
@@ -620,12 +314,12 @@ Improved learning efficiency and student engagement.
 
 <div class="section-title">Algorithm Applied</div>
 <p>
-Breadth First Search for pollution spread analysis.
+Breadth First Search (BFS) to analyze pollution spread.
 </p>
 
 <div class="section-title">Outcome</div>
 <p>
-Better pollution control and policy planning.
+Better environmental planning and pollution control.
 </p>
 </div>
 
@@ -640,83 +334,14 @@ Dijkstra’s Algorithm + Knapsack Dynamic Programming.
 
 <div class="section-title">Outcome</div>
 <p>
-Efficient storage, faster order processing, reduced cost.
+Efficient storage allocation and faster order processing.
 </p>
 </div>
-  <!-- BIG DATA STRUCTURE / ALGO TABLE -->
-  <section class="ds-analysis-section">
-    <div class="ds-analysis-title">Data Structures &amp; Algorithms Analysis</div>
-    <div class="ds-analysis-sub">
-      Detailed list of core structures and algorithms across all ten cases, including whether they are used,
-      where they appear, and their asymptotic space and time efficiency.
-    </div>
 
-    <div class="ds-analysis-table-wrapper">
-      <table class="ds-analysis-table">
-        <thead>
-          <tr>
-            <th>Data Structure / Algorithm</th>
-            <th>Used?</th>
-            <th>Where Used</th>
-            <th>Space Efficiency</th>
-            <th>Time Efficiency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases (graphs, grids, matrices, DP tables, lists of records/events)</td><td>O(n)</td><td>O(1) access</td></tr>
-          <tr><td>Structures</td><td class="ds-used-yes">Yes</td><td>All cases (<code>Edge</code>, <code>Node</code>, <code>Zone</code>, <code>Patient</code>, <code>User</code>, <code>Task</code>, etc.)</td><td>O(1) per record</td><td>O(1) field access</td></tr>
-          <tr><td>List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Stack</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Queue</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 6, 8, 10 (BFS over health graph, traffic, disaster grid, lighting graph, port graph)</td><td>O(V)</td><td>O(1) enqueue / dequeue</td></tr>
-          <tr><td>Binary Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 (key or node relationships)</td><td>O(n)</td><td>O(h) search</td></tr>
-          <tr><td>Binary Search Tree</td><td class="ds-used-yes">Yes</td><td>Case 5 · Case 7 (balanced BST behaviour)</td><td>O(n)</td><td>Average O(log n), worst O(n)</td></tr>
-          <tr><td>AVL Tree</td><td class="ds-used-yes">Yes</td><td>Case 7 (balanced storage for simulation keys)</td><td>O(n)</td><td>O(log n) search / insert / delete</td></tr>
-          <tr><td>2–3 Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Red‑Black Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Trie</td><td class="ds-used-yes">Yes</td><td>Case 9 (dataset prefixes and auto‑complete)</td><td>O(total characters)</td><td>O(k) per search / insert</td></tr>
-          <tr><td>Heap (Min/Max‑Heap) / Priority Queue</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (Dijkstra / A* PQ, request schedulers)</td><td>O(n)</td><td>O(log n) push / pop</td></tr>
-          <tr><td>Lookup Table (Hash Table / Unordered Map)</td><td class="ds-used-yes">Yes</td><td>Cases 2, 5, 9 (patients, credentials, dataset index)</td><td>O(n)</td><td>Expected O(1) lookup / insert</td></tr>
-          <tr><td>Sparse Table</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Fenwick Tree</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Segment Tree</td><td class="ds-used-yes">Yes</td><td>Case 3 (traffic density), Case 8 (lighting energy)</td><td>O(n)</td><td>O(log n) update and range query</td></tr>
-          <tr><td>Skip List</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Union‑Find (Disjoint Set)</td><td class="ds-used-yes">Yes</td><td>Case 1 and 10 (irrigation / logistics MST)</td><td>O(n)</td><td>Amortised ≈ O(1) union / find</td></tr>
-          <tr><td>Hashing</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (unordered_map / sets, security hashes)</td><td>O(n)</td><td>O(1) expected per operation</td></tr>
-          <tr><td>DFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 6, 10 (graph / grid exploration)</td><td>O(V)</td><td>O(V + E)</td></tr>
-          <tr><td>BFS</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 6, 8, 10 (reachability, crowd / safety paths)</td><td>O(V)</td><td>O(V + E)</td></tr>
-          <tr><td>Bubble Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Selection Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Insertion Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Quick Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (sorting datasets / logs)</td><td>O(log n) extra stack</td><td>Average O(n log n)</td></tr>
-          <tr><td>Merge Sort</td><td class="ds-used-yes">Yes</td><td>Case 9 (stable sorting of metadata)</td><td>O(n)</td><td>O(n log n)</td></tr>
-          <tr><td>Brute‑Force Pattern Search</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Rabin–Karp</td><td class="ds-used-yes">Yes</td><td>Cases 2, 3, 4, 5, 8, 9 (log scanning, text analysis)</td><td>O(1) extra per window</td><td>Average O(n + m)</td></tr>
-          <tr><td>Boyer–Moore</td><td class="ds-used-yes">Yes</td><td>Case 5 (malware signature search)</td><td>O(m + Σ) preprocessing</td><td>Sublinear average over text</td></tr>
-          <tr><td>Knuth–Morris–Pratt (KMP)</td><td class="ds-used-yes">Yes</td><td>Cases 2–10 (pattern search in various logs / notes)</td><td>O(m)</td><td>O(n + m)</td></tr>
-          <tr><td>Heap Sort</td><td class="ds-used-no">No</td><td>Not part of system requirements</td><td>—</td><td>—</td></tr>
-          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (energy and port MST)</td><td>O(E)</td><td>O(E log E)</td></tr>
-          <tr><td>Prim</td><td class="ds-used-yes">Yes</td><td>Case 1, 10 (alternate MST construction)</td><td>O(V + E)</td><td>O(V²) with array implementation</td></tr>
-          <tr><td>Dijkstra</td><td class="ds-used-yes">Yes</td><td>Cases 1, 2, 3, 6, 10 (routing in grids and graphs)</td><td>O(V)</td><td>O(E log V) with PQ</td></tr>
-          <tr><td>Floyd–Warshall</td><td class="ds-used-yes">Yes</td><td>Case 3 (all‑pairs travel times)</td><td>O(n²)</td><td>O(n³)</td></tr>
-          <tr><td>Bellman–Ford</td><td class="ds-used-yes">Yes</td><td>Case 1 (alternative shortest paths under constraints)</td><td>O(V)</td><td>O(V·E)</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Aarunya — Sai (Roll 202) · All source files located in <code>Sai/</code>
-  </footer>
+<footer>
+© 2025 Ankita | Design & Analysis of Algorithms | Aarunya Smart City
+</footer>
 
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fadein').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 60 * i);
-    });
-  });
-</script>
-
 </body>
 </html>
