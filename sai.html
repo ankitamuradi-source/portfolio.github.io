@@ -128,27 +128,32 @@
     .pill-value{color:#e5e7eb;font-weight:600}
 
     .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:start;
-    }
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  justify-items:center;
+}
+
     @media (max-width:800px){
       .grid{
         grid-template-columns:1fr;
       }
     }
    .card{
+     max-width:920px;
+width:100%;
+
   padding:14px 14px 13px;
   border-radius:16px;
   background:
-    linear-gradient(
-      160deg,
-      rgba(99,102,241,0.10),
-      rgba(34,197,94,0.08),
-      rgba(2,6,23,0.92) 55%
-    );
-  border:1px solid rgba(99,102,241,0.35);
+  linear-gradient(
+    160deg,
+    rgba(99,102,241,0.18),
+    rgba(34,197,94,0.14),
+    rgba(2,6,23,0.95) 55%
+  );
+border:1px solid rgba(165,180,252,0.55);
+
   box-shadow:
     0 14px 40px rgba(0,0,0,0.8),
     inset 0 0 0 1px rgba(255,255,255,0.05);
@@ -166,26 +171,15 @@
   background:
     linear-gradient(#020617,#020617) padding-box,
     linear-gradient(120deg,#22c55e,#38bdf8,#a78bfa) border-box;
-  opacity:0.4;
+  opacity:0.65;
   pointer-events:none;
 }
 .card:hover{
-  transform:translateY(-8px) scale(1.02);
+  transform:translateY(-12px) scale(1.03);
   box-shadow:
-    0 0 40px rgba(99,102,241,0.45),
-    0 0 70px rgba(34,197,94,0.25);
+    0 0 55px rgba(99,102,241,0.65),
+    0 0 90px rgba(34,197,94,0.45);
 }
-
-@keyframes floatCard{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-4px)}
-  100%{transform:translateY(0)}
-}
-
-.card{
-  animation:floatCard 7s ease-in-out infinite;
-}
-
     .case-title{
   font-size:1.08rem;
   font-weight:800;
