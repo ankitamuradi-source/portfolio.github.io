@@ -150,7 +150,9 @@ width:100%;
     160deg,
     rgba(99,102,241,0.18),
     rgba(34,197,94,0.14),
-    rgba(2,6,23,0.95) 55%
+    rgba(2,6,23,0.82) 55%
+    background-clip:padding-box;
+
   );
 border:1px solid rgba(165,180,252,0.55);
 
@@ -171,23 +173,43 @@ border:1px solid rgba(165,180,252,0.55);
   background:
     linear-gradient(#020617,#020617) padding-box,
     linear-gradient(120deg,#22c55e,#38bdf8,#a78bfa) border-box;
-  opacity:0.65;
+  opacity:0.7;
   pointer-events:none;
 }
+    /* Inner content glow for readability */
+.card > *{
+  position:relative;
+  z-index:1;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.01)
+  );
+  pointer-events:none;
+}
+
 .card:hover{
   transform:translateY(-12px) scale(1.03);
   box-shadow:
     0 0 55px rgba(99,102,241,0.65),
     0 0 90px rgba(34,197,94,0.45);
 }
-    .case-title{
-  font-size:1.08rem;
-  font-weight:800;
-  background:linear-gradient(90deg,#a5b4fc,#34d399,#f472b6);
+  .case-title{
+  font-size:1.1rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#e0e7ff,#34d399,#f9a8d4);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:4px;
+  margin-bottom:6px;
 }
+
     .meta{
       display:flex;
       gap:6px;
@@ -211,11 +233,11 @@ border:1px solid rgba(165,180,252,0.55);
       box-shadow:0 0 0 1px #a855f780;
     }
     .desc{
-      color:#e5e7eb;
-      font-size:0.9rem;
-      line-height:1.7;
-      margin-bottom:7px;
-    }
+  color:#f1f5f9;           
+  font-size:0.92rem;
+  line-height:1.8;
+}
+
     .desc span.sdg-text{
       color:#9ca3af;
       font-size:0.84rem;
@@ -227,10 +249,13 @@ border:1px solid rgba(165,180,252,0.55);
       border:1px dashed var(--border-soft);
       margin-bottom:7px;
       font-size:0.8rem;
-      color:#e5e7eb;
-    }
-    .ds-list code{color:#22c55e;font-weight:700}
+     color:#e5e7eb;
 
+    }
+  .ds-list code{
+  color:#34d399;
+  font-weight:700;
+}
     .diagram{
       background:var(--diagram-bg);
       padding:7px 8px;
