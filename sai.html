@@ -48,19 +48,22 @@
       flex-direction:column;
       gap:20px;
     }
-      .hero{
+    .hero{
   display:flex;
-  flex-direction:column;   /* 👈 stack vertically */
-  gap:16px;
+  flex-direction:column;
+  align-items:center;   
+  gap:18px;
+  text-align:center;    
 }
+
     .hero-left{display:flex;gap:14px;align-items:flex-start}
     
-   .hero-title-box{
-  align-self:flex-start;
-  padding:14px 22px;
-  border-radius:16px;
-
-  background:linear-gradient(
+ .hero-title-box{
+  align-self:center;  
+  padding:22px 28px;
+  border-radius:22px;
+ 
+   background:linear-gradient(
     135deg,
     rgba(34,211,238,0.18),
     rgba(139,92,246,0.18)
@@ -120,11 +123,13 @@
       font-size:1.35rem;
       margin-bottom:4px;
     }
-    .hero-sub{
-      font-size:0.92rem;
-      opacity:0.9;
-      max-width:540px;
-    }
+  .hero-sub{
+  font-size:0.82rem;      
+  opacity:0.85;
+  max-width:640px;
+  margin-top:6px;           
+  color:#c7d2fe;
+}
     .hero-right{
       text-align:right;
       font-size:0.86rem;
@@ -437,30 +442,30 @@
 <body>
 <div class="wrap">
 
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-title-box">
-  <div class="title-small">DESIGN AND ANALYSIS OF ALGORITHMS</div>
-  <div class="title-main">Business Case Studies</div>
-  <div class="title-city">AARUNYA</div>
-</div>
+<section class="hero">
 
+  <div class="hero-title-box">
+    <div class="title-small">DESIGN AND ANALYSIS OF ALGORITHMS</div>
+    <div class="title-main">Business Case Studies</div>
+    <div class="title-city">AARUNYA</div>
+  </div>
 
+  <p class="hero-sub">
+    Engineering implementations of 10 urban systems, mapping real-world operations
+    to advanced data structures and algorithms in <code>Sai/</code>.
+  </p>
 
-<p class="hero-sub">
-  Engineering implementations of 10 urban systems, mapping real-world operations
-  to advanced data structures and algorithms in <code>Sai/</code>.
-</p>
-      </div>
-    <div class="hero-right">
-      <div>Author: <strong>Sai</strong></div>
-      <div>Roll: <strong>202</strong></div>
-      <div>City: <strong>Aarunya</strong></div>
-      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
-        Open GitHub Repository
-      </a>
-    </div>
-  </section>
+  <div class="hero-right">
+    <div>Author: <strong>Sai</strong></div>
+    <div>Roll: <strong>202</strong></div>
+    <div>City: <strong>Aarunya</strong></div>
+    <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
+      Open GitHub Repository
+    </a>
+  </div>
+
+</section>
+
 
   <section class="summary-strip">
     <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
