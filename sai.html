@@ -30,14 +30,17 @@
       --btn-h:36px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
     body{
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);;
-      color:var(--text-main);
-      padding:24px 10px 32px;
-      line-height:1.7;
-    }
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:
+    radial-gradient(circle at top left, rgba(139,92,246,0.18), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(34,211,238,0.15), transparent 45%),
+    linear-gradient(135deg,#05050f 0%, #0b0b1a 35%, #141433 65%, #020617 100%);
+  color:var(--text-main);
+  padding:24px 10px 32px;
+  line-height:1.7;
+}
+
     .wrap{
       max-width:var(--maxw);
       margin:0 auto;
@@ -52,15 +55,7 @@
 }
     .hero-left{display:flex;gap:14px;align-items:flex-start}
     
-    .hero-tag{
-  font-size:0.8rem;
-  font-weight:600;
-  letter-spacing:0.06em;
-  text-transform:none;
-  color:#cbd5f5;
-  margin-bottom:6px;
-}
-    .hero-title-box{
+   .hero-title-box{
   align-self:flex-start;
   padding:14px 22px;
   border-radius:16px;
@@ -77,14 +72,50 @@
 
   backdrop-filter: blur(10px);
 }
+ .hero-title-box{
+  align-self:flex-start;
+  padding:22px 26px;
+  border-radius:20px;
 
-.hero-title-box h1{
-  font-size:1.6rem;
+  background:linear-gradient(
+    135deg,
+    rgba(88,28,135,0.35),
+    rgba(30,64,175,0.35)
+  );
+
+  box-shadow:
+    0 0 45px rgba(139,92,246,0.55),
+    0 0 90px rgba(34,211,238,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(14px);
+}
+
+.hero-title-box .title-small{
+  font-size:0.78rem;
+  letter-spacing:0.12em;
+  font-weight:700;
+  color:#c7d2fe;
+  margin-bottom:6px;
+}
+
+.hero-title-box .title-main{
+  font-size:1.55rem;
   font-weight:900;
-  background:linear-gradient(90deg,#22d3ee,#a78bfa);
+  line-height:1.15;
+  background:linear-gradient(90deg,#22d3ee,#a78bfa,#f472b6);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+
+.hero-title-box .title-city{
+  font-size:1.1rem;
+  font-weight:800;
+  margin-top:4px;
+  color:#e0e7ff;
+  text-shadow:0 0 12px rgba(139,92,246,0.6);
+}
+
         h1{
       font-size:1.35rem;
       margin-bottom:4px;
@@ -408,12 +439,12 @@
 
   <section class="hero">
     <div class="hero-left">
-      
-      <div class="hero-tag">Design and Analysis of Algorithms</div>
-
-<div class="hero-title-box">
-  <h1>Business Case Studies — Aarunya</h1>
+      <div class="hero-title-box">
+  <div class="title-small">DESIGN AND ANALYSIS OF ALGORITHMS</div>
+  <div class="title-main">Business Case Studies</div>
+  <div class="title-city">AARUNYA</div>
 </div>
+
 
 
 <p class="hero-sub">
