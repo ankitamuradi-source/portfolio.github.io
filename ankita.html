@@ -4,647 +4,756 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ankita — Business Case Studies | Aarunya</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --page-bg:#020617;
-      --hero-bg:#0f172a;
-      --hero-bg-soft:#020617;
-      --text-main:#e5e7eb;
-      --muted:#9ca3af;
-      --card-bg:#020617;
-      --accent-chip:#1e293b;
-      --accent-chip-text:#38bdf8;
-      --accent-chip2:#0f172a;
-      --accent-chip2-text:#a5b4fc;
-      --border-soft:#1f2933;
-      --diagram-bg:#020617;
-      --diagram-border:#38bdf8;  /* CHANGED: Cyan accent */
-      --btn-bg:#38bdf8;          /* CHANGED: Cyan buttons */
-      --btn-bg2:#22c55e;
-      --btn-text:#0f172a;
-      --maxw:1040px;
-      --btn-h:36px;
+      --page-bg: #0a0a1a;
+      --hero-bg: #1a1a3a;
+      --hero-glow: #00d4ff80;
+      --text-main: #e0e7ff;
+      --text-glow: #ffffff20;
+      --accent-cyan: #00d4ff;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --card-glow: rgba(0,212,255,0.15);
+      --glass-bg: rgba(255,255,255,0.03);
+      --border-glow: rgba(0,212,255,0.3);
+      --maxw: 1100px;
+      --btn-h: 40px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(135deg,#090910 0%, #141228 25%, #1e2a4f 55%, #05050c 100%);
-      color:var(--text-main);
-      padding:24px 10px 32px;
-      line-height:1.7;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120,219,255,0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0f0f2a 100%);
+      color: var(--text-main);
+      padding: 32px 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
     }
+    body::before{
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 30%, var(--accent-cyan) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--accent-purple) 0%, transparent 50%);
+      opacity: 0.05;
+      z-index: -1;
+      animation: pulse 20s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%, 100% { opacity: 0.05; transform: scale(1); }
+      50% { opacity: 0.08; transform: scale(1.05); }
+    }
+
     .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
     }
 
     .hero{
-      border-radius:18px;
-      padding:18px 20px;
-      background:radial-gradient(circle at top left,#38bdf820 0,#0f172a 45%,#020617 100%);  /* CHANGED: Cyan gradient */
-      color:#e5e7eb;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      border:1px solid #38bdf840;  /* CHANGED: Cyan border */
-      box-shadow:0 18px 60px rgba(15,23,42,0.9);
+      position: relative;
+      border-radius: 24px;
+      padding: 32px 32px;
+      background: 
+        linear-gradient(145deg, var(--glass-bg) 0%, rgba(26,26,58,0.8) 100%),
+        radial-gradient(circle at top left, var(--hero-glow) 0%, transparent 70%);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glow);
+      box-shadow: 
+        0 25px 80px rgba(0,0,0,0.6),
+        0 0 50px var(--card-glow),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      overflow: hidden;
     }
-    .hero-left{display:flex;gap:14px;align-items:flex-start}
-    
+    .hero::before{
+      content: '';
+      position: absolute;
+      top: -50%; right: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      opacity: 0.03;
+    }
+    @keyframes rotate{ to{ transform: rotate(360deg); } }
+
+    .hero-title-group{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
     .hero-tag{
-      font-size:0.8rem;
-      font-weight:600;
-      letter-spacing:0.06em;
-      text-transform:none;
-      color:#cbd5f5;
-      margin-bottom:6px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
     }
-    
     h1{
-      font-size:1.35rem;
-      margin-bottom:4px;
+      font-family: 'Orbitron', monospace;
+      font-size: 2.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 50%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin: 0;
     }
     .hero-sub{
-      font-size:0.92rem;
-      opacity:0.9;
-      max-width:540px;
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      background: var(--glass-bg);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
     }
     .hero-right{
-      text-align:right;
-      font-size:0.86rem;
-      opacity:0.9;
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-      align-items:flex-end;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+      font-size: 0.9rem;
     }
-    .hero-right strong{color:#fefce8}
+    .hero-author{
+      font-weight: 800;
+      color: var(--accent-cyan);
+      text-shadow: 0 0 20px var(--accent-cyan);
+    }
     .hero-git-btn{
-      margin-top:6px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 14px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.7);
-      background:linear-gradient(120deg,#020617,#0f172a);
-      color:#e5e7eb;
-      font-size:0.78rem;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 0 0 1px #38bdf840;  /* CHANGED: Cyan glow */
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: 2px solid var(--border-glow);
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+      color: #0a0a1a;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.4);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .hero-git-btn:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.6);
     }
 
-    .summary-strip{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
+    .summary-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
     }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      font-size:0.8rem;
-      color:var(--muted);
-      box-shadow:0 0 0 1px #1e293b;
+    .metric-card{
+      padding: 20px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, var(--glass-bg), rgba(26,26,58,0.6));
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
-    .pill-label{color:#6b7280}
-    .pill-value{color:#e5e7eb;font-weight:600}
+    .metric-card:hover{ transform: translateY(-5px); }
+    .metric-value{
+      font-family: 'Orbitron', monospace;
+      font-size: 1.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .metric-label{ 
+      font-size: 0.8rem; 
+      opacity: 0.8;
+      margin-top: 4px;
+    }
 
     .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:start;
-    }
-    @media (max-width:800px){
-      .grid{
-        grid-template-columns:1fr;
-      }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
     }
 
     .card{
-      padding:14px 14px 13px;
-      border-radius:12px;
-      background:radial-gradient(circle at top left,#38bdf810 0,#020617 55%);  /* CHANGED: Cyan card gradient */
-      border:1px solid var(--border-soft);
-      border-left:none;
-      box-shadow:0 10px 32px rgba(15,23,42,0.9);
+      position: relative;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, var(--glass-bg), rgba(26,26,58,0.7));
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(20px);
+      box-shadow: 
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 30px var(--card-glow),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .card::before{
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-green));
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer{ 
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .card:hover{
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 50px var(--card-glow);
     }
     .case-title{
-      font-size:1.0rem;
-      font-weight:800;
-      color:var(--text-main);
-      margin-bottom:4px;
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--text-main), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .meta{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-      margin-bottom:6px;
+    .tech-badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
     }
     .badge{
-      padding:3px 10px;
-      border-radius:999px;
-      font-size:0.74rem;
-      font-weight:600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Orbitron', monospace;
+      backdrop-filter: blur(10px);
     }
-    .badge:nth-child(1){
-      background:var(--accent-chip);
-      color:var(--accent-chip-text);
-      box-shadow:0 0 0 1px #38bdf880;
+    .badge.ds{
+      background: linear-gradient(135deg, var(--accent-cyan), #06b6d4);
+      color: white;
+      box-shadow: 0 0 15px rgba(0,212,255,0.5);
     }
-    .badge:nth-child(2){
-      background:var(--accent-chip2);
-      color:var(--accent-chip2-text);
-      box-shadow:0 0 0 1px #a855f780;
+    .badge.algo{
+      background: linear-gradient(135deg, var(--accent-purple), #a855f7);
+      color: white;
+      box-shadow: 0 0 15px rgba(139,92,246,0.5);
     }
     .desc{
-      color:#e5e7eb;
-      font-size:0.9rem;
-      line-height:1.7;
-      margin-bottom:7px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      opacity: 0.95;
     }
-    .desc span.sdg-text{
-      color:#9ca3af;
-      font-size:0.84rem;
+    .sdg-tag{
+      display: inline-block;
+      background: rgba(16,185,129,0.2);
+      color: var(--accent-green);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(16,185,129,0.4);
     }
-    .ds-list{
-      background:#020617;
-      padding:6px 8px;
-      border-radius:8px;
-      border:1px dashed var(--border-soft);
-      margin-bottom:7px;
-      font-size:0.8rem;
-      color:#e5e7eb;
+    .tech-stack{
+      background: rgba(255,255,255,0.02);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 16px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
     }
-    .ds-list code{color:#38bdf8;font-weight:700}  /* CHANGED: Cyan code highlight */
-
-    .diagram{
-      background:var(--diagram-bg);
-      padding:7px 8px;
-      border-radius:8px;
-      font-family:ui-monospace,monospace;
-      color:#e5e7eb;
-      font-size:0.78rem;
-      overflow:auto;
-      white-space:pre;
-      border:1px solid rgba(255,255,255,0.12);
-      margin-bottom:6px;
-      box-shadow:none;
+    .tech-stack code{
+      color: var(--accent-cyan);
+      font-weight: 800;
+      text-shadow: 0 0 10px var(--accent-cyan);
     }
-
-    .actions{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-top:4px;
-      flex-wrap:wrap;
+    .flow-diagram{
+      background: rgba(0,0,0,0.3);
+      padding: 16px;
+      border-radius: 12px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      border-left: 4px solid var(--accent-cyan);
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
     .btn{
-      height:var(--btn-h);
-      padding:0 13px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:0.84rem;
-      color:#071b24;
-      background:linear-gradient(135deg,#38bdf8,#22c55e);  /* CHANGED: Cyan-primary gradient */
-      display:inline-flex;
-      align-items:center;
-      border:none;
-      box-shadow:0 0 10px rgba(56,189,248,0.35);  /* CHANGED: Cyan glow */
+      height: var(--btn-h);
+      padding: 0 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-family: 'Orbitron', monospace;
+      font-weight: 800;
+      font-size: 0.85rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+      color: #0a0a1a;
+      display: inline-flex;
+      align-items: center;
+      border: none;
+      box-shadow: 0 8px 25px rgba(0,212,255,0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0,212,255,0.6);
     }
 
-    /* styles for bottom DS/Algo table */
-    .ds-analysis-section{
-      margin-top:18px;
-      border-radius:14px;
-      padding:12px 14px 14px;
-      background:#020617;
-      border:1px solid var(--border-soft);
-      box-shadow:0 14px 48px rgba(15,23,42,0.9);
+    .analysis-section{
+      border-radius: 24px;
+      padding: 32px;
+      background: linear-gradient(145deg, var(--glass-bg), rgba(26,26,58,0.8));
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(25px);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.6);
     }
-    .ds-analysis-title{
-      font-size:0.98rem;
-      font-weight:800;
-      margin-bottom:4px;
+    .analysis-title{
+      font-family: 'Orbitron', monospace;
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .ds-analysis-sub{
-      font-size:0.8rem;
-      color:var(--muted);
-      margin-bottom:8px;
+    .analysis-table-wrapper{
+      max-height: 400px;
+      overflow: auto;
+      border-radius: 20px;
+      border: 1px solid var(--border-glow);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(15px);
     }
-    .ds-analysis-table-wrapper{
-      max-height:260px;
-      overflow:auto;
-      border-radius:10px;
-      border:1px solid var(--border-soft);
-      background:#020617;
-      font-size:0.76rem;
+    .analysis-table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      font-family: 'Orbitron', monospace;
     }
-    .ds-analysis-table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:720px;
+    .analysis-table th{
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      color: white;
+      padding: 16px 12px;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
-    .ds-analysis-table th,
-    .ds-analysis-table td{
-      padding:6px 7px;
-      border-bottom:1px solid #1f2937;
-      text-align:left;
+    .analysis-table td{
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .ds-analysis-table th{
-      background:#020617;
-      color:#e5e7eb;
-      position:sticky;
-      top:0;
-      z-index:1;
+    .analysis-table tr:hover{
+      background: rgba(0,212,255,0.1);
     }
-    .ds-analysis-table tr:nth-child(even){
-      background:#020617;
+    .used-yes{
+      color: var(--accent-green);
+      font-weight: 900;
+      text-shadow: 0 0 10px var(--accent-green);
     }
-    .ds-analysis-table tr:nth-child(odd){
-      background:#020617;
-    }
-    .ds-used-yes{
-      color:#38bdf8;  /* CHANGED: Cyan yes */
-      font-weight:700;
-    }
-    .ds-used-no{
-      color:#f97373;
-      font-weight:600;
-    }
-
-    footer{
-      margin-top:18px;
-      padding:8px 10px;
-      border-radius:10px;
-      text-align:center;
-      color:var(--muted);
-      border:1px solid var(--border-soft);
-      background:#020617;
-      font-size:0.78rem;
-      box-shadow:0 8px 26px rgba(15,23,42,0.9);
+    .used-no{
+      color: #ef4444;
+      font-weight: 700;
     }
 
-    .fadein{opacity:0;transform:translateY(10px)}
-    .visible{opacity:1;transform:translateY(0);transition:all 260ms ease-out}
+    .footer{
+      margin-top: 40px;
+      padding: 24px 32px;
+      border-radius: 24px;
+      text-align: center;
+      background: linear-gradient(145deg, var(--glass-bg), rgba(26,26,58,0.6));
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(20px);
+      font-family: 'Orbitron', monospace;
+    }
+    .footer code{
+      color: var(--accent-cyan);
+      font-weight: 800;
+    }
 
-    @media (max-width:640px){
-      .hero{flex-direction:column;align-items:flex-start}
-      .hero-right{align-items:flex-start;text-align:left}
-      .ds-analysis-table{min-width:640px;}
+    @media (max-width: 768px){
+      .hero{ grid-template-columns: 1fr; gap: 24px; padding: 24px; }
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 1.8rem; }
+      .analysis-table-wrapper{ font-size: 0.75rem; }
+    }
+    .fadein{
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .visible{
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
   </style>
 </head>
-
 <body>
-<div class="wrap">
-
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-tag">Design and Analysis of Algorithms</div>
-      <h1>Business Case Studies — Aarunya</h1>
-      <p class="hero-sub">
-        Engineering implementations of 10 urban systems, mapping real-world operations
-        to advanced data structures and algorithms in <code>Ankita/</code>.
-      </p>
-    </div>
-    <div class="hero-right">
-      <div>Author: <strong>Ankita</strong></div>
-      <div>Roll: <strong>244</strong></div>
-      <div>City: <strong>Aarunya</strong></div>
-      <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
-        Open GitHub Repository →
-      </a>
-    </div>
-  </section>
-
-  <section class="summary-strip">
-    <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
-    <div class="pill"><span class="pill-label">City</span><span class="pill-value">Aarunya</span></div>
-    <div class="pill"><span class="pill-label">Cases</span><span class="pill-value">10 business modules</span></div>
-    <div class="pill"><span class="pill-label">Focus</span><span class="pill-value">Real-world DSA</span></div>
-  </section>
-
-  <section class="grid">
-
-    <!-- 1 -->
-    <article class="card fadein" id="case1">
-      <div class="case-title">1 • Smart Traffic Automation</div>
-      <div class="meta">
-        <div class="badge">Graph · Segment Tree</div>
-        <div class="badge">Dijkstra · A* · KMP</div>
+  <div class="wrap">
+    <section class="hero fadein">
+      <div class="hero-title-group">
+        <div class="hero-tag">DESIGN & ANALYSIS OF ALGORITHMS</div>
+        <h1>Business Case Studies</h1>
+        <p class="hero-sub">
+          Engineering 10 urban systems for <strong>Aarunya</strong> city - mapping real-world operations 
+          to advanced data structures & algorithms in <code>Ankita/</code>
+        </p>
       </div>
-      <p class="desc">
-        Aarunya's traffic system processes live camera feeds across 500+ intersections detecting accidents and congestion. Road networks form weighted graphs where Dijkstra finds fastest emergency routes while A* handles dynamic obstacles. Segment trees aggregate traffic density for instant range queries, KMP scans license plates identifying offenders.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Innovation</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>vector&lt;Node&gt;</code>, <code>priority_queue</code> —
-        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Segment Tree</code>, <code>KMP</code>
+      <div class="hero-right">
+        <div>Author: <span class="hero-author">Ankita</span></div>
+        <div>Roll: <strong>244</strong></div>
+        <div>City: <strong>Aarunya</strong></div>
+        <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
+          → Open Repository
+        </a>
       </div>
-      <div class="diagram">
+    </section>
+
+    <section class="summary-grid fadein">
+      <div class="metric-card">
+        <div class="metric-value">DAA-2025</div>
+        <div class="metric-label">Course</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Aarunya</div>
+        <div class="metric-label">City</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">10</div>
+        <div class="metric-label">Cases</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Real DSA</div>
+        <div class="metric-label">Focus</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card fadein" id="case1">
+        <div class="case-title">1 • Smart Traffic Automation</div>
+        <div class="tech-badges">
+          <div class="badge ds">Graph · Segment Tree</div>
+          <div class="badge algo">Dijkstra · A* · KMP</div>
+        </div>
+        <p class="desc">
+          Processes 500+ intersections with live camera feeds. <strong>Dijkstra</strong> finds emergency routes,
+          <strong>A*</strong> handles dynamic obstacles, <strong>Segment Trees</strong> aggregate traffic density,
+          <strong>KMP</strong> scans license plates in real-time.
+        </p>
+        <span class="sdg-tag">SDG 11 – Sustainable Cities | SDG 9 – Innovation</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>vector&lt;Node&gt;</code> <code>priority_queue</code> | 
+          <strong>Algo:</strong> <code>Dijkstra</code> <code>Segment Tree</code> <code>KMP</code>
+        </div>
+        <div class="flow-diagram">
 Camera → KMP Plates → Alerts
-Traffic → Segment Tree → Congestion
-Emergency → Graph A*/Dijkstra → Routes
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case1.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+Traffic → Segment Tree → Density
+Emergency → A*/Dijkstra → Routes
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case1.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 2 -->
-    <article class="card fadein" id="case2">
-      <div class="case-title">2 • Water-Energy Optimization Grid</div>
-      <div class="meta">
-        <div class="badge">Edge List · Union-Find</div>
-        <div class="badge">Kruskal · Knapsack DP · BFS</div>
-      </div>
-      <p class="desc">
-        Balances 150 reservoirs, 1200km pipes during peak demand. Kruskal constructs minimum-cost pipe networks using Union-Find. Knapsack DP optimally allocates energy across time slots. BFS validates connectivity during maintenance.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 6 – Clean Water, SDG 7 – Clean Energy</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>vector&lt;Edge&gt;</code>, <code>DP table</code> —
-        <strong>Algorithms:</strong> <code>Kruskal MST</code>, <code>0/1 Knapsack</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case2">
+        <div class="case-title">2 • Water-Energy Grid</div>
+        <div class="tech-badges">
+          <div class="badge ds">Edge List · Union-Find</div>
+          <div class="badge algo">Kruskal · Knapsack · BFS</div>
+        </div>
+        <p class="desc">
+          Balances 150 reservoirs, 1200km pipes. <strong>Kruskal</strong> builds minimum-cost networks,
+          <strong>Knapsack DP</strong> allocates energy optimally, <strong>BFS</strong> validates connectivity.
+        </p>
+        <span class="sdg-tag">SDG 6 – Clean Water | SDG 7 – Clean Energy</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>vector&lt;Edge&gt;</code> <code>DP table</code> | 
+          <strong>Algo:</strong> <code>Kruskal MST</code> <code>0/1 Knapsack</code>
+        </div>
+        <div class="flow-diagram">
 Pipes → Kruskal → Optimal Network
-Demand → Knapsack DP → Fill Plan
-Maintenance → BFS → Continuity Check
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case2.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+Demand → Knapsack → Fill Plan
+Maintenance → BFS → Connectivity
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case2.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 3 -->
-    <article class="card fadein" id="case3">
-      <div class="case-title">3 • Intelligent Waste Collection</div>
-      <div class="meta">
-        <div class="badge">HashMap · Priority Queue</div>
-        <div class="badge">TSP · Dijkstra</div>
-      </div>
-      <p class="desc">
-        Optimizes 2500+ smart bins, 75 trucks with capacity constraints. TSP heuristics generate routes prioritizing overflow bins. Dijkstra reroutes around traffic. Hash tables track fill levels/material types.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 12 – Responsible Consumption</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>unordered_map</code>, <code>priority_queue</code> —
-        <strong>Algorithms:</strong> <code>TSP heuristic</code>, <code>Dijkstra</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case3">
+        <div class="case-title">3 • Intelligent Waste</div>
+        <div class="tech-badges">
+          <div class="badge ds">HashMap · Priority Queue</div>
+          <div class="badge algo">TSP · Dijkstra</div>
+        </div>
+        <p class="desc">
+          Optimizes 2500+ smart bins, 75 trucks. <strong>TSP heuristics</strong> prioritize overflow bins,
+          <strong>Dijkstra</strong> reroutes around traffic, <strong>Hash tables</strong> track fill levels.
+        </p>
+        <span class="sdg-tag">SDG 11 – Cities | SDG 12 – Consumption</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>unordered_map</code> <code>priority_queue</code> | 
+          <strong>Algo:</strong> <code>TSP</code> <code>Dijkstra</code>
+        </div>
+        <div class="flow-diagram">
 Sensors → Hash → Priority Bins
 Priority → TSP → Truck Routes
 Traffic → Dijkstra → Rerouting
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case3.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case3.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 4 -->
-    <article class="card fadein" id="case4">
-      <div class="case-title">4 • Edu-Tech Learning Platform</div>
-      <div class="meta">
-        <div class="badge">Trie · Segment Tree</div>
-        <div class="badge">Decision Tree · DP Progress</div>
-      </div>
-      <p class="desc">
-        Serves 50K+ students with adaptive paths across 500+ courses. Tries enable instant multilingual search. Segment trees track class progress O(log n). Decision trees recommend lessons based on mastery gaps.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 4 – Quality Education, SDG 9 – Innovation</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>Trie</code>, <code>Segment Tree</code> —
-        <strong>Algorithms:</strong> <code>Decision Tree</code>, <code>Range Query</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case4">
+        <div class="case-title">4 • Edu-Tech Platform</div>
+        <div class="tech-badges">
+          <div class="badge ds">Trie · Segment Tree</div>
+          <div class="badge algo">Decision Tree · DP</div>
+        </div>
+        <p class="desc">
+          Serves 50K+ students, 500+ courses. <strong>Tries</strong> enable instant multilingual search,
+          <strong>Segment trees</strong> track progress O(log n), <strong>Decision trees</strong> recommend lessons.
+        </p>
+        <span class="sdg-tag">SDG 4 – Education | SDG 9 – Innovation</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>Trie</code> <code>Segment Tree</code> | 
+          <strong>Algo:</strong> <code>Decision Tree</code> <code>Range Query</code>
+        </div>
+        <div class="flow-diagram">
 Search → Trie → Suggestions
 Quiz → Decision Tree → Lessons
 Progress → Segment Tree → Dashboard
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case4.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case4.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 5 -->
-    <article class="card fadein" id="case5">
-      <div class="case-title">5 • Urban Security Intelligence</div>
-      <div class="meta">
-        <div class="badge">Graph · HashSet</div>
-        <div class="badge">BFS · Rabin-Karp</div>
-      </div>
-      <p class="desc">
-        Analyzes 1200+ CCTV feeds with pattern recognition. Graphs trace suspect movement between cameras using BFS. Rabin-Karp scans metadata. HashSets validate 50K+ watchlist entries instantly.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace & Justice, SDG 11 – Cities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>HashSet</code>, <code>Graph</code> —
-        <strong>Algorithms:</strong> <code>BFS</code>, <code>Rabin-Karp</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case5">
+        <div class="case-title">5 • Security Intelligence</div>
+        <div class="tech-badges">
+          <div class="badge ds">Graph · HashSet</div>
+          <div class="badge algo">BFS · Rabin-Karp</div>
+        </div>
+        <p class="desc">
+          Analyzes 1200+ CCTV feeds. <strong>Graphs + BFS</strong> trace suspect movement,
+          <strong>Rabin-Karp</strong> scans metadata, <strong>HashSets</strong> validate 50K+ watchlist entries.
+        </p>
+        <span class="sdg-tag">SDG 16 – Justice | SDG 11 – Cities</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>HashSet</code> <code>Graph</code> | 
+          <strong>Algo:</strong> <code>BFS</code> <code>Rabin-Karp</code>
+        </div>
+        <div class="flow-diagram">
 CCTV → Rabin-Karp → Patterns
-Camera Zones → Graph BFS → Suspect Path
-Faces → Hash → Watchlist Matches
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case5.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+Zones → Graph BFS → Suspect Path
+Faces → Hash → Watchlist Match
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case5.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 6 -->
-    <article class="card fadein" id="case6">
-      <div class="case-title">6 • AgroTech Smart Farming</div>
-      <div class="meta">
-        <div class="badge">2D Grid · AVL Tree</div>
-        <div class="badge">DP Yield · KMP</div>
-      </div>
-      <p class="desc">
-        5000+ IoT sensors track soil/crop health. 2D grids model field layouts. AVL trees index historical data. KMP analyzes soil test sequences for nutrient patterns.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 2 – Zero Hunger, SDG 13 – Climate Action</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>2D Grid</code>, <code>AVL Tree</code> —
-        <strong>Algorithms:</strong> <code>DP Yield</code>, <code>KMP Soil</code>
-      </div>
-      <div class="diagram">
-Sensors → 2D Grid → Moisture Heatmap
+      <article class="card fadein" id="case6">
+        <div class="case-title">6 • Smart Farming</div>
+        <div class="tech-badges">
+          <div class="badge ds">2D Grid · AVL Tree</div>
+          <div class="badge algo">DP Yield · KMP</div>
+        </div>
+        <p class="desc">
+          5000+ IoT sensors track crop health. <strong>2D grids</strong> model field layouts,
+          <strong>AVL trees</strong> index history, <strong>KMP</strong> analyzes soil nutrient patterns.
+        </p>
+        <span class="sdg-tag">SDG 2 – Zero Hunger | SDG 13 – Climate</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>2D Grid</code> <code>AVL Tree</code> | 
+          <strong>Algo:</strong> <code>DP Yield</code> <code>KMP Soil</code>
+        </div>
+        <div class="flow-diagram">
+Sensors → 2D Grid → Heatmap
 History → AVL Tree → Comparisons
 Soil → KMP → Nutrient Patterns
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case6.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case6.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 7 -->
-    <article class="card fadein" id="case7">
-      <div class="case-title">7 • Multi-Modal Transport</div>
-      <div class="meta">
-        <div class="badge">Graph · Priority Queue</div>
-        <div class="badge">Dijkstra · Floyd-Warshall</div>
-      </div>
-      <p class="desc">
-        Integrates buses/metros/bikes across 10K+ stops. Multi-modal graphs use Dijkstra for door-to-door trips. Floyd-Warshall precomputes hub distances. Segment trees track crowding.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 11 – Sustainable Cities, SDG 9 – Innovation</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>Graph</code>, <code>Priority Queue</code> —
-        <strong>Algorithms:</strong> <code>Dijkstra</code>, <code>Floyd-Warshall</code>
-      </div>
-      <div class="diagram">
-ETAs → Multi-modal Graph → Dijkstra
-Hubs → Floyd-Warshall → Transfer Tables
+      <article class="card fadein" id="case7">
+        <div class="case-title">7 • Multi-Modal Transport</div>
+        <div class="tech-badges">
+          <div class="badge ds">Graph · Priority Queue</div>
+          <div class="badge algo">Dijkstra · Floyd-Warshall</div>
+        </div>
+        <p class="desc">
+          10K+ stops across buses/metros/bikes. <strong>Multi-modal graphs + Dijkstra</strong> for door-to-door,
+          <strong>Floyd-Warshall</strong> precomputes hubs, <strong>Segment trees</strong> track crowding.
+        </p>
+        <span class="sdg-tag">SDG 11 – Cities | SDG 9 – Innovation</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>Graph</code> <code>Priority Queue</code> | 
+          <strong>Algo:</strong> <code>Dijkstra</code> <code>Floyd-Warshall</code>
+        </div>
+        <div class="flow-diagram">
+ETAs → Multi-modal → Dijkstra
+Hubs → Floyd-Warshall → Tables
 Crowding → Segment Tree → Alerts
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case7.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case7.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 8 -->
-    <article class="card fadein" id="case8">
-      <div class="case-title">8 • Healthcare Emergency Routing</div>
-      <div class="meta">
-        <div class="badge">Graph · HashMap</div>
-        <div class="badge">A* · Decision Tree</div>
-      </div>
-      <p class="desc">
-        Routes ambulances to 150+ hospitals considering bed availability/traffic. A* finds fastest specialty paths. Decision trees match symptoms to facilities. Hash tables provide instant bed lookups.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 3 – Good Health, SDG 11 – Cities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>HashMap</code>, <code>Graph</code> —
-        <strong>Algorithms:</strong> <code>A*</code>, <code>Decision Tree</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case8">
+        <div class="case-title">8 • Emergency Routing</div>
+        <div class="tech-badges">
+          <div class="badge ds">Graph · HashMap</div>
+          <div class="badge algo">A* · Decision Tree</div>
+        </div>
+        <p class="desc">
+          Routes ambulances to 150+ hospitals. <strong>A*</strong> finds fastest specialty paths,
+          <strong>Decision trees</strong> match symptoms, <strong>Hash tables</strong> provide instant bed lookup.
+        </p>
+        <span class="sdg-tag">SDG 3 – Health | SDG 11 – Cities</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>HashMap</code> <code>Graph</code> | 
+          <strong>Algo:</strong> <code>A*</code> <code>Decision Tree</code>
+        </div>
+        <div class="flow-diagram">
 Symptoms → Decision Tree → Hospital
 Beds → Hash Table → Availability
 Traffic → A* → Route Assignment
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case8.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case8.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 9 -->
-    <article class="card fadein" id="case9">
-      <div class="case-title">9 • E-Commerce Supply Chain</div>
-      <div class="meta">
-        <div class="badge">Trie · Graph</div>
-        <div class="badge">Knapsack · QuickSort</div>
-      </div>
-      <p class="desc">
-        Optimizes delivery across 200+ warehouses, 1M orders/day. Graphs model road networks (Dijkstra routes). Tries provide instant product search. Knapsack maximizes truck loads. QuickSort picking priority.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 8 – Economic Growth, SDG 9 – Innovation</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>Trie</code>, <code>Graph</code> —
-        <strong>Algorithms:</strong> <code>Knapsack</code>, <code>QuickSort</code>
-      </div>
-      <div class="diagram">
-Orders → Trie → Product Matches
-Stock → QuickSort → Picking Priority
-Trucks → Knapsack → Load Optimization
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case9.cpp" target="_blank">View Code</a>
-      </div>
-    </article>
+      <article class="card fadein" id="case9">
+        <div class="case-title">9 • E-Commerce Supply</div>
+        <div class="tech-badges">
+          <div class="badge ds">Trie · Graph</div>
+          <div class="badge algo">Knapsack · QuickSort</div>
+        </div>
+        <p class="desc">
+          200+ warehouses, 1M orders/day. <strong>Graphs + Dijkstra</strong> route optimization,
+          <strong>Tries</strong> instant product search, <strong>Knapsack</strong> maximizes truck loads.
+        </p>
+        <span class="sdg-tag">SDG 8 – Growth | SDG 9 – Innovation</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>Trie</code> <code>Graph</code> | 
+          <strong>Algo:</strong> <code>Knapsack</code> <code>QuickSort</code>
+        </div>
+        <div class="flow-diagram">
+Orders → Trie → Product Match
+Stock → QuickSort → Priority
+Trucks → Knapsack → Optimization
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case9.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
 
-    <!-- 10 -->
-    <article class="card fadein" id="case10">
-      <div class="case-title">10 • Public Safety Command Center</div>
-      <div class="meta">
-        <div class="badge">Grid · Segment Tree</div>
-        <div class="badge">BFS · Huffman · DP</div>
-      </div>
-      <p class="desc">
-        Coordinates police/fire/medical response using live feeds. 2D grids model response zones (BFS nearest units). Huffman compresses camera streams. DP assigns response teams optimally.
-        <br><br><span class="sdg-text"><strong>Aligned SDGs:</strong> SDG 16 – Peace & Justice, SDG 11 – Cities</span>
-      </p>
-      <div class="ds-list">
-        <strong>Data Structures:</strong> <code>Grid</code>, <code>Segment Tree</code> —
-        <strong>Algorithms:</strong> <code>BFS</code>, <code>Huffman</code>, <code>DP</code>
-      </div>
-      <div class="diagram">
+      <article class="card fadein" id="case10">
+        <div class="case-title">10 • Safety Command</div>
+        <div class="tech-badges">
+          <div class="badge ds">Grid · Segment Tree</div>
+          <div class="badge algo">BFS · Huffman · DP</div>
+        </div>
+        <p class="desc">
+          Coordinates police/fire/medical response. <strong>2D grids + BFS</strong> find nearest units,
+          <strong>Huffman</strong> compresses camera streams, <strong>DP</strong> assigns response teams.
+        </p>
+        <span class="sdg-tag">SDG 16 – Justice | SDG 11 – Cities</span>
+        <div class="tech-stack">
+          <strong>DS:</strong> <code>Grid</code> <code>Segment Tree</code> | 
+          <strong>Algo:</strong> <code>BFS</code> <code>Huffman</code> <code>DP</code>
+        </div>
+        <div class="flow-diagram">
 Incidents → Grid BFS → Responders
-Resources → Segment Tree → Availability
+Resources → Segment Tree → Status
 Cameras → Huffman → Archive
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case10.cpp" target="_blank">View Code →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="analysis-section fadein">
+      <div class="analysis-title">DSA Analysis Matrix</div>
+      <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 24px;">
+        Core structures & algorithms across all cases with complexity metrics
       </div>
-      <div class="actions">
-        <a class="btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/blob/main/Ankita/Case10.cpp" target="_blank">View Code</a>
+      <div class="analysis-table-wrapper">
+        <table class="analysis-table">
+          <thead>
+            <tr>
+              <th>Algorithm / Data Structure</th>
+              <th>Used</th>
+              <th>Cases</th>
+              <th>Space</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Arrays / Vectors</td><td class="used-yes">✓ All</td><td>All cases</td><td>O(n)</td><td>O(1) access</td></tr>
+            <tr><td>Graphs</td><td class="used-yes">✓</td><td>1,2,3,5,7,8,9</td><td>O(V+E)</td><td>O(E log V)</td></tr>
+            <tr><td>Segment Trees</td><td class="used-yes">✓</td><td>1,4,7,10</td><td>O(n)</td><td>O(log n)</td></tr>
+            <tr><td>Tries</td><td class="used-yes">✓</td><td>4,9</td><td>O(chars)</td><td>O(k)</td></tr>
+            <tr><td>Priority Queue</td><td class="used-yes">✓</td><td>1,3,7,8</td><td>O(n)</td><td>O(log n)</td></tr>
+            <tr><td>Hash Tables</td><td class="used-yes">✓</td><td>3,5,8</td><td>O(n)</td><td>O(1) avg</td></tr>
+            <tr><td>AVL Trees</td><td class="used-yes">✓</td><td>6</td><td>O(n)</td><td>O(log n)</td></tr>
+            <tr><td>BFS/DFS</td><td class="used-yes">✓</td><td>2,5,6,10</td><td>O(V)</td><td>O(V+E)</td></tr>
+            <tr><td>Dijkstra/A*</td><td class="used-yes">✓</td><td>1,3,7,8</td><td>O(V)</td><td>O(E log V)</td></tr>
+            <tr><td>DP (Knapsack)</td><td class="used-yes">✓</td><td>2,9,10</td><td>O(nW)</td><td>O(nW)</td></tr>
+            <tr><td>KMP/Rabin-Karp</td><td class="used-yes">✓</td><td>1,5,6</td><td>O(m)</td><td>O(n+m)</td></tr>
+            <tr><td>Kruskal MST</td><td class="used-yes">✓</td><td>2</td><td>O(E)</td><td>O(E log E)</td></tr>
+            <tr><td>Floyd-Warshall</td><td class="used-yes">✓</td><td>7</td><td>O(n²)</td><td>O(n³)</td></tr>
+            <tr><td>QuickSort</td><td class="used-yes">✓</td><td>9</td><td>O(log n)</td><td>O(n log n)</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-  </section>
+    <footer class="footer fadein">
+      © 2025 <strong>Aarunya</strong> — Ankita (Roll 244) · 
+      All implementations in <code>Ankita/</code> ✨
+    </footer>
+  </div>
 
-  <!-- BIG DATA STRUCTURE / ALGO TABLE -->
-  <section class="ds-analysis-section">
-    <div class="ds-analysis-title">Data Structures & Algorithms Analysis</div>
-    <div class="ds-analysis-sub">
-      Detailed list of core structures and algorithms across all ten cases with asymptotic complexity.
-    </div>
-
-    <div class="ds-analysis-table-wrapper">
-      <table class="ds-analysis-table">
-        <thead>
-          <tr>
-            <th>Data Structure / Algorithm</th>
-            <th>Used?</th>
-            <th>Where Used</th>
-            <th>Space Efficiency</th>
-            <th>Time Efficiency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Arrays / Vectors</td><td class="ds-used-yes">Yes</td><td>All cases</td><td>O(n)</td><td>O(1) access</td></tr>
-          <tr><td>Graphs</td><td class="ds-used-yes">Yes</td><td>1,2,3,5,7,8,9</td><td>O(V+E)</td><td>O(E log V)</td></tr>
-          <tr><td>Segment Trees</td><td class="ds-used-yes">Yes</td><td>1,4,7,10</td><td>O(n)</td><td>O(log n)</td></tr>
-          <tr><td>Tries</td><td class="ds-used-yes">Yes</td><td>4,9</td><td>O(chars)</td><td>O(k)</td></tr>
-          <tr><td>Priority Queue</td><td class="ds-used-yes">Yes</td><td>1,2,7,8</td><td>O(n)</td><td>O(log n)</td></tr>
-          <tr><td>Hash Tables</td><td class="ds-used-yes">Yes</td><td>3,5,8,9</td><td>O(n)</td><td>O(1) avg</td></tr>
-          <tr><td>AVL Trees</td><td class="ds-used-yes">Yes</td><td>6</td><td>O(n)</td><td>O(log n)</td></tr>
-          <tr><td>BFS/DFS</td><td class="ds-used-yes">Yes</td><td>2,5,6,10</td><td>O(V)</td><td>O(V+E)</td></tr>
-          <tr><td>Dijkstra/A*</td><td class="ds-used-yes">Yes</td><td>1,3,7,8,9</td><td>O(V)</td><td>O(E log V)</td></tr>
-          <tr><td>DP (Knapsack)</td><td class="ds-used-yes">Yes</td><td>2,9,10</td><td>O(nW)</td><td>O(nW)</td></tr>
-          <tr><td>KMP/Rabin-Karp</td><td class="ds-used-yes">Yes</td><td>1,5,6</td><td>O(m)</td><td>O(n+m)</td></tr>
-          <tr><td>Kruskal</td><td class="ds-used-yes">Yes</td><td>2</td><td>O(E)</td><td>O(E log E)</td></tr>
-          <tr><td>Floyd-Warshall</td><td class="ds-used-yes">Yes</td><td>7</td><td>O(n²)</td><td>O(n³)</td></tr>
-          <tr><td>QuickSort</td><td class="ds-used-yes">Yes</td><td>9</td><td>O(log n)</td><td>O(n log n)</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Aarunya — Ankita (Roll 244) · All source files in <code>Ankita/</code> ✨
-  </footer>
-
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.fadein').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 60 * i);
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fadein').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 100 + 120 * i);
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
