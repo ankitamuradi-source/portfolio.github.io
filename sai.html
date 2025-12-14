@@ -33,9 +33,10 @@
     body{
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
   background:
-    radial-gradient(circle at top left, rgba(139,92,246,0.18), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(34,211,238,0.15), transparent 45%),
-    linear-gradient(135deg,#05050f 0%, #0b0b1a 35%, #141433 65%, #020617 100%);
+  radial-gradient(circle at top, rgba(139,92,246,0.35), transparent 45%),
+  radial-gradient(circle at bottom, rgba(34,211,238,0.3), transparent 50%),
+  linear-gradient(135deg,#04040c 0%, #0b0b2a 40%, #1a1240 70%, #020617 100%);
+  
   color:var(--text-main);
   padding:24px 10px 32px;
   line-height:1.7;
@@ -76,21 +77,23 @@
   backdrop-filter: blur(10px);
 }
  .hero-title-box{
-  align-self:flex-start;
+  align-self:center;
+text-align:center;
   padding:22px 26px;
   border-radius:20px;
 
-  background:linear-gradient(
-    135deg,
-    rgba(88,28,135,0.35),
-    rgba(30,64,175,0.35)
-  );
+   background:linear-gradient(
+  135deg,
+  rgba(139,92,246,0.45),
+  rgba(34,211,238,0.45),
+  rgba(244,114,182,0.35)
+);
 
-  box-shadow:
-    0 0 45px rgba(139,92,246,0.55),
-    0 0 90px rgba(34,211,238,0.25),
-    inset 0 0 0 1px rgba(255,255,255,0.12);
-
+box-shadow:
+  0 0 40px rgba(139,92,246,0.9),
+  0 0 80px rgba(34,211,238,0.6),
+  inset 0 0 0 1px rgba(255,255,255,0.2);
+ 
   backdrop-filter: blur(14px);
 }
 
@@ -123,11 +126,20 @@
       font-size:1.35rem;
       margin-bottom:4px;
     }
-  .hero-sub{
-  font-size:0.82rem;      
-  opacity:0.85;
-  max-width:640px;
-  margin-top:6px;           
+   .hero-meta{
+  margin-top:10px;
+  font-size:0.75rem;
+  color:#e0e7ff;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.hero-sub{
+  font-size:0.78rem;
+  opacity:0.8;
+  margin-top:10px;
   color:#c7d2fe;
 }
     .hero-right{
@@ -444,28 +456,34 @@
 
 <section class="hero">
 
+  <section class="hero">
+
   <div class="hero-title-box">
-    <div class="title-small">DESIGN AND ANALYSIS OF ALGORITHMS</div>
-    <div class="title-main">Business Case Studies</div>
-    <div class="title-city">AARUNYA</div>
-  </div>
 
-  <p class="hero-sub">
-    Engineering implementations of 10 urban systems, mapping real-world operations
-    to advanced data structures and algorithms in <code>Sai/</code>.
-  </p>
+    <div class="title-main">
+      AARUNYA: Business Case Studies
+    </div>
 
-  <div class="hero-right">
-    <div>Author: <strong>Sai</strong></div>
-    <div>Roll: <strong>202</strong></div>
-    <div>City: <strong>Aarunya</strong></div>
-    <a class="hero-git-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io" target="_blank">
+    <div class="hero-meta">
+      <div>Author: <strong>Sai</strong></div>
+      <div>Roll: <strong>202</strong></div>
+      <div>City: <strong>Aarunya</strong></div>
+    </div>
+
+    <a class="hero-git-btn"
+       href="https://github.com/ankitamuradi-source/portfolio.github.io"
+       target="_blank">
       Open GitHub Repository
     </a>
+
+    <p class="hero-sub">
+      Engineering implementations of 10 urban systems, mapping real-world operations
+      to advanced data structures and algorithms in <code>Sai/</code>.
+    </p>
+
   </div>
 
 </section>
-
 
   <section class="summary-strip">
     <div class="pill"><span class="pill-label">Course</span><span class="pill-value">DAA-2025</span></div>
