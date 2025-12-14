@@ -6,253 +6,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===========================
-   DARK CYBERPUNK THEME
-   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Orbitron', 'Courier New', monospace;
-    background: 
-        linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 50%, #0f0f23 100%);
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(135deg, #0a0a0a, #1a0f2e, #0f0f23);
     color: #e0e7ff;
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
-    z-index: -1;
-    animation: neonPulse 8s ease-in-out infinite;
-}
-
-@keyframes neonPulse {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.05); }
 }
 
 header {
-    background: linear-gradient(135deg, #1a0033, #2d1b69, #0f3460);
-    color: #fff;
-    padding: 40px 25px;
+    padding: 40px;
     text-align: center;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0, 74, 173, 0.4);
-    border-bottom: 2px solid rgba(120, 219, 255, 0.3);
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #78dbff, #ff77c6, transparent);
-    animation: headerGlow 3s linear infinite;
-}
-
-@keyframes headerGlow {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    background: linear-gradient(135deg, #1a0033, #2d1b69, #0f3460);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
 }
 
 header h1 {
     margin: 0;
     font-size: 36px;
-    font-weight: 900;
-    text-shadow: 0 0 20px rgba(120, 219, 255, 0.8);
-    background: linear-gradient(45deg, #78dbff, #ff77c6, #a8e6cf);
+    background: linear-gradient(45deg, #78dbff, #ff77c6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: titleShimmer 4s ease-in-out infinite;
-}
-
-@keyframes titleShimmer {
-    0%, 100% { filter: hue-rotate(0deg); }
-    50% { filter: hue-rotate(180deg); }
 }
 
 header p {
-    margin-top: 15px;
+    margin-top: 12px;
     font-size: 18px;
-    opacity: 0.9;
-    font-weight: 300;
 }
 
-/* ===========================
-   MAIN CONTAINER
-   =========================== */
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* ===========================
-   BUSINESS CARD - CYBERPUNK STYLE
-   =========================== */
 .business {
-    background: linear-gradient(145deg, rgba(15, 15, 35, 0.95), rgba(25, 20, 60, 0.9));
-    padding: 35px;
+    background: rgba(15,15,35,0.95);
+    padding: 30px;
     margin-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(120, 219, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(120, 219, 255, 0.3);
-    backdrop-filter: blur(15px);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.business::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #78dbff, #ff77c6, transparent);
-    animation: cardShimmer 6s infinite;
-}
-
-@keyframes cardShimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-.business:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.9),
-        0 0 60px rgba(120, 219, 255, 0.5);
-    border-color: rgba(120, 219, 255, 0.6);
+    border-radius: 18px;
+    border: 1px solid rgba(120,219,255,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
 .business h2 {
     color: #78dbff;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 700;
-    font-family: 'Orbitron', monospace;
-    text-shadow: 0 0 15px rgba(120, 219, 255, 0.7);
-}
-
-.business p {
-    line-height: 1.8;
-    font-size: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .label {
-    font-weight: 700;
     color: #a8e6cf;
-    text-shadow: 0 0 8px rgba(168, 230, 207, 0.5);
+    font-weight: bold;
 }
 
-/* ===========================
-   VIEW CODE BUTTON - NOW OPENS FOLDER
-   =========================== */
 .view-btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #ff77c6, #78dbff, #a8e6cf);
-    color: #1a0f2e;
+    padding: 12px 26px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #ff77c6, #78dbff);
+    color: #0f0f23;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 800;
-    font-family: 'Orbitron', monospace;
-    box-shadow: 
-        0 8px 25px rgba(255, 119, 198, 0.4),
-        0 4px 15px rgba(120, 219, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    target="_blank";
-}
-
-.view-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: 0.5s;
-}
-
-.view-btn:hover::before {
-    left: 100%;
+    transition: 0.3s;
 }
 
 .view-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 
-        0 15px 35px rgba(255, 119, 198, 0.6),
-        0 10px 25px rgba(120, 219, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(120,219,255,0.6);
 }
 
-/* ===========================
-   FOOTER - NEON GLOW
-   =========================== */
 footer {
-    background: linear-gradient(135deg, rgba(10, 10, 26, 0.95), rgba(26, 15, 46, 0.9));
     text-align: center;
-    padding: 30px;
-    margin-top: 60px;
-    font-size: 15px;
-    border-top: 1px solid rgba(120, 219, 255, 0.2);
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    background: rgba(10,10,26,0.95);
+    border-top: 1px solid rgba(120,219,255,0.2);
 }
-
-/* ===========================
-   RESPONSIVE DESIGN
-   =========================== */
-@media (max-width: 768px) {
-    .container {
-        padding: 25px 15px;
-    }
-    
-    header {
-        padding: 30px 20px;
-    }
-    
-    header h1 {
-        font-size: 28px;
-    }
-    
-    .business {
-        padding: 25px 20px;
-    }
-    
-    .business h2 {
-        font-size: 22px;
-    }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 </style>
 </head>
 
@@ -265,150 +99,90 @@ footer {
 
 <div class="container">
 
-<!-- 1. FLOATING MICRO-FARMS -->
 <div class="business">
 <h2>1. Floating Micro-Farms</h2>
 <p><span class="label">SDGs:</span> SDG 2, SDG 11, SDG 13</p>
-<p>
-Floating micro-farms use water surfaces to grow crops in cities.
-They optimize limited resources and improve food security.
-Dynamic programming helps maximize crop yield.
-</p>
 <p><span class="label">Data Structure:</span> Array</p>
-<p><span class="label">Algorithm:</span> 0/1 Knapsack Algorithm</p>
-<a class="view-btn" href="akshata/Floating_Micro_Farms/Floating_Micro_Farms.cpp" target="_blank">View Code</a>
+<p><span class="label">Algorithm:</span> 0/1 Knapsack</p>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Floating_Micro_Farms" target="_blank">View Code</a>
 </div>
 
-<!-- 2. XR HOLOGRAM SHOPS -->
 <div class="business">
 <h2>2. XR Hologram Shops</h2>
 <p><span class="label">SDGs:</span> SDG 8, SDG 9, SDG 11</p>
-<p>
-XR hologram shops offer immersive virtual shopping.
-User preferences are matched using similarity measures.
-This improves customer engagement and sales.
-</p>
 <p><span class="label">Data Structure:</span> Vector</p>
 <p><span class="label">Algorithm:</span> Cosine Similarity</p>
-<a class="view-btn" href="akshata/XR_Hologram_Shops/XR_Hologram_Shops.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/XR_Hologram_Shops" target="_blank">View Code</a>
 </div>
 
-<!-- 3. AI SOUND TRAILS -->
 <div class="business">
 <h2>3. AI Sound Trails</h2>
 <p><span class="label">SDGs:</span> SDG 3, SDG 11</p>
-<p>
-AI sound trails generate adaptive audio paths in public spaces.
-Sound transitions depend on previous states.
-Markov models improve relaxation and navigation.
-</p>
 <p><span class="label">Data Structure:</span> Matrix</p>
 <p><span class="label">Algorithm:</span> Markov Chain</p>
-<a class="view-btn" href="akshata/AI_Sound_Trails/AI_Sound_Trails.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/AI_Sound_Trails" target="_blank">View Code</a>
 </div>
 
-<!-- 4. ENERGY-BIKE CAFÉ -->
 <div class="business">
 <h2>4. Energy-Bike Café</h2>
 <p><span class="label">SDGs:</span> SDG 7, SDG 11, SDG 13</p>
-<p>
-Energy-bike cafés generate electricity from cycling.
-Energy distribution is optimized based on priority.
-This supports clean energy initiatives.
-</p>
 <p><span class="label">Data Structure:</span> Priority Queue</p>
 <p><span class="label">Algorithm:</span> Greedy Scheduling</p>
-<a class="view-btn" href="akshata/Energy_Bike_Cafe/Energy_Bike_Cafe.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Energy_Bike_Cafe" target="_blank">View Code</a>
 </div>
 
-<!-- 5. SIMULATION PODS -->
 <div class="business">
 <h2>5. Simulation Pods</h2>
 <p><span class="label">SDGs:</span> SDG 3, SDG 8</p>
-<p>
-Simulation pods offer immersive training environments.
-Users are scheduled efficiently using queues.
-Event simulation ensures fairness.
-</p>
 <p><span class="label">Data Structure:</span> Queue</p>
 <p><span class="label">Algorithm:</span> Discrete Event Simulation</p>
-<a class="view-btn" href="akshata/Simulation_Pods/Simulation_Pods.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Simulation_Pods" target="_blank">View Code</a>
 </div>
 
-<!-- 6. ECO-BRICKS -->
 <div class="business">
 <h2>6. Eco-Bricks</h2>
 <p><span class="label">SDGs:</span> SDG 11, SDG 12</p>
-<p>
-Eco-bricks reuse plastic waste for construction.
-Bricks are selected based on strength.
-Greedy allocation improves resource usage.
-</p>
 <p><span class="label">Data Structure:</span> Multiset</p>
 <p><span class="label">Algorithm:</span> Best-Fit Greedy</p>
-<a class="view-btn" href="akshata/Eco_Bricks/Eco_Bricks.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Eco_Bricks" target="_blank">View Code</a>
 </div>
 
-<!-- 7. SCENT NAVIGATION MAPS -->
 <div class="business">
 <h2>7. Scent Navigation Maps</h2>
 <p><span class="label">SDGs:</span> SDG 3, SDG 11</p>
-<p>
-Scent-based navigation helps visually impaired users.
-Shortest paths ensure safe movement.
-Graph algorithms improve accessibility.
-</p>
 <p><span class="label">Data Structure:</span> Graph</p>
-<p><span class="label">Algorithm:</span> Dijkstra's Algorithm</p>
-<a class="view-btn" href="akshata/Scent_Navigation_Maps/Scent_Navigation_Maps.cpp" target="_blank">View Code</a>
+<p><span class="label">Algorithm:</span> Dijkstra’s Algorithm</p>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Scent_Navigation_Maps" target="_blank">View Code</a>
 </div>
 
-<!-- 8. DRONE DINING -->
 <div class="business">
 <h2>8. Drone Dining</h2>
 <p><span class="label">SDGs:</span> SDG 8, SDG 9, SDG 12</p>
-<p>
-Drone dining enables fast food delivery.
-Routes are optimized to reduce time.
-Efficiency improves customer satisfaction.
-</p>
 <p><span class="label">Data Structure:</span> Array</p>
 <p><span class="label">Algorithm:</span> Nearest Neighbor (TSP)</p>
-<a class="view-btn" href="akshata/Drone_Dining/Drone_Dining.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Drone_Dining" target="_blank">View Code</a>
 </div>
 
-<!-- 9. SMART SIDEWALKS -->
 <div class="business">
 <h2>9. Smart Sidewalks</h2>
 <p><span class="label">SDGs:</span> SDG 11, SDG 3</p>
-<p>
-Smart sidewalks monitor crowd density.
-Movement is simulated to avoid congestion.
-Urban safety is enhanced.
-</p>
 <p><span class="label">Data Structure:</span> 2D Grid</p>
 <p><span class="label">Algorithm:</span> Cellular Automata</p>
-<a class="view-btn" href="akshata/Smart_Sidewalks/Smart_Sidewalks.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Smart_Sidewalks" target="_blank">View Code</a>
 </div>
 
-<!-- 10. MEDITATION PODS -->
 <div class="business">
 <h2>10. Meditation Pods</h2>
 <p><span class="label">SDGs:</span> SDG 3, SDG 11</p>
-<p>
-Meditation pods manage wellness sessions.
-Time slots are scheduled efficiently.
-Stress reduction is improved.
-</p>
 <p><span class="label">Data Structure:</span> List</p>
 <p><span class="label">Algorithm:</span> Interval Scheduling</p>
-<a class="view-btn" href="akshata/Meditation_Pods/Meditation_Pods.cpp" target="_blank">View Code</a>
+<a class="view-btn" href="https://github.com/ankitamuradi-source/portfolio.github.io/tree/main/Akshata/Meditation_Pods" target="_blank">View Code</a>
 </div>
 
 </div>
 
 <footer>
-<p>Smart City Project | SDGs & Design and Analysis of Algorithms | Akshata's Portfolio</p>
+<p>Smart City Project | SDGs & Design and Analysis of Algorithms | Akshata</p>
 </footer>
 
 </body>
