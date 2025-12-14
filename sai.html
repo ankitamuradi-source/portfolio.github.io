@@ -102,12 +102,16 @@
       font-weight:600;
       box-shadow:0 0 0 1px #22c55e40;
     }
+     .summary-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom: 28px; 
+  position: relative;   
+  z-index: 1;
+}
 
-    .summary-strip{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
+     
     .pill{
       display:inline-flex;
       align-items:center;
@@ -127,10 +131,9 @@
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap:24px;
-  justify-items:center;   /* CENTER cards */
-  align-items:stretch;
+  justify-items:center;
+  margin-top: 10px;   /* 👈 ADD THIS */
 }
-
     @media (max-width:800px){
       .grid{
         grid-template-columns:1fr;
