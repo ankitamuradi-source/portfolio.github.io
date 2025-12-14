@@ -318,4 +318,197 @@ th{ background:linear-gradient(135deg,#1f1b3a,#2a2550); color:#7df9ff; font-weig
 td{ background:rgba(12,12,27,0.9); color:#e2e8f0; }
 tr:hover td{ background:rgba(125,249,255,0.1); transform:scale(1.01); }
 .dsa-badge{ display:inline-flex;align-items:center,gap:10px;background:rgba(0,0,0,0.4);padding:12px 20px;border-radius:25px;margin:10px 0;border:1px solid rgba(125,249,255,0.4);font-family:'Orbitron',monospace;font-size:15px;color:#7df9ff; }
-.dsa-badge code{
+.dsa-badge code{ color:#ffb07c;font-weight:800;text-shadow:0 0 10px rgba(255,176,124,0.8); }
+
+@media (max-width: 768px){
+  .section{ padding:25px 20px;margin:20px 10px; }
+  .title{ font-size:28px; }
+  .team-grid{ grid-template-columns:1fr; }
+  .course-info{ grid-template-columns:1fr; }
+  nav a{ margin:0 10px; font-size:16px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a onclick="showPage('home')">🏙 Home</a>
+  <a onclick="showPage('project')">👥 DAA Team</a>
+  <a href="ArbiyaNaaz.html">🌟 Arbiya Naaz</a>
+  <a onclick="showPage('akshata')">⭐ Akshata</a>
+  <a href="ankita.html">💎 Ankita</a>
+  <a href="sai.html">🚀 Sai</a>
+</nav>
+
+<!-- HOME (unchanged from previous version) -->
+<section id="home" class="section active">
+  <h1 class="title">AARUNYA CITY</h1>
+  <p class="desc">
+    Futuristic city powered by <strong>DAA Algorithms</strong> - Sustainable development through 
+    Graph Theory, Dynamic Programming, and Advanced Data Structures
+  </p>
+
+  <!-- DAA COURSE HEADER -->
+  <div class="course-header">
+    <div class="course-title">🎓 DESIGN & ANALYSIS OF ALGORITHMS</div>
+    <div class="course-info">
+      <div class="course-badge"><strong>Professor</strong><br>Prakash Hegade</div>
+      <div class="course-badge"><strong>Course Code</strong><br>24ECS205</div>
+      <div class="course-badge"><strong>University</strong><br>KLE TECH</div>
+      <div class="course-badge"><strong>Semester</strong><br>DAA-2025</div>
+    </div>
+  </div>
+
+  <!-- ALGORITHM CITY DESIGN -->
+  <div class="algorithm-city">
+    <h2 class="neon-name" style="margin-bottom:25px;">⚙ Aarunya - Designed by DAA Algorithms</h2>
+    <div class="dsa-badge">🗺 <strong>Graph:</strong> <code>Dijkstra/A*</code> → Traffic & Emergency</div>
+    <div class="dsa-badge">🌊 <strong>DP:</strong> <code>Knapsack</code> → Resource Allocation</div>
+    <div class="dsa-badge">🔍 <strong>Search:</strong> <code>Trie/Segment Tree</code> → Smart City</div>
+    <div class="dsa-badge">📡 <strong>String:</strong> <code>KMP/Rabin-Karp</code> → Surveillance</div>
+    <div class="dsa-badge">🌐 <strong>MST:</strong> <code>Kruskal</code> → Infrastructure</div>
+  </div>
+
+  <!-- CITY INFO, POPULATION, LAYOUT, BUDGET, REVENUE TABLES (unchanged) -->
+  <div class="member-box">
+    <h2 class="neon-name">🏙 City Information</h2>
+    <div class="idea-list">
+      <p>🏙 City Name: Aarunya City</p>
+      <p>📍 State: Andhra Pradesh</p>
+      <p>🌐 Population Density: 5,000 per sq. km</p>
+      <p>⏰ Time Zone: IST (UTC +5:30)</p>
+      <p>🚗 Vehicle Code: AP-XX</p>
+    </div>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">👥 Population Distribution</h2>
+    <table>
+      <tr><th>Category</th><th>Details</th></tr>
+      <tr><td>Total Population</td><td>50,00,000</td></tr>
+      <tr><td>Working Population</td><td>60%</td></tr>
+      <tr><td>Students</td><td>20%</td></tr>
+      <tr><td>Senior Citizens</td><td>10%</td></tr>
+      <tr><td>Children</td><td>10%</td></tr>
+    </table>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">🏘 City Layout Plan</h2>
+    <div class="idea-list">
+      <p>🏘 Residential Area – 22%</p><p>🏭 Industrial & Port – 22%</p><p>🏢 Commercial & IT – 8%</p>
+      <p>🚍 Public Transport – 8%</p><p>🎓 Education – 7%</p><p>🌿 Agriculture & Green – 20%</p>
+      <p>🏥 Health – 5%</p><p>🌲 Ecological Buffers – Remaining</p>
+    </div>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">💰 Budget (₹ Crores)</h2>
+    <table>
+      <tr><th>Sector</th><th>Amount</th></tr>
+      <tr><td>Residential</td><td>2,40,000</td></tr>
+      <tr><td>Industrial & Port</td><td>2,40,000</td></tr>
+      <tr><td>Commercial & IT</td><td>1,00,000</td></tr>
+      <tr><td>Transport</td><td>3,00,000</td></tr>
+      <tr><td>Education</td><td>70,000</td></tr>
+      <tr><td>Agriculture & Green</td><td>50,000</td></tr>
+      <tr><td>Health</td><td>75,000</td></tr>
+      <tr><td>Ecological</td><td>50,000</td></tr>
+    </table>
+  </div>
+
+  <div class="member-box">
+    <h2 class="neon-name">📈 Revenue Model</h2>
+    <table>
+      <tr><th>Sector</th><th>Revenue</th><th>Share</th></tr>
+      <tr><td>Residential</td><td>54,000</td><td>27%</td></tr>
+      <tr><td>Industrial</td><td>52,000</td><td>26%</td></tr>
+      <tr><td>Commercial</td><td>31,000</td><td>15%</td></tr>
+      <tr><td>Transport</td><td>13,000</td><td>6%</td></tr>
+      <tr><td>Education</td><td>8,000</td><td>4%</td></tr>
+      <tr><td>Health</td><td>9,500</td><td>5%</td></tr>
+      <tr><td>Agriculture</td><td>15,000</td><td>7%</td></tr>
+      <tr><td>Ecological</td><td>6,500</td><td>3%</td></tr>
+      <tr><th>Total</th><th>2,00,000</th><th>100%</th></tr>
+    </table>
+  </div>
+</section>
+
+<!-- DAA TEAM PROFILES -->
+<section id="project" class="section">
+  <h1 class="title">🚀 DAA SUPER TEAM</h1>
+  <p class="desc">Aarunya City Architects - Masters of Algorithms & Data Structures</p>
+
+  <div class="team-grid">
+    <!-- SAI PROFILE -->
+    <div class="profile-card">
+      <div class="profile-avatar">🚀</div>
+      <div class="profile-name">Sai Bhusaraddi</div>
+      <div class="profile-details">Roll: 202 | USN: 01FE24BCS018</div>
+      <div class="daa-specialty">
+        <h4>🔥 Graph Theory Master</h4>
+        <div class="dsa-highlight">🗺 <code>Dijkstra</code> - Traffic Optimization</div>
+        <div class="dsa-highlight">🌐 <code>Floyd-Warshall</code> - Multi-modal Transport</div>
+        <div class="dsa-highlight">⚡ <code>A*</code> - Emergency Response</div>
+        <p style="font-size:14px;color:#d6dcf0;margin-top:12px;">Built Aarunya's intelligent routing backbone</p>
+      </div>
+      <button class="view-btn" onclick="window.location.href='sai.html'">Explore Portfolio →</button>
+    </div>
+
+    <!-- AKSHATA PROFILE -->
+    <div class="profile-card">
+      <div class="profile-avatar">⭐</div>
+      <div class="profile-name">Akshata S Angadi</div>
+      <div class="profile-details">Roll: 215 | USN: 01FE24BCS044</div>
+      <div class="daa-specialty">
+        <h4>🌟 Dynamic Programming Expert</h4>
+        <div class="dsa-highlight">🎒 <code>Knapsack DP</code> - Resource Allocation</div>
+        <div class="dsa-highlight">📊 <code>DP Yield</code> - Smart Farming</div>
+        <div class="dsa-highlight">⚖ <code>Optimal Substructure</code> - Budget Planning</div>
+        <p style="font-size:14px;color:#d6dcf0;margin-top:12px;">Optimized Aarunya's resource distribution</p>
+      </div>
+      <button class="view-btn" onclick="showPage('akshata')">View Portfolio →</button>
+    </div>
+
+    <!-- ANKITA PROFILE -->
+    <div class="profile-card">
+      <div class="profile-avatar">💎</div>
+      <div class="profile-name">Ankita Muradi</div>
+      <div class="profile-details">Roll: 244 | USN: 01FE24BCS146</div>
+      <div class="daa-specialty">
+        <h4>💎 Advanced Data Structures</h4>
+        <div class="dsa-highlight">🌳 <code>Segment Tree</code> - Traffic Analytics</div>
+        <div class="dsa-highlight">🔤 <code>Trie</code> - Smart Search Systems</div>
+        <div class="dsa-highlight">🎛 <code>AVL Tree</code> - Historical Data</div>
+        <p style="font-size:14px;color:#d6dcf0;margin-top:12px;">Engineered Aarunya's 10 urban systems</p>
+      </div>
+      <button class="view-btn" onclick="window.location.href='ankita.html'">View Portfolio →</button>
+    </div>
+
+    <!-- ARBIYA PROFILE -->
+    <div class="profile-card">
+      <div class="profile-avatar">🌟</div>
+      <div class="profile-name">Arbiya Naaz Bhavikatti</div>
+      <div class="profile-details">Roll: 214 | USN: 01FE24BCS042</div>
+      <div class="daa-specialty">
+        <h4>🎯 String & Search Algorithms</h4>
+        <div class="dsa-highlight">🔍 <code>KMP</code> - License Plate Recognition</div>
+        <div class="dsa-highlight">📡 <code>Rabin-Karp</code> - CCTV Surveillance</div>
+        <div class="dsa-highlight">🧠 <code>Decision Tree</code> - Healthcare Routing</div>
+        <p style="font-size:14px;color:#d6dcf0;margin-top:12px;">Powered Aarunya's security & monitoring</p>
+      </div>
+      <button class="view-btn" onclick="window.location.href='ArbiyaNaaz.html'">View Portfolio →</button>
+    </div>
+  </div>
+</section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
