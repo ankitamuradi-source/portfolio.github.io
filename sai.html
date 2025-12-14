@@ -45,18 +45,11 @@
       flex-direction:column;
       gap:20px;
     }
-
-    .hero{
-      border-radius:18px;
-      padding:18px 20px;
-      background:radial-gradient(circle at top left,#22c55e20 0,#0f172a 45%,#020617 100%);
-      color:#e5e7eb;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      border:1px solid #22c55e40;
-      box-shadow:0 18px 60px rgba(15,23,42,0.9);
-    }
+      .hero{
+  display:flex;
+  flex-direction:column;   /* 👈 stack vertically */
+  gap:16px;
+}
     .hero-left{display:flex;gap:14px;align-items:flex-start}
     
     .hero-tag{
@@ -67,8 +60,32 @@
   color:#cbd5f5;
   margin-bottom:6px;
 }
-    
-    h1{
+    .hero-title-box{
+  align-self:flex-start;
+  padding:14px 22px;
+  border-radius:16px;
+
+  background:linear-gradient(
+    135deg,
+    rgba(34,211,238,0.18),
+    rgba(139,92,246,0.18)
+  );
+
+  box-shadow:
+    0 0 35px rgba(34,211,238,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.hero-title-box h1{
+  font-size:1.6rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#22d3ee,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+        h1{
       font-size:1.35rem;
       margin-bottom:4px;
     }
@@ -128,12 +145,12 @@
     .pill-value{color:#e5e7eb;font-weight:600}
 
     .grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap:24px;
-  justify-items:center;
-  margin-top: 10px;   /* 👈 ADD THIS */
+  display:flex;
+  flex-direction:column;   
+  align-items:center;      
+  gap:34px;               
 }
+
     @media (max-width:800px){
       .grid{
         grid-template-columns:1fr;
@@ -160,6 +177,9 @@
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
+      position:relative;
+      overflow:hidden;
+
 }
 
 .card:hover{
@@ -168,7 +188,15 @@
     0 28px 65px rgba(34,211,238,0.35),
     0 0 0 1px rgba(34,211,238,0.35);
 }
-
+    .card::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle at top left, rgba(34,211,238,0.15), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(139,92,246,0.15), transparent 60%);
+  z-index:-1;
+}
     .case-title{
   font-size:1.05rem;
   font-weight:800;
@@ -383,14 +411,16 @@
       
       <div class="hero-tag">Design and Analysis of Algorithms</div>
 
-<h1>Business Case Studies — Aarunya</h1>
+<div class="hero-title-box">
+  <h1>Business Case Studies — Aarunya</h1>
+</div>
+
 
 <p class="hero-sub">
   Engineering implementations of 10 urban systems, mapping real-world operations
   to advanced data structures and algorithms in <code>Sai/</code>.
 </p>
       </div>
-    </div>
     <div class="hero-right">
       <div>Author: <strong>Sai</strong></div>
       <div>Roll: <strong>202</strong></div>
